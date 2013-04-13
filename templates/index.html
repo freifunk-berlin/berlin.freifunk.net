@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <style>
+
+    .node {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+
+    .link {
+      stroke: #999;
+      stroke-opacity: .6;
+    }
+    </style>
+  </head>
+<body>
+  <h1>Freifunk Node Graph</h1>
+  <div id="graph">
+    <p>
+      Loading latest data... (this can last several minutes for the first time)
+    </p>
+  </div>
+
+  <p>
+    data from <a href="http://www.openwifimap.net">www.openwifimap.net</a>
+  </p>
+
+</body>
+<script>
+
+var width = 1366,
+    height = 780;
+
+var color = d3.scale.category20();
+
+var force = d3.layout.force()
+    .charge(-50)
+    .linkDistance(30)
+    .size([width, height]);
+
+var svg = d3.select("#graph").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("/api/nodes", function(graph) {
+
+  d3.select("#graph p").remove();
+
+  var nodes = graph.nodes.map(function(x) {
+    return { name: x };
+  });
+
+  var links = graph.edges.filter(function(elem) {
+    return graph.nodes.indexOf(elem.target) >= 0;
+  });
+
+  links = links.map(function(x) {
+    return {
+      source: graph.nodes.indexOf(x.source),
+      target: graph.nodes.indexOf(x.target),
+    };
+  });
+
+  force.nodes(nodes)
+       .links(links)
+       .start();
+
+  var link = svg.selectAll(".link")
+      .data(links)
+      .enter().append("line")
+      .attr("class", "link")
+
+  var node = svg.selectAll(".node")
+      .data(nodes)
+      .enter().append("circle")
+      .attr("class", "node")
+      .attr("r", 5)
+      .style("fill", function(d) { return "black"; });
+//      .call(force.drag);
+
+  var text = svg.selectAll('text')
+      .data(force.nodes())
+      .enter()
+      .append('text')
+      .text(function(d) { return d.name; })
+      .call(force.drag);
+
+  text.append("svg:text")
+    .attr("x", 8)
+    .attr("y", ".31em")
+    .attr("class", "shadow")
+    .text(function(d) { return d.name; });
+
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+
+    text.attr("x", function(d) { return d.x; })
+        .attr("y", function(d) { return d.y; });
+  });
+});
+</script>
+</html>
