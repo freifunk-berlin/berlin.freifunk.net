@@ -18,6 +18,7 @@
   </head>
 <body>
   <h1>Freifunk Node Graph</h1>
+  <p>Only nodes with at least one link will be displayed</p>
   <div id="graph">
     <p>
       Loading latest data... (this can last several minutes for the first time)
@@ -37,8 +38,8 @@ var width = 1366,
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-50)
-    .linkDistance(30)
+    .charge(-90)
+    .linkDistance(80)
     .size([width, height]);
 
 var svg = d3.select("#graph").append("svg")
@@ -50,18 +51,26 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
   d3.select("#graph p").remove();
 
   var nodes = graph.nodes.map(function(x) {
-    return { name: x };
+    return { name: x, links : 0 };
   });
 
   var links = graph.edges.filter(function(elem) {
     return graph.nodes.indexOf(elem.target) >= 0;
+  }).map(function(x) {
+    var source = nodes[graph.nodes.indexOf(x.source)],
+        target = nodes[graph.nodes.indexOf(x.target)];
+
+    source.links++;
+    target.links++;
+
+    return {
+      source: source,
+      target: target,
+    };
   });
 
-  links = links.map(function(x) {
-    return {
-      source: graph.nodes.indexOf(x.source),
-      target: graph.nodes.indexOf(x.target),
-    };
+  nodes = nodes.filter(function(elem) {
+    return elem.links > 0;
   });
 
   force.nodes(nodes)

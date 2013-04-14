@@ -18,16 +18,6 @@ def couch_init():
     couch = couchdb.Server('http://%s' % SERVER)
     g.db = couch[DATABASE]
 
-@app.route('/api/nodes-cached')
-def api_nodes_cached():
-    nodes = cache.get('nodes')
-    if nodes is None:
-      amount_of_nodes = 0
-    else:
-      amount_of_nodes = len(nodes)
-
-    return jsonify(amountOfNodes = amount_of_nodes)
-
 @app.route('/api/nodes')
 def api_nodes():
     nodes = cache.get('nodes')
