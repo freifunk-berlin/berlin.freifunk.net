@@ -45,7 +45,7 @@ var svg = d3.select("#graph").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("/api/nodes", function(graph) {
+d3.json("{{url_for('api_nodes')}}", function(graph) {
 
   d3.select("#graph p").remove();
 
