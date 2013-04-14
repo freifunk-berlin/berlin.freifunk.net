@@ -45,7 +45,7 @@ var width = 800,
 var svg = d3.select("#graph").append("svg")
     .attr({
       "width": "100%",
-      "height": "100%"
+      "height": height
     })
     .call(d3.behavior.zoom().on("zoom", redraw));
 
