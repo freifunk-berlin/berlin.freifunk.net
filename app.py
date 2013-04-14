@@ -29,15 +29,15 @@ def api_nodes():
         if edges is None:
             edges = []
 
-        keys = [x for x in g.db]
-        rows = g.db.view('_all_docs', keys=keys, include_docs=True)
+        rows = g.db.view('_all_docs', include_docs=True)
         for doc in (row.doc for row in rows):
             nodes.append(doc.id)
             try:
                 for n in doc['neighbors']:
                     edge = {
-                        'source' : doc.id,
-                        'target' : n['id']
+                        'source'  : doc.id,
+                        'target'  : n['id'],
+                        'quality' : n['quality']
                     }
                     edges.append(edge)
             except:
