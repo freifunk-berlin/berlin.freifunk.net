@@ -39,13 +39,14 @@ def api_nodes():
         if edges is None:
             edges = []
 
-        for name in [x for x in g.db]:
-            entry = g.db.get(name)
-            nodes.append(entry.id)
+        keys = [x for x in g.db]
+        rows = g.db.view('_all_docs', keys=keys, include_docs=True)
+        for doc in (row.doc for row in rows):
+            nodes.append(doc.id)
             try:
-                for n in entry['neighbors']:
+                for n in doc['neighbors']:
                     edge = {
-                        'source' : entry.id,
+                        'source' : doc.id,
                         'target' : n['id']
                     }
                     edges.append(edge)
