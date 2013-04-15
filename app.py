@@ -49,8 +49,12 @@ def api_nodes():
     return jsonify(nodes = nodes, edges = edges)
 
 @app.route('/')
-def index():
-    return render_template("index.html")
+def graph():
+    return render_template("graph.html")
+
+@app.route('/map')
+def map():
+    return render_template("map.html")
 
 if __name__ == '__main__':
     app.run(debug = True)

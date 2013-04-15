@@ -1,39 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="{{url_for('static', filename='js/graph.js')}}"></script>
-    <style>
-    .label {
-       font-style: italic;
-     }
+{% extends "layout.html" %}
+{% block content %}
 
-    .link {
-      stroke-opacity: .3;
-    }
-    </style>
-  </head>
-<body>
-  <h1>Freifunk Node Graph</h1>
+<!--
+<p>
+  Only nodes with at least one link will be displayed.
+  Use your mouse wheel to zoom in and out.
+</p>
+-->
+
+<div id="graph">
   <p>
-    Only nodes with at least one link will be displayed.
-    Use your mouse wheel to zoom in and out.
+    Loading latest data... (this can last several minutes for the first time)
   </p>
-  <div id="graph">
-    <p>
-      Loading latest data... (this can last several minutes for the first time)
-    </p>
-  </div>
+</div>
 
-  <p>
-    data from <a href="http://www.openwifimap.net">www.openwifimap.net</a>
-  </p>
-
-</body>
+<p>
+  data from <a href="http://www.openwifimap.net">www.openwifimap.net</a>
+</p>
+</div>
 <script>
-
-
 /**
 * SVG Elements
 */
@@ -47,6 +32,7 @@ var svg = d3.select("#graph").append("svg")
       "width": "100%",
       "height": height
     })
+    .classed('hidden', true)
     .call(d3.behavior.zoom().on("zoom", redraw));
 
 var vis = svg.append('g');
@@ -64,6 +50,8 @@ function redraw(data) {
 /**
 * Force directed Graph
 */
+
+
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
@@ -140,6 +128,8 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
     text.attr("x", function(d) { return d.x; })
         .attr("y", function(d) { return d.y; });
   });
+
+  svg.classed('hidden', false);
 });
 </script>
-</html>
+{% endblock %}

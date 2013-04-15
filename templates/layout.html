@@ -1,0 +1,123 @@
+{% macro nav(endpoint) -%}
+<li{% if request.endpoint == endpoint %} class="active"{%endif%}>
+  <a href="{{url_for(endpoint)}}">
+    {{endpoint | capitalize}}
+  </a>
+</li>
+{%- endmacro %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="{{url_for('static', filename='js/graph.js')}}"></script>
+    <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    #header ul, #header div, #content {
+      margin: 0 auto;
+      width: 960px;
+    }
+
+
+    #header {
+      font-family: monospace;
+      color: #dc0067;
+      background-color: #ffcc2e;
+    }
+    #header div {
+      display: block;
+    }
+
+    #header h1 {
+    }
+
+    #header h1, #header p {
+      line-height: 80px;
+      margin: 0px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    #header p {
+      line-height: 80px;
+      float: right;
+    }
+
+    #header p img {
+      vertical-align: middle;
+      height: 75px;
+    }
+
+    #header ul li {
+      list-style-type: none;
+      display: inline-block;
+      font-size: 14pt;
+      text-align: center;
+      width: 200px;
+      line-height: 30px;
+    }
+
+    #header ul li.active {
+      background-color: #fff;
+    }
+
+    #header a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    #header a:hover {
+      text-decoration: underline;
+    }
+
+    #content {
+      padding: 40px 10px 40px 10px;
+    }
+
+    #content p {
+      text-align: center;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    svg {
+      border: 1px solid #000;
+    }
+
+    .label {
+       font-style: italic;
+     }
+
+    .link {
+      stroke-opacity: .3;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        <h1>
+          Freifunk
+        </h1>
+        <p>
+          <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Freifunk" />
+        </p>
+      </div>
+    <ul>
+      {{ nav('graph') }}
+      {{ nav('map') }}
+    </ul>
+    </div>
+
+    <div id="content">
+      {%block content %}{% endblock %}
+    </div>
+  </body>
+</html>
