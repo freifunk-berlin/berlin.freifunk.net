@@ -79,9 +79,21 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
         return lineGen([d.source, {x: width/2, y: height/2 }, d.target])
     })
     .attr("class", "link")
-    .attr("stroke", "blue")
     .attr("stroke-width", 1)
-    .attr("fill", "none");
+    .attr("fill", "none")
+    .on("mouseover", function(d){
+        d3.select(this)
+          .style("stroke", "red")
+          .style("stroke-width", 4)
+    })
+    .on("mouseout", function(d){
+        d3.select(this)
+          .style("stroke", "steelblue")
+          .style("stroke-width", 1)
+    })
+    .append("svg:title").text(function(d){
+        return "ETX: " + d.quality;
+    });
 
 
   d3.select("#edges p").remove();
