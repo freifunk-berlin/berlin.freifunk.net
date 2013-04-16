@@ -34,7 +34,11 @@ def api_nodes():
             node = {'id' : doc.id }
 
             if 'firmware' in doc:
-              node['firmware'] = doc['firmware']['revision']
+              rev = doc['firmware']['revision']
+              split_id = "(MeshKit/r"
+              if split_id in rev:
+                rev = rev.split(split_id)[0]
+              node['firmware'] = rev
 
             if 'hardware' in doc:
               if 'model' in doc['hardware']:
