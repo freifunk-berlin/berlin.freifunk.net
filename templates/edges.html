@@ -50,10 +50,6 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       .attr("height", height)
       .classed('hidden', true);
 
-  var lineGen = d3.svg.line()
-      .x(function(d) { return d.x; })
-      .y(function(d) { return d.y; })
-      .interpolate("monotone");
 
   svg.selectAll("text").data(nodes).enter()
     .append("g")
@@ -69,21 +65,24 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       .attr('font-size', "12px")
       .text(function(d) { return d.getId(); });
 
-  links = g.getEdges()
-  for (var i=0; i < links.length; i++) {
-    var link = links[i],
-        lines = [
-          link.source,
-          link.target
-        ];
+  var links = g.getEdges();
 
-    svg.append("path")
-      .attr("d", lineGen(lines))
-      .attr("class", "link")
-      .attr("stroke", "blue")
-      .attr("stroke-width", 1)
-      .attr("fill", "none");
-  }
+  var lineGen = d3.svg.line()
+    .x(function(d) { return d.x; })
+    .y(function(d) { return d.y; })
+    .interpolate("monotone");
+
+  svg.selectAll("link").data(links)
+    .enter()
+    .append("path")
+    .attr("d", function(d) {
+        return lineGen([d.source, d.target])
+    })
+    .attr("class", "link")
+    .attr("stroke", "blue")
+    .attr("stroke-width", 1)
+    .attr("fill", "none");
+
 
   d3.select("#edges p").remove();
   svg.classed('hidden', false);
