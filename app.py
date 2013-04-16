@@ -6,7 +6,7 @@ from werkzeug.contrib.cache import SimpleCache
 
 import couchdb
 
-SERVER = 'map.pberg.freifunk.net'#openwifimap.net'
+SERVER = 'openwifimap.net'
 DATABASE = 'openwifimap'
 CACHE_TIMEOUT = 60*60
 

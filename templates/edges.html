@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <div id="edges">
+  <p>Loading Data...</p>
 </div>
 <style>
   .link {
@@ -19,6 +20,8 @@ var radius = 400,
 
 
 d3.json("{{url_for('api_nodes')}}", function(graph) {
+  d3.select("#edges p").text("Generating graph...")
+
   var g = new Graph(),
       edges = graph.edges;
   for (var i = 0; i < edges.length; i++) {
@@ -44,7 +47,8 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
 
   var svg = d3.select("#edges").append("svg")
       .attr("width", width)
-      .attr("height", height);
+      .attr("height", height)
+      .classed('hidden', true);
 
   var lineGen = d3.svg.line()
       .x(function(d) { return d.x; })
@@ -80,6 +84,9 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       .attr("stroke-width", 1)
       .attr("fill", "none");
   }
+
+  d3.select("#edges p").remove();
+  svg.classed('hidden', false);
 });
 
 </script>

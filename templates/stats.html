@@ -3,14 +3,17 @@
 <div id="stats">
   <div id="firmware">
     <h1>Firmware</h1>
+    <p>Loading data...</p>
   </div>
 
   <div id="hardware">
     <h1>Hardware</h1>
+    <p>Loading data...</p>
   </div>
 
   <div id="devices">
     <h1>Devices</h1>
+    <p>Loading data...</p>
   </div>
 </div>
 <script>
@@ -97,6 +100,8 @@ d3.json("{{url_for('api_nodes')}}", function(data) {
           .text(function(d, i) { 
             return data[i].id + " ("+ data[i].value + ")";
           });
+
+    d3.select(id + " p").remove();
   };
 
   pieChart("#firmware", firmwares);
