@@ -70,13 +70,13 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
   var lineGen = d3.svg.line()
     .x(function(d) { return d.x; })
     .y(function(d) { return d.y; })
-    .interpolate("monotone");
+    .interpolate("bundle");
 
   svg.selectAll("link").data(links)
     .enter()
     .append("path")
     .attr("d", function(d) {
-        return lineGen([d.source, d.target])
+        return lineGen([d.source, {x: width/2, y: height/2 }, d.target])
     })
     .attr("class", "link")
     .attr("stroke", "blue")
