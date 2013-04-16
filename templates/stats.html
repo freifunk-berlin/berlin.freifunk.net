@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block content %}
+<style type="text/css">
+        .slice text {
+            font-size: 16pt;
+            font-family: Arial;
+        }
+    </style>
+<div id="firmware">
+  <h1>Firmware</h1>
+</div>
+
+<div id="hardware">
+  <h1>Hardware</h1>
+</div>
+
+<div id="devices">
+  <h1>Devices</h1>
+</div>
+<script>
+
+d3.json("{{url_for('api_nodes')}}", function(data) {
+  var nodes = data['nodes'];
+  var firmwares = [{ 'id' : 'unknown', 'value' : 0 }];
+  var hardwares = [{ 'id' : 'unknown', 'value' : 0 }];
+  var devices = [{ 'id' : 'unknown', 'value' : 0 }];
+
+  var findAndInc = function(list, id) {
+    for (var i = 0; i < list.length; i++) {
+      var item = list[i];
+      if (item.id == id) {
+        item['value']++;
+        return;
+      }
+    }
+
+    list.push({ 'id' : id, 'value' : 1 });
+  }
+
+  for (var i = 0; i < nodes.length; i++) {
+    var node = nodes[i],
+        firmware = ('firmware' in node) ? node['firmware'] : 'unknown',
+        hardware = ('hardware' in node) ? node['hardware'] : 'unknown',
+        device = ('device' in node) ? node['device'] : 'unknown';
+
+    findAndInc(firmwares, firmware);
+    findAndInc(hardwares, hardware);
+    findAndInc(devices, device);
+  }
+
+  var pieChart = function(id, data) {
+    var r = 150,
+        labelr = r + 30,
+        color = d3.scale.category20c();
+
+    var svg = d3.select(id).append("svg")
+        .data([data])
+          .attr("width", "100%")
+          .attr("height", 2*r + 50)
+
+    var transX = r + 10,
+        transY = r + 10;
+
+    var vis = svg.append("g")
+        .attr("transform", "translate(" + transX + "," + transY + ")")
+
+    var pie = d3.layout.pie()
+        .value(function(d) { return d.value; });
+
+    var arc = d3.svg.arc()
+          .outerRadius(r);
+
+    var arcs = vis.selectAll("g.slice")
+        .data(pie)
+        .enter()
+          .append("g")
+          .attr("class", "slice")
+
+    arcs.append("path")
+        .attr("fill", function(d, i) { return color(i); } )
+        .attr("d", arc);
+
+    svg.selectAll("rect")
+        .data(pie)
+        .enter()
+          .append("rect")
+          .attr("x", 2*r + 50)
+          .attr("y", function(d,i) { return 20*(1 + i) })
+          .attr("width", 10)
+          .attr("height", 10)
+          .attr("fill", function(d, i) { return color(i); } )
+          //.attr("text-anchor", "middle")
+          .text(function(d, i) { return data[i].id; });
+
+    svg.selectAll(".label")
+        .data(pie)
+        .enter()
+          .append("text")
+          .attr("dx", 2*r + 80)
+          .attr("dy", function(d,i) { return 20*(1.5+i) })
+          .text(function(d, i) { 
+            return data[i].id + " ("+ data[i].value + ")";
+          });
+  };
+
+  pieChart("#firmware", firmwares);
+  pieChart("#hardware", hardwares);
+  pieChart("#devices", devices);
+});
+
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<p>Not yet implemented</p>
+<script>
+var width = 800,
+    height = 600;
+
+
+var g = new Graph();
+d3.json("{{url_for('api_nodes')}}", function(graph) {
+  // Generate graph from data
+
+  for (var i = 0; i < graph.edges.length; i++) {
+    var edge = graph.edges[i],
+        source = {'id': edge.source},
+        target = {'id': edge.target},
+        data = {'quality': edge.quality};
+
+    g.addEdge(source, target, data);
+  }
+
+  var edges = g.getEdges();
+  for (var i = 0; i < edges.length; i++) {
+    var edge = edges[i];
+    edge.parent = edge.source;
+  }
+
+  console.log(g);
+
+});
+
+</script>
+{% endblock %}

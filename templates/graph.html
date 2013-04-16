@@ -9,6 +9,7 @@
 -->
 
 <div id="graph">
+  <input id="zoom" type='range' min='0' max='100' />
   <p>
     Loading latest data... (this can last several minutes for the first time)
   </p>
@@ -17,7 +18,6 @@
 <p>
   data from <a href="http://www.openwifimap.net">www.openwifimap.net</a>
 </p>
-</div>
 <script>
 /**
 * SVG Elements
@@ -50,6 +50,8 @@ function redraw(data) {
 /**
 * Force directed Graph
 */
+//d3.select("#zoom").property("value", 100);
+console.log(d3.select("#zoom").node().value);
 
 
 var color = d3.scale.category20();

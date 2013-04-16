@@ -31,7 +31,22 @@ def api_nodes():
 
         rows = g.db.view('_all_docs', include_docs=True)
         for doc in (row.doc for row in rows):
-            nodes.append(doc.id)
+            node = {'id' : doc.id }
+
+            if 'firmware' in doc:
+              node['firmware'] = doc['firmware']['revision']
+
+            if 'hardware' in doc:
+              if 'model' in doc['hardware']:
+                node['hardware'] =  doc['hardware']['model']
+              else:
+                node['hardware'] =  doc['hardware']
+
+            if 'system' in doc:
+              if 'sysinfo' in doc['system'] and len(doc['system']) > 1:
+                node['device'] = doc['system']['sysinfo'][1]
+            nodes.append(node)
+
             try:
                 for n in doc['neighbors']:
                     edge = {
@@ -51,6 +66,14 @@ def api_nodes():
 @app.route('/')
 def graph():
     return render_template("graph.html")
+
+@app.route('/edges')
+def edges():
+    return render_template("edges.html")
+
+@app.route('/stats')
+def stats():
+    return render_template("stats.html")
 
 @app.route('/map')
 def map():
