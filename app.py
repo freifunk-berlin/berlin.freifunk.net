@@ -6,7 +6,7 @@ from werkzeug.contrib.cache import SimpleCache
 
 import couchdb
 
-SERVER = 'openwifimap.net'
+SERVER = 'map.pberg.freifunk.net'#openwifimap.net'
 DATABASE = 'openwifimap'
 CACHE_TIMEOUT = 60*60
 
@@ -81,7 +81,7 @@ def stats():
 
 @app.route('/map')
 def map():
-    return render_template("map.html")
+    return render_template("map.html", server=SERVER)
 
 if __name__ == '__main__':
     app.run(debug = True)

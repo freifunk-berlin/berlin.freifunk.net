@@ -1,32 +1,49 @@
 {% extends "layout.html" %}
 {% block content %}
-<p>Not yet implemented</p>
+<div id="edges">
+</div>
 <script>
-var width = 800,
-    height = 600;
+var radius = 400,
+    width = radius*3,
+    height = radius*3,
+    padding = 10,
+    radians = 2 * Math.PI;
+
 
 
 var g = new Graph();
-d3.json("{{url_for('api_nodes')}}", function(graph) {
-  // Generate graph from data
+d3.json("{{url_for('api_nodes')}}", function(data) {
+  var nodes = data.nodes,
+      radianGen = d3.scale.linear()
+      .domain([0, nodes.length])
+      .range([0, 2 * Math.PI]);
 
-  for (var i = 0; i < graph.edges.length; i++) {
-    var edge = graph.edges[i],
-        source = {'id': edge.source},
-        target = {'id': edge.target},
-        data = {'quality': edge.quality};
+  for (var i=0; i < nodes.length; i++) {
+    var node = nodes[i],
+        rad = radianGen(i);
 
-    g.addEdge(source, target, data);
+    node.x = width/2 - radius*Math.cos(rad);
+    node.y = height/2 - radius*Math.sin(rad);
+    node.angle = rad*(180/Math.PI);
   }
 
-  var edges = g.getEdges();
-  for (var i = 0; i < edges.length; i++) {
-    var edge = edges[i];
-    edge.parent = edge.source;
-  }
+  var svg = d3.select("#edges").append("svg")
+      .attr("width", width)
+      .attr("height", height)
 
-  console.log(g);
 
+  svg.selectAll("text").data(nodes).enter()
+    .append("g")
+      .attr("transform", function(d) {
+        return "translate(" + d.x + ", " + d.y + ")";
+      })
+    .append("text")
+      .attr("transform", function(d,i) {
+          return "rotate("+d.angle+")"
+      })
+      .attr("text-anchor", "end")
+      .attr('font-size', "12px")
+      .text(function(d) { return d.id; });
 });
 
 </script>

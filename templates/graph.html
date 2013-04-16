@@ -62,10 +62,10 @@ var force = d3.layout.force()
     .gravity(0.05)
     .size([width, height]);
 
+var g = new Graph();
 d3.json("{{url_for('api_nodes')}}", function(graph) {
 
   // Generate graph from data
-  var g = new Graph();
 
   for (var i = 0; i < graph.edges.length; i++) {
     var edge = graph.edges[i],
