@@ -9,6 +9,15 @@
     stroke-opacity: .4;
     fill: none;
   }
+
+  text.active {
+    fill: red;
+  }
+
+  path.active {
+    stroke: red;
+    stroke-width: 4;
+  }
 </style>
 <script>
 var radius = 400,
@@ -61,9 +70,18 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
           return "rotate("+(d.rad*(180/Math.PI))+")"
       })
       .attr("dx", -8)
+      .attr("dy", ".35em")
       .attr("text-anchor", "end")
       .attr('font-size', "12px")
-      .text(function(d) { return d.getId(); });
+      .text(function(d) { return d.getId(); })
+      .on("mouseover", function(d){
+        d3.select(this).classed('active', true);
+        d3.selectAll('.l-' + d.getId().replace(/\./g,'')).classed('active', true);
+      })
+      .on("mouseout", function(d){
+        d3.select(this).classed('active', false);
+        d3.selectAll('.l-' + d.getId().replace(/\./g,'')).classed('active', false);
+      });
 
   var links = g.getEdges();
 
@@ -78,19 +96,12 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
     .attr("d", function(d) {
         return lineGen([d.source, {x: width/2, y: height/2 }, d.target])
     })
-    .attr("class", "link")
+    .attr("class", function(d) {
+      var source = "l-" + d.source.getId().replace(/\./g,'');
+      return "link " + source;
+    })
     .attr("stroke-width", 1)
     .attr("fill", "none")
-    .on("mouseover", function(d){
-        d3.select(this)
-          .style("stroke", "red")
-          .style("stroke-width", 4)
-    })
-    .on("mouseout", function(d){
-        d3.select(this)
-          .style("stroke", "steelblue")
-          .style("stroke-width", 1)
-    })
     .append("svg:title").text(function(d){
         return "ETX: " + d.quality;
     });
