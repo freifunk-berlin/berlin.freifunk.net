@@ -35,11 +35,19 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       edges = graph.edges;
   for (var i = 0; i < edges.length; i++) {
     var edge = edges[i],
-        source = {'id': edge.source},
-        target = {'id': edge.target},
-        data = {'quality': edge.quality};
+        data = {
+          'source' : {
+            'id' : edge.source,
+            'classId' : 'l-' + edge.source.replace(/\./g,'')
+          },
+          'target' : {
+            'id': edge.target,
+            'classId' : 'l-' + edge.target.replace(/\./g,'')
+          },
+          'edge' : { 'quality': edge.quality }
+        };
 
-    g.addEdge(source, target, data);
+    g.addEdge(data);
   }
 
   var nodes = g.getNodes(),
@@ -75,12 +83,13 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       .attr('font-size', "12px")
       .text(function(d) { return d.getId(); })
       .on("mouseover", function(d){
+        console.log(d);
         d3.select(this).classed('active', true);
-        d3.selectAll('.l-' + d.getId().replace(/\./g,'')).classed('active', true);
+        d3.selectAll('.' + d.data.classId).classed('active', true);
       })
       .on("mouseout", function(d){
         d3.select(this).classed('active', false);
-        d3.selectAll('.l-' + d.getId().replace(/\./g,'')).classed('active', false);
+        d3.selectAll('.' + d.data.classId).classed('active', false);
       });
 
   var links = g.getEdges();
@@ -94,16 +103,15 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
     .enter()
     .append("path")
     .attr("d", function(d) {
-        return lineGen([d.source, {x: width/2, y: height/2 }, d.target])
+      return lineGen([d.source, {x: width/2, y: height/2 }, d.target])
     })
     .attr("class", function(d) {
-      var source = "l-" + d.source.getId().replace(/\./g,'');
-      return "link " + source;
+      return ['link', d.source.data.classId].join(' ')
     })
     .attr("stroke-width", 1)
     .attr("fill", "none")
     .append("svg:title").text(function(d){
-        return "ETX: " + d.quality;
+      return "ETX: " + d.quality;
     });
 
 

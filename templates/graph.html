@@ -71,9 +71,13 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
     var edge = graph.edges[i],
         source = {'id': edge.source},
         target = {'id': edge.target},
-        data = {'quality': edge.quality};
+        data = {
+          'source' : { 'id' : edge.source },
+          'target' : { 'id': edge.target },
+          'edge' : { 'quality': edge.quality}
+        };
 
-    g.addEdge(source, target, data);
+    g.addEdge(data);
   }
 
   var graphs = g.getDistinctGraphs();

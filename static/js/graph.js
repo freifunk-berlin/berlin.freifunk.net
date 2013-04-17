@@ -60,7 +60,10 @@ Graph.prototype = {
     func(root, []);
   },
 
-  'addEdge' : function(source, target, data) {
+  'addEdge' : function(data) {
+    var source = data['source'],
+        target = data['target'];
+
     var from = this.search(source, this.root);
     if (from == undefined) {
       from = new Node(source);
@@ -85,8 +88,8 @@ Graph.prototype = {
       'target' : to,
     }
 
-    for (var key in data)
-      edge[key] = data[key];
+    for (var key in data['edge'])
+      edge[key] = data['edge'][key];
 
     this.edges.push(edge);
   },
