@@ -79,9 +79,13 @@ def edges():
 def stats():
     return render_template("stats.html")
 
-@app.route('/')
+@app.route('/blog')
 def map():
     return render_template("map.html", server=SERVER)
+
+@app.route('/')
+def blog():
+    return render_template("blog.html")
 
 if __name__ == '__main__':
     app.run(debug = True)

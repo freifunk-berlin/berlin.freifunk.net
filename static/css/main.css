@@ -32,8 +32,7 @@ body {
   vertical-align: middle;
   display: inline-block;
   list-style-type: none;
-  width: 150px;
-  margin:0px;
+  margin:0px 0px 0px 20px;
   text-align: center;
 }
 
@@ -45,16 +44,28 @@ body {
 
 #header a {
   color: #fff;
+}
+
+#header li {
   font-weight: bold;
 }
 
-#header a:hover {
+#header li.active {
   color: #ffcb05;
-  text-decoration:none;
 }
 
-#header li.active a {
-  font-style: italic;
+a {
+  color: #db0166;
+}
+
+#blog {
+  margin: 0px;
+  padding: 0px 30px 30px 30px;
+  text-align: left;
+}
+
+h4 {
+  margin-top: 20px;
 }
 
     .hidden {

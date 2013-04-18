@@ -1,6 +1,19 @@
 {% macro nav(label, endpoint) -%}
-<li{% if request.endpoint == endpoint %} class="active"{%endif%}>
+{% if request.endpoint == endpoint %}
+<li class="active">
+  {{label}}
+{% else %}
+<li>
   <a href="{{url_for(endpoint)}}">
+    {{label}}
+  </a>
+</li>
+{%endif%}
+{%- endmacro %}
+
+{% macro nav_external(label, url) -%}
+<li>
+  <a href="{{url}}">
     {{label}}
   </a>
 </li>
@@ -24,14 +37,17 @@
         <div class="span12" id="header">
           <div>
             <h1>
-              Freifunk Berlin <small>Map</small>
+              Freifunk <small>Berlin</small>
             </h1>
 
             <ul>
+              {{ nav('Aktuelles', 'blog') }}
+              {{ nav_external('IP-Vergabe', 'http://ip.berlin.freifunk.net/') }}
               {{ nav('Karte', 'map') }}
               {{ nav('Vernetzung', 'edges') }}
               {{ nav('Topologie', 'graph') }}
               {{ nav('Statistik', 'stats') }}
+              {{ nav_external('Kontakt', 'http://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo') }}
             </ul>
           </div>
 
