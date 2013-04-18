@@ -1,127 +1,50 @@
-{% macro nav(endpoint) -%}
+{% macro nav(label, endpoint) -%}
 <li{% if request.endpoint == endpoint %} class="active"{%endif%}>
   <a href="{{url_for(endpoint)}}">
-    {{endpoint | capitalize}}
+    {{label}}
   </a>
 </li>
 {%- endmacro %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="{{url_for('static', filename='js/graph.js')}}"></script>
-    <style>
-    body {
-      margin: 0px;
-      padding: 0px;
-    }
-
-    #header ul, #header div, #graph, #stats, #map {
-      margin: 0 auto;
-      width: 960px;
-    }
-
-
-    #header {
-      font-family: monospace;
-      color: #dc0067;
-      background-color: #ffcc2e;
-    }
-    #header div {
-      display: block;
-    }
-
-    #header h1 {
-    }
-
-    #header h1, #header p {
-      line-height: 80px;
-      margin: 0px;
-      vertical-align: middle;
-      display: inline-block;
-    }
-
-    #header p {
-      line-height: 80px;
-      float: right;
-    }
-
-    #header p img {
-      vertical-align: middle;
-      height: 75px;
-    }
-
-    #header ul li {
-      list-style-type: none;
-      display: inline-block;
-      font-size: 14pt;
-      text-align: center;
-      width: 200px;
-      line-height: 30px;
-    }
-
-    #header ul li.active {
-      background-color: #fff;
-    }
-
-    #header a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    #header a:hover {
-      text-decoration: underline;
-    }
-
-    #content {
-      margin: 0 auto;
-      text-align: center;
-      padding: 40px 10px 40px 10px;
-    }
-
-    #content p {
-      text-align: center;
-    }
-
-    .hidden {
-      visibility: hidden;
-    }
-
-    #graph svg {
-      border: 1px solid #000;
-    }
-
-    .label {
-       font-style: italic;
-     }
-
-    .link {
-      stroke-opacity: .3;
-    }
-    </style>
+    <title>Freifunk Map Berlin</title>
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+    <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet" media="screen">
+    <script src="{{url_for('static',filename='js/d3.v3.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/graph.js')}}"></script>
   </head>
   <body>
-    <div id="header">
-      <div>
-        <h1>
-          Freifunk
-        </h1>
-        <p>
-          <img src="{{url_for('static', filename = 'img/logo.png')}}" alt="Freifunk" />
-        </p>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="span12" id="header">
+          <div>
+            <h1>
+              Freifunk Berlin <small>Map</small>
+            </h1>
+
+            <ul>
+              {{ nav('Karte', 'map') }}
+              {{ nav('Vernetzung', 'edges') }}
+              {{ nav('Topologie', 'graph') }}
+              {{ nav('Statistik', 'stats') }}
+            </ul>
+          </div>
+
+          <p>
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Freifunk Logo" />
+          </p>
+        </div>
       </div>
-    <ul>
-      {{ nav('graph') }}
-      {{ nav('edges') }}
-      {{ nav('map') }}
-      {{ nav('stats') }}
-    </ul>
     </div>
 
     <div id="content">
-      {%block content %}{% endblock %}
+      {%block raw %}{% endblock %}
     </div>
+
   </body>
 </html>

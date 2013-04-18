@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block content %}
+{% block raw %}
 <div id="edges">
   <p>Loading Data...</p>
 </div>
@@ -83,7 +83,6 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       .attr('font-size', "12px")
       .text(function(d) { return d.getId(); })
       .on("mouseover", function(d){
-        console.log(d);
         d3.select(this).classed('active', true);
         d3.selectAll('.' + d.data.classId).classed('active', true);
       })

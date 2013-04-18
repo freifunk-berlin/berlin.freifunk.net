@@ -7,7 +7,7 @@ from werkzeug.contrib.cache import SimpleCache
 import couchdb
 
 SERVER = 'openwifimap.net'
-DATABASE = 'openwifimap'
+DB_NAME = 'openwifimap'
 CACHE_TIMEOUT = 60*60
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ cache = SimpleCache()
 @app.before_request
 def couch_init():
     couch = couchdb.Server('http://%s' % SERVER)
-    g.db = couch[DATABASE]
+    g.db = couch[DB_NAME]
 
 @app.route('/api/nodes')
 def api_nodes():
@@ -67,7 +67,7 @@ def api_nodes():
 
     return jsonify(nodes = nodes, edges = edges)
 
-@app.route('/')
+@app.route('/graph')
 def graph():
     return render_template("graph.html")
 
@@ -79,7 +79,7 @@ def edges():
 def stats():
     return render_template("stats.html")
 
-@app.route('/map')
+@app.route('/')
 def map():
     return render_template("map.html", server=SERVER)
 

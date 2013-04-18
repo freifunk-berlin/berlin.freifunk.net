@@ -1,21 +1,19 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 {% block content %}
-<div id="stats">
   <div id="firmware">
-    <h1>Firmware</h1>
+    <h3>Firmware</h3>
     <p>Loading data...</p>
   </div>
 
   <div id="hardware">
-    <h1>Hardware</h1>
+    <h3>Hardware</h3>
     <p>Loading data...</p>
   </div>
 
   <div id="devices">
-    <h1>Devices</h1>
+    <h3>Devices</h3>
     <p>Loading data...</p>
   </div>
-</div>
 <script>
 
 d3.json("{{url_for('api_nodes')}}", function(data) {

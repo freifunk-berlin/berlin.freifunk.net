@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+#header {
+  background: url(../img/logo_background.png);
+  margin-top: 10px;
+}
+
+#header h1 {
+  font-family: "Courier New", Courier, monospace;
+  margin: 10px;
+  height: 44px;
+}
+
+#header h1 small {
+  font-style: italic;
+}
+#header div, #header p {
+  display: inline-block;
+}
+
+#header p {
+  float: right;
+}
+#header ul {
+  margin: 0px;
+}
+
+#header li {
+  line-height: 29px;
+  vertical-align: middle;
+  display: inline-block;
+  list-style-type: none;
+  width: 150px;
+  margin:0px;
+  text-align: center;
+}
+
+#content  {
+  padding: 0px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#header a {
+  color: #fff;
+  font-weight: bold;
+}
+
+#header a:hover {
+  color: #ffcb05;
+  text-decoration:none;
+}
+
+#header li.active a {
+  font-style: italic;
+}
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    #graph svg {
+      border: 1px solid #000;
+    }
+
+    .label {
+       font-style: italic;
+     }
+
+    .link {
+      stroke-opacity: .3;
+    }
