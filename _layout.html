@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Freifunk Berlin</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static/img/favicon.ico') }}">
+    <link href="{{url_for('static/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+    <link href="{{url_for('static/css/main.css')}}" rel="stylesheet" media="screen">
+
+    <script src="{{url_for('static/js/d3.v3.min.js')}}"></script>
+    <script src="{{url_for('static/js/d3.jsonp.js')}}"></script>
+    <script src="{{url_for('static/js/graph.js')}}"></script>
+    <script src="{{url_for('static/js/openwifimap.js')}}"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="span12" id="header">
+          <div>
+            <h1>
+              Freifunk <small>Berlin</small>
+            </h1>
+
+            <ul>
+              {% import '_utils.html' as utils with context %}
+              {{ utils.nav('Info', '/') }}
+              {{ utils.nav('Netz', 'network/map') }}
+              {{ utils.nav_external('Wiki', 'http://wiki.freifunk.net/Hauptseite') }}
+              {{ utils.nav('Kontakt', 'contact') }}
+            </ul>
+          </div>
+
+          <p>
+            <img src="{{url_for('static/img/logo.png')}}" alt="Freifunk Logo" />
+          </p>
+        </div>
+      </div>
+    </div>
+
+   {%block raw %}{% endblock %}
+
+  </body>
+</html>
