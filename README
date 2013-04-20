@@ -1,11 +1,11 @@
 Freifunk Berlin
 ===============
 
-A new website for <http://berlin.freifunk.net>
+A new website for http://berlin.freifunk.net
 
   $ git clone git://github.com/cholin/ff-graph.git
   $ cd ff-graph
-  $ pip install flask
-  $ python2 app.py
+  $ pip install cyrax
+  $ cyrax && chromium _build
 
-Live Demo at <http://spielwiese.spline.de/ff-graph>
+Live Demo at http://spielwiese.spline.de/ff-graph
