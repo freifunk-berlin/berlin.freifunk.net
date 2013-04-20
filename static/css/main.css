@@ -100,7 +100,7 @@ ul.submenu li {
   padding: 0px 50px 0px 50px;
 }
 
-#edges p, #graph p {
+#edges, #graph p {
   text-align: center;
 }
 
