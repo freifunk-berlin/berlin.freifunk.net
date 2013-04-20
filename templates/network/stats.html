@@ -16,6 +16,9 @@
     <h3>Devices</h3>
     <p>Loading data...</p>
   </div>
+  <div>
+    <p>Unbekante Geräte <a id="showUnknown">anzeigen</a>.</p>  
+  </div>
 <script>
 
 d3.json("{{url_for('api_nodes')}}", function(data) {
@@ -51,6 +54,10 @@ d3.json("{{url_for('api_nodes')}}", function(data) {
     var r = 150,
         labelr = r + 30,
         color = d3.scale.category20c();
+    
+    try{
+        d3.select(id + " svg").remove();
+    } catch(e) { }
 
     var svg = d3.select(id).append("svg")
         .data([data])
@@ -104,10 +111,24 @@ d3.json("{{url_for('api_nodes')}}", function(data) {
     d3.select(id + " p").remove();
   };
 
-  pieChart("#firmware", firmwares);
-  pieChart("#hardware", hardwares);
-  pieChart("#devices", devices);
-});
+  var showAllDevices = function(){
+    pieChart("#firmware", firmwares);
+    pieChart("#hardware", hardwares);
+    pieChart("#devices", devices);
 
+    document.getElementById("showUnknown").onclick = showKnowDevices;
+    document.getElementById("showUnknown").innerHTML = "ausblenden";
+  }
+  
+  var showKnowDevices = function(){
+    data = firmwares.slice(); data.splice(0,1); pieChart("#firmware", data);
+    data = hardwares.slice(); data.splice(0,1); pieChart("#hardware", data);
+    data = devices.slice();   data.splice(0,1); pieChart("#devices", data);
+    document.getElementById("showUnknown").onclick = showAllDevices;
+    document.getElementById("showUnknown").innerHTML = "anzeigen";
+  }
+
+  showKnowDevices();
+});
 </script>
 {% endblock %}
