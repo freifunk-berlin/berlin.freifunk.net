@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Freifunk Berlin</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename='img/favicon.ico')}}">
     <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
     <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet" media="screen">
 <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
@@ -26,7 +27,7 @@
               {% import '_utils.html' as utils with context %}
               {{ utils.nav('Info', 'index') }}
               {{ utils.nav('Netz', 'network') }}
-              {{ utils.nav_external('Wiki', 'https://wiki.freifunk.net/Hauptseite') }}
+              {{ utils.nav_external('Wiki', 'http://wiki.freifunk.net/Hauptseite') }}
               {{ utils.nav('Kontakt', 'contact') }}
             </ul>
           </div>
