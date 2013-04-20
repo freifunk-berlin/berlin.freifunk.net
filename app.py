@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-from flask import Flask, render_template, g, jsonify
+from flask import Flask, render_template, g, jsonify, redirect, url_for
 from werkzeug.contrib.cache import SimpleCache
 
 import couchdb
@@ -67,25 +67,33 @@ def api_nodes():
 
     return jsonify(nodes = nodes, edges = edges)
 
-@app.route('/graph')
-def graph():
-    return render_template("graph.html")
+@app.route('/network')
+def network():
+    return redirect(url_for('network_map'))
 
-@app.route('/edges')
-def edges():
-    return render_template("edges.html")
+@app.route('/network/map')
+def network_map():
+    return render_template("network/map.html", server=SERVER)
 
-@app.route('/stats')
-def stats():
-    return render_template("stats.html")
+@app.route('/network/topology')
+def network_topology():
+    return render_template("network/topology.html")
 
-@app.route('/blog')
-def map():
-    return render_template("map.html", server=SERVER)
+@app.route('/network/nodes')
+def network_nodes():
+    return render_template("network/nodes.html")
+
+@app.route('/network/stats')
+def network_stats():
+    return render_template("network/stats.html")
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/')
-def blog():
-    return render_template("blog.html")
+def index():
+    return render_template("about.html")
 
 if __name__ == '__main__':
     app.run(debug = True)

@@ -1,31 +1,13 @@
-{% macro nav(label, endpoint) -%}
-{% if request.endpoint == endpoint %}
-<li class="active">
-  {{label}}
-{% else %}
-<li>
-  <a href="{{url_for(endpoint)}}">
-    {{label}}
-  </a>
-</li>
-{%endif%}
-{%- endmacro %}
-
-{% macro nav_external(label, url) -%}
-<li>
-  <a href="{{url}}">
-    {{label}}
-  </a>
-</li>
-{%- endmacro %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Freifunk Map Berlin</title>
+    <title>Freifunk Berlin</title>
     <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
     <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet" media="screen">
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <script src="{{url_for('static',filename='js/jquery-2.0.0.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
     <script src="{{url_for('static',filename='js/d3.v3.min.js')}}"></script>
     <script src="{{url_for('static',filename='js/graph.js')}}"></script>
   </head>
@@ -41,13 +23,11 @@
             </h1>
 
             <ul>
-              {{ nav('Aktuelles', 'blog') }}
-              {{ nav_external('IP-Vergabe', 'http://ip.berlin.freifunk.net/') }}
-              {{ nav('Karte', 'map') }}
-              {{ nav('Vernetzung', 'edges') }}
-              {{ nav('Topologie', 'graph') }}
-              {{ nav('Statistik', 'stats') }}
-              {{ nav_external('Kontakt', 'http://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo') }}
+              {% import '_utils.html' as utils with context %}
+              {{ utils.nav('Info', 'index') }}
+              {{ utils.nav('Netz', 'network') }}
+              {{ utils.nav_external('Wiki', 'https://wiki.freifunk.net/Hauptseite') }}
+              {{ utils.nav('Kontakt', 'contact') }}
             </ul>
           </div>
 
@@ -58,9 +38,7 @@
       </div>
     </div>
 
-    <div id="content">
-      {%block raw %}{% endblock %}
-    </div>
+   {%block raw %}{% endblock %}
 
   </body>
 </html>

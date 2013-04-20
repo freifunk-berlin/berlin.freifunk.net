@@ -1,24 +1,18 @@
 {% extends "layout.html" %}
 {% block raw %}
-<div id="edges">
-  <p>Loading Data...</p>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      {% import 'network/_utils.html' as utils with context %}
+      {{ utils.render_subnav() }}
+    </div>
+  </div>
 </div>
-<style>
-  .link {
-    stroke: steelblue;
-    stroke-opacity: .4;
-    fill: none;
-  }
 
-  text.active {
-    fill: red;
-  }
+<div id="edges">
+  <p>Lade Daten...</p>
+</div>
 
-  path.active {
-    stroke: red;
-    stroke-width: 4;
-  }
-</style>
 <script>
 var radius = 400,
     width = radius*3,

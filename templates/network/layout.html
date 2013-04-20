@@ -4,7 +4,10 @@
 <div class="container">
   <div class="row">
     <div class="span12">
-      <div id="content">
+      {% import 'network/_utils.html' as utils with context %}
+      {{ utils.render_subnav() }}
+
+      <div id="network">
         {% block content %}{%endblock %}
       </div>
     </div>
