@@ -1,14 +1,36 @@
+/*
+ * Global
+ */
 body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
 }
-#header {
-  background: url(../img/logo_background.png);
-  margin-top: 10px;
-}
 
 h1, h2, h3 {
   font-family: 'Noto Sans', sans-serif;
+}
+
+h4 {
+  margin-top: 20px;
+}
+
+
+a {
+  color: #db0166;
+}
+
+a:hover {
+  color: #ffcb05;
+}
+
+
+
+/*
+ * Header
+ */
+#header {
+  background: url(../img/logo_background.png);
+  margin-top: 10px;
 }
 
 #header h1 {
@@ -42,14 +64,6 @@ h1, h2, h3 {
   text-align: center;
 }
 
-#content  {
-  padding: 0px 30px 0px 30px;
-}
-
-#network  {
-  padding: 0px 50px 0px 50px;
-}
-
 #header a {
   color: #fff;
 }
@@ -58,28 +72,12 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-#header li.active, a:hover {
+#header li.active {
   color: #ffcb05;
 }
 
-a {
-  color: #db0166;
-}
-
-#blog {
-  margin: 0px;
-  padding: 0px 30px 30px 30px;
-  text-align: left;
-}
-
-h4 {
-  margin-top: 20px;
-}
-
 ul.submenu {
-  padding: 0px 10px 0px 10px;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin: 10px 0px 20px 10px;
 }
 
 ul.submenu li {
@@ -89,9 +87,27 @@ ul.submenu li {
   list-style-type: none;
 }
 
+
+/*
+ * Content
+ */
+
+#content  {
+  padding: 0px 30px 0px 30px;
+}
+
+#network  {
+  padding: 0px 50px 0px 50px;
+}
+
 #edges p, #graph p {
   text-align: center;
 }
+
+
+/*
+ * SVG
+ */
 
 .hidden {
   visibility: hidden;
@@ -102,8 +118,8 @@ ul.submenu li {
 }
 
 .label {
-   font-style: italic;
- }
+  font-style: italic;
+}
 
 .link {
   stroke: steelblue;
@@ -114,6 +130,7 @@ ul.submenu li {
 text.active {
   fill: red;
 }
+
 path.active {
   stroke: red;
   stroke-width: 4;

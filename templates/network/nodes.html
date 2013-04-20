@@ -49,6 +49,7 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       radianGen = d3.scale.linear()
         .domain([0, nodes.length])
         .range([0, 2 * Math.PI]);
+
   for (var i=0; i < nodes.length; i++) {
     var node = nodes[i];
 
@@ -63,6 +64,7 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       .classed('hidden', true);
 
 
+  // Render node ids on a circle
   svg.selectAll("text").data(nodes).enter()
     .append("g")
       .attr("transform", function(d) {
@@ -86,13 +88,13 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
         d3.selectAll('.' + d.data.classId).classed('active', false);
       });
 
-  var links = g.getEdges();
+  var links = g.getEdges(),
+      lineGen = d3.svg.line()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+        .interpolate("bundle");
 
-  var lineGen = d3.svg.line()
-    .x(function(d) { return d.x; })
-    .y(function(d) { return d.y; })
-    .interpolate("bundle");
-
+  // Render all links
   svg.selectAll("link").data(links)
     .enter()
     .append("path")

@@ -1,6 +1,11 @@
 {% extends "network/layout.html" %}
 {% block content %}
+
 <noscript><big>Für diese Seite wird JavaScript benötigt!<br />Bitte verwenden Sie einen modernen Browser mir aktiviertem Javascript.</big></noscript>
+
+  <div class="pull-right">
+    <p>Unbekante Geräte: <a id="showUnknown">anzeigen</a>.</p>
+  </div>
 
   <div id="firmware">
     <h3>Firmware</h3>
@@ -16,11 +21,8 @@
     <h3>Devices</h3>
     <p>Loading data...</p>
   </div>
-  <div>
-    <p>Unbekante Geräte <a id="showUnknown">anzeigen</a>.</p>  
-  </div>
-<script>
 
+<script>
 d3.json("{{url_for('api_nodes')}}", function(data) {
   var nodes = data['nodes'];
   var firmwares = [{ 'id' : 'unknown', 'value' : 0 }];
@@ -54,7 +56,6 @@ d3.json("{{url_for('api_nodes')}}", function(data) {
     var r = 150,
         labelr = r + 30,
         color = d3.scale.category20c();
-    
     try{
         d3.select(id + " svg").remove();
     } catch(e) { }
@@ -119,7 +120,7 @@ d3.json("{{url_for('api_nodes')}}", function(data) {
     document.getElementById("showUnknown").onclick = showKnowDevices;
     document.getElementById("showUnknown").innerHTML = "ausblenden";
   }
-  
+
   var showKnowDevices = function(){
     data = firmwares.slice(); data.splice(0,1); pieChart("#firmware", data);
     data = hardwares.slice(); data.splice(0,1); pieChart("#hardware", data);

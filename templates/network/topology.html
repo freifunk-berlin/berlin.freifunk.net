@@ -9,13 +9,8 @@
 </div>
 
 <script>
-/**
-* SVG Elements
-*/
-
 var width = 800,
     height = 600;
-
 
 var svg = d3.select("#graph").append("svg")
     .attr({
@@ -49,11 +44,9 @@ var force = d3.layout.force()
     .gravity(0.05)
     .size([width, height]);
 
-var g = new Graph();
 d3.json("{{url_for('api_nodes')}}", function(graph) {
-
   // Generate graph from data
-
+  var g = new Graph();
   for (var i = 0; i < graph.edges.length; i++) {
     var edge = graph.edges[i],
         source = {'id': edge.source},
@@ -99,7 +92,6 @@ d3.json("{{url_for('api_nodes')}}", function(graph) {
       .append('text')
       .attr("class", "label")
       .text(function(d) { return d.getId(); });
-      //.call(force.drag);
 
   var node = vis.selectAll("circle")
       .data(g.getNodes())
