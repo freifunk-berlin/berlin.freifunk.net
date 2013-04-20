@@ -3,33 +3,38 @@
 
 <noscript><big>Für diese Seite wird JavaScript benötigt!<br />Bitte verwenden Sie einen modernen Browser mir aktiviertem Javascript.</big></noscript>
 
-  <div class="pull-right">
-    <p>Unbekante Geräte: <a id="showUnknown">anzeigen</a>.</p>
-  </div>
+<div class="pull-right">
+  <p>Unbekante Geräte: <a id="showUnknown">anzeigen</a>.</p>
+</div>
 
-  <div id="firmware">
-    <h3>Firmware</h3>
-    <p>Loading data...</p>
-  </div>
+<div id="firmware">
+  <h3>Firmware</h3>
+  <p>Lade Daten...</p>
+</div>
 
-  <div id="hardware">
-    <h3>Hardware</h3>
-    <p>Loading data...</p>
-  </div>
+<div id="hardware">
+  <h3>Hardware</h3>
+  <p>Lade Daten...</p>
+</div>
 
-  <div id="devices">
-    <h3>Devices</h3>
-    <p>Loading data...</p>
-  </div>
+<div id="devices">
+  <h3>Devices</h3>
+  <p>Lade Daten...</p>
+</div>
 
 <script>
-d3.json("{{url_for('api_nodes')}}", function(data) {
-  var nodes = data['nodes'];
+var url = 'http://www.openwifimap.net/openwifimap/_all_docs?include_docs=True&callback={callback}',
+    map = new Openwifimap(url);
+
+map.getNodes(function(nodes) {
   var firmwares = [{ 'id' : 'unknown', 'value' : 0 }];
   var hardwares = [{ 'id' : 'unknown', 'value' : 0 }];
   var devices = [{ 'id' : 'unknown', 'value' : 0 }];
 
   var findAndInc = function(list, id) {
+    if (id == undefined)
+      id = 'unknown';
+
     for (var i = 0; i < list.length; i++) {
       var item = list[i];
       if (item.id == id) {
@@ -42,14 +47,28 @@ d3.json("{{url_for('api_nodes')}}", function(data) {
   }
 
   for (var i = 0; i < nodes.length; i++) {
-    var node = nodes[i],
-        firmware = ('firmware' in node) ? node['firmware'] : 'unknown',
-        hardware = ('hardware' in node) ? node['hardware'] : 'unknown',
-        device = ('device' in node) ? node['device'] : 'unknown';
+    var node = nodes[i];
 
-    findAndInc(firmwares, firmware);
-    findAndInc(hardwares, hardware);
-    findAndInc(devices, device);
+    try {
+      var firmware = node.firmware.revision;
+      var idx = firmware.search("\\(MeshKit/r");
+
+      if (idx > 0)
+        firmware = firmware.substring(0, idx);
+      findAndInc(firmwares, firmware);
+    } catch (e) {
+      findAndInc(firmwares);
+    }
+
+    try {
+      findAndInc(hardwares, node.hardware);
+    } catch (e) { }
+
+    try {
+      findAndInc(devices, node.system.sysinfo[1]);
+    } catch (e) {
+      findAndInc(devices);
+    }
   }
 
   var pieChart = function(id, data) {

@@ -19,32 +19,11 @@ var radius = 400,
     width = radius*3,
     height = radius*3,
     padding = 10,
-    radians = 2 * Math.PI;
+    radians = 2 * Math.PI,
+    url = 'http://www.openwifimap.net/openwifimap/_all_docs?include_docs=True&callback={callback}',
+    map = new Openwifimap(url);
 
-
-
-d3.json("{{url_for('api_nodes')}}", function(graph) {
-  d3.select("#edges p").text("Generating graph...")
-
-  var g = new Graph(),
-      edges = graph.edges;
-  for (var i = 0; i < edges.length; i++) {
-    var edge = edges[i],
-        data = {
-          'source' : {
-            'id' : edge.source,
-            'classId' : 'l-' + edge.source.replace(/\./g,'')
-          },
-          'target' : {
-            'id': edge.target,
-            'classId' : 'l-' + edge.target.replace(/\./g,'')
-          },
-          'edge' : { 'quality': edge.quality }
-        };
-
-    g.addEdge(data);
-  }
-
+map.getGraph(function(g) {
   var nodes = g.getNodes(),
       radianGen = d3.scale.linear()
         .domain([0, nodes.length])
