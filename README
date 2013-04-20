@@ -1,0 +1,11 @@
+Freifunk Berlin
+===============
+
+A new website for <http://berlin.freifunk.net>
+
+  $ git clone git://github.com/cholin/ff-graph.git
+  $ cd ff-graph
+  $ pip install flask
+  $ python2 app.py
+
+Live Demo at <http://spielwiese.spline.de/ff-graph>
