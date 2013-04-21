@@ -1,14 +1,20 @@
-{% macro nav(label, url, endpoint) -%}
-{% if endpoint in entry.endpoint %}
-<li class="active">
-  {{label}}
-{% else %}
-<li>
-  <a href="{{url_for(url)}}">
+{% macro nav(label, url, endpoint = None) -%}
+{% with %}
+  {% if endpoint is none %}
+    {% set endpoint = url.replace('/', '_') if url != '/' else 'index' %}
+  {% endif %}
+
+  {% if endpoint in entry.endpoint %}
+  <li class="active">
     {{label}}
-  </a>
-</li>
-{%endif%}
+  {% else %}
+  <li>
+    <a href="{{url_for(url)}}">
+      {{label}}
+    </a>
+  </li>
+  {% endif %}
+{% endwith %}
 {%- endmacro %}
 
 {% macro nav_external(label, url) -%}
