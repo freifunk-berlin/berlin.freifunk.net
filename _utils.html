@@ -1,10 +1,10 @@
-{% macro nav(label, endpoint) -%}
-{% if endpoint in request.endpoint %}
+{% macro nav(label, url, endpoint) -%}
+{% if endpoint in entry.endpoint %}
 <li class="active">
   {{label}}
 {% else %}
 <li>
-  <a href="{{url_for(endpoint)}}">
+  <a href="{{url_for(url)}}">
     {{label}}
   </a>
 </li>
