@@ -17,8 +17,8 @@
 {% endwith %}
 {%- endmacro %}
 
-{% macro nav_external(label, url) -%}
-<li>
+{% macro nav_external(label, url, class = None) -%}
+<li{%if class is not none%} class="{{class}}"{%endif%}>
   <a href="{{url}}">
     {{label}}
   </a>

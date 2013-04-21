@@ -14,7 +14,6 @@ h4 {
   margin-top: 20px;
 }
 
-
 a {
   color: #db0166;
 }
@@ -60,10 +59,14 @@ footer {
   margin: 0px 0px 0px 10px;
 }
 
+#header li.right {
+  float: right;
+}
+
 #header li {
   line-height: 29px;
   vertical-align: middle;
-  display: inline-block;
+  float: left;
   list-style-type: none;
   margin:0px 20px 0px 20px;
   text-align: center;
@@ -119,6 +122,7 @@ ul.submenu li {
 }
 
 .figure {
+  padding: 10px;
   text-align: center;
   font-weight: bold;
   font-size: 0.8em;
