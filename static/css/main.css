@@ -109,9 +109,12 @@ ul.submenu li {
   text-align: center;
 }
 
-div.about-freifunk {
+#about-functionality, #about-participate {
   clear: both;
   padding-top: 40px;
+}
+
+#about-functionality {
   text-align: right;
 }
 
