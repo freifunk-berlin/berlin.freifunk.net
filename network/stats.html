@@ -35,7 +35,7 @@ map.getNodes(function(nodes) {
   var devices = [{ 'id' : 'unknown', 'value' : 0 }];
 
   var findAndInc = function(list, id) {
-    if (id == undefined)
+    if (typeof id != "string")
       id = 'unknown';
 
     for (var i = 0; i < list.length; i++) {
