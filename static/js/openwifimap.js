@@ -8,14 +8,14 @@ Openwifimap.prototype = {
 
     d3.jsonp(this.url, function(data) {
       for (var i = 0; i < data.rows.length; i++) {
-        var node = data.rows[i].doc;
+        var node = data.rows[i].value;
         try {
           for (var j = 0; j < node.neighbors.length; j++) {
             var target = node.neighbors[j],
                 edge = {
                   'source' : {
-                    'id' : node._id,
-                    'classId' : 'l-' + node._id.replace(/\./g,'')
+                    'id' : node.id,
+                    'classId' : 'l-' + node.id.replace(/\./g,'')
                   },
                   'target' : {
                     'id': target.id,

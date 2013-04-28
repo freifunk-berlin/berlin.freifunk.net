@@ -23,7 +23,7 @@ var radius = 400,
     height = radius*3,
     padding = 10,
     radians = 2 * Math.PI,
-    url = 'http://www.openwifimap.net/openwifimap/_all_docs?include_docs=True&callback={callback}',
+    url = 'http://openwifimap.net/openwifimap/_design/openwifimap/_view/nodes_essentials?&callback={callback}',
     map = new Openwifimap(url);
 
 map.getGraph(function(g) {
