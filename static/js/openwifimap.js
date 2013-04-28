@@ -1,6 +1,6 @@
 var Openwifimap = function(url) {
   this.url = url;
-}
+};
 
 Openwifimap.prototype = {
   'getGraph' : function(cb) {
@@ -26,7 +26,9 @@ Openwifimap.prototype = {
 
             g.addEdge(edge);
           }
-        } catch (e) { }
+        } catch (e) {
+          console.error(e);
+        }
       }
 
       cb(g);
@@ -35,7 +37,7 @@ Openwifimap.prototype = {
 
   'getNodes' : function(cb) {
     d3.jsonp(this.url, function(data) {
-      var nodes = []
+      var nodes = [];
       for (var i = 0; i < data.rows.length; i++)
         nodes.push(data.rows[i].doc);
 
