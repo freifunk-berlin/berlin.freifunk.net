@@ -1,0 +1,34 @@
+#/bin/bash
+
+WEB_BASE="/var/www/"
+TARGET_DIR="${WEB_BASE}/berlin.freifunk.net"
+CYRAX_DIR="www"
+URL="http://berlin.freifunk.net"
+
+while read old new ref ; do
+	BRANCH="${ref#refs/heads/}"
+
+  if [ "$BRANCH" = "master" ]; then
+
+    TMP_DIR=$(mktemp -d)
+    TARGET_TMP_DIR=$(mktemp -d)
+
+    git archive "${BRANCH}" | (cd ${TMP_DIR} && tar xf -)
+    mkdir -p "${TARGET_TMP_DIR}"
+
+    cd "${TMP_DIR}/${CYRAX_DIR}"
+    cyrax -q -d ${TARGET_TMP_DIR}
+
+    rm -rf ${TARGET_DIR}
+    mv "${TARGET_TMP_DIR}" ${TARGET_DIR}
+
+    rm -rf ${TMP_DIR}
+    rm -rf ${TARGET_TMP_DIR}
+
+    echo
+    echo "Seite befindet sich nun auf:"
+    echo "${URL}"
+    echo
+  fi
+
+done
