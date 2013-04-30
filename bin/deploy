@@ -1,0 +1,24 @@
+#/bin/bash
+
+BRANCH="${1:-master}"
+TARGET_DIR="${2:-/var/www/berlin.freifunk.net}"
+TMP_DIR=$(mktemp -d)
+TARGET_TMP_DIR=$(mktemp -d)
+
+set -e
+
+git archive "${BRANCH}" | (cd ${TMP_DIR} && tar xf -)
+mkdir -p "${TARGET_TMP_DIR}"
+
+echo "Rendering Pages..."
+cd "${TMP_DIR}/www"
+cyrax -q -d "${TARGET_TMP_DIR}"
+
+rm -rf "${TARGET_DIR}"
+mkdir -p "${TARGET_DIR}"
+mv "${TARGET_TMP_DIR}"/* "${TARGET_DIR}"/
+
+rm -rf "${TMP_DIR}"
+rm -rf "${TARGET_TMP_DIR}"
+
+echo "Deployed on ${TARGET_DIR}"
