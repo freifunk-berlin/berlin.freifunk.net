@@ -47,7 +47,13 @@
    {%block raw %}{% endblock %}
 
    <footer>
-    <a href="http://www.freifunk.net">Freifunk.net</a>
+    {{site.url}}
+    -
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">
+      <img src="{{url_for('static/img/cc.png')}}" alt="CC" />
+      <img src="{{url_for('static/img/cc_by.png')}}" alt="BY" />
+      <img src="{{url_for('static/img/cc_sa.png')}}" alt="SA" />
+    </a>
     -
     <a href="{{url_for('impressum')}}">Impressum</a>
    </footer>
