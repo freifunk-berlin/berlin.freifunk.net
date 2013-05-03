@@ -120,8 +120,9 @@ ul.submenu li {
 
 #news {
   width: 80%;
+  margin: 20px auto;
   border: 1px dashed #000;
-  margin: 0 auto;
+  text-align: center;
   padding: 10px;
 }
 
