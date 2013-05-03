@@ -1,7 +1,7 @@
 #/bin/bash
 
-BRANCH="${1:-master}"
-TARGET_DIR="${2:-/var/www/berlin.freifunk.net}"
+TARGET_DIR="${1:-/var/www/berlin.freifunk.net}"
+BRANCH="${2:-master}"
 TMP_DIR=$(mktemp -d)
 TARGET_TMP_DIR=$(mktemp -d)
 
