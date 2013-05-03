@@ -1,18 +1,9 @@
 Freifunk Berlin
 ===============
 
-A new website for http://berlin.freifunk.net
-
-  $ git clone git://github.com/cholin/ff-graph.git
-  $ cd ff-graph
+  $ git clone git://github.com/freifunk/berlin.freifunk.net.git
+  $ cd berlin.freifunk.net
   $ pip install cyrax
-  $ cyrax -w # or check _build
+  $ make webserver
 
-Live Demo at http://spielwiese.spline.de/ff-graph
-
-
-Issues
-
-* If you try to run cyrax in a virtual environment name the env dir with a
-  prefix underscore (like _env) otherwise cyrax will try to render the env
-  directory.
+Live: http://berlin.freifunk.net
