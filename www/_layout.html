@@ -33,7 +33,6 @@
               {{ utils.nav_external('Wiki', 'http://wiki.freifunk.net/Hauptseite') }}
               {{ utils.nav('Downloads', 'downloads') }}
               {{ utils.nav('Kontakt', 'contact') }}
-              {{ utils.nav('Impressum', 'impressum') }}
               {{ utils.nav_external('freifunk.net', 'http://www.freifunk.net', class='right')}}
             </ul>
           </div>
@@ -47,7 +46,11 @@
 
    {%block raw %}{% endblock %}
 
-   <footer>Freifunk Berlin 2013</footer>
+   <footer>
+    <a href="http://www.freifunk.net">Freifunk.net</a>
+    -
+    <a href="{{url_for('impressum')}}">Impressum</a>
+   </footer>
 
   </body>
 </html>
