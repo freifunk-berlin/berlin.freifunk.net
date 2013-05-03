@@ -1,13 +1,20 @@
 /*
  * Global
  */
+@font-face {
+  font-family: 'Liberation Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Liberation Sans'), local('Liberation'), url('LiberationSansNarrow-Regular.woff') format('woff');
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
 }
 
 h1, h2, h3 {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Liberation Sans', sans-serif;
 }
 
 h4 {
@@ -46,7 +53,6 @@ footer {
 #header h1 small {
   font-style: italic;
   letter-spacing:3px;
-  text-transform: uppercase;
 }
 #header div, #header p {
   display: inline-block;
