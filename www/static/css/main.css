@@ -118,6 +118,13 @@ ul.submenu li {
   text-align: center;
 }
 
+#news {
+  width: 80%;
+  border: 1px dashed #000;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 #about-functionality, #about-participate {
   clear: both;
   padding-top: 40px;
