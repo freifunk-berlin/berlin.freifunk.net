@@ -68,6 +68,7 @@ footer img {
 
 #header p {
   float: right;
+  margin: 0px;
 }
 #header ul {
   margin: 0px 0px 0px 10px;
