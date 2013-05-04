@@ -187,3 +187,12 @@ path.active {
   stroke: red;
   stroke-width: 4;
 }
+
+
+/*
+ * VIDEO JS
+ */
+
+.video-js {
+  background-color: #fff;
+}

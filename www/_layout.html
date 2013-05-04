@@ -5,14 +5,19 @@
 
     <title>Freifunk Berlin</title>
 
+    <link href="{{url_for('static/css/video-js.min.css')}}" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static/img/favicon.ico') }}">
     <link href="{{url_for('static/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
     <link href="{{url_for('static/css/main.css')}}" rel="stylesheet" media="screen">
 
+    <script src="{{url_for('static/js/video.min.js')}}"></script>
     <script src="{{url_for('static/js/d3.v3.min.js')}}"></script>
     <script src="{{url_for('static/js/d3.jsonp.js')}}"></script>
     <script src="{{url_for('static/js/graph.js')}}"></script>
     <script src="{{url_for('static/js/openwifimap.js')}}"></script>
+    <script>
+      _V_.options.flash.swf = "{{url_for('static/video/video-js.swf')}}";
+    </script>
   </head>
 
   <body>
