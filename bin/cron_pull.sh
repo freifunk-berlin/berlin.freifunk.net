@@ -10,11 +10,11 @@ GIT_TARGET_DIR="${1:-${BASE}/git}"
 
 #update git
 cd ${GIT_TARGET_DIR}
-git pull -q origin master
+/usr/bin/git pull -q origin master
 
 #generate website
 cd ${GIT_TARGET_DIR}/www
-cyrax -q -d ${WWW_TARGET_DIR}
+/usr/local/bin/cyrax -q -d ${WWW_TARGET_DIR}
 
 exit 0
 
