@@ -1,0 +1,34 @@
+{
+  "name": "Freifunk Berlin",
+  "url": "http://berlin.freifunk.net",
+  "state": {
+    "nodes": 107,
+    "lastchange": 1374092208,
+    "message": "open for public"
+  },
+  "location": {
+    "city": "Berlin",
+    "address": {
+      "Name": "C-Base",
+      "Street": "Rungestraße 20",
+      "Zipcode": "10179"
+    },
+    "lat": 52.518725,
+    "lon": 13.40312
+  },
+  "contact": {
+    "email": "berlin@berlin.freifunk.net",
+    "ml": "berlin@berlin.freifunk.net",
+    "twitter": "freifunk_berlin"
+  },
+  "techDetails": {
+    "stoererhaftung": "Förderverein Freie Netzwerke (ISP) VPN",
+    "firmware": {
+      "url": "http://firmware.pberg.freifunk.net/attitude_adjustment/12.09/",
+      "name": "Pberg Firmware"
+    },
+    "routing": "OLSR",
+    "vpn": "VPN03"
+  },
+  "api": "0.1"
+}
