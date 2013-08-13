@@ -195,3 +195,7 @@ path.active {
   stroke: red;
   stroke-width: 4;
 }
+
+#nodes {
+  border: 1px solid #ccc;
+}
