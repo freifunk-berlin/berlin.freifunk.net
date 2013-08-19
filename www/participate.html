@@ -4,11 +4,13 @@
 
 {% block content %}
 
+<div class="col3">
+
 <div class="case" id="case-starter">
   <div class="case-head page-header">
-    <h3>Starter-Kit
-      <small>Wohnung / Geschäft / Café / Restaurant / Bar</small>
-    </h3>
+    <h3>Starter-Kit</h3>
+    <h5>Wohnung, Geschäft, Café, Restaurant, Bar</h5>
+    <img src="{{url_for('static/img/participate_small.png')}}">
   </div>
   <div class="case-body">
     <dl>
@@ -32,7 +34,6 @@
             <a href="#" data-toggle="tooltip" title="Die Freifunk-Firmware ist eine Software, die auf einem Router installiert wird und ihn in einen Freifunk-Router verwandelt.">Freifunk-Firmware</a>. (Link!)
           </li>
           <li>Stelle den Router an einem günstigen Ort auf (z.B. Fensterbank).</li>
-          <li>Siehe auch: <a href="#more">weitere Informationen und Hinweise</a>.</li>
         </ul>
       </dd>
     </dl>
@@ -41,10 +42,10 @@
 
 <div class="case" id="case-level2">
   <div class="case-head page-header">
-    <h3>Level 2
-      <small>Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges
-        Gelände</small>
-    </h3>
+    <h3>Level 2</h3>
+    <h5>Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges
+      Gelände</h5>
+    <img src="{{url_for('static/img/participate_medium.png')}}">
   </div>
   <div class="case-body">
     <dl>
@@ -77,7 +78,6 @@
           <li>Mehrere Freifunk-Router können über ein Switch mit Netzwerk-Kabeln
             verbunden werden. Der im <a href="#case-starter">Starter-Kit</a>
             empfohlene Router hat z.B. ein integriertes Switch.</li>
-          <li>Siehe auch: <a href="#more">weitere Informationen und Hinweise</a>.</li>
         </ul>
       </dd>
     </dl>
@@ -86,10 +86,10 @@
 
 <div class="case" id="case-backbone">
   <div class="case-head page-header">
-    <h3>Backbone
-      <small>Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus,
-        Kirchturm</small>
-    </h3>
+    <h3>Backbone</h3>
+    <h5>Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus,
+      Kirchturm</h5>
+    <img src="{{url_for('static/img/participate_big.png')}}">
   </div>
   <div class="case-body">
     <dl>
@@ -118,11 +118,12 @@
           </li>
           <li>Die neuen Verbindungen solltest Du mit den FreifunkerInnen
             planen, die die entfernten Router betreiben.</li>
-          <li>Siehe auch: <a href="#more">weitere Informationen und Hinweise</a>.</li>
         </ul>
       </dd>
     </dl>
   </div>
+</div>
+
 </div>
 
 <h3 id="more">Weitere Informationen und Hinweise</h3>
