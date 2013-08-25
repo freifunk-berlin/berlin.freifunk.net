@@ -4,6 +4,34 @@
 
 {% block content %}
 
+<h3>Jede_r kann mitmachen!</h3>
+
+Sprich mit deinem Freundeskreis, Geschäftspartner_innen und allen Menschen die
+dich umgeben und verbreite die Idee von Freifunk.
+
+Alle können Freifunker_innen werden! Wir freuen uns über Unterstützung bei
+<ul>
+  <li>der Erweiterung des Freifunk-Netzwerks durch das Aufstellen neuer
+    Freifunk-Router (<a href="#aufstellen">siehe unten</a>) oder durch das
+    Bereitstellen interessanter Standorte für Freifunk-Router (z.B.
+    Dächer).</li>
+  <li>der Entwicklung von Infomaterial, Bannern, Transparenten, T-Shirts, ...
+    was immer dir Kreatives einfällt!</li>
+  <li>der Verbreitung der Idee auf Veranstaltungen, Barcamps und
+    Kongressen.</li>
+  <li>dem Betreiben von Diensten für die Community und der Entwicklung von
+    Webanwendungen.</li>
+</ul>
+
+<p>
+  Komm zum <a href="{{url_for('contact')}}">Freifunk-Treffen</a> oder frag auf
+  der <a href="{{url_for('contact')}}">Mailingliste</a>. Du kannst uns auch mit
+  <a href="http://www.betterplace.org/de/projects/14418-berlin-freifunk-net">Spenden</a>
+  unterstützen.
+</p>
+
+<h3 id="aufstellen">Du möchtest einen Freifunk-Router aufstellen?</h3>
+
 <div class="col3">
 
 <div class="case" id="case-starter">
@@ -131,9 +159,6 @@
 
 <h3 id="more">Weitere Informationen und Hinweise</h3>
 <dl>
-  <dt>Du hast Fragen?</dt>
-  <dd>Komm zum <a href="{{url_for('contact')}}">Freifunk-Treffen</a> oder frag auf der
-    <a href="{{url_for('contact')}}">Mailingliste</a>!</dd>
   <dt>Wo stehen schon Freifunk-Router?</dt>
   <dd>Schau mal auf der <a href="{{url_for('network/map')}}">Netzkarte</a> nach.
     Wenn es bei dir noch keinen Freifunk-Router in der Nachbarschaft gibt, dann

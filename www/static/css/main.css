@@ -156,8 +156,13 @@ ul.submenu li {
 }
 
 .case .page-header {
+  margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+.case-head h3 {
+  margin-top: 0;
 }
 
 .case-head h5 {
