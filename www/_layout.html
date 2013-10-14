@@ -60,16 +60,13 @@
    {%block raw %}{% endblock %}
 
    <footer>
-    <ul>
-      <li>
+    <p>
         <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">
           <img src="{{url_for('static/img/cc.png')}}" alt="CC" />
           <img src="{{url_for('static/img/cc_by.png')}}" alt="BY" />
           <img src="{{url_for('static/img/cc_sa.png')}}" alt="SA" />
         </a>
-      </li>
-
-      <li>
+        <a href="{{url_for('impressum')}}">Impressum</a>
         <a class="FlattrButton" style="display:none;"
           title="freifunk.net / Förderverein Freie Netzwerke e.V"
           data-flattr-uid="freifunk"
@@ -77,12 +74,7 @@
           data-flattr-button="compact"
           href="http://freifunk.net">
         </a>
-      </li>
-
-      <li>
-        <a href="{{url_for('impressum')}}">Impressum</a>
-      </li>
-    </ul>
+    </p>
    </footer>
 
   </body>

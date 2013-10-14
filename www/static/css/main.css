@@ -30,15 +30,16 @@ a:hover {
 }
 
 footer {
+  margin: 20px 0px;
   text-align: center;
 }
 
-footer ul {
-  list-style-type: none;
+footer iframe {
+  vertical-align: middle;
 }
 
-footer li:first-child {
-  margin: 10px;
+footer a, footer iframe{
+  margin: 0px 15px;
 }
 
 footer a:hover {
