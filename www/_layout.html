@@ -11,6 +11,20 @@
 
     <script src="{{url_for('static/js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{url_for('static/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script');
+        var t = document.getElementsByTagName('script')[0];
+
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=freifunk';
+
+        t.parentNode.insertBefore(s, t);
+     })();
+    /* ]]> */
+    </script>
   </head>
 
   <body>
@@ -45,15 +59,29 @@
    {%block raw %}{% endblock %}
 
    <footer>
-    {{site.url}}
-    -
-    <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">
-      <img src="{{url_for('static/img/cc.png')}}" alt="CC" />
-      <img src="{{url_for('static/img/cc_by.png')}}" alt="BY" />
-      <img src="{{url_for('static/img/cc_sa.png')}}" alt="SA" />
-    </a>
-    -
-    <a href="{{url_for('impressum')}}">Impressum</a>
+    <ul>
+      <li>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">
+          <img src="{{url_for('static/img/cc.png')}}" alt="CC" />
+          <img src="{{url_for('static/img/cc_by.png')}}" alt="BY" />
+          <img src="{{url_for('static/img/cc_sa.png')}}" alt="SA" />
+        </a>
+      </li>
+
+      <li>
+        <a class="FlattrButton" style="display:none;"
+          title="freifunk.net / Förderverein Freie Netzwerke e.V"
+          data-flattr-uid="freifunk"
+          data-flattr-tags="distributed, wifi, mesh, openwrt"
+          data-flattr-button="compact"
+          href="http://freifunk.net">
+        </a>
+      </li>
+
+      <li>
+        <a href="{{url_for('impressum')}}">Impressum</a>
+      </li>
+    </ul>
    </footer>
 
   </body>

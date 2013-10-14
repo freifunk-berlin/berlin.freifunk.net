@@ -31,7 +31,14 @@ a:hover {
 
 footer {
   text-align: center;
-  padding: 40px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer li:first-child {
+  margin: 10px;
 }
 
 footer a:hover {
