@@ -28,7 +28,7 @@
       "name": "Pberg Firmware"
     },
     "routing": "OLSR",
-    "vpn": "VPN03"
+    "vpn": "OpenVPN"
   },
   "api": "0.1"
 }
