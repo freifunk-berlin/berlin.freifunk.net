@@ -2,8 +2,8 @@
   "name": "Freifunk Berlin",
   "url": "http://berlin.freifunk.net",
   "state": {
-    "nodes": 196,
-    "lastchange": 1382036115,
+    "nodes": 202,
+    "lastchange": 1382286279,
     "message": "open for public"
   },
   "location": {
@@ -27,7 +27,16 @@
       "url": "http://firmware.pberg.freifunk.net/attitude_adjustment/12.09/",
       "name": "Pberg Firmware"
     },
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 8,
+          "network": "104.0.0.0"
+        }
+      ]
+    },
     "routing": "OLSR",
+    "topodata": "http://api.openwifimap.net/view_nodes_spatial?bbox=13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279",
     "vpn": "OpenVPN"
   },
   "api": "0.1"
