@@ -15,20 +15,7 @@
     <script src="{{url_for('static/js/video.js')}}"></script>
     <script type="text/javascript">
     /* <![CDATA[ */
-      // flattr
-      (function() {
-          var s = document.createElement('script');
-          var t = document.getElementsByTagName('script')[0];
-
-          s.type = 'text/javascript';
-          s.async = true;
-          s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=freifunk';
-
-          t.parentNode.insertBefore(s, t);
-       })();
-
-      // video js
-      videojs.options.flash.swf = "http://example.com/path/to/video-js.swf"
+      videojs.options.flash.swf = "{{url_for('static/swf/video-js.swf')}}"
     /* ]]> */
     </script>
   </head>
@@ -72,13 +59,13 @@
           <img src="{{url_for('static/img/cc_by.png')}}" alt="BY" />
           <img src="{{url_for('static/img/cc_sa.png')}}" alt="SA" />
         </a>
+
         <a href="{{url_for('impressum')}}">Impressum</a>
-        <a class="FlattrButton" style="display:none;"
-          title="freifunk.net / Förderverein Freie Netzwerke e.V"
-          data-flattr-uid="freifunk"
-          data-flattr-tags="distributed, wifi, mesh, openwrt"
-          data-flattr-button="compact"
-          href="http://freifunk.net">
+
+        <a
+          href="https://flattr.com/submit/auto?user_id=freifunk&url=http://freifunk.net&title=Freifunk%20Berlin&description=Freifunk%20is%20a%20non-commercial%20initiative%20for%20free%20decentraliced%20wireless%20mesh%20networks.&language=de_DE&tags=distributed,wifi,mesh,openwrt,olsr&category=software">
+          <img src="{{url_for('static/img/flattr-badge-large.png')}}" 
+          alt="Flattr Freifunk Berlin" />
         </a>
     </p>
    </footer>
