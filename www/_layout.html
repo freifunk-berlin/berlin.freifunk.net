@@ -7,22 +7,28 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static/img/favicon.ico') }}">
     <link href="{{url_for('static/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+    <link href="{{url_for('static/css/video-js.min.css')}}" rel="stylesheet">
     <link href="{{url_for('static/css/main.css')}}" rel="stylesheet" media="screen">
 
     <script src="{{url_for('static/js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{url_for('static/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static/js/video.js')}}"></script>
     <script type="text/javascript">
     /* <![CDATA[ */
-    (function() {
-        var s = document.createElement('script');
-        var t = document.getElementsByTagName('script')[0];
+      // flattr
+      (function() {
+          var s = document.createElement('script');
+          var t = document.getElementsByTagName('script')[0];
 
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=freifunk';
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = '//api.flattr.com/js/0.6/load.js?mode=auto&uid=freifunk';
 
-        t.parentNode.insertBefore(s, t);
-     })();
+          t.parentNode.insertBefore(s, t);
+       })();
+
+      // video js
+      videojs.options.flash.swf = "http://example.com/path/to/video-js.swf"
     /* ]]> */
     </script>
   </head>

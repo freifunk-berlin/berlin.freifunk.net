@@ -240,3 +240,25 @@ path.active {
 .col3 > *:not(:last-child) {
   padding-right: 2%;
 }
+
+
+/*
+ Fixing video js bug: play button centered
+*/
+.vjs-default-skin {
+  margin: 20px 0px 0px 10px;
+}
+
+.vjs-default-skin .vjs-big-play-button
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -40px;
+  width: 80px;
+  height: 80px;
+}
+
+.vjs-default-skin:hover .vjs-big-play-button {
+  border-color: #db0166;
+}

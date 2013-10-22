@@ -16,9 +16,23 @@
 </div>
 -->
 <div id="about-freifunk">
-	<iframe class="pull-right figure"
-	width="333" height="187" src="http://www.youtube.com/embed/2Z12OjnPADA" frameborder="0" allowfullscreen></iframe>
-<!--  <iframe class="pull-right figure"
+<video class="video-js vjs-default-skin vjs-big-play-centered pull-right"
+  controls preload="auto"  width="333" height="188"
+  poster="{{url_for('static/img/video_poster.png')}}"
+  data-setup='{"example_option":true, "preload":"metadata","controls": true, "autoplay": false }'>
+  <source src="http://cholin.spline.de/freifunk/video/freifunk_verbindet.webm" type='video/webm' />
+  <source src="http://cholin.spline.de/freifunk/video/freifunk_verbindet.mp4" type='video/mp4' />
+  <source src="http://cholin.spline.de/freifunk/video/freifunk_verbindet.ogv" type='video/ogg' />
+</video>
+
+<!--
+// YouTube
+<iframe class="pull-right figure"
+  src="http://www.youtube.com/embed/2Z12OjnPADA" 
+  width="333" height="187" frameborder="0" allowfullscreen></iframe>
+
+// Vimeo
+<iframe class="pull-right figure"
   src="http://player.vimeo.com/video/64814620?byline=0&portrait=0&title=0"
   width="333" height="187" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 -->
