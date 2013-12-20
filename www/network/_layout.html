@@ -4,12 +4,8 @@
 <div class="container">
   <div class="row">
     <div class="span12">
-      <ul class="span12 submenu">
-        {% import '_utils.html' as utils with context%}
-        {{ utils.nav('Karte', 'network/map') }}
-        {{ utils.nav('Knoten', 'network/nodes') }}
-        {{ utils.nav('Statistik', 'network/stats') }}
-      </ul>
+      {% import 'network/_utils.html' as utils with context %}
+      {{ utils.render_subnav() }}
 
       <div id="network">
         {% block content %}{%endblock %}

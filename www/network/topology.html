@@ -1,0 +1,105 @@
+{% meta %}
+  endpoint: network_topology
+{% endmeta %}
+
+{% block raw %}
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      {% import 'network/_utils.html' as utils with context %}
+      {{ utils.render_subnav() }}
+    </div>
+  </div>
+</div>
+
+<div id="edges">
+  <noscript><big>Für diese Seite wird JavaScript benötigt!<br />Bitte verwenden Sie einen modernen Browser mir aktiviertem Javascript.</big></noscript>
+  <p>Lade Daten...</p>
+</div>
+
+<script>
+var radius = 400,
+    width = radius*3,
+    height = radius*3,
+    padding = 10,
+    radians = 2 * Math.PI,
+    map = new Openwifimap('http://api.openwifimap.net');
+
+map.getGraph(function(g) {
+  var nodes = g.getNodes(),
+      radianGen = d3.scale.linear()
+        .domain([0, nodes.length])
+        .range([0, 2 * Math.PI]);
+
+  for (var i=0; i < nodes.length; i++) {
+    var node = nodes[i];
+
+    node.rad = radianGen(i);
+    node.x = width/2 - radius*Math.cos(node.rad);
+    node.y = height/2 - radius* Math.sin(node.rad);
+  }
+
+  var svg = d3.select("#edges").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .classed('hidden', true);
+
+
+  console.log(g);
+
+  var getClassId = function(id) {
+      return 'l-' + id.replace(/\./g,'');
+  }
+  // Render node ids on a circle
+  svg.selectAll("text").data(nodes).enter()
+    .append("g")
+      .attr("transform", function(d) {
+        return "translate(" + d.x + ", " + d.y + ")";
+      })
+    .append("text")
+      .attr("transform", function(d,i) {
+          return "rotate("+(d.rad*(180/Math.PI))+")"
+      })
+      .attr("dx", -8)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "end")
+      .attr('font-size', "12px")
+      .text(function(d) { return d.data.id; })
+      .on("mouseover", function(d){
+        d3.select(this).classed('active', true);
+        d3.selectAll('.' + getClassId(d.data.id)).classed('active', true);
+      })
+      .on("mouseout", function(d){
+        d3.select(this).classed('active', false);
+        d3.selectAll('.' + getClassId(d.data.id)).classed('active', false);
+      });
+
+  var links = g.getEdges(),
+      lineGen = d3.svg.line()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+        .interpolate("bundle");
+
+  // Render all links
+  svg.selectAll("link").data(links)
+    .enter()
+    .append("path")
+    .attr("d", function(d) {
+      return lineGen([nodes[d.source], {x: width/2, y: height/2 }, nodes[d.target]])
+    })
+    .attr("class", function(d) {
+      return ['link', getClassId(nodes[d.source].id), getClassId(nodes[d.target].id)].join(' ')
+    })
+    .attr("stroke-width", 1)
+    .attr("fill", "none")
+    .append("svg:title").text(function(d){
+      return "ETX: " + d.quality;
+    });
+
+
+  d3.select("#edges p").remove();
+  svg.classed('hidden', false);
+});
+
+</script>
+{% endblock %}
