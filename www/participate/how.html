@@ -1,5 +1,6 @@
 {% meta %}
-  endpoint: participate
+  endpoint: participate_how
+  parent_tmpl: participate/_layout.html
 {% endmeta %}
 
 {% block content %}
@@ -26,7 +27,7 @@ Alle können Freifunker_innen werden! Wir freuen uns über Unterstützung bei
 <p>
   Komm zum <a href="{{url_for('contact')}}">Freifunk-Treffen</a> oder frag auf
   der <a href="{{url_for('contact')}}">Mailingliste</a>. Du kannst uns auch mit
-  <a href="http://www.betterplace.org/de/projects/14418-berlin-freifunk-net">Spenden</a>
+  <a href="{{url_for('participate/donate')}}">Spenden</a>
   unterstützen.
 </p>
 
@@ -55,7 +56,7 @@ Alle können Freifunker_innen werden! Wir freuen uns über Unterstützung bei
         <ul>
           <li>
             Besorge einen Freifunk-fähigen Router. Empfehlung:
-            <a href="#" data-toggle="tooltip" title="TP-Link TL-WDR3600, ~55 EUR, 2.4 GHz und 5 GHz.">TL-WDR3600</a>.
+            <a href="#" data-toggle="tooltip" title="TP-Link TL-WDR3500, ~30 EUR, 2.4 GHz und 5 GHz.">TL-WDR3500</a>.
           </li>
           <li>
             Falls du deinen Internet-Zugang freigeben möchtest, dann kannst
@@ -63,7 +64,8 @@ Alle können Freifunker_innen werden! Wir freuen uns über Unterstützung bei
             vor Abmahnungen sicher zu sein. <!-- TODO: Link (wie komme ich an den account?) -->
           </li>
           <li>
-            Installiere und konfiguriere die
+            Hol die eine <a href="http://ip.berlin.freifunk.net">Freifunk-IP</a>,
+            installiere und konfiguriere die
             <a href="#" data-toggle="tooltip" title="Die Freifunk-Firmware ist eine Software, die auf einem Router installiert wird und ihn in einen Freifunk-Router verwandelt.">Freifunk-Firmware</a>.
             <!-- TODO: Link (wie flashe ich?) -->
           </li>

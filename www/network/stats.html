@@ -15,24 +15,24 @@
   <p>Lade Daten...</p>
 </div>
 
-<div id="hardware">
-  <h3>Hardware</h3>
+<div id="router">
+  <h3>Router</h3>
   <p>Lade Daten...</p>
 </div>
 
-<div id="devices">
-  <h3>Devices</h3>
+<div id="hardware">
+  <h3>Chipsatz</h3>
   <p>Lade Daten...</p>
 </div>
+
 
 <script>
-var url = 'http://www.openwifimap.net/openwifimap/_all_docs?include_docs=True&callback={callback}',
-    map = new Openwifimap(url);
+var map = new Openwifimap('http://api.openwifimap.net');
 
 map.getNodes(function(nodes) {
   var firmwares = [{ 'id' : 'unknown', 'value' : 0 }];
   var hardwares = [{ 'id' : 'unknown', 'value' : 0 }];
-  var devices = [{ 'id' : 'unknown', 'value' : 0 }];
+  var routers = [{ 'id' : 'unknown', 'value' : 0 }];
 
   var findAndInc = function(list, id) {
     if (typeof id != "string")
@@ -41,7 +41,7 @@ map.getNodes(function(nodes) {
     for (var i = 0; i < list.length; i++) {
       var item = list[i];
       if (item.id == id) {
-        item['value']++;
+        ++item['value']
         return;
       }
     }
@@ -54,10 +54,6 @@ map.getNodes(function(nodes) {
 
     try {
       var firmware = node.firmware.revision;
-      var idx = firmware.search("\\(MeshKit/r");
-
-      if (idx > 0)
-        firmware = firmware.substring(0, idx);
       findAndInc(firmwares, firmware);
     } catch (e) {
       findAndInc(firmwares);
@@ -68,9 +64,9 @@ map.getNodes(function(nodes) {
     } catch (e) { }
 
     try {
-      findAndInc(devices, node.system.sysinfo[1]);
+      findAndInc(routers, node.system.sysinfo[1]);
     } catch (e) {
-      findAndInc(devices);
+      findAndInc(routers);
     }
   }
 
@@ -85,7 +81,7 @@ map.getNodes(function(nodes) {
     var svg = d3.select(id).append("svg")
         .data([data])
           .attr("width", "100%")
-          .attr("height", 2*r + 50)
+          .attr("height", "100%")
 
     var transX = r + 10,
         transY = r + 10;
@@ -118,7 +114,6 @@ map.getNodes(function(nodes) {
           .attr("width", 10)
           .attr("height", 10)
           .attr("fill", function(d, i) { return color(i); } )
-          //.attr("text-anchor", "middle")
           .text(function(d, i) { return data[i].id; });
 
     svg.selectAll(".label")
@@ -127,7 +122,7 @@ map.getNodes(function(nodes) {
           .append("text")
           .attr("dx", 2*r + 80)
           .attr("dy", function(d,i) { return 20*(1.5+i) })
-          .text(function(d, i) { 
+          .text(function(d, i) {
             return data[i].id + " ("+ data[i].value + ")";
           });
 
@@ -137,21 +132,21 @@ map.getNodes(function(nodes) {
   var showAllDevices = function(){
     pieChart("#firmware", firmwares);
     pieChart("#hardware", hardwares);
-    pieChart("#devices", devices);
+    pieChart("#router", routers);
 
-    document.getElementById("showUnknown").onclick = showKnowDevices;
+    document.getElementById("showUnknown").onclick = showKnownDevices;
     document.getElementById("showUnknown").innerHTML = "ausblenden";
   }
 
-  var showKnowDevices = function(){
+  var showKnownDevices = function(){
     data = firmwares.slice(); data.splice(0,1); pieChart("#firmware", data);
     data = hardwares.slice(); data.splice(0,1); pieChart("#hardware", data);
-    data = devices.slice();   data.splice(0,1); pieChart("#devices", data);
+    data = routers.slice();   data.splice(0,1); pieChart("#router", data);
     document.getElementById("showUnknown").onclick = showAllDevices;
     document.getElementById("showUnknown").innerHTML = "anzeigen";
   }
 
-  showKnowDevices();
+  showKnownDevices();
 });
 </script>
 {% endblock %}

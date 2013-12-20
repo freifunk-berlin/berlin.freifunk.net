@@ -4,11 +4,12 @@ var Openwifimap = function(url) {
 
 Openwifimap.prototype = {
   'getGraph' : function(cb) {
-    var g = new Graph();
-
-    d3.jsonp(this.url, function(data) {
-      for (var i = 0; i < data.rows.length; i++) {
-        var node = data.rows[i].doc;
+    var g = new SimpleGraph();
+    var url = this.baseUrl + 'view_nodes_spatial?bbox=13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279'
+    d3.json(url, function(json) {
+      var data = json.rows;
+      for (var i = 0; i < data.length; i++) {
+        var node = data[i].doc;
         try {
           for (var j = 0; j < node.neighbors.length; j++) {
             var target = node.neighbors[j],
@@ -34,12 +35,28 @@ Openwifimap.prototype = {
   },
 
   'getNodes' : function(cb) {
-    d3.jsonp(this.url, function(data) {
-      var nodes = []
-      for (var i = 0; i < data.rows.length; i++)
-        nodes.push(data.rows[i].doc);
+    var url = 'http://api.openwifimap.net/view_nodes_spatial?bbox=13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279';
+    d3.json(url, function(json) {
+      var deferreds = [];
+      var nodes = [];
 
-      cb(nodes);
+      for (var i = 0; i < json.rows.length; i++) {
+        deferreds.push(function(dfd) {
+          var nodeUrl = 'http://api.openwifimap.net/db/'+json.rows[i].id;
+          d3.json(nodeUrl, function(node) {
+            nodes.push(node);
+            dfd.resolve();
+          });
+          return dfd;
+        }($.Deferred()));
+
+      }
+
+      console.log('length', deferreds.length);
+
+      $.when.apply($, deferreds).then(function() {
+        cb(nodes);
+      });
     });
   }
 };
