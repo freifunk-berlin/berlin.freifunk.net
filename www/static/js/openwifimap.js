@@ -1,6 +1,8 @@
 var Openwifimap = function(apiUrl, bbox) {
   this.apiUrl = apiUrl;
-  this.url = apiUrl + '/view_nodes_spatial?bbox=' + bbox;
+  this.url = apiUrl + '/view_nodes_spatial';
+  if (bbox != null)
+    this.url += '?bbox=' + bbox;
 }
 
 Openwifimap.prototype = {
