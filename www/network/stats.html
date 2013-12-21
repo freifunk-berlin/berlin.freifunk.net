@@ -27,9 +27,10 @@
 
 
 <script>
-var map = new Openwifimap('http://api.openwifimap.net');
+var bbox = '13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279',
+    map = new Openwifimap('http://api.openwifimap.net', bbox);
 
-map.getNodes(function(nodes) {
+var drawNodes = function(nodes) {
   var firmwares = [{ 'id' : 'unknown', 'value' : 0 }];
   var hardwares = [{ 'id' : 'unknown', 'value' : 0 }];
   var routers = [{ 'id' : 'unknown', 'value' : 0 }];
@@ -147,6 +148,15 @@ map.getNodes(function(nodes) {
   }
 
   showKnownDevices();
-});
+};
+
+var loading = function(idx, amount) {
+  var ids = ['firmware', 'hardware', 'router'];
+  for (var i=0; i < ids.length; ++i)
+    $('#' + ids[i] +  ' p').text(idx + ' von ' + amount + ' Knoten geladen.');
+}
+
+map.getNodes().then(drawNodes, null, loading);
+
 </script>
 {% endblock %}

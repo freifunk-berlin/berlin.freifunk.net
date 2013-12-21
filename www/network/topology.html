@@ -23,9 +23,10 @@ var radius = 400,
     height = radius*3,
     padding = 10,
     radians = 2 * Math.PI,
-    map = new Openwifimap('http://api.openwifimap.net');
+    bbox = '13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279',
+    map = new Openwifimap('http://api.openwifimap.net', bbox);
 
-map.getGraph(function(g) {
+var drawNodes = function(g) {
   var nodes = g.getNodes(),
       radianGen = d3.scale.linear()
         .domain([0, nodes.length])
@@ -99,7 +100,17 @@ map.getGraph(function(g) {
 
   d3.select("#edges p").remove();
   svg.classed('hidden', false);
-});
+};
+
+var loading = function(i, amount) {
+  $('#edges p').text(i + ' von ' + amount + ' Knoten geladen.');
+};
+
+var error = function() {
+  $('#edges p').text('Fehler beim Laden der Daten');
+};
+
+map.getGraph().then(drawNodes, error, loading);
 
 </script>
 {% endblock %}
