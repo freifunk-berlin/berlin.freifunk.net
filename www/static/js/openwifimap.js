@@ -17,12 +17,15 @@ Openwifimap.prototype = {
       var data = json.rows;
       for (var i = 0; i < data.length; i++) {
         var node = data[i].value;
-        try {
-          for (var j = 0; j < node.links.length; j++) {
-            var target = node.links[j];
-            g.addEdge(node, target, { 'quality': target.quality });
+          if ('links' in node && node.links.length > 0) {
+            for (var j=0; j < node.links.length; j++) {
+              var target = node.links[j];
+              g.addEdge(node, target, {'quality' : target.quality})
+            }
+          } else {
+            g.addSingleNode(node, false);
           }
-        } catch (e) { }
+
         dfd.notify(i, data.length);
       }
 
