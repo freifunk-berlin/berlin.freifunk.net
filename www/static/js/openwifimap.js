@@ -21,8 +21,8 @@ Openwifimap.prototype = {
           if (that._validate(node)) {
             if ('links' in node && node.links.length > 0) {
               for (var j=0; j < node.links.length; j++) {
-                var target = node.links[j];
-                g.addEdge(node, target, target)
+                var link = node.links[j];
+                g.addEdge(node, link.id, link)
               }
             } else {
               g.addSingleNode(node, false);

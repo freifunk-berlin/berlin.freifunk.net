@@ -65,14 +65,16 @@ var drawNodes = function(g) {
       .attr("dy", ".35em")
       .attr("text-anchor", "end")
       .attr('font-size', "12px")
-      .text(function(d) { return d.data.id; })
+      .text(function(d) {
+        return d.id
+      })
       .on("mouseover", function(d){
         d3.select(this).classed('active', true);
-        d3.selectAll('.' + getClassId(d.data.id)).classed('active', true);
+        d3.selectAll('.' + getClassId(d.id)).classed('active', true);
       })
       .on("mouseout", function(d){
         d3.select(this).classed('active', false);
-        d3.selectAll('.' + getClassId(d.data.id)).classed('active', false);
+        d3.selectAll('.' + getClassId(d.id)).classed('active', false);
       });
 
   var links = g.getEdges(),
