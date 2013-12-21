@@ -102,8 +102,8 @@ var drawNodes = function(g) {
   svg.classed('hidden', false);
 };
 
-var loading = function(i, amount) {
-  $('#edges p').text(i + ' von ' + amount + ' Knoten geladen.');
+var loading = function(resolved, skipped, amount) {
+  $('#edges p').text(resolved + ' von ' + amount-skipped + ' Knoten geladen ('+skipped+' out-of-date)');
 };
 
 var error = function() {

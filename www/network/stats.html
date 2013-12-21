@@ -132,10 +132,12 @@ var drawNodes = function(nodes) {
 
 };
 
-var loading = function(idx, amount) {
+var loading = function(resolved, skipped, total) {
   var ids = ['firmware', 'hardware', 'router'];
-  for (var i=0; i < ids.length; ++i)
-    $('#' + ids[i] +  ' p').text(idx + ' von ' + amount + ' Knoten geladen.');
+  for (var i=0; i < ids.length; ++i) {
+    var elem = $('#' + ids[i] +  ' p');
+    elem.text(resolved + ' von ' + (total-skipped) + ' Knoten geladen');
+  }
 }
 
 map.getNodes().then(drawNodes, null, loading);

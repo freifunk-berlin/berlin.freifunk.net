@@ -6,7 +6,8 @@ var Openwifimap = function(apiUrl, bbox) {
 Openwifimap.prototype = {
   'getGraph' : function() {
     var g = new SimpleGraph(),
-        dfd = $.Deferred();
+        dfd = $.Deferred(),
+        that = this;
 
     d3.json(this.url, function(error, json) {
       if (error) {
@@ -17,15 +18,16 @@ Openwifimap.prototype = {
       var data = json.rows;
       for (var i = 0; i < data.length; i++) {
         var node = data[i].value;
-          if ('links' in node && node.links.length > 0) {
-            for (var j=0; j < node.links.length; j++) {
-              var target = node.links[j];
-              g.addEdge(node, target, {'quality' : target.quality})
+          if (that._validate(node)) {
+            if ('links' in node && node.links.length > 0) {
+              for (var j=0; j < node.links.length; j++) {
+                var target = node.links[j];
+                g.addEdge(node, target, target)
+              }
+            } else {
+              g.addSingleNode(node, false);
             }
-          } else {
-            g.addSingleNode(node, false);
-          }
-
+        }
         dfd.notify(i, data.length);
       }
 
@@ -38,22 +40,29 @@ Openwifimap.prototype = {
 
   'getNodes' : function() {
     var retDfd = $.Deferred(),
-        nodeUrl = this.apiUrl + '/db/';
+        nodeUrl = this.apiUrl + '/db/',
+        that = this;
 
     d3.json(this.url, function(json) {
-      var deferreds = [];
-      var nodes = [];
+      var deferreds = [],
+          nodes = [],
+          resolved = 0,
+          skipped = 0;
 
       for (var i = 0; i < json.rows.length; i++) {
-        deferreds.push(function(dfd, j) {
-          d3.json(nodeUrl + json.rows[j].id, function(node) {
-            nodes.push(node);
-            retDfd.notify(j, json.rows.length);
-            dfd.resolve();
-          });
-          return dfd;
-        }($.Deferred(), i));
-
+        var node = json.rows[i];
+          if (that._validate(node.value)) {
+            deferreds.push(function(dfd) {
+              d3.json(nodeUrl + node.id, function(node) {
+                nodes.push(node);
+                retDfd.notify(++resolved, skipped, json.rows.length);
+                dfd.resolve();
+              });
+              return dfd;
+            }($.Deferred()));
+          } else {
+            retDfd.notify(resolved, ++skipped, json.rows.length);
+          }
       }
 
       $.when.apply($, deferreds).done(function() {
@@ -64,5 +73,14 @@ Openwifimap.prototype = {
     });
 
     return retDfd;
+  },
+
+  '_validate' : function(node) {
+    // ignore this node if mtime older than 7 days
+    var date = new Date();
+    date.setHours(date.getHours() - 24*7);
+    var nodeDate = new Date(node.mtime);
+    return nodeDate > date;
   }
+
 };
