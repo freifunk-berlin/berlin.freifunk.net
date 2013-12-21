@@ -6,10 +6,6 @@
 {% block content %}
 <noscript><big>Für diese Seite wird JavaScript benötigt!<br />Bitte verwenden Sie einen modernen Browser mir aktiviertem Javascript.</big></noscript>
 
-<div class="pull-right">
-  <p>Unbekante Geräte: <a id="showUnknown">anzeigen</a>.</p>
-</div>
-
 <div id="firmware">
   <h3>Firmware</h3>
   <p>Lade Daten...</p>
@@ -130,24 +126,10 @@ var drawNodes = function(nodes) {
     d3.select(id + " p").remove();
   };
 
-  var showAllDevices = function(){
-    pieChart("#firmware", firmwares);
-    pieChart("#hardware", hardwares);
-    pieChart("#router", routers);
+  pieChart("#firmware", firmwares);
+  pieChart("#hardware", hardwares);
+  pieChart("#router", routers);
 
-    document.getElementById("showUnknown").onclick = showKnownDevices;
-    document.getElementById("showUnknown").innerHTML = "ausblenden";
-  }
-
-  var showKnownDevices = function(){
-    data = firmwares.slice(); data.splice(0,1); pieChart("#firmware", data);
-    data = hardwares.slice(); data.splice(0,1); pieChart("#hardware", data);
-    data = routers.slice();   data.splice(0,1); pieChart("#router", data);
-    document.getElementById("showUnknown").onclick = showAllDevices;
-    document.getElementById("showUnknown").innerHTML = "anzeigen";
-  }
-
-  showKnownDevices();
 };
 
 var loading = function(idx, amount) {
