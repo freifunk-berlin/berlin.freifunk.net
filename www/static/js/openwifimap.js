@@ -15,20 +15,24 @@ Openwifimap.prototype = {
         return;
       }
 
-      var data = json.rows;
+      var data = json.rows,
+          resolved = 0,
+          skipped = 0;
       for (var i = 0; i < data.length; i++) {
         var node = data[i].value;
-          if (that._validate(node)) {
-            if ('links' in node && node.links.length > 0) {
-              for (var j=0; j < node.links.length; j++) {
-                var link = node.links[j];
-                g.addEdge(node, link.id, link)
-              }
-            } else {
-              g.addSingleNode(node, false);
+        if (that._validate(node)) {
+          if ('links' in node && node.links.length > 0) {
+            for (var j=0; j < node.links.length; j++) {
+              var link = node.links[j];
+              g.addEdge(node, link.id, link)
             }
+          } else {
+            g.addSingleNode(node, false);
+          }
+          dfd.notify(++resolved, skipped, data.length);
+        } else {
+          dfd.notify(resolved, ++skipped, data.length);
         }
-        dfd.notify(i, data.length);
       }
 
       this.graph = g;

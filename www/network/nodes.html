@@ -20,7 +20,7 @@
 <script>
 var radius = 500,
     width = radius*2.5,
-    height = radius*2.5,
+    height = radius*2.7,
     padding = 10,
     radians = 2 * Math.PI,
     bbox = '13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279',
@@ -43,7 +43,7 @@ var drawNodes = function(g) {
   var svg = d3.select("#edges").append("svg")
       .attr("width", width)
       .attr("height", height)
-      .classed('hidden', true);
+      .style("display", "none");
 
 
   console.log(g);
@@ -100,12 +100,13 @@ var drawNodes = function(g) {
     });
 
 
-  d3.select("#edges p").remove();
-  svg.classed('hidden', false);
+  $('#edges p').fadeOut('slow', function() {
+    $('svg').fadeIn('slow');
+  });
 };
 
 var loading = function(resolved, skipped, amount) {
-  $('#edges p').text(resolved + ' von ' + amount-skipped + ' Knoten geladen ('+skipped+' out-of-date)');
+  $('#edges p').text(resolved + ' von ' + (amount-skipped) + ' Knoten geladen');
 };
 
 var error = function() {

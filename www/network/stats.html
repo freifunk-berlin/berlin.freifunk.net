@@ -76,9 +76,10 @@ var drawNodes = function(nodes) {
     } catch(e) { }
 
     var svg = d3.select(id).append("svg")
-        .data([data])
+          .data([data])
           .attr("width", "100%")
-          .attr("height", "100%")
+          .attr("height", "50%")
+          .style("display", "none");
 
     var transX = r + 10,
         transY = r + 10;
@@ -123,7 +124,9 @@ var drawNodes = function(nodes) {
             return data[i].id + " ("+ data[i].value + ")";
           });
 
-    d3.select(id + " p").remove();
+    $(id + ' p').fadeOut('slow', function() {
+      $('svg').fadeIn('slow');
+    });
   };
 
   pieChart("#firmware", firmwares);
