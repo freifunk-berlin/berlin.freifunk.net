@@ -78,7 +78,7 @@ var drawNodes = function(nodes) {
     var svg = d3.select(id).append("svg")
           .data([data])
           .attr("width", "100%")
-          .attr("height", "50%")
+          .attr("height", "100%")
           .style("display", "none");
 
     var transX = r + 10,
@@ -129,9 +129,11 @@ var drawNodes = function(nodes) {
     });
   };
 
-  pieChart("#firmware", firmwares);
-  pieChart("#hardware", hardwares);
-  pieChart("#router", routers);
+  console.log(firmwares);
+  var cmp = (function(a,b) {return b.value - a.value});
+  pieChart("#firmware", firmwares.sort(cmp));
+  pieChart("#hardware", hardwares.sort(cmp));
+  pieChart("#router", routers.sort(cmp));
 
 };
 
