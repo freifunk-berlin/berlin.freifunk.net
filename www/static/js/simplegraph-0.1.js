@@ -134,9 +134,8 @@ SimpleGraph.prototype = {
       'target' : this.nodes.indexOf(to),
     }
 
-    if ('edge' in data)
-      for (var key in data['edge'])
-        edge[key] = data['edge'][key];
+    for (var key in data)
+      edge[key] = data[key];
 
     this.edges.push(edge);
   },
@@ -167,4 +166,3 @@ SimpleGraph.prototype = {
   }
 
 };
-
