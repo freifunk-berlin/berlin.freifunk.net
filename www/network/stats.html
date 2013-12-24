@@ -129,7 +129,6 @@ var drawNodes = function(nodes) {
     });
   };
 
-  console.log(firmwares);
   var cmp = (function(a,b) {return b.value - a.value});
   pieChart("#firmware", firmwares.sort(cmp));
   pieChart("#hardware", hardwares.sort(cmp));
