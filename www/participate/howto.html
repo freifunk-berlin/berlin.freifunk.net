@@ -1,0 +1,84 @@
+{% meta %}
+  endpoint: participate_howto
+  parent_tmpl: participate/_layout.html
+{% endmeta %}
+
+{% block content %}
+
+{% filter markdown %}
+
+
+# Anleitung Starter-Kit
+
+Um beim Freifunk-Projekt mitmachen zu können, brauchst du zu allerst einen
+freifunkfähigen Router. Wir empfehlen zur Zeit den TL-WDR3500 (~30 €).
+Um diesen nutzen im Freifunk-Netz nutzen zu können ist es erforderlich das
+Freifunk Betriebssystem – die Freifunk Firmware – zu installieren.
+
+Die Installation ist ganz einfach und Du benötigst keine technischen Kenntnisse.
+Wenn du dieser Anleitung folgst kann eigentlich nichts schiefgehen.
+Los geht's!
+
+## 1. Freifunk-Router mit dem Computer verbinden
+![]({{url_for('static/img/howto/wdr3500.jpg')}} "Das ist dein Router")
+
+Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - Das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit Deinem Computer. 
+
+Stecke dafür das Kabel in eine der gelben Buchsen (die blaue brauchst du später).
+
+![]({{url_for('static/img/howto/wdr3500-anschluss.jpg')}} "Steck deinen Router für die Einrichtung hier ein")
+
+## 2. Firmware runterladen
+
+Die Freifunk Firmware für den WDR3500 findest du [hier](http://firmware.berlin.freifunk.net/barrier_breaker/bleeding-edge/ar71xx/vpn/TLWDR4300/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-factory.bin).
+
+## 3. Firmware einspielen
+Jetzt kannst du den Router einfach über den Browser konfigurieren. 
+
+Dazu rufst du in deinen Browser folgende Adresse auf: **<http://192.168.0.1>**
+
+Bevor du weitermachst, musst du dich erst anmelden. Die wenig inspirierte Username / Passwort Kombination ist: **admin** / **admin**
+
+Dein Browserfenster müsste nun so aussehen – Folge hier dem Link "System Tools".
+
+![]({{url_for('static/img/howto/TP_link_start.png')}} "Geh zu System Tools")
+
+Als nächste wählst du aus dem Menü "Firmware Upgrade" (1). Danach kannst du die vorhin (in Schritt 2) geladene Datei zum Hochladen auswählen (2). Nach einem Klick auf "Upgrade" (3) beginnt der Prozess.
+
+![]({{url_for('static/img/howto/TP_link_firmware.png')}} "Wähle die Freifunk Firmware und spiele sie ein")
+
+Du musst noch einmal kurz bestätigen …
+
+![]({{url_for('static/img/howto/TP_link_firmware_file.png')}} "Einmal Bestätigen")
+
+… und die Installation läuft.
+Während die Installation läuft, zieh bitte auf keinen Fall den Stecker oder das Netzwerk-Kabel – denn dann ist dein Router hinüber.
+
+![]({{url_for('static/img/howto/TP_link_upgrade_progress.png')}} "Die Installation läuft")
+
+## 5. Abschluss
+
+Nachdem die Firmware fertig eingespielt ist, startet der Router neu.
+
+Dass der Router neu startet merkst du auch am Blinken der Lämpchen an deinem Router. Zuerst blinken alle Lämpchen wild, dann gehen sie aus. Wenn danach das Lämpchen mit dem Zahnrad gemütlich vor sich hin blinkt, ist der Router im Config-Mode angekommen.
+
+Jetzt ist der Router nicht mehr unter der angegeben Adresse sichtbar und eine Fehlermeldung erscheint.
+Das ist gut so. Denn nun läuft nicht mehr die alte Firmware sondern die neue, tolle Freifunk Firmware auf deinem Router.
+
+![]({{url_for('static/img/howto/TP_link_firmware_reboot_finished.png')}} "Die alte Firmware ist weg - die neue läuft")
+
+Als nächstes musst du deinen Router noch einrichten und im Freifunk Netz anmelden.
+Hierzu benutze den **Freifunk Wizard** im Menüeintrag.
+
+## Fragen?
+Solltest Du Fragen oder Probleme haben oder Einträge deines Knoten ändern wollen, schreibe gerne an
+
+** <berlin@berlin.freifunk.net> ** !
+
+[![]({{url_for('static/img/howto/nolaw.png')}})](http://creativecommons.org/publicdomain/zero/1.0/)
+
+Die Anleitung basiert auf
+<https://github.com/rainersax/FreifunkHamburgHandbuch>!
+
+{% endfilter %}
+{% endblock %}
