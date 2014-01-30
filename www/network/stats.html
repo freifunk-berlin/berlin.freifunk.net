@@ -148,7 +148,7 @@ var drawNodes = function(nodes) {
 };
 
 var loading = function(resolved, skipped, total) {
-  var ids = ['firmware', 'hardware', 'router'];
+  var ids = ['firmware', 'hardware', 'router', 'script'];
   for (var i=0; i < ids.length; ++i) {
     var elem = $('#' + ids[i] +  ' p');
     elem.text(resolved + ' von ' + (total-skipped) + ' Knoten geladen');
