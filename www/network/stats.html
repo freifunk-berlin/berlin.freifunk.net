@@ -77,13 +77,20 @@ var drawNodes = function(nodes) {
     } catch (e) { }
   }
 
-  var pieChart = function(id, data) {
+  var pieChart = function(id, raw) {
     var r = 150,
         labelr = r + 30,
         color = d3.scale.category20c();
+
     try{
         d3.select(id + " svg").remove();
     } catch(e) { }
+
+    var data = [];
+    for (var i in raw) {
+      if(raw[i].value > 0)
+        data.push(raw[i]);
+    }
 
     var svg = d3.select(id).append("svg")
           .data([data])
