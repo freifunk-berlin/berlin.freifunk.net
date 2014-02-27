@@ -10,6 +10,8 @@
 
 # Anleitung Starter-Kit
 
+## Schritt 1: Router Flashen
+
 Um beim Freifunk-Projekt mitmachen zu können, brauchst du zu allerst einen
 freifunkfähigen Router. Wir empfehlen zur Zeit den TL-WDR3500 (~30 €).
 Um diesen im Freifunk-Netz nutzen zu können, ist es erforderlich das
@@ -19,7 +21,7 @@ Die Installation ist ganz einfach und du benötigst keine technischen Kenntnisse
 Wenn du dieser Anleitung folgst, kann eigentlich nichts schiefgehen.
 Los geht's!
 
-## 1. Freifunk-Router mit dem Computer verbinden
+### 1.1 Freifunk-Router mit dem Computer verbinden
 ![]({{url_for('static/img/howto/wdr3500.jpg')}} "Das ist dein Router")
 
 Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - Das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit Deinem Computer. 
@@ -28,11 +30,11 @@ Stecke dafür das Kabel in eine der gelben Buchsen (die blaue brauchst du späte
 
 ![]({{url_for('static/img/howto/wdr3500-anschluss.jpg')}} "Steck deinen Router für die Einrichtung hier ein")
 
-## 2. Firmware runterladen
+### 1.2 Firmware runterladen
 
 Die Freifunk Firmware für den WDR3500 findest du [hier](http://firmware.berlin.freifunk.net/barrier_breaker/bleeding-edge/ar71xx/vpn/TLWDR4300/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-factory.bin).
 
-## 3. Firmware einspielen
+### 1.3 Firmware einspielen
 Jetzt kannst du den Router einfach über den Browser konfigurieren. 
 
 Dazu rufst du in deinen Browser folgende Adresse auf: **<http://192.168.0.1>**
@@ -56,19 +58,48 @@ Während die Installation läuft, zieh bitte auf keinen Fall den Stecker oder da
 
 ![]({{url_for('static/img/howto/TP_link_upgrade_progress.png')}} "Die Installation läuft")
 
-## 5. Abschluss
+### 1.5 Abschluss
 
 Nachdem die Firmware fertig eingespielt ist, startet der Router neu.
 
 Dass der Router neu startet merkst du auch am Blinken der Lämpchen an deinem Router. Zuerst blinken alle Lämpchen wild, dann gehen sie aus. Wenn danach das Lämpchen mit dem Zahnrad gemütlich vor sich hin blinkt, ist der Router im Config-Mode angekommen.
 
 Jetzt ist der Router nicht mehr unter der angegeben Adresse sichtbar und eine Fehlermeldung erscheint.
-Das ist gut so. Denn nun läuft nicht mehr die alte Firmware sondern die neue, tolle Freifunk Firmware auf deinem Router.
+Das ist gut so. Denn nun läuft nicht mehr die alte Firmware sondern die neue, tolle Freifunk Firmware auf deinem Router. 
 
 ![]({{url_for('static/img/howto/TP_link_firmware_reboot_finished.png')}} "Die alte Firmware ist weg - die neue läuft")
 
-Als nächstes musst du deinen Router noch einrichten und im Freifunk Netz anmelden.
-Hierzu benutze den **Freifunk Wizard** im Menüeintrag.
+## Schritt 2: IP-Adressen registieren
+Um den Freifunkassistenten ausfüllen zu können, müssen wir uns zunächst IP-Adressen unter **<http://ip.berlin.freifunk.net>** registrieren.
+
+## Schritt 3: Konfiguration mithilfe des Freifunkassistenten
+
+### 3.1 Freifunkassistent aufrufen
+Jetzt sollte der Router unter der Adresse **<http://192.168.1.1>** erreichbar sein und der Freifunkassistent erscheint (Falls die Adresse nicht erreichbar ist, kann es sein, dass du deinem Rechner eine neue IP-Adresse geben musst, z.b. 192.168.1.2 mit dem Subnetzwerk 255.255.255.0). 
+Klicke auf Essentials -> Freifunk -> Freifunkassistent.
+![]({{url_for('static/img/howto/Aufruf_Freifunkassistent.png')}} "Die alte Firmware ist weg - die neue läuft")
+
+### 3.2 Routerpasswort setzen
+Da noch kein Passwort für den Router gesetzt wurde, tun wir dies, indem wir zweimal das gleiche Passwort in die markierten Felder schreiben:
+![]({{url_for('static/img/howto/Freifunkassistent_Passwort_setzen.png')}} "Freifunkassistent Save & Apply")
+Nun gehen wir an das Ende der Seite und klicken Save & Apply.
+![]({{url_for('static/img/howto/Freifunkassistent_Passwort_SaveAndApply.png')}} "Freifunkassistent Save & Apply")
+
+### 3.3 Freifunkassistent ausfüllen
+Folgende Felder müssen ausgefüllt werden:<br>
+Freifunk Community: Berlin<br>
+Knoten Name: Der Names des Gerätes, wie er später in der Liste von Geräten die davon Internet beziehen erscheint<br>
+Standort: z.B. "Vorderhaus", "Bar", etc.<br>
+E-Mail: Pflichtfeld, damit dich Leute aus der Freifunk Community erreichen können, wenn irgendetwas ist.<br>
+
+Nun machen wir ein Häckchen bei - Drahtloses Freifunk Netzwerk "RADIO0" - Es öffnen sich weitere Einstellungsmöglichkeiten, die wir ausfüllen:<br>
+RADIO0 Freifunk Kanal einrichten: 13 (2.472 GHz)<br>
+RADIO0 Mesh IP Adresse einrichten: Die erste registierte IP-Adresse aus Schritt 2 z.b. <br>
+RADIO0 DHCP anbieten: Hacken setzen, damit andere über deinen Router in das Freifunknetz kommen können.<br>
+RADIO0 Mesh DHCP anbieten: Wenn Du mehrere Adressen registriert hast, gibst Du Dein Subnetz ein, 104.x.y.z/n, z.B. 104.203.0.80/28. <br>
+
+
+## Schritt3: VPN einrichten
 
 ## Fragen?
 Solltest Du Fragen oder Probleme haben oder Einträge deines Knoten ändern wollen, schreibe gerne an
@@ -77,8 +108,10 @@ Solltest Du Fragen oder Probleme haben oder Einträge deines Knoten ändern woll
 
 [![]({{url_for('static/img/howto/nolaw.png')}})](http://creativecommons.org/publicdomain/zero/1.0/)
 
-Die Anleitung basiert auf
+Die Anleitung "Router Flashen" basiert auf
 <https://github.com/rainersax/FreifunkHamburgHandbuch>.
+Die Anleitung "Freifunkassistent" basiert auf
+<http://wiki.freifunk.net/Tutorial_TL-WR741ND>
 
 {% endfilter %}
 {% endblock %}
