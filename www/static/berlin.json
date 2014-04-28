@@ -1,43 +1,33 @@
 {
   "name": "Freifunk Berlin",
-  "url": "http://berlin.freifunk.net",
-  "state": {
-    "nodes": 182,
-    "lastchange": 1382286279,
-    "message": "open for public"
-  },
+  "url": "http://berlin.freifunk.net/",
   "location": {
     "city": "Berlin",
-    "address": {
-      "Name": "C-Base",
-      "Street": "Rungestraße 20",
-      "Zipcode": "10179"
-    },
+    "country": "Germany",
     "lat": 52.518725,
-    "lon": 13.40312
+    "lon": 13.40312,
+    "address": {
+      "Name": "c-base",
+      "Street": "Rungestr. 20",
+      "Zipcode": "10179"
+    }
   },
   "contact": {
     "email": "berlin@berlin.freifunk.net",
     "ml": "berlin@berlin.freifunk.net",
-    "twitter": "freifunk_berlin"
+    "twitter": "@freifunk_berlin"
+  },
+  "state": {
+    "nodes": 235,
+    "message": "open for everyone",
+    "lastchange": "2014-04-28T09:18:51.816Z"
   },
   "techDetails": {
-    "stoererhaftung": "Förderverein Freie Netzwerke (ISP) VPN",
+    "stoererhaftung": "Förderverein Freie Netzwerke (ISP) VPN03",
     "firmware": {
-      "url": "http://firmware.pberg.freifunk.net/attitude_adjustment/12.09/",
-      "name": "Pberg Firmware"
+      "name": "Berlin"
     },
-    "networks": {
-      "ipv4": [
-        {
-          "netmask": 8,
-          "network": "104.0.0.0"
-        }
-      ]
-    },
-    "routing": "OLSR",
-    "topodata": "http://api.openwifimap.net/view_nodes_spatial?bbox=13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279",
-    "vpn": "OpenVPN"
+    "routing": "OLSR"
   },
-  "api": "0.1"
+  "api": "0.3.0"
 }
