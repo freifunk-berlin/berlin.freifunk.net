@@ -3,7 +3,7 @@
   "url": "http://berlin.freifunk.net/",
   "location": {
     "city": "Berlin",
-    "country": "Germany",
+    "country": "DE",
     "lat": 52.518725,
     "lon": 13.40312,
     "address": {
@@ -19,15 +19,34 @@
   },
   "state": {
     "nodes": 235,
-    "message": "open for everyone",
-    "lastchange": "2014-04-28T09:18:51.816Z"
+    "focus": [
+      "infrastructure/backbone",
+      "Public Free Wifi",
+      "Free internet access"
+    ],
+    "lastchange": "2014-06-30T21:50:27.347Z"
   },
+  "nodeMaps": [
+    {
+      "url": "http://www.openwifimap.net",
+      "interval": "daily",
+      "technicalType": "openwifimap",
+      "mapType": "geographical"
+    }
+  ],
   "techDetails": {
-    "stoererhaftung": "Förderverein Freie Netzwerke (ISP) VPN03",
     "firmware": {
       "name": "Berlin"
     },
-    "routing": "OLSR"
+    "routing": [
+      "batman-adv",
+      "OLSR"
+    ],
+    "legals": [
+      "zappscript",
+      "institutions"
+    ],
+    "updatemode": []
   },
-  "api": "0.3.0"
+  "api": "0.3.2"
 }
