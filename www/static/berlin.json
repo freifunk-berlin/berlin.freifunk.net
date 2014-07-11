@@ -24,7 +24,7 @@
       "Public Free Wifi",
       "Free internet access"
     ],
-    "lastchange": "2014-06-30T21:50:27.347Z"
+    "lastchange": "2014-07-11T17:04:06.097Z"
   },
   "nodeMaps": [
     {
@@ -48,5 +48,5 @@
     ],
     "updatemode": []
   },
-  "api": "0.3.2"
+  "api": "0.4.1"
 }
