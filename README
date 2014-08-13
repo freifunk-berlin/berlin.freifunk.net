@@ -3,7 +3,7 @@ Freifunk Berlin
 
   $ git clone git://github.com/freifunk/berlin.freifunk.net.git
   $ cd berlin.freifunk.net
-  $ pip install cyrax
+  $ pip install cyrax markdown2
   $ cd www
   $ cyrax -vw
 
