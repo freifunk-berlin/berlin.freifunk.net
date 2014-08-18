@@ -134,10 +134,9 @@ ul.submenu li {
   text-align: center;
 }
 
-#news {
+#announcement {
   width: 80%;
   margin: 20px auto;
-  border: 1px dashed #000;
   text-align: center;
   padding: 10px;
 }
