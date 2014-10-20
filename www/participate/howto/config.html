@@ -1,0 +1,56 @@
+{% meta %}
+endpoint: participate_howto
+parent_tmpl: participate/_layout.html
+{% endmeta %}
+{% block content %}
+{% filter markdown %}
+
+Nachdem du dir ein paar [IP-Adresssen geklickt](http://ip.berlin.freifunk.net) hast und deinen Router erfolgreich [geflashed]({{url_for('participate/howto/flash')}}) hast, erscheint nach dem Neustarten des Gerätes sofort der [Berliner Freifunk Assistent](http://frei.funk), der dir beim Einrichten deines Freifunk-Routers helfen kann.
+
+Erstelle zu erst ein neues Passwort für deinen Router:
+
+![]({{url_for('static/img/howto/config/passwort.png')}} "Screenshot Passworteingabe")
+
+Mit einem Klick auf den "Next" Button erscheint die Kontaktseite, auf der die deine Kontaktdaten eingeben kannst. Wenn du dich dafür entscheidest hier deine Daten korrekt einzugeben, ist es anderen FreifunkerInnen möglich, sich mit dir in Verbindung zu setzten, falls sie ihren Router mit deinem verbinden möchten
+
+![]({{url_for('static/img/howto/config/kontakt.png')}} "Screenshot Kontakteingabe")
+
+Auf der nächsten Seite musst du dich entscheiden, wie du am Freifunknetz teilnehmen möchtest:
+
+1. Internet teilen
+2. Freifunknetz bereitstellen
+
+Falls du dein Internet teilen möchtest, klick auf den Button "Internet teilen" und frag vorher auf der [Mailingliste](http://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin) nach einem VPN-Schlüssel. Dieser wird dir in einer zip Datei per Mail zugesckickt.
+Falls du das Freifunknetz erweitern möchtest ohne dein Internet zu teilen, muss ein anderer Freifunk Router in der Nähe sein, mit dem sich dein Router verbinden kann. In unserer [Karte]({{url_for('network/map')}}) findest du viele der Berliner Freifunkrouter. Du kannst auch andere FreifunkerInnen kontaktieren, um eine optimale Ausrichtung der Router abzusprechen.
+
+![]({{url_for('static/img/howto/config/entscheidung.png')}} "Screenshot Entscheidung Internet teilen oder Freifunknetz bereitstellen")
+
+(Falls du dein Internet nicht teilst, klick hier um den nächsten Punkt zu überspringen)
+
+Entpacke die zip Datei, die du von einem anderen Freifunker erhalten hast auf deinem Computer. Darin sind neben anderen Dateien zwei wichtige für deinen Router:
+
+* dein-vpn-tunnelname.crt
+* dein-vpn-tunnelname.key
+
+Lade die beiden Dateien auf der nächsten Seite hoch. Hier kannst du auch eingeben, wieviel Bandbreite du dem Freifunknetz Verfügung stellen möchtest.
+
+![]({{url_for('static/img/howto/config/internet.png')}} "Screenshot Internet teilen")
+
+Mit einem Klick auf "Next" Button kommst du zu den optioalen Einstellungen:
+
+![]({{url_for('static/img/howto/config/optionaleEinstellungen.png')}} "Screenshot oprtionale Einstllungen")
+
+Hier kannst das zentrale Monitoring einschalten. Außerdem kannst du einen privaten Access Point konfigurieren, falls du neben dem Freifunnk Access Point noch einen verschlüsselten Zugangspunkt haben möchtest. Daten über diesen Access Point werden auch nicht über das Freifunk Netz sondern direkt über deinen Internetanschluss weiter geleitet.
+
+Auf der nächsten Seite konfigurierst du die IP-Adressen für deinen Router. Falls du es noch nicht gemacht hast, solltest du dir jetzt ein paar [Adressen registrieren](http://ip.berlin.freifunk.net).
+
+![]({{url_for('static/img/howto/config/ipeinstellungen.png')}} "Screenshot IP Adressen konfigurieren")
+
+Je nachdem auf wievielen Frequezen dein Router sendet, kannst du entweder eine oder zwei IP Adressen zum [Meshen](http://wiki.freifunk.net/Meshing) konfigurieren. Über diese Adressen kann sich dein Router mit anderen Freifunk Routern verbinden und erweitert so das Netz.
+
+Die SSID ist der Name deines Freifunknetzes mit dem du, deine Besucher und deine Nachbarn sich später per Handy oder Computer verbinden können. Mit dem Addressraum werden die IP Adressen konfiguriert, die Nutzer deines Zugangspunktes erhalten.
+
+Wenn du jetzt noch ein letztes Mal auf den "Next" klickst, hast du es geschafft! Nachdem dein Router neugestartet hat, funkst du frei :D
+
+{% endfilter %}
+{% endblock %}
