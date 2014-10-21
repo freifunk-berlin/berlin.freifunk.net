@@ -1,11 +1,13 @@
 {% meta %}
-endpoint: participate_howto
+endpoint: participate_howto_config
 parent_tmpl: participate/_layout.html
 {% endmeta %}
 {% block content %}
 {% filter markdown %}
 
-Nachdem du dir ein paar [IP-Adresssen geklickt](http://ip.berlin.freifunk.net) hast und deinen Router erfolgreich [geflashed]({{url_for('participate/howto/flash')}}) hast, erscheint nach dem Neustarten des Gerätes sofort der [Berliner Freifunk Assistent](http://frei.funk), der dir beim Einrichten deines Freifunk-Routers helfen kann.
+# Anleitung Router konfigurieren
+
+Nachdem du dir ein paar [IP-Adresssen geklickt](http://config.berlin.freifunk.net) hast und deinen Router erfolgreich [geflashed]({{url_for('participate/howto/flash')}}) hast, erscheint nach dem Neustarten des Gerätes sofort der <a href="http://frei.funk" target="_blank">Berliner Freifunk Assistent</a>, der dir beim Einrichten deines Freifunk-Routers helfen kann.
 
 Erstelle zu erst ein neues Passwort für deinen Router:
 
