@@ -1,0 +1,30 @@
+{% meta %}
+endpoint: participate_howto
+parent_tmpl: participate/_layout.html
+{% endmeta %}
+
+{% block content %}
+
+{% filter markdown %}
+
+## Wie werde ich Freifunker_in?
+
+Um beim Freifunk-Projekt mitmachen zu können, ist es erforderlich drei Dinge zu tun:
+
+1. [IP Adressen registrieren](http://config.berlin.freifunk.net)
+2. [Freifunkfirmware installieren]({{url_for('participate/howto/flash')}})
+3. [Router konfigurieren]({{url_for('participate/howto/config')}})
+
+Die Installation und Konfiguration ist ganz einfach und du benötigst keine technischen Kenntnisse.
+Wenn du dieser Anleitung folgst, kann eigentlich nichts schiefgehen.
+
+Falls du Fragen hast, kannst du dich jederzeit an unsere [Mailingliste](http://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin) wenden oder zu einem unserer [Treffen]({{url_for('contact')}}) kommen.
+
+Los geht's!
+
+<div class="text-center">
+  <img src="{{url_for('static/img/participate_small.png')}}" />
+</div>
+
+{% endfilter %}
+{% endblock %}
