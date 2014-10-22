@@ -4,9 +4,8 @@
 {% endmeta %}
 
 {% block content %}
-
+<div id="howto">
 {% filter markdown %}
-
 
 ## Wie *flashe* ich meinen Router?
 
@@ -16,21 +15,22 @@ Wir empfehlen zur Zeit den TL-WDR3500 (~30 €).
 Um diesen im Freifunk-Netz nutzen zu können, ist es erforderlich das
 Freifunk Betriebssystem – die Freifunk Firmware – zu installieren.
 
-## 1. Freifunk-Router mit dem Computer verbinden
-![]({{url_for('static/img/howto/wdr3500.jpg')}} "Das ist dein Router")
+### 1. Freifunk-Router mit dem Computer verbinden
 
-Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - Das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit Deinem Computer.
 
-Stecke dafür das Kabel in eine der gelben Buchsen (die blaue brauchst du später).
+<p class="pull-left">
+  <img src="{{url_for('static/img/howto/wdr3500-anschluss.jpg')}}" alt="Steck deinen Router für die Einrichtung hier ein Router") style="width: 200px; float: left; margin: 0 10px" />
+    Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - Das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit Deinem Computer.
 
-![]({{url_for('static/img/howto/wdr3500-anschluss.jpg')}} "Steck deinen Router für die Einrichtung hier ein")
+    Stecke dafür das Kabel in eine der gelben Buchsen (die blaue brauchst du später).
+</p>
 
-## 2. Firmware runterladen
+### 2. Firmware runterladen
 
 Die Freifunk Firmware für den WDR3500 findest du [hier](http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.1/ar71xx/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-factory.bin).
 Falls du dir schon deine [IP-Adressen registriert](http://config.berlin.freifunk.net) hast, hast du bereits eine Mail erhalten, in der es einen Link zu deiner Firmware gibt. Weitere Firmeware Images für andere Modelle kannst du [hier](http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.1) herunterladen.
 
-## 3. Firmware einspielen
+### 3. Firmware einspielen
 Jetzt kannst du den Router einfach über den Browser konfigurieren.
 
 Dazu rufst du in deinen Browser folgende Adresse auf: <a href="http://frei.funk" target="_blank">http://frei.funk</a>
@@ -79,4 +79,5 @@ Die Anleitung basiert auf
 <https://github.com/rainersax/FreifunkHamburgHandbuch>.
 
 {% endfilter %}
+</div>
 {% endblock %}

@@ -1,8 +1,7 @@
 /*
  * Global
  */
-@font-face {
-  font-family: 'Liberation Sans';
+@font-face { font-family: 'Liberation Sans';
   font-style: normal;
   font-weight: 400;
   src: local('Liberation Sans'), local('Liberation'), url('LiberationSansNarrow-Regular.woff') format('woff');
@@ -260,4 +259,9 @@ path.active {
 
 .vjs-default-skin:hover .vjs-big-play-button {
   border-color: #db0166;
+}
+
+#howto h3 {
+  clear: both;
+  margin-top: 30px;
 }
