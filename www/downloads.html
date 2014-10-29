@@ -4,29 +4,170 @@
 
 {% block content %}
 <h3>Freifunk-Firmware</h3>
-Zur Zeit empfehlen wir interessierten Menschen die Pberg-Firmware zu
-nutzen. Die Firmware beinhaltet den Routing-Daemon OLSR, IPv4/6-Support,
-Open-VPN und Scripts zur Visualisierung des Knotes auf der Openwifimap. Es gibt
-zwei verschiedene Versionen. Für Einsteiger empfiehlt sich die
-<i>stable</i>-Version. Nur für Interessierte oder falls die Hardware noch nicht
-unterstützt wird sollte auf <i>Barrier Breaker</i> zurückgegriffen werden:
+<p>
+  Am besten suchst du dir die richtige Firmware für deinen Router über
+  <a href="http://config.berlin.freifunk.net">config.berlin.freifunk.net</a>.
+  Du kannst aber auch aus folgender Auflistung deinen Router direkt wählen:
+</p>
 
-<ul>
-  <li>
-    Stable:
-    <a href="http://download.berlin.freifunk.net/attitude_adjustment/">
-    Attitude Adjustment
-    </a>
-  </li>
-  <li>
-    Testing:
-    <a href="http://firmware.berlin.freifunk.net/barrier_breaker/">
-    Barrier Breaker
-    </a>
-  </li>
-</ul>
+<h4>v0.0.0 - kathleen</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Router</th>
+      <th>Erstinstallation</th>
+      <th>Aktualisierung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TL-WDR3500</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-factory.bin">v1</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-sysupgrade.bin">v1</a>
+      </td>
+    </tr>
 
-Sollte etwas in der Firmware nicht korrekt funktionieren, so findet sich unser Bugtracker auf github: <a href="https://github.com/freifunk/firmware-berlin/issues">https://github.com/freifunk/firmware-berlin/issues</a>. Ein Ticket kann auch gleich <a href="https://github.com/freifunk/firmware-berlin/issues/new">direkt</a> angelegt werden.
+    <tr>
+      <td>TL-WDR3600</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wdr3600-v1-squashfs-factory.bin">v1</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wdr3600-v1-squashfs-sysupgrade.bin">v1</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WDR4300</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wdr4300-v1-squashfs-factory.bin">v1</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wdr4300-v1-squashfs-sysupgrade.bin">v1</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Nanostation</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-ubnt-nano-m-squashfs-factory.bin">M2/M5</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-ubnt-nano-m-xw-squashfs-factory.bin">M2 XW/M5 XW</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-ubnt-nano-m-squashfs-factory.bin">M2/M5</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-ubnt-nano-m-xw-squashfs-sysupgrade.bin">M2 XW/M5 XW</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Nanobridge</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-ubnt-bullet-m-squashfs-factory.bin">M2/M5</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-ubnt-bullet-m-squashfs-sysupgrade.bin">M2/M5</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WR740N ND</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr740n-v1-squashfs-factory.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr740n-v3-squashfs-factory.bin">v3</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr740n-v4-squashfs-factory.bin">v4</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr740n-v1-squashfs-sysupgrade.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr740n-v3-squashfs-sysupgrade.bin">v3</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr740n-v4-squashfs-sysupgrade.bin">v4</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WR741N ND</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr741nd-v1-squashfs-factory.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr741nd-v2-squashfs-factory.bin">v2</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr741nd-v4-squashfs-factory.bin">v4</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr741nd-v1-squashfs-sysupgrade.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr741nd-v2-squashfs-sysupgrade.bin">v2</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr741nd-v4-squashfs-sysupgrade.bin">v4</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WR743N ND</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr743nd-v1-squashfs-factory.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr743nd-v2-squashfs-factory.bin">v2</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr743nd-v1-squashfs-sysupgrade.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr743nd-v2-squashfs-sysupgrade.bin">v2</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WR841N N</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841n-v8-squashfs-factory.bin">v8</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841n-v9-squashfs-factory.bin">v9</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841n-v8-squashfs-sysupgrade.bin">v8</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841n-v9-squashfs-sysupgrade.bin">v9</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WR841N ND</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841nd-v3-squashfs-factory.bin">v3</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841nd-v5-squashfs-factory.bin">v5</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841nd-v7-squashfs-factory.bin">v7</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841nd-v3-squashfs-sysupgrade.bin">v3</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841nd-v5-squashfs-sysupgrade.bin">v5</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr841nd-v7-squashfs-sysupgrade.bin">v7</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WR842N N</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr842n-v1-squashfs-factory.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr842n-v2-squashfs-factory.bin">v2</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr842n-v1-squashfs-sysupgrade.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr842n-v2-squashfs-sysupgrade.bin">v2</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TL-WR1043N ND</td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr1043nd-v1-squashfs-factory.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr1043nd-v2-squashfs-factory.bin">v2</a>
+      </td>
+      <td>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr1043nd-v1-squashfs-sysupgrade.bin">v1</a>
+        <a href="http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wr1043nd-v2-squashfs-sysupgrade.bin">v2</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Sollte etwas in der Firmware nicht korrekt funktionieren, so teile uns das bitte <a href="https://github.com/freifunk/firmware-berlin/issues/new">hier</a> mit.
+</p>
+
 
 <h3>Downloads</h3>
 <ul>
