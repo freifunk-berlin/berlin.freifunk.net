@@ -1,41 +1,39 @@
 {% meta %}
-  endpoint: participate_howto
+  endpoint: participate_howto_flash
   parent_tmpl: participate/_layout.html
 {% endmeta %}
 
 {% block content %}
-
+<div id="howto">
 {% filter markdown %}
 
+## Wie *flashe* ich meinen Router?
 
-# Anleitung Starter-Kit
+[zurück zur Übersicht]({{url_for('participate/howto')}})
 
-Um beim Freifunk-Projekt mitmachen zu können, brauchst du zu allerst einen
-freifunkfähigen Router. Wir empfehlen zur Zeit den TL-WDR3500 (~30 €).
+Wir empfehlen zur Zeit den TL-WDR3500 (~30 €).
 Um diesen im Freifunk-Netz nutzen zu können, ist es erforderlich das
 Freifunk Betriebssystem – die Freifunk Firmware – zu installieren.
 
-Die Installation ist ganz einfach und du benötigst keine technischen Kenntnisse.
-Wenn du dieser Anleitung folgst, kann eigentlich nichts schiefgehen.
-Los geht's!
+### 1. Freifunk-Router mit dem Computer verbinden
 
-## 1. Freifunk-Router mit dem Computer verbinden
-![]({{url_for('static/img/howto/wdr3500.jpg')}} "Das ist dein Router")
 
-Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - Das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit Deinem Computer. 
+<p class="pull-left">
+  <img src="{{url_for('static/img/howto/wdr3500-anschluss.jpg')}}" alt="Steck deinen Router für die Einrichtung hier ein Router") style="width: 200px; float: left; margin: 0 10px" />
+    Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - Das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit Deinem Computer.
 
-Stecke dafür das Kabel in eine der gelben Buchsen (die blaue brauchst du später).
+    Stecke dafür das Kabel in eine der gelben Buchsen (die blaue brauchst du später).
+</p>
 
-![]({{url_for('static/img/howto/wdr3500-anschluss.jpg')}} "Steck deinen Router für die Einrichtung hier ein")
+### 2. Firmware runterladen
 
-## 2. Firmware runterladen
+Die Freifunk Firmware für den WDR3500 findest du [hier](http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.1/ar71xx/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-factory.bin).
+Falls du dir schon deine [IP-Adressen registriert](http://config.berlin.freifunk.net) hast, hast du bereits eine Mail erhalten, in der es einen Link zu deiner Firmware gibt. Weitere Firmeware Images für andere Modelle kannst du [hier](http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.1) herunterladen.
 
-Die Freifunk Firmware für den WDR3500 findest du [hier](http://firmware.berlin.freifunk.net/barrier_breaker/bleeding-edge/ar71xx/vpn/TLWDR4300/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-factory.bin).
+### 3. Firmware einspielen
+Jetzt kannst du den Router einfach über den Browser konfigurieren.
 
-## 3. Firmware einspielen
-Jetzt kannst du den Router einfach über den Browser konfigurieren. 
-
-Dazu rufst du in deinen Browser folgende Adresse auf: **<http://192.168.0.1>**
+Dazu rufst du in deinen Browser folgende Adresse auf: <a href="http://frei.funk" target="_blank">http://frei.funk</a>
 
 Bevor du weitermachst, musst du dich erst anmelden. Die wenig inspirierte Username / Passwort Kombination ist: **admin** / **admin**
 
@@ -68,7 +66,7 @@ Das ist gut so. Denn nun läuft nicht mehr die alte Firmware sondern die neue, t
 ![]({{url_for('static/img/howto/TP_link_firmware_reboot_finished.png')}} "Die alte Firmware ist weg - die neue läuft")
 
 Als nächstes musst du deinen Router noch einrichten und im Freifunk Netz anmelden.
-Hierzu benutze den **Freifunk Wizard** im Menüeintrag.
+Hierzu benutze den [Freifunk Wizard]({{url_for('participate/howto/config')}}) im Menüeintrag.
 
 ## Fragen?
 Solltest Du Fragen oder Probleme haben oder Einträge deines Knoten ändern wollen, schreibe gerne an
@@ -81,4 +79,5 @@ Die Anleitung basiert auf
 <https://github.com/rainersax/FreifunkHamburgHandbuch>.
 
 {% endfilter %}
+</div>
 {% endblock %}
