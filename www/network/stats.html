@@ -5,31 +5,73 @@
 
 {% block content %}
 <noscript><big>Für diese Seite wird JavaScript benötigt!<br />Bitte verwenden Sie einen modernen Browser mir aktiviertem Javascript.</big></noscript>
+<script src="{{url_for('static/js/chart.js')}}"></script>
 
-<div id="firmware">
-  <h3>Firmware</h3>
-  <p>Lade Daten...</p>
+
+<div id="firmware" class="row">
+  <div class="span12">
+    <h3>Firmware</h3>
+    <p>Lade Daten...</p>
+  </div>
+  <div class="span5">
+    <canvas id="firmwarePie" width="400px" height="400px"></canvas>
+  </div>
+  <div class="span5">
+    <div id="firmwareLegend">
+  </div>
 </div>
 
-<div id="router">
-  <h3>Router</h3>
-  <p>Lade Daten...</p>
+<div id="router" class="row">
+  <div class="span12">
+    <h3>Router</h3>
+    <p>Lade Daten...</p>
+  </div>
+  <div class="span5">
+    <canvas id="routerPie" width="400px" height="400px"></canvas>
+  </div>
+  <div class="span5">
+    <div id="routerLegend">
+  </div>
 </div>
 
-<div id="hardware">
-  <h3>Chipsatz</h3>
-  <p>Lade Daten...</p>
+<div id="hardware" class="row">
+  <div class="span12">
+    <h3>Chipsatz</h3>
+    <p>Lade Daten...</p>
+  </div>
+  <div class="span5">
+    <canvas id="hardwarePie" width="400px" height="400px"></canvas>
+  </div>
+  <div class="span5">
+    <div id="hardwareLegend">
+  </div>
 </div>
 
-<div id="script">
-  <h3>Map-Scripts</h3>
-  <p>Lade Daten...</p>
+<div id="script" class="row">
+  <div class="span12">
+    <h3>Map-Scripts</h3>
+    <p>Lade Daten...</p>
+  </div>
+  <div class="span5">
+    <canvas id="scriptPie" width="400px" height="400px"></canvas>
+  </div>
+  <div class="span5">
+    <div id="scriptLegend">
+  </div>
 </div>
-
 
 <script>
 var bbox = '13.179473876953125,52.45308034523523,13.647079467773438,52.59241215943279',
     map = new Openwifimap('http://api.openwifimap.net', bbox);
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 var drawNodes = function(nodes) {
   var firmwares = [{ 'id' : 'unknown', 'value' : 0 }];
@@ -77,81 +119,42 @@ var drawNodes = function(nodes) {
     } catch (e) { }
   }
 
-  var pieChart = function(id, raw) {
-    var r = 150,
-        labelr = r + 30,
-        color = d3.scale.category20c();
-
-    try{
-        d3.select(id + " svg").remove();
-    } catch(e) { }
-
-    var data = [];
-    for (var i in raw) {
-      if(raw[i].value > 0)
-        data.push(raw[i]);
-    }
-
-    var svg = d3.select(id).append("svg")
-          .data([data])
-          .attr("width", "100%")
-          .attr("height", "353px")
-          .style("display", "none");
-
-    var transX = r + 10,
-        transY = r + 10;
-
-    var vis = svg.append("g")
-        .attr("transform", "translate(" + transX + "," + transY + ")")
-
-    var pie = d3.layout.pie()
-        .value(function(d) { return d.value; });
-
-    var arc = d3.svg.arc()
-          .outerRadius(r);
-
-    var arcs = vis.selectAll("g.slice")
-        .data(pie)
-        .enter()
-          .append("g")
-          .attr("class", "slice")
-
-    arcs.append("path")
-        .attr("fill", function(d, i) { return color(i); } )
-        .attr("d", arc);
-
-    svg.selectAll("rect")
-        .data(pie)
-        .enter()
-          .append("rect")
-          .attr("x", 2*r + 50)
-          .attr("y", function(d,i) { return 20*(1 + i) })
-          .attr("width", 10)
-          .attr("height", 10)
-          .attr("fill", function(d, i) { return color(i); } )
-          .text(function(d, i) { return data[i].id; });
-
-    svg.selectAll(".label")
-        .data(pie)
-        .enter()
-          .append("text")
-          .attr("dx", 2*r + 80)
-          .attr("dy", function(d,i) { return 20*(1.5+i) })
-          .text(function(d, i) {
-            return data[i].id + " ("+ data[i].value + ")";
-          });
-
-    $(id + ' p').fadeOut('slow', function() {
-      $('svg').fadeIn('slow');
-    });
-  };
-
+  {% raw %}
   var cmp = (function(a,b) {return b.value - a.value});
-  pieChart("#firmware", firmwares.sort(cmp));
-  pieChart("#hardware", hardwares.sort(cmp));
-  pieChart("#router", routers.sort(cmp));
-  pieChart("#script", scripts.sort(cmp));
+  firmwares = firmwares.sort(cmp);
+  hardwares = hardwares.sort(cmp);
+  routers = routers.sort(cmp);
+  scripts = scripts.sort(cmp);
 
+
+  drawPie = function(data, chart_id) {
+    var ctx = document.getElementById(chart_id + "Pie").getContext("2d");
+    data.map(function(x) {
+      x["color"] = getRandomColor();
+      x["label"]=x["id"];
+      delete x["id"];
+      return x
+    })
+    legendTemplate = "\
+    <ul style=\"list-style-type: none;\">\
+      <% for (var i=0; i<segments.length; i++){%>\
+        <li>  \
+          <span class=\"labelbox\" style=\"color:<%=segments[i].fillColor%>\">&#9899</span>\
+          <%if(segments[i].label){%><%=segments[i].label%><%}%> : <%if(segments[i].value){%><%=segments[i].value %><%}%>\
+        </li>\
+      <%}%>\
+    </ul>"
+    var myDoughnutChart = new Chart(ctx).Doughnut(data ,{segmentShowStroke : true, legendTemplate: legendTemplate});
+    var legend = myDoughnutChart.generateLegend();
+    $('#' + chart_id + 'Legend').append(legend);
+    $("#" + chart_id + ' p').fadeOut('slow')
+  }
+  drawPie(firmwares, "firmware")
+  drawPie(routers, "router")
+  drawPie(hardwares, "hardware")
+  drawPie(scripts, "script")
+
+  {% endraw %}
 };
 
 var loading = function(resolved, skipped, total) {
