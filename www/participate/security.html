@@ -1,0 +1,49 @@
+{% meta %}
+  endpoint: participate_security
+  parent_tmpl: participate/_layout.html
+{% endmeta %}
+
+{% block content %}
+{% filter markdown %}
+
+### Hinweise zur Sicherheit im (Freifunk-)Netz
+
+#### Unverschlüsseltes WLAN
+
+#### Anonymität im Freifunk
+
+* Keine Registrierung
+* Eindeutige IP
+* Daten sichtbar
+
+#### Wie kann ich meine Daten schützen
+
+##### Off the record messaging (OTR)
+
+* Nutzen um Kommunikation im Chat z.B. jabber zu verschlüsseln.
+
+##### HTTPS
+
+* https in der Adresszeile
+* https everywhere als plugin installieren
+
+##### GPG
+
+* email
+
+##### SSL
+
+* email
+
+##### Starke Passwörter
+
+##### Sicherheits Updates
+
+* regelmäßig einspielen
+
+##### adblock
+
+##### Anti-Tracking tools
+
+{% endfilter %}
+{% endblock %}
