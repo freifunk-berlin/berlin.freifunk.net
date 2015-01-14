@@ -44,12 +44,13 @@ Dein Browserfenster müsste nun so aussehen – Folge hier dem Link "System Tool
 
 Als nächste wählst du aus dem Menü "Firmware Upgrade" (1). Danach kannst du die vorhin (in Schritt 2) geladene Datei zum Hochladen auswählen (2). Nach einem Klick auf "Upgrade" (3) beginnt der Prozess.
 
-Bei TL-WR841N v8.4: Beim Flashen über das Firmware-Upgrade der Original-Firmware tritt ggf. folgender Fehler auf:
+Hinweis zu TL-WR841N v8.4: Beim Flashen über das Firmware-Upgrade der Original-Firmware tritt ggf. folgender Fehler auf:
 
     Error code: 23002
     The uploaded file name is too long!
 
-Hier hilft einfaches Umbenennen der herunter geladenen Freifunk-Firmware.
+Hier hilft einfaches Umbenennen der heruntergeladenen Freifunk-Firmware vor dem
+Upload.
 
 ![]({{url_for('static/img/howto/TP_link_firmware.png')}} "Wähle die Freifunk Firmware und spiele sie ein")
 
@@ -68,8 +69,11 @@ Nachdem die Firmware fertig eingespielt ist, startet der Router neu.
 
 Dass der Router neu startet merkst du auch am Blinken der Lämpchen an deinem Router. Zuerst blinken alle Lämpchen wild, dann gehen sie aus. Wenn danach das Lämpchen mit dem Zahnrad gemütlich vor sich hin blinkt, ist der Router im Config-Mode angekommen.
 
-Jetzt ist der Router nicht mehr unter der angegeben Adresse sichtbar und eine Fehlermeldung erscheint.
-Das ist gut so. Denn nun läuft nicht mehr die alte Firmware sondern die neue, tolle Freifunk Firmware auf deinem Router. Rufe in deinen Browser dazu folgende Adresse auf: **<http://192.168.42.1>**
+Jetzt ist der Router nicht mehr unter der angegeben Adresse erreichbar und
+eine Fehlermeldung erscheint. Das ist gut so, denn nun läuft nicht mehr die
+alte Firmware, sondern die neue Freifunk Firmware auf deinem Router. Deinen
+Router erreicht du, indem du die folgende Adresse in deinem Browser eingibst:
+**<http://192.168.42.1>**
 
 ![]({{url_for('static/img/howto/TP_link_firmware_reboot_finished.png')}} "Die alte Firmware ist weg - die neue läuft")
 
@@ -77,9 +81,11 @@ Als nächstes musst du deinen Router noch einrichten und im Freifunk Netz anmeld
 Hierzu benutze den [Freifunk Wizard]({{url_for('participate/howto/config')}}) im Menüeintrag.
 
 ## Fragen?
-Solltest Du Fragen oder Probleme haben oder Einträge deines Knoten ändern wollen, schreibe gerne an
 
-** <berlin@berlin.freifunk.net> ** !
+Solltest Du Fragen oder Probleme haben oder Einträge deines Knoten ändern
+wollen, erreichst du uns unter:
+
+**<berlin@berlin.freifunk.net>**
 
 [![]({{url_for('static/img/howto/nolaw.png')}})](http://creativecommons.org/publicdomain/zero/1.0/)
 
