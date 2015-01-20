@@ -11,13 +11,13 @@
 
 [zurück zur Übersicht]({{url_for('participate/howto')}})
 
-Wir empfehlen zur Zeit den TL-WDR3500 (~30 €).
-Um diesen im Freifunk-Netz nutzen zu können, ist es erforderlich das
-Freifunk Betriebssystem – die Freifunk Firmware – zu installieren.
+Wir empfehlen zur Zeit den TL-WDR3600 (~40 €).
+Um diesen im Freifunk-Netz nutzen zu können, ist es erforderlich, das
+Freifunk-Betriebssystem – die Freifunk-Firmware – zu installieren.
 
 ### 1. Firmware runterladen
 
-Die Freifunk Firmware für den WDR3500 findest du [hier](http://buildbot.berlin.freifunk.net/buildbot/stable/0.0.0/ar71xx/openwrt-ar71xx-generic-tl-wdr3500-v1-squashfs-factory.bin).
+Die Berliner Freifunk-Firmware findest du auf der [Download-Seite]({{url_for('downloads')}}).
 Falls du dir schon deine [IP-Adressen registriert](http://config.berlin.freifunk.net/wizard/routers) hast, hast du bereits eine Mail erhalten, in der es einen Link zu deiner Firmware gibt. Weitere Firmeware Images für andere Modelle kannst du unter [Downloads]({{url_for('downloads')}}) herunterladen.
 
 ### 2. Freifunk-Router mit dem Computer verbinden
@@ -25,9 +25,9 @@ Falls du dir schon deine [IP-Adressen registriert](http://config.berlin.freifunk
 
 <p class="pull-left">
   <img src="{{url_for('static/img/howto/wdr3500-anschluss.jpg')}}" alt="Steck deinen Router für die Einrichtung hier ein Router") style="width: 200px; float: left; margin: 0 10px" />
-    Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - Das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit Deinem Computer.
+    Bitte schließe deinen Router (1) (Die Antenne (2) kannst du jetzt oder auch später aufschrauben.) an eine Steckdose an - das Kabel dazu ist dabei (3). Verbinde dann den Router mit dem beiliegenden grauen LAN-Kabel (4) mit deinem Computer.
 
-    Stecke dafür das Kabel in eine der gelben Buchsen (die blaue brauchst du später).
+    Stecke dafür das Kabel in eine der gelben Buchsen (die blaue Buchse brauchst du später).
 </p>
 
 
@@ -36,13 +36,13 @@ Jetzt kannst du den Router einfach über den Browser konfigurieren.
 
 Dazu rufst du in deinen Browser folgende Adresse auf: **<http://192.168.0.1>** 
 
-Bevor du weitermachst, musst du dich erst anmelden. Die wenig inspirierte Username / Passwort Kombination ist: **admin** / **admin**
+Bevor du weitermachst, musst du dich erst anmelden. Die wenig inspirierte Username/Passwort-Kombination ist: **admin** / **admin**
 
 Dein Browserfenster müsste nun so aussehen – Folge hier dem Link "System Tools".
 
 ![]({{url_for('static/img/howto/TP_link_start.png')}} "Geh zu System Tools")
 
-Als nächste wählst du aus dem Menü "Firmware Upgrade" (1). Danach kannst du die vorhin (in Schritt 2) geladene Datei zum Hochladen auswählen (2). Nach einem Klick auf "Upgrade" (3) beginnt der Prozess.
+Als nächstes wählst du aus dem Menü "Firmware Upgrade" (1). Danach kannst du die vorhin (in Schritt 2) geladene Datei zum Hochladen auswählen (2). Nach einem Klick auf "Upgrade" (3) beginnt der Prozess.
 
 Hinweis zu TL-WR841N v8.4: Beim Flashen über das Firmware-Upgrade der Original-Firmware tritt ggf. folgender Fehler auf:
 
@@ -54,12 +54,12 @@ Upload.
 
 ![]({{url_for('static/img/howto/TP_link_firmware.png')}} "Wähle die Freifunk Firmware und spiele sie ein")
 
-Du musst noch einmal kurz bestätigen …
+Du musst noch einmal kurz bestätigen…
 
 ![]({{url_for('static/img/howto/TP_link_firmware_file.png')}} "Einmal Bestätigen")
 
-… und die Installation läuft.
-Während die Installation läuft, zieh bitte auf keinen Fall den Stecker oder das Netzwerk-Kabel – denn dann ist dein Router hinüber.
+…und die Installation läuft.
+Während die Installation läuft, zieh bitte auf keinen Fall den Stecker oder das Netzwerk-Kabel – denn dann wäre dein Router hinüber.
 
 ![]({{url_for('static/img/howto/TP_link_upgrade_progress.png')}} "Die Installation läuft")
 
@@ -69,16 +69,16 @@ Nachdem die Firmware fertig eingespielt ist, startet der Router neu.
 
 Dass der Router neu startet merkst du auch am Blinken der Lämpchen an deinem Router. Zuerst blinken alle Lämpchen wild, dann gehen sie aus. Wenn danach das Lämpchen mit dem Zahnrad gemütlich vor sich hin blinkt, ist der Router im Config-Mode angekommen.
 
-Jetzt ist der Router nicht mehr unter der angegeben Adresse erreichbar und
+Jetzt ist der Router nicht mehr unter der angegebenen Adresse erreichbar, und
 eine Fehlermeldung erscheint. Das ist gut so, denn nun läuft nicht mehr die
-alte Firmware, sondern die neue Freifunk Firmware auf deinem Router. Deinen
+alte Firmware, sondern die neue Freifunk-Firmware auf deinem Router. Deinen
 Router erreicht du, indem du die folgende Adresse in deinem Browser eingibst:
 **<http://192.168.42.1>**
 
 ![]({{url_for('static/img/howto/TP_link_firmware_reboot_finished.png')}} "Die alte Firmware ist weg - die neue läuft")
 
-Als nächstes musst du deinen Router noch einrichten und im Freifunk Netz anmelden.
-Hierzu benutze den [Freifunk Wizard]({{url_for('participate/howto/config')}}) im Menüeintrag.
+Als nächstes musst du deinen Router noch einrichten und im Freifunk-Netz anmelden.
+Hierzu benutze den [Freifunk-Wizard]({{url_for('participate/howto/config')}}) im Menüeintrag.
 
 ## Fragen?
 
