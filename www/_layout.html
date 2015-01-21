@@ -39,11 +39,11 @@
               {% import '_utils.html' as utils with context %}
               {{ utils.nav('Info', '/') }}
               {{ utils.nav('Mitmachen', 'participate/overview', 'participate') }}
-              {{ utils.nav('Netz', 'network/map', 'network') }}
-              {{ utils.nav_external('Wiki', 'http://wiki.freifunk.net/Hauptseite') }}
+              {{ utils.nav('Netzkarte', 'network/map', 'network') }}
+              {{ utils.nav('Wiki', 'wiki') }}
               {{ utils.nav('Downloads', 'downloads') }}
               {{ utils.nav('Kontakt', 'contact') }}
-              <i>{{ utils.nav_external('freifunk.net', 'http://www.freifunk.net', class='right')}}</i>
+              {{ utils.nav_external('freifunk.net', 'http://www.freifunk.net', class='right')}}
             </ul>
           </div>
 
@@ -66,7 +66,7 @@
 
         <a href="{{url_for('impressum')}}">Impressum</a>
 
-        <a href="http://www.mabb.de/foerderung/digitale-projekte/wlan.html">
+        <a href="http://www.mabb.de/information/digitale-welt/freifunk.html">
           <img src="{{url_for('static/img/mabb.png')}}" alt="gefördert durch die Medienanstalt Berlin Brandenburg" />
         </a>
 

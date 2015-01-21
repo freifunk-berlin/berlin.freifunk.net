@@ -49,6 +49,15 @@ footer img {
   height: 20px;
 }
 
+.description {
+  color: #db0166;
+  cursor: default;
+}
+
+.externalLink {
+  font-style: italic;
+}
+
 
 
 /*
