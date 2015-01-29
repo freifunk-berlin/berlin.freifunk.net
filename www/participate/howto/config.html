@@ -9,9 +9,9 @@ parent_tmpl: participate/_layout.html
 
 [zurück zur Übersicht]({{url_for('participate/howto')}})
 
-Nachdem du dir ein paar [IP-Adressen geklickt](http://config.berlin.freifunk.net/wizard/routers) hast und deinen Router erfolgreich [geflashed]({{url_for('participate/howto/flash')}}) hast, erscheint nach dem Neustarten des Gerätes sofort der <a href="http://frei.funk" target="_blank">Berliner Freifunk-Assistent</a>, der dir beim Einrichten deines Freifunk-Routers helfen kann.
+<i>Du hast dir im vorigen Schritt beim [Wizard zur IP-Vergabe](http://config.berlin.freifunk.net/wizard/routers) IPs geholt und deinen Router erfolgreich [geflashed]({{url_for('participate/howto/flash')}}). Jetzt kannst du den Router mittels des Berliner Freifunk-Assistenten einrichten.</i>
 
-Erstelle zuerst ein neues Passwort für deinen Router:
+Gehe auf die Website des Routers **<http://192.168.42.1/>** (oder **<http://frei.funk/>**, falls es sich nicht um die Erstkonfiguration des Routers handelt) und setze zuerst ein neues Passwort.
 
 ![]({{url_for('static/img/howto/config/passwort.png')}} "Screenshot Passworteingabe")
 
@@ -46,16 +46,17 @@ Mit einem Klick auf den "Next"-Button kommst du zu den optionalen Einstellungen:
 
 Hier kannst das zentrale Monitoring einschalten. Außerdem kannst du einen privaten Access Point konfigurieren, falls du neben dem Freifunk-Access Point noch einen verschlüsselten Zugangspunkt haben möchtest. Daten über diesen Access Point werden nicht über das Freifunk-Netz sondern direkt über deinen Internet-Anschluss weitergeleitet.
 
-Auf der nächsten Seite konfigurierst du die IP-Adressen für deinen Router.
-Falls du es noch nicht gemacht hast, solltest du dir jetzt ein paar [Adressen registrieren](http://config.berlin.freifunk.net/wizard/routers).
+Auf der nächsten Seite konfigurierst du die IP-Adressen für deinen Router, die du vom [Wizard zur IP-Vergabe](http://config.berlin.freifunk.net/wizard/routers) bekommen hattest.
 
 ![]({{url_for('static/img/howto/config/ipeinstellungen.png')}} "Screenshot IP-Adressen konfigurieren")
 
-Je nachdem auf wievielen Frequezen dein Router sendet, kannst du entweder eine oder zwei IP-Adressen zum [Meshen](http://wiki.freifunk.net/Meshing) konfigurieren. Über diese Adressen kann sich dein Router mit anderen Freifunk-Routern verbinden und erweitert so das Netz.
+Je nachdem auf wievielen Frequenzen dein Router sendet, kannst du entweder eine oder zwei IP-Adressen zum [Meshen](http://wiki.freifunk.net/Meshing) konfigurieren. Über diese Adressen kann sich dein Router mit anderen Freifunk-Routern verbinden und erweitert so das Netz.
 
 Die SSID ist der Name deines Freifunk-Netzes mit dem du, deine Besucher und deine Nachbarn sich später per Handy oder Computer verbinden können. Mit dem Addressraum werden die IP-Adressen konfiguriert, die Nutzer deines Zugangspunktes erhalten.
 
-Wenn du jetzt noch ein letztes Mal auf "Next" klickst, hast du es geschafft! Nachdem dein Router neugestartet hat, funkst du frei :D
+Wenn du jetzt noch ein letztes Mal auf "Next" klickst, hast du es geschafft! Nachdem dein Router neugestartet hat, funkst du frei! :D
+
+Dein Router ist nach der Erstkonfiguration von direkt an ihm per (W)LAN angeschlossenen Rechnern via **<http://frei.funk/>** erreichbar.
 
 {% endfilter %}
 {% endblock %}
