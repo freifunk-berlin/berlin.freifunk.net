@@ -14,9 +14,15 @@ cd ${GIT_TARGET_DIR}
 
 #generate website
 cd ${GIT_TARGET_DIR}/www
-/usr/local/bin/cyrax -q -d ${WWW_TARGET_DIR}
+
+# activate virtual environment if one exists
+if [ -e "${GIT_TARGET_DIR}/env/bin/activate" ]; then
+  . "${GIT_TARGET_DIR}/env/bin/activate"
+fi
+
+CYRAX=$(which cyrax)
+$CYRAX -q -d ${WWW_TARGET_DIR}
 
 exit 0
 
 #EOF
-
