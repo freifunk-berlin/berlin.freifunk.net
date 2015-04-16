@@ -37,7 +37,7 @@
 
             <ul class="span10">
               {% import '_utils.html' as utils with context %}
-              {{ utils.nav('Info', '/') }}
+              <li><a href="{{ url_for('/') }}">Info</a> <a href="{{ url_for('index_en') }}">(EN)</a></li>
               {{ utils.nav('Mitmachen', 'participate/overview', 'participate') }}
               {{ utils.nav('Netzkarte', 'network/map', 'network') }}
               {{ utils.nav('Wiki', 'wiki') }}
