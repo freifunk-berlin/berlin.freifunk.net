@@ -149,6 +149,16 @@ ul.submenu li {
   padding: 10px;
 }
 
+#lang-switch {
+  position: relative;
+}
+
+#lang-switch a {
+  position: absolute;
+  right: 0px;
+  font-weight: bold;
+}
+
 #about-functionality, #about-participate {
   clear: both;
   padding-top: 40px;
