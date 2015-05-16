@@ -159,6 +159,14 @@ ul.submenu li {
   font-weight: bold;
 }
 
+#about-freifunk {
+  clear: both;
+}
+
+#wcw p {
+  padding-top: 40px;
+}
+
 #about-functionality, #about-participate {
   clear: both;
   padding-top: 40px;
