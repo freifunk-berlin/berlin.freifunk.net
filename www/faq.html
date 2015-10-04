@@ -1,0 +1,32 @@
+{% meta %}
+  endpoint: faq 
+{% endmeta %}
+
+{% block content %}
+
+<h3>Häufige Fragen und Antworten</h3>
+<dl>
+  <dt>Kann ich die freigegebene Bandbreite limitieren?</dt>
+  <dd>Bei der Einrichtung des Freifunkrouters kann man angeben, wie viel seiner Bandbreite man freigeben möchte. Dieser Wert ist auch später noch anpassbar.</dd>
+  <dt>Ändert sich etwas an meiner aktuellen Netzwerkkonfiguration?</dt>
+  <dd>Das eigene Netzwerk bleibt vom Freifunk-Netzwerk unberührt und an der vorhandenen Installation muss nichts verändert werden. Alle Einstellungen erfolgen über einen zusätzlichen Router mit eigener, freier Freifunk-Firmware, dieser wird mit dem vorhandenen DSL Router verbunden.</dd>
+  <dt>Kann auf mein privates Netzwerk zugegriffen werden?</dt>
+  <dd>Aus dem offenen Freifunknetzwerk kann nicht auf das private Netzwerk zugegriffen werden</dd>
+  <dt>Was ist mit der der Störerhaftung?</dt>
+  <dd>Der Internetverkehr des offenen Freifunk-Netzwerks kann durch einen VPN-Tunnel über einen Server des Förderverein freie Netzwerke e.V. geleitet werden. Dieser Service beruhigt die Angst vor der sogenannten Störerhaftung in öffentlichem WLAN. Der Verein ist als Provider registriert und daher von der Störerhaftung ausgenommen, der Anbieter der Zugangsknotens ist nicht zurückverfolgbar. Mehr zu den rechtlichen Aspekten und unserem Kampf gegen die Störerhaftung kannst Du unter freifunkstattangst.de lesen.</dd>
+  <dt>Wo stehen schon Freifunk-Router?</dt>
+  <dd>Schau mal auf der <a href="{{url_for('network/map')}}">Netzkarte</a> nach.
+    Wenn es bei dir noch keinen Freifunk-Router in der Nachbarschaft gibt, dann
+    sei die oder der Erste!</dd>
+  <dt>Benötige ich einen Router für 2.4 GHz oder 5 GHz?<dt>
+  <dd>Damit sich ein Freifunk-Router mit einem
+    anderen Freifunk-Router über WLAN verbinden kann, müssen beide Router im
+    gleichen Frequenzband (2.4 GHz oder 5 GHz) arbeiten. Bitte vorher
+    prüfen!</dd>
+  <dt>Können mehrere Freifunk-Router an einem Ort miteinander verbunden werden?</dt>
+  <dd>Mehrere Freifunk-Router können über ein Switch mit Netzwerk-Kabeln
+    verbunden werden. Der im <em>Starter-Kit</em> empfohlene Router hat z.B. ein
+    integriertes Switch.</dd>
+</dl>
+
+{% endblock %}
