@@ -1,52 +1,74 @@
 {
-    "api":"0.4.1",
-    "contact":{
-        "email":"berlin@berlin.freifunk.net",
-        "ml":"berlin@berlin.freifunk.net",
-        "twitter":"@freifunk_berlin"
-    },
-    "location":{
-        "address":{
-            "Name":"c-base",
-            "Street":"Rungestr. 20",
-            "Zipcode":"10179"
-        },
-        "city":"Berlin",
-        "country":"DE",
-        "lat":52.518725000000003,
-        "lon":13.403119999999999
-    },
-    "name":"Freifunk Berlin",
-    "nodeMaps":[
-        {
-            "interval":"daily",
-            "mapType":"geographical",
-            "technicalType":"openwifimap",
-            "url":"http://www.openwifimap.net"
-        }
+  "name": "Freifunk Berlin",
+  "url": "http://berlin.freifunk.net/",
+  "location": {
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.518725,
+    "lon": 13.40312,
+    "address": {
+      "Name": "c-base",
+      "Street": "Rungestr. 20",
+      "Zipcode": "10179"
+    }
+  },
+  "contact": {
+    "email": "berlin@berlin.freifunk.net",
+    "ml": "berlin@berlin.freifunk.net",
+    "twitter": "@freifunk_berlin"
+  },
+  "state": {
+    "nodes": 585,
+    "focus": [
+      "infrastructure/backbone",
+      "Public Free Wifi",
+      "Free internet access"
     ],
-    "state":{
-        "focus":[
-            "infrastructure/backbone",
-            "Public Free Wifi",
-            "Free internet access"
-        ],
-        "lastchange":"2016-04-10T18:00:01.065957Z",
-        "nodes":585
+    "lastchange": "2016-05-11T17:47:23.355Z"
+  },
+  "nodeMaps": [
+    {
+      "url": "http://www.openwifimap.net",
+      "interval": "daily",
+      "technicalType": "openwifimap",
+      "mapType": "geographical"
+    }
+  ],
+  "socialprojects": {
+    "number": 38,
+    "website": "http://wiki.freifunk.net/Berlin:Refugees"
+  },
+  "techDetails": {
+    "firmware": {
+      "name": "kathleen",
+      "url": "http://berlin.freifunk.net/downloads/",
+      "docs": "https://wiki.freifunk.net/Berlin:Firmware",
+      "vpnaccess": "webform",
+      "registrationurl": "http://ca.berlin.freifunk.net/"
     },
-    "techDetails":{
-        "firmware":{
-            "name":"Berlin"
+    "networks": {
+      "ipv4": [
+        {
+          "network": "10.31.0.0/16"
         },
-        "legals":[
-            "zappscript",
-            "institutions"
-        ],
-        "routing":[
-            "batman-adv",
-            "OLSR"
-        ],
-        "updatemode":[]
+        {
+          "network": "10.36.0.0/16"
+        },
+        {
+          "network": "10.230.0.0/16"
+        }
+      ]
     },
-    "url":"http://berlin.freifunk.net/"
+    "routing": [
+      "batman-adv",
+      "OLSR"
+    ],
+    "legals": [
+      "vpnnational",
+      "zappscript",
+      "institutions"
+    ],
+    "updatemode": []
+  },
+  "api": "0.4.13"
 }
