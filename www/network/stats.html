@@ -83,6 +83,8 @@ var drawNodes = function(nodes) {
     if (typeof id != "string")
       id = 'unknown';
 
+    id = id.trim(); // Kathleen<=0.1.2 had trailing newlines for sysinfo[1] at least
+
     for (var i = 0; i < list.length; i++) {
       var item = list[i];
       if (item.id == id) {
