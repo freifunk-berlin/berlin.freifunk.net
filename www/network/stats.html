@@ -112,7 +112,12 @@ var drawNodes = function(nodes) {
     } catch (e) { }
 
     try {
-      findAndInc(routers, node.system.sysinfo[1]);
+      var router = node.system.sysinfo[1];
+      if(router.startsWith("Ubiquiti Nanostation M") || router.startsWith("Ubiquiti Bullet M") || router.startsWith("Ubiquiti Rocket M")) {
+        // For Ubiquiti routers, add 2.4GHz/5GHz indication
+        router = router.replace(" M", (parseInt(node.interfaces[0].channel, 10)<=15) ? " M2" : " M5");
+      }
+      findAndInc(routers, router);
     } catch (e) {
       findAndInc(routers);
     }
