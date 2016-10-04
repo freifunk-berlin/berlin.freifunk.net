@@ -54,6 +54,10 @@ var drawNodes = function(g) {
       .attr("transform", function(d) {
         return "translate(" + d.x + ", " + d.y + ")";
       })
+    .append("a")
+      .attr("xlink:href", function(d) {
+        return "//openwifimap.net/index.html#detail?node=" + d.id;
+      })
     .append("text")
       .attr("transform", function(d,i) {
           return "rotate("+(d.rad*(180/Math.PI))+")"
