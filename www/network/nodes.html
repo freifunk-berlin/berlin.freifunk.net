@@ -36,6 +36,7 @@ var drawNodes = function(g) {
     var node = nodes[i];
 
     node.rad = radianGen(i);
+    node.rightSide = node.rad>Math.PI/2&&node.rad<Math.PI*3/2;
     node.x = width/2 - radius*Math.cos(node.rad);
     node.y = height/2 - radius* Math.sin(node.rad);
   }
@@ -60,11 +61,15 @@ var drawNodes = function(g) {
       })
     .append("text")
       .attr("transform", function(d,i) {
-          return "rotate("+(d.rad*(180/Math.PI))+")"
+          return "rotate("+((d.rightSide?d.rad+Math.PI:d.rad)*(180/Math.PI))+")"
       })
-      .attr("dx", -8)
+      .attr("dx", function(d) {
+        return d.rightSide?"8":"-8"
+      })
       .attr("dy", ".35em")
-      .attr("text-anchor", "end")
+      .attr("text-anchor", function(d) {
+        return d.rightSide?"start":"end"
+      })
       .attr('font-size', "12px")
       .text(function(d) {
         return d.id
