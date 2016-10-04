@@ -23,13 +23,16 @@ Openwifimap.prototype = {
       for (var i = 0; i < data.length; i++) {
         var node = data[i].value;
         if (that._validate(node)) {
-          if ('links' in node && node.links.length > 0) {
-            for (var j=0; j < node.links.length; j++) {
-              var link = node.links[j];
-              g.addEdge(node, link.id, link)
+          if ('links' in node) {
+            // to remove some noise, include only links with more than two links
+            if (node.links.length > 2) {
+              for (var j=0; j < node.links.length; j++) {
+                var link = node.links[j];
+                g.addEdge(node, link.id, link)
+              }
             }
           } else {
-            g.addSingleNode(node, false);
+            //g.addSingleNode(node, false);
           }
           dfd.notify(++resolved, skipped, data.length);
         } else {
