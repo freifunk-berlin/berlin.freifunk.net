@@ -22,12 +22,18 @@
             "interval":"daily",
             "mapType":"geographical",
             "technicalType":"openwifimap",
-            "url":"http://www.openwifimap.net"
+            "url":"https://www.openwifimap.net"
+        },
+        {
+            "interval":"daily",
+            "mapType":"geographical",
+            "technicalType":"hopglass",
+            "url":"https://hopglass.berlin.freifunk.net"
         }
     ],
     "socialprojects":{
         "number":38,
-        "website":"http://wiki.freifunk.net/Berlin:Refugees"
+        "website":"https://wiki.freifunk.net/Berlin:Refugees"
     },
     "state":{
         "focus":[
@@ -42,8 +48,8 @@
         "firmware":{
             "docs":"https://wiki.freifunk.net/Berlin:Firmware",
             "name":"kathleen",
-            "registrationurl":"http://ca.berlin.freifunk.net/",
-            "url":"http://berlin.freifunk.net/downloads/",
+            "registrationurl":"https://ca.berlin.freifunk.net/",
+            "url":"https://berlin.freifunk.net/downloads/",
             "vpnaccess":"webform"
         },
         "legals":[
@@ -70,5 +76,5 @@
         ],
         "updatemode":[]
     },
-    "url":"http://berlin.freifunk.net/"
+    "url":"https://berlin.freifunk.net/"
 }
