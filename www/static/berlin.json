@@ -1,5 +1,5 @@
 {
-    "api":"0.4.13",
+    "api":"0.4.14",
     "contact":{
         "email":"berlin@berlin.freifunk.net",
         "ml":"berlin@berlin.freifunk.net",
@@ -41,7 +41,7 @@
             "Public Free Wifi",
             "Free internet access"
         ],
-        "lastchange":"2016-10-16T18:00:01.259104Z",
+        "lastchange":"2016-11-24T18:00:01.259104Z",
         "nodes":566
     },
     "techDetails":{
