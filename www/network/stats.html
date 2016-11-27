@@ -100,8 +100,14 @@ var drawNodes = function(nodes) {
     var node = nodes[i];
 
     try {
-      var firmware = node.firmware.revision;
-      firmware = firmware.replace(/\+[a-f0-9]{7}$/, ''); // remove hash part of alpha/beta builds
+      var firmware = node.firmware.name;
+      // see https://github.com/freifunk-berlin/firmware/issues/406
+      // owm.lua is only filling firmware.revision
+      // this keeps it backward-compatible
+      if(firmware == "") {
+        firmware = node.firmware.revision;
+        firmware = firmware.replace(/\+[a-f0-9]{7}$/, ''); // remove hash part of alpha/beta builds
+      }
       findAndInc(firmwares, firmware);
     } catch (e) {
       findAndInc(firmwares);
