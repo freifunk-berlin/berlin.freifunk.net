@@ -1,80 +1,88 @@
 {
-    "api":"0.4.14",
-    "contact":{
-        "email":"berlin@berlin.freifunk.net",
-        "ml":"berlin@berlin.freifunk.net",
-        "twitter":"@freifunk_berlin"
-    },
-    "location":{
-        "address":{
-            "Name":"c-base",
-            "Street":"Rungestr. 20",
-            "Zipcode":"10179"
-        },
-        "city":"Berlin",
-        "country":"DE",
-        "lat":52.518725000000003,
-        "lon":13.403119999999999
-    },
-    "name":"Freifunk Berlin",
-    "nodeMaps":[
-        {
-            "interval":"daily",
-            "mapType":"geographical",
-            "technicalType":"openwifimap",
-            "url":"https://www.openwifimap.net"
-        },
-        {
-            "interval":"daily",
-            "mapType":"geographical",
-            "technicalType":"hopglass",
-            "url":"https://hopglass.berlin.freifunk.net"
-        }
+  "name": "Freifunk Berlin",
+  "url": "https://berlin.freifunk.net/",
+  "location": {
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.518725,
+    "lon": 13.40312,
+    "address": {
+      "Name": "c-base",
+      "Street": "Rungestr. 20",
+      "Zipcode": "10179"
+    }
+  },
+  "contact": {
+    "email": "berlin@berlin.freifunk.net",
+    "ml": "berlin@berlin.freifunk.net",
+    "twitter": "@freifunk_berlin"
+  },
+  "state": {
+    "nodes": 598,
+    "focus": [
+      "infrastructure/backbone",
+      "Public Free Wifi",
+      "Free internet access"
     ],
-    "socialprojects":{
-        "number":38,
-        "website":"https://wiki.freifunk.net/Berlin:Refugees"
+    "lastchange": "2017-02-14T16:49:05.185Z"
+  },
+  "feeds": [
+    {
+      "name": "berlin calendar",
+      "category": "ics",
+      "type": "ics",
+      "url": "https://ics.freifunk.net/tags/berlin.ics"
+    }
+  ],
+  "nodeMaps": [
+    {
+      "url": "https://www.openwifimap.net",
+      "interval": "daily",
+      "technicalType": "openwifimap",
+      "mapType": "geographical"
     },
-    "state":{
-        "focus":[
-            "infrastructure/backbone",
-            "Public Free Wifi",
-            "Free internet access"
-        ],
-        "lastchange":"2017-01-08T18:00:01.787518Z",
-        "nodes":598
+    {
+      "url": "https://hopglass.berlin.freifunk.net",
+      "interval": "daily",
+      "technicalType": "hopglass",
+      "mapType": "geographical"
+    }
+  ],
+  "socialprojects": {
+    "number": 38,
+    "website": "https://wiki.freifunk.net/Berlin:Refugees"
+  },
+  "techDetails": {
+    "firmware": {
+      "name": "kathleen",
+      "url": "https://berlin.freifunk.net/downloads/",
+      "docs": "https://wiki.freifunk.net/Berlin:Firmware",
+      "vpnaccess": "webform",
+      "registrationurl": "https://ca.berlin.freifunk.net/"
     },
-    "techDetails":{
-        "firmware":{
-            "docs":"https://wiki.freifunk.net/Berlin:Firmware",
-            "name":"kathleen",
-            "registrationurl":"https://ca.berlin.freifunk.net/",
-            "url":"https://berlin.freifunk.net/downloads/",
-            "vpnaccess":"webform"
+    "networks": {
+      "ipv4": [
+        {
+          "network": "10.31.0.0/16"
         },
-        "legals":[
-            "vpnnational",
-            "zappscript",
-            "institutions"
-        ],
-        "networks":{
-            "ipv4":[
-                {
-                    "network":"10.31.0.0/16"
-                },
-                {
-                    "network":"10.36.0.0/16"
-                },
-                {
-                    "network":"10.230.0.0/16"
-                }
-            ]
+        {
+          "network": "10.36.0.0/16"
         },
-        "routing":[
-            "batman-adv",
-            "OLSR"
-        ],
-        "updatemode":[]
+        {
+          "network": "10.230.0.0/16"
+        }
+      ]
     },
-    "url":"https://berlin.freifunk.net/"
+    "routing": [
+      "batman-adv",
+      "OLSR"
+    ],
+    "legals": [
+      "vpnnational",
+      "zappscript",
+      "institutions"
+    ],
+    "updatemode": []
+  },
+  "api": "0.4.14"
 }
