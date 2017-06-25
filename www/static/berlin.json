@@ -5,6 +5,14 @@
         "ml":"berlin@berlin.freifunk.net",
         "twitter":"@freifunk_berlin"
     },
+    "feeds":[
+        {
+            "category":"ics",
+            "name":"berlin calendar",
+            "type":"ics",
+            "url":"https://ics.freifunk.net/tags/berlin.ics"
+        }
+    ],
     "location":{
         "address":{
             "Name":"c-base",
@@ -41,17 +49,9 @@
             "Public Free Wifi",
             "Free internet access"
         ],
-        "lastchange":"2017-02-14T17:52:01.787518Z",
-        "nodes":598
+        "lastchange":"2017-06-25T18:00:01.066351Z",
+        "nodes":535
     },
-    "feeds": [
-        {
-            "name": "berlin calendar",
-            "category": "ics",
-            "type": "ics",
-            "url": "https://ics.freifunk.net/tags/berlin.ics"
-        }
-    ],
     "techDetails":{
         "firmware":{
             "docs":"https://wiki.freifunk.net/Berlin:Firmware",
