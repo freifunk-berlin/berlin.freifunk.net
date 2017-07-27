@@ -1,11 +1,16 @@
 build_dir = 'www'
 hook_dir = '.git/hooks'
 
-generate:
+generate: build_news
 	cd $(build_dir) && cyrax -v
 
-webserver:
+webserver: build_news
 	cd $(build_dir) && cyrax -wv
+
+build_news:
+	cd $(build_dir) && \
+	php ../bin/external_news.php ffwiki > external_news_wiki.html && \
+	php ../bin/external_news.php fflist > external_news_list.html
 
 deploy:
 	bin/deploy
