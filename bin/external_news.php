@@ -16,7 +16,12 @@ function getHtml($url) {
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
   curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
   $result = curl_exec($ch);
+  $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
   curl_close($ch);
+  if($code!=200) {
+    echo("failed to fetch $url (HTTP error $code)");
+    exit(1);
+  }
   return $result;
 }
 
@@ -39,10 +44,11 @@ if(in_array("fflist", $argv)) {
   $topicList = "";
   foreach(array_reverse($matches[2]) as $match) {
     if(strpos($match, "Berlin Nachrichtensammlung")===0) continue;
+    $match = trim($match);
     if(strpos($topicList, substr($match, 0, 10))===FALSE) {
       if(strlen($topicList)>300) break;
       if(strlen($topicList)>0) $topicList .= "&nbsp;• ";
-      $topicList .= trim($match);
+      $topicList .= str_replace("<", "&lt;", $match);
     }
   }
   echo $topicList;
@@ -62,10 +68,11 @@ if(in_array("ffwiki", $argv)) {
   $topicList = "";
   foreach($matches[2] as $match) {
     if(strlen($match)<5) continue;
+    $match = trim($match);
     if(strpos($topicList, $match)===FALSE) {
       if(strlen($topicList)>300) break;
       if(strlen($topicList)>0) $topicList .= "&nbsp;• ";
-      $topicList .= trim($match);
+      $topicList .= str_replace("<", "&lt;", $match);
     }
   }
   echo $topicList;
