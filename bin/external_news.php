@@ -31,12 +31,13 @@ if(in_array("fflist", $argv)) {
   $listArchiveUrl = "https://lists.berlin.freifunk.net/pipermail/berlin/";
   // Find newest archive page
   $listHtml = getHtml($listArchiveUrl);
-  preg_match("/Herunterladbare Version.*?<A href=\"(.*?)\"/s", $listHtml, $matches);
-  $listNewestUrl = $listArchiveUrl.str_replace("thread", "date", $matches[1]);
-  //echo $listNewestUrl;
+  preg_match("/Herunterladbare Version.*?<A href=\"([^\"]*?date.html)\".*?<A href=\"([^\"]*?date.html)\"/s", $listHtml, $matches);
+  //echo $matches[1];
+  //echo $matches[2];
 
-  // Find postings
-  $listHtml = getHtml($listNewestUrl);
+  // Find postings (in two months to prevent near-empty list at beginning of month)
+  $listHtml = getHtml($listArchiveUrl . $matches[2]);
+  $listHtml .= getHtml($listArchiveUrl . $matches[1]);
   preg_match_all("/<A HREF=\"(\d\d\d\d\d\d.html)\">\[Berlin-wireless\] (.*?)<\/A>/s", $listHtml, $matches);
   //print_r($matches[2]);
 
