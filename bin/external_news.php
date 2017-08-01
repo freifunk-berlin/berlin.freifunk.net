@@ -49,6 +49,7 @@ if(in_array("fflist", $argv)) {
     if(strpos($topicList, substr($match, 0, 10))===FALSE) {
       if(strlen($topicList)>300) break;
       if(strlen($topicList)>0) $topicList .= "&nbsp;• ";
+      $match = str_replace(" ", "&nbsp;", $match);
       $topicList .= str_replace("<", "&lt;", $match);
     }
   }
@@ -73,6 +74,7 @@ if(in_array("ffwiki", $argv)) {
     if(strpos($topicList, $match)===FALSE) {
       if(strlen($topicList)>300) break;
       if(strlen($topicList)>0) $topicList .= "&nbsp;• ";
+      $match = str_replace(" ", "&nbsp;", $match);
       $topicList .= str_replace("<", "&lt;", $match);
     }
   }
