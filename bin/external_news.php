@@ -25,6 +25,8 @@ function getHtml($url) {
   return $result;
 }
 
+$debug = in_array("debug", $argv);
+
 if(in_array("fflist", $argv)) {
   // FF Berlin mailinglist
 
@@ -42,20 +44,30 @@ if(in_array("fflist", $argv)) {
   //print_r($matches[2]);
 
   // Create topic list
-  $topicList = "";
+  $topicList = [];
+  $topicListLength = 0;
   foreach(array_reverse($matches[2]) as $match) {
     if(strpos($match, "Berlin Nachrichtensammlung")===0) continue;
     $match = trim($match);
     if(strlen($match)>70) $match = substr($match, 0, 70) . "...";
-    $match = str_replace(" ", "&nbsp;", $match);
-    $match = str_replace("<", "&lt;", $match);
-    if((similar_text($topicList, $match)<=15) && (strpos($topicList, substr($match, 0, 10))===FALSE)) {
-      if(strlen($topicList)>350) break;
-      if(strlen($topicList)>0) $topicList .= "&nbsp;• ";
-      $topicList .= $match;
+    if(!$debug) $match = str_replace(" ", "&nbsp;", $match);
+    if(!$debug) $match = str_replace("<", "&lt;", $match);
+    $skipReason = "";
+    foreach($topicList as $haveTopic) {
+      if(levenshtein($haveTopic, $match)<(max(strlen($haveTopic), strlen($match))*0.7)) { $skipReason = $haveTopic; break; }
+      if(strpos($haveTopic, substr($match, 0, 10))!==FALSE) { $skipReason = $haveTopic; break; }
     }
+    if($skipReason!=="") {
+      if($debug) print "$match ***SKIPPING B/C*** $skipReason\n";
+      continue;
+    }
+    if($debug) print "ACCEPT $match\n";
+    $topicListLength += strlen($match);
+    if($topicListLength>350) break;
+    array_push($topicList, $match);
   }
-  echo $topicList;
+  if($debug) echo "\n\n\n";
+  echo implode("&nbsp;• ", $topicList);
 }
 
 if(in_array("ffwiki", $argv)) {
