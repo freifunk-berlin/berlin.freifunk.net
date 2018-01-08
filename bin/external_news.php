@@ -50,8 +50,6 @@ if(in_array("fflist", $argv)) {
     if(strpos($match, "Berlin Nachrichtensammlung")===0) continue;
     $match = trim($match);
     if(strlen($match)>70) $match = substr($match, 0, 70) . "...";
-    if(!$debug) $match = str_replace(" ", "&nbsp;", $match);
-    if(!$debug) $match = str_replace("<", "&lt;", $match);
     $skipReason = "";
     foreach($topicList as $haveTopic) {
       if(levenshtein($haveTopic, $match)<(max(strlen($haveTopic), strlen($match))*0.7)) { $skipReason = $haveTopic; break; }
@@ -66,8 +64,20 @@ if(in_array("fflist", $argv)) {
     if($topicListLength>350) break;
     array_push($topicList, $match);
   }
-  if($debug) echo "\n\n\n";
-  echo implode("&nbsp;• ", $topicList);
+
+  // HTML escaping (not in debug mode)
+  $result = [];
+  if($debug) {
+    echo "\n\n\n";
+    $result = $topicList;
+  } else {
+    foreach($topicList as $topic) {
+      $topic = str_replace(" ", "&nbsp;", $topic);
+      $topic = str_replace("<", "&lt;", $topic);
+      array_push($result, $topic);
+    }
+  }
+  echo implode("&nbsp;• ", $result);
 }
 
 if(in_array("ffwiki", $argv)) {
