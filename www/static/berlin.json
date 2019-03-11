@@ -55,14 +55,13 @@
     "techDetails":{
         "firmware":{
             "docs":"https://wiki.freifunk.net/Berlin:Firmware",
-            "name":"kathleen",
-            "registrationurl":"https://ca.berlin.freifunk.net/",
+            "name":"hedy",
+            "registrationurl":"https://tunnel.berlin.freifunk.net/",
             "url":"https://berlin.freifunk.net/downloads/",
             "vpnaccess":"webform"
         },
         "legals":[
             "vpnnational",
-            "zappscript",
             "institutions"
         ],
         "networks":{
