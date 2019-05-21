@@ -1,6 +1,6 @@
-Jinja2==2.7.3
+Jinja2~=2.10.1
 MarkupSafe==0.23
 cyrax==2.5
-markdown2==2.3.5
+markdown2~=2.3.7
 smartypants==1.8.6
 wsgiref==0.1.2
