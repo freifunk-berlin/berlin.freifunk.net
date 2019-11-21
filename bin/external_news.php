@@ -103,6 +103,9 @@ if(in_array("ffwiki", $argv)) {
       $topicList .= $match;
     }
   }
+  if($topicList == "") {
+    $topicList="<a href=\"https://wiki.freifunk.net/Berlin\">Berlin</a>";
+  }
   echo $topicList;
 }
 
