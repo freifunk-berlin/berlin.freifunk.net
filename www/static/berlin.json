@@ -58,7 +58,7 @@
             "name":"hedy",
             "registrationurl":"https://config.berlin.freifunk.net/",
             "url":"https://berlin.freifunk.net/downloads/",
-            "vpnaccess":"webform"
+            "vpnaccess":"fwimage"
         },
         "legals":[
             "vpnnational",
