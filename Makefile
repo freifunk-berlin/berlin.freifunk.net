@@ -14,8 +14,10 @@ build_news:
 
 get_nodes_count:
 	cd $(build_dir) && \
+	LASTCHANGE=$$(date --iso-8601=seconds) && \
+	sed -i "/\"lastchange\":/c\        \"lastchange\":\"$$LASTCHANGE\"," static/berlin.json && \
 	NODECOUNT=$$(curl -s 'https://hopglass.berlin.freifunk.net/nodes.json' | jq '.nodes | length') && \
-	sed -i "/\"nodes\":/c\\        \"nodes\":$$NODECOUNT" static/berlin.json
+	sed -i "/\"nodes\":/c\        \"nodes\":$$NODECOUNT" static/berlin.json
 
 deploy:
 	bin/deploy
