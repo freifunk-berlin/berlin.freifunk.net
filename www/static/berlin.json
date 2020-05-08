@@ -50,7 +50,7 @@
             "Free internet access"
         ],
         "lastchange":"2019-09-22T18:00:07.666106Z",
-        "nodes":533
+        "nodes":"FILLED_IN_BY_MAKEFILE"
     },
     "techDetails":{
         "firmware":{

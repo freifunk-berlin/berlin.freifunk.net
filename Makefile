@@ -1,16 +1,21 @@
 build_dir = 'www'
 hook_dir = '.git/hooks'
 
-generate: build_news
+generate: build_news get_nodes_count
 	cd $(build_dir) && cyrax -v
 
-webserver: build_news
+webserver: build_news get_nodes_count
 	cd $(build_dir) && cyrax -wv
 
 build_news:
 	cd $(build_dir) && \
 	php ../bin/external_news.php ffwiki > external_news_wiki.html && \
 	php ../bin/external_news.php fflist > external_news_list.html
+
+get_nodes_count:
+	cd $(build_dir) && \
+	NODECOUNT=$$(curl -s 'https://hopglass.berlin.freifunk.net/nodes.json' | jq '.nodes | length') && \
+	sed -i "/\"nodes\":/c\\        \"nodes\":$$NODECOUNT" static/berlin.json
 
 deploy:
 	bin/deploy
