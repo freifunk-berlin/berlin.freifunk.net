@@ -1,7 +1,7 @@
 {
     "api":"0.4.14",
     "contact":{
-        "email":"berlin@berlin.freifunk.net",
+        "email":"info@berlin.freifunk.net",
         "ml":"berlin@berlin.freifunk.net",
         "twitter":"@freifunk_berlin"
     },
@@ -56,7 +56,7 @@
         "firmware":{
             "docs":"https://wiki.freifunk.net/Berlin:Firmware",
             "name":"hedy",
-            "registrationurl":"https://tunnel.berlin.freifunk.net/",
+            "registrationurl":"https://config.berlin.freifunk.net/",
             "url":"https://berlin.freifunk.net/downloads/",
             "vpnaccess":"webform"
         },
