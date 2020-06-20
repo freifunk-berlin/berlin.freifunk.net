@@ -95,7 +95,7 @@ if(in_array("ffwiki", $argv)) {
   foreach($matches[2] as $match) {
     if(strlen($match)<5) continue;
     $match = trim($match);
-    if(strpos($match, "\u{2192}") === 0) continue;
+    if(strpos($match, "\xe2\x86\x92") === 0) continue;
     $match = str_replace(" ", "&nbsp;", $match);
     $match = str_replace("<", "&lt;", $match);
     if(strpos($topicList, $match)===FALSE) {
