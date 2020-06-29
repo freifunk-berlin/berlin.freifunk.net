@@ -29,12 +29,6 @@
         {
             "interval":"daily",
             "mapType":"geographical",
-            "technicalType":"openwifimap",
-            "url":"https://www.openwifimap.net"
-        },
-        {
-            "interval":"daily",
-            "mapType":"geographical",
             "technicalType":"hopglass",
             "url":"https://hopglass.berlin.freifunk.net"
         }
