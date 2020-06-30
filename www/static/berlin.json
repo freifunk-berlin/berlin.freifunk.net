@@ -5,14 +5,6 @@
         "ml":"berlin@berlin.freifunk.net",
         "twitter":"@freifunk_berlin"
     },
-    "feeds":[
-        {
-            "category":"ics",
-            "name":"berlin calendar",
-            "type":"ics",
-            "url":"https://ics.freifunk.net/tags/berlin.ics"
-        }
-    ],
     "location":{
         "address":{
             "Name":"Haus der Materialisierung",
