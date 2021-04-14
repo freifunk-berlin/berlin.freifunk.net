@@ -1,7 +1,8 @@
 {% macro render_subnav() -%}
       <ul class="span12 submenu">
         {% import '_utils.html' as utils with context%}
-        {{ utils.nav('Karte', 'network/map') }}
+        {{ utils.nav_external('Karte (Hopglass)', 'https://hopglass.berlin.freifunk.net/') }}
+        {{ utils.nav('Karte (OWM)', 'network/map') }}
         {{ utils.nav_external('Monitor', 'http://monitor.berlin.freifunk.net') }}
       </ul>
 {%- endmacro %}
