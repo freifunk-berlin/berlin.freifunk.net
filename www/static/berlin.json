@@ -22,7 +22,7 @@
             "interval":"daily",
             "mapType":"geographical",
             "technicalType":"openwifimap",
-            "url":"https://www.openwifimap.net"
+            "url":"https://openwifimap.net"
         },
         {
             "interval":"daily",
