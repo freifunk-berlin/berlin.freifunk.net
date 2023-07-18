@@ -47,7 +47,7 @@
     "techDetails":{
         "firmware":{
             "docs":"https://wiki.freifunk.net/Berlin:Firmware",
-            "name":"hedy",
+            "name":"falter",
             "registrationurl":"https://config.berlin.freifunk.net/",
             "url":"https://berlin.freifunk.net/downloads/",
             "vpnaccess":"fwimage"
@@ -71,7 +71,8 @@
         },
         "routing":[
             "batman-adv",
-            "OLSR"
+            "OLSR",
+            "babel"
         ],
         "updatemode":[]
     },
