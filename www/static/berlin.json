@@ -1,80 +1,94 @@
 {
-    "api":"0.4.14",
-    "contact":{
-        "email":"info@berlin.freifunk.net",
-        "ml":"berlin@berlin.freifunk.net",
-        "twitter":"@freifunk_berlin"
+  "api": "0.5.2",
+  "contact": {
+    "email": "info@berlin.freifunk.net",
+    "ml": "berlin@berlin.freifunk.net",
+    "twitter": "@freifunk_berlin",
+    "matrix": "https://matrix.to/#/#berlin.freifunk.net:matrix.org"
+  },
+  "location": {
+    "address": {
+      "name": "Haus der Materialisierung",
+      "street": "Otto-Braun-Str. 70-72",
+      "zipcode": "10178"
     },
-    "location":{
-        "address":{
-            "Name":"Haus der Materialisierung",
-            "Street":"Otto-Braun-Str. 70-72",
-            "Zipcode":"10178"
-        },
-        "city":"Berlin",
-        "country":"DE",
-        "lat":52.52315,
-        "lon":13.41957
+    "city": "Berlin",
+    "country": "DE",
+    "geoCode": {
+      "lat": 52.52315,
+      "lon": 13.41957
+    }
+  },
+  "name": "Freifunk Berlin",
+  "nodeMaps": [
+    {
+      "interval": "daily",
+      "mapType": "geographical",
+      "technicalType": "openwifimap",
+      "url": "https://openwifimap.net"
     },
-    "name":"Freifunk Berlin",
-    "nodeMaps":[
-        {
-            "interval":"daily",
-            "mapType":"geographical",
-            "technicalType":"openwifimap",
-            "url":"https://openwifimap.net"
-        },
-        {
-            "interval":"daily",
-            "mapType":"geographical",
-            "technicalType":"hopglass",
-            "url":"https://hopglass.berlin.freifunk.net"
-        }
+    {
+      "interval": "daily",
+      "mapType": "geographical",
+      "technicalType": "hopglass",
+      "url": "https://hopglass.berlin.freifunk.net"
+    }
+  ],
+  "socialprojects": {
+    "number": 38,
+    "website": "https://wiki.freifunk.net/Berlin:Refugees"
+  },
+  "state": {
+    "focus": [
+      "infrastructure/backbone",
+      "Public Free Wifi",
+      "Free internet access"
     ],
-    "socialprojects":{
-        "number":38,
-        "website":"https://wiki.freifunk.net/Berlin:Refugees"
+    "lastchange": "FILLED_IN_BY_MAKEFILE",
+    "nodes": "FILLED_IN_BY_MAKEFILE"
+  },
+  "techDetails": {
+    "firmware": {
+      "docs": "https://wiki.freifunk.net/Berlin:Firmware",
+      "name": "falter",
+      "registrationurl": "https://config.berlin.freifunk.net/",
+      "url": "https://berlin.freifunk.net/downloads/",
+      "vpnaccess": "fwimage"
     },
-    "state":{
-        "focus":[
-            "infrastructure/backbone",
-            "Public Free Wifi",
-            "Free internet access"
-        ],
-        "lastchange":"FILLED_IN_BY_MAKEFILE",
-        "nodes":"FILLED_IN_BY_MAKEFILE"
-    },
-    "techDetails":{
-        "firmware":{
-            "docs":"https://wiki.freifunk.net/Berlin:Firmware",
-            "name":"falter",
-            "registrationurl":"https://config.berlin.freifunk.net/",
-            "url":"https://berlin.freifunk.net/downloads/",
-            "vpnaccess":"fwimage"
+    "legals": [
+      "vpnnational",
+      "institutions"
+    ],
+    "networks": {
+      "ipv4": [
+        {
+          "network": "10.31.0.0/16"
         },
-        "legals":[
-            "vpnnational",
-            "institutions"
-        ],
-        "networks":{
-            "ipv4":[
-                {
-                    "network":"10.31.0.0/16"
-                },
-                {
-                    "network":"10.36.0.0/16"
-                },
-                {
-                    "network":"10.230.0.0/16"
-                }
-            ]
+        {
+          "network": "10.36.0.0/16"
         },
-        "routing":[
-            "batman-adv",
-            "OLSR",
-            "babel"
-        ],
-        "updatemode":[]
+        {
+          "network": "10.230.0.0/16"
+        },
+        {
+          "network": "10.248.0.0/14"
+        }
+      ],
+      "ipv6": [
+        {
+          "network": "2001:bf7::/32"
+        }
+      ]
     },
-    "url":"https://berlin.freifunk.net/"
+    "routing": [
+      "batman-adv",
+      "OLSR",
+      "Babel"
+    ],
+    "updatemode": [
+      "manual",
+      "autoupdate"
+    ]
+  },
+  "url": "https://berlin.freifunk.net/"
 }
