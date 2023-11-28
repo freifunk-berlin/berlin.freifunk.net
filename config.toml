@@ -10,6 +10,8 @@ defaultContentLanguageInSubdir = true
 SectionPagesMenu = "main"
 enableRobotsTXT = true
 
+disableKinds = ['taxonomy', 'term']
+
 [languages]
     [languages.de]
 	weight = 1

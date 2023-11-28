@@ -1,9 +1,9 @@
 name: Deploy website to dev server
 
 on:
- push:
-   branches-ignore:
-     - main
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   deploy:
@@ -25,6 +25,7 @@ jobs:
       - name: Build
         env:
           HUGO_ENV: production
+          URL_DEVELOPMENT: ${{ vars.URL_DEVELOPMENT }}
         run: hugo --minify -b $URL_DEVELOPMENT/$GITHUB_REF_NAME --destination branch/$GITHUB_REF_NAME
 
       - name: Create robots.txt

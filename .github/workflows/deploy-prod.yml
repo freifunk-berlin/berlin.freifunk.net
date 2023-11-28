@@ -25,6 +25,7 @@ jobs:
       - name: Build
         env:
           HUGO_ENV: production
+          URL_PRODUCTION: ${{ vars.URL_PRODUCTION }}
         run: hugo --minify -b $URL_PRODUCTION
             
       - name: Deploy
@@ -34,5 +35,5 @@ jobs:
           username: ${{ secrets.SSH_USERNAME_PRODUCTION }}
           key: ${{ secrets.SSH_KEY_PRODUCTION }}
           source: "public/"
-          target: ${{ secrets.WEBROOT_PRODUCTION }}
+          target: ${{ vars.WEBROOT_PRODUCTION }}
           strip_components: 1
