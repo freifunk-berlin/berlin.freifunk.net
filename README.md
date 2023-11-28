@@ -44,4 +44,4 @@ hugo build --minify -b <DOMAIN>
 
 The website is deployed automatically via github actions. The main branch is at [berlin.freifunk.net](https://berlin.freifunk.net). The other branches could be accessed via `dev.berlin.freifunk.net/<BRANCH_NAME>/`.
 
-The actions are defined in `.github/workflows` and could be configured with [github variables and secrets](https://github.com/freifunk-berlin/berlin.freifunk.net/settings/secrets/actions). The configurations for the production and development webserver are in the `apache` directory. The development setup should also use the `robots.txt` file to deny indexing.
+The actions are defined in `.github/workflows` and could be configured with [github variables and secrets](https://github.com/freifunk-berlin/berlin.freifunk.net/settings/secrets/actions). The configurations for the production and development webserver are in the `apache` directory.

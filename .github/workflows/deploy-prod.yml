@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   deploy:
@@ -24,6 +23,8 @@ jobs:
           extended: true
 
       - name: Build
+        env:
+          HUGO_ENV: production
         run: hugo --minify -b $URL_PRODUCTION
             
       - name: Deploy

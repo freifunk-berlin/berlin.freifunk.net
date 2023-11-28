@@ -4,9 +4,6 @@ on:
  push:
    branches-ignore:
      - main
- pull_request:
-   branches-ignore:
-     - main
 
 jobs:
   deploy:
@@ -26,7 +23,12 @@ jobs:
           extended: true
 
       - name: Build
+        env:
+          HUGO_ENV: production
         run: hugo --minify -b $URL_DEVELOPMENT/$GITHUB_REF_NAME --destination branch/$GITHUB_REF_NAME
+
+      - name: Create robots.txt
+        run: 'echo -e "User-agent: *\nDisallow: /" > branch/robots.txt'
 
       - name: Deploy
         uses: appleboy/scp-action@master
