@@ -35,6 +35,13 @@ hugo build --minify -b <DOMAIN>
 ├── archetypes                  # Template for new content
 ├── content                     # Pages as markdown files
 ├── layouts/partials            # Reusable elements
-├── static                      # Images and Videos
-└── themes                      # Theme, integrated via submodule
+├── static                      # Images and videos
+├── themes                      # Theme, integrated via submodule
+└── apache                      # Server configs
 ```
+
+## Deployment
+
+The website is deployed automatically via github actions. The main branch is at [berlin.freifunk.net](https://berlin.freifunk.net). The other branches could be accessed via `dev.berlin.freifunk.net/<BRANCH_NAME>/`.
+
+The actions are defined in `.github/workflows` and could be configured with [github variables and secrets](https://github.com/freifunk-berlin/berlin.freifunk.net/settings/secrets/actions). The configurations for the production and development webserver are in the `apache` directory. The development setup should also use the `robots.txt` file to deny indexing.
