@@ -1,0 +1,39 @@
+name: Deploy website to dev server
+
+on:
+ push:
+   branches-ignore:
+     - main
+ pull_request:
+   branches-ignore:
+     - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0 
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.119.0'
+          extended: true
+
+      - name: Build
+        run: hugo --minify -b $URL_DEVELOPMENT/$GITHUB_REF_NAME --destination branch/$GITHUB_REF_NAME
+
+      - name: Deploy
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ vars.IP_DEVELOPMENT }}
+          username: ${{ secrets.SSH_USERNAME_DEVELOPMENT }}
+          key: ${{ secrets.SSH_KEY_DEVELOPMENT }}
+          source: "branch/${{ github.ref.name }}"
+          target: ${{ vars.WEBROOT_DEVELOPMENT}}
+          strip_components: 1
