@@ -1,6 +1,6 @@
 ---
 title: "Mitmachen"
-description: ""
+omit_header_text: true
 menu:
   main:
     weight: 2
@@ -21,7 +21,9 @@ Sprich mit deinem Freundeskreis, Geschäftspartner\_innen und allen Menschen die
 
 ### Starter-Kit
 
-#### Wohnung, Geschäft, Café, Restaurant, Bar
+_Wohnung, Geschäft, Café, Restaurant, Bar_
+
+![](/participate_small.png)
 
 Du möchtest
 
@@ -37,7 +39,9 @@ So kannst du mitmachen
 
 ### Level 2
 
-#### Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges Gelände
+_Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges Gelände_
+
+![](/participate_medium.png)
 
 Du möchtest
 
@@ -52,7 +56,9 @@ So kannst du mitmachen
 
 ### Backbone
 
-#### Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus, Kirchturm
+_Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus, Kirchturm_
+
+![](/participate_big.png)
 
 Du möchtest
 
@@ -64,7 +70,10 @@ So kannst du mitmachen
 *   Eventuell kannst du diese Hardware im Rahmen einer [Überlassungserklärung](https://wiki.freifunk.net/Berlin:%C3%9Cberlassungserkl%C3%A4rung) leihen.
 *   Zur Planung der neuen Verbindungen solltest du mit den Freifunker\_innen, die die entfernten Router betreiben, [Kontakt aufnehmen](../../contact).
 
-### Weitere Informationen und Hinweise
+## Weitere Informationen und Hinweise
 
 Viele weitere Informationen gibt es in den [Häufigen Fragen](https://wiki.freifunk.net/Berlin:FAQ) im [Wiki](../../wiki).
 
+* [HowTo](https://wiki.freifunk.net/Berlin:Firmware/HowTo)
+* [Freifunk-Wizard](https://config.berlin.freifunk.net/wizard/routers)
+* [BBB-VPN](https://wiki.freifunk.net/Berlin:BBB-VPN)

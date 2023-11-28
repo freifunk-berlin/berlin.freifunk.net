@@ -1,9 +1,9 @@
 ---
 title: "Contact"
-description: ""
+omit_header_text: true
 menu:
   main:
-    weight: 1
+    weight: 7
 ---
 
 ## Meetings
