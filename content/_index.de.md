@@ -6,10 +6,10 @@ featured_image: '/header.jpg'
 
 Die Vision von Freifunk ist die Verbreitung freier Netzwerke, die Demokratisierung der Kommunikationsmedien und die Förderung lokaler Sozialstrukturen. Durch die Vernetzung ganzer Stadtteile wollen wir der digitalen Spaltung entgegenwirken und freie unabhängige Netzwerkstrukturen aufbauen. Konkret hat sich Freifunk zum Ziel gesetzt, offene WLAN-Netze einzurichten und diese miteinander zu verbinden. Dies ermöglicht einen freien Datenverkehr "durch die Luft" in der ganzen Stadt innerhalb des Freifunk-Netzes. Freifunk ist somit eine offene nicht-kommerzielle hierarchielose Initiative für freie Funknetzwerke.
 
-<video controls preload="metadata" poster="/video_poster.png" width="100%" src="https://berlin.freifunk.net/media/videos/freifunk_verbindet.webm">
-  <source src="https://berlin.freifunk.net/media/videos/freifunk_verbindet.webm" type="video/webm">
-  <source src="https://berlin.freifunk.net/media/videos/freifunk_verbindet.mp4" type="video/mp4">
-  <source src="https://berlin.freifunk.net/media/videos/freifunk_verbindet.ogv" type="video/ogg">
+<video controls preload="metadata" poster="videos/freifunk-verbindet.png" width="100%" src="videos/freifunk-verbindet.webm">
+  <source src="videos/freifunk-verbindet.webm" type="video/webm">
+  <source src="videos/freifunk-verbindet.mp4" type="video/mp4">
+  <source src="videos/freifunk-verbindet.ogv" type="video/ogg">
 </video>
 
 ## Wie funktioniert Freifunk?
