@@ -6,11 +6,7 @@ featured_image: '/header.jpg'
 
 Freifunk stands for distributing free networks, democratizing media of communication and promoting local social structures. By interconnecting whole neighborhoods, we want to bridge the digital gap and establish a free and independent network infrastructure. More precisely, the aim of Freifunk is installing open wifi networks and interconnecting them. This facilitates free data "air traffic" in the whole city within the Freifunk network. In short, Freifunk is an open, non-commercial, non-hierarchical initiative for free networks.
 
-<video controls preload="metadata" poster="videos/freifunk-verbindet.png" width="100%" src="videos/freifunk-verbindet.webm">
-  <source src="videos/freifunk-verbindet.webm" type="video/webm">
-  <source src="videos/freifunk-verbindet.mp4" type="video/mp4">
-  <source src="videos/freifunk-verbindet.ogv" type="video/ogg">
-</video>
+{{< video src="freifunk-verbindet" default-format="webm" preload="metadata" >}}
 
 ## How does it work?
 
