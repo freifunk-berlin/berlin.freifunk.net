@@ -26,7 +26,7 @@ Andreas Bräu
 
 **Kontakt**  
 E-Mail: verein{at}foerderverein.freie-netzwerke.de  
-WWW: <http://foerderverein.freie-netzwerke.de>
+WWW: <https://foerderverein.freie-netzwerke.de>
 
 **Registereintrag**  
 Registergericht: Amtsgericht Berlin Charlottenburg  

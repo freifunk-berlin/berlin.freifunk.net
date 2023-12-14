@@ -23,7 +23,7 @@ Sprich mit deinem Freundeskreis, Geschäftspartner\_innen und allen Menschen die
 
 _Wohnung, Geschäft, Café, Restaurant, Bar_
 
-{{< img src="participate_small.png" alt="Person am Laptop mit einem Router auf der fensterbank" >}}
+{{< img src="participate_small.png" alt="Person am Laptop mit einem Router auf der Fensterbank" >}}
 
 Du möchtest
 

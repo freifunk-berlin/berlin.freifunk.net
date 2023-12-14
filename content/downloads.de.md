@@ -17,4 +17,4 @@ Der Update-Vorgang von der veralteten Hedy-Firmware auf die aktuelle Falter-Firm
 
 Die Entwicklung der Firmware findet auf [github.com/freifunk-berlin/falter-packages](https://github.com/freifunk-berlin/falter-packages) statt. Sollte etwas nicht korrekt funktionieren, so teile uns das bitte [hier](https://github.com/freifunk-berlin/falter-packages/issues/new) mit.
 
-Unter [download.berlin.freifunk.net](http://download.berlin.freifunk.net/) finden sich diverse Videos, eBooks und Flyer.
+Unter [download.berlin.freifunk.net](https://download.berlin.freifunk.net/) finden sich diverse Videos, eBooks und Flyer.

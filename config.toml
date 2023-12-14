@@ -48,13 +48,13 @@ url = "https://github.com/freifunk-berlin"
 [menu]
 [[menu.main]]
     name = 'freifunk.net'
-    url = 'http://freifunk.net'
+    url = 'https://freifunk.net'
     weight = 8
     [menu.main.params]
       rel = 'external'
 [[menu.main]]
     name = 'FAQ'
-    url = 'http://wiki.freifunk.net/Berlin:FAQ'
+    url = 'https://wiki.freifunk.net/Berlin:FAQ'
     weight = 6
     [menu.main.params]
       rel = 'external'
