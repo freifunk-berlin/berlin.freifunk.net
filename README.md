@@ -12,25 +12,25 @@ The website is built using the static website generator Hugo.
 
 ## Run for development
 
-```
+```console
 hugo server -w
 ```
 
 Note: You can change the base address `-b` and the bind address `--bind` if your run it on a remote machine.
 
-```
+```console
 hugo server -w -b http://localhost:1313/ --bind 0.0.0.0
 ```
 
 ## Build for production
 
-```
+```console
 hugo build --minify -b <baseURL>
 ```
 
 ## Structure
 
-```
+```text
 ├── .github/workflows           # Config for pipelines to test and deploy
 ├── archetypes                  # Template for new content
 ├── content                     # Pages as markdown files

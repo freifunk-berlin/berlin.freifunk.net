@@ -6,7 +6,7 @@ menu:
     weight: 3
 ---
 
-## Freifunk in Berlin durch Spenden unterstützen!
+## Freifunk in Berlin durch Spenden unterstützen
 
 Für den Aufbau und Erhalt unseres freien Funknetzwerks sind wird auf regelmäßige Spenden angewiesen. Wir bevorzugen Spenden über betterplace.org. Das ist sowohl für uns, als auch für euch einfacher. Spendenbescheinigungen werden von betterplace.org ausgestellt und im Februar des Folgejahres verschickt.
 
@@ -27,7 +27,7 @@ Ihr könnt Freifunk Berlin auf verschiedenen Wegen eure Geld-Spende zukommen las
 
 **Vereinskonto:**
 
-```
+```text
 Förderverein Freie Netzwerke e.V.
 Konto 722 722 7006
 BLZ 100 900 00
