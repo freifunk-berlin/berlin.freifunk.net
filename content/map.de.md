@@ -9,4 +9,4 @@ menu:
 - [Karte (Hopglass)](https://hopglass.berlin.freifunk.net/)
 - [Monitor](https://monitor.berlin.freifunk.net/cgp/)
 
-<iframe id="map" src="//openwifimap.net/#map?bbox=52.449,13.1777,52.587,13.625" width="100%" style="min-width: 400px;" height="600px" frameborder="0"></iframe>
+{{< iframe src="https://openwifimap.net/#map?bbox=52.449,13.1777,52.587,13.625" height="600px" width="100%" >}}

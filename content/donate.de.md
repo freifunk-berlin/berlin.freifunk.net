@@ -14,12 +14,8 @@ Ihr könnt Freifunk Berlin auf verschiedenen Wegen eure Geld-Spende zukommen las
 
 **Betterplace:**
 
-<iframe frameborder="0" marginheight="0" marginwidth="0"
-  src="https://www.betterplace-widget.org/projects/83703?l=de"
-  width="100%" height="320" style="border: 0; padding:0; margin:0;"
-  >Informieren und spenden: <a href='https://www.betterplace.org/de/projects/83703-freifunk-berlin-im-haus-der-statistik'
-  target='_blank'>„Freifunk Berlin im Haus der Statistik“</a> auf betterplace.org öffnen.
-</iframe>
+{{< iframe src="https://www.betterplace-widget.org/projects/83703?l=de" height="320px">}}
+
 
 **Flattr:**
 
