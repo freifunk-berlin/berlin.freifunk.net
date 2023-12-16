@@ -10,7 +10,7 @@ menu:
 
 Sprich mit deinem Freundeskreis, Geschäftspartner\_innen und allen Menschen die dich umgeben und verbreite die Idee von Freifunk. Alle können Freifunker\_innen werden! Wir freuen uns über Unterstützung bei
 
-* der Erweiterung des Freifunk-Netzwerks durch das Aufstellen neuer Freifunk-Router ([siehe unten](#aufstellen)) oder durch das Bereitstellen interessanter Standorte für Freifunk-Router (z.B. Dächer).
+* der Erweiterung des Freifunk-Netzwerks durch das Aufstellen neuer Freifunk-Router ([siehe unten](#du-möchtest-einen-freifunk-router-aufstellen)) oder durch das Bereitstellen interessanter Standorte für Freifunk-Router (z.B. Dächer).
 * der Entwicklung von Infomaterial, Bannern, Transparenten, T-Shirts... was immer dir Kreatives einfällt!
 * der Verbreitung der Idee auf Veranstaltungen, Barcamps und Kongressen.
 * dem Betreiben von Diensten für die Community und der Entwicklung von Web-Anwendungen.
@@ -21,7 +21,7 @@ Sprich mit deinem Freundeskreis, Geschäftspartner\_innen und allen Menschen die
 
 ### Starter-Kit
 
-_Wohnung, Geschäft, Café, Restaurant, Bar_
+_Wohnung, Geschäft, Café, Restaurant, Bar ..._
 
 {{< img src="participate_small.png" alt="Person am Laptop mit einem Router auf der Fensterbank" >}}
 
@@ -39,7 +39,7 @@ So kannst du mitmachen
 
 ### Level 2
 
-_Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges Gelände_
+_Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges Gelände ..._
 
 {{< img src="participate_medium.png" alt="Glückliche Personen mit Wlan Empfang am Handy und Laptops" >}}
 
@@ -56,7 +56,7 @@ So kannst du mitmachen
 
 ### Backbone
 
-_Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus, Kirchturm_
+_Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus, Kirchturm ..._
 
 {{< img src="participate_big.png" alt="Dächer von Häusern die mit roten Punkten und Linien miteinander verbunden sind um das Mesh-Netz zu symbolisieren" >}}
 

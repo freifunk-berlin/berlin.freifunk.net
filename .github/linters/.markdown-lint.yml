@@ -1,3 +1,6 @@
 ---
 MD013: false
 MD041: false
+MD034: false
+MD026:
+  punctuation: ".,;:"

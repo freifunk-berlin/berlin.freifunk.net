@@ -1,6 +1,6 @@
 # Freifunk Berlin
 
-This is the repository for the website of the Freifunk Community Berlin (https://berlin.freifunk.net).
+This is the repository for the website of the [Freifunk Community Berlin](https://berlin.freifunk.net).
 
 The website is built using the static website generator Hugo.
 

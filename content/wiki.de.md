@@ -22,4 +22,4 @@ Mach mit!
 
 **Die letzten [Änderungen im Wiki](https://wiki.freifunk.net/index.php?title=Spezial:Letzte_%C3%84nderungen&amp;days=30&amp;from=&amp;limit=500) in Sachen Berlin behandelten die Themen...**  
 
-_🚧  Dieser Abschnitt wird gerade überarbeitet 🚧_
+_🚧  Dieser Abschnitt wird gerade überarbeitet ..._
