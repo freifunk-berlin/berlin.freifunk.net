@@ -1,4 +1,5 @@
-_build/
-.*.swp
-www/external_news_list.html
-www/external_news_wiki.html
+public/
+.hugo_build.lock
+resources/_gen/
+www/
+www-dev/

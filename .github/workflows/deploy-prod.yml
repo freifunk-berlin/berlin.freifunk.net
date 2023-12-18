@@ -1,0 +1,40 @@
+---
+name: Deploy website to production server
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.119.0'
+          extended: true
+
+      - name: Build
+        env:
+          HUGO_ENV: production
+          URL_PRODUCTION: ${{ vars.URL_PRODUCTION }}
+        run: hugo --minify -b "$URL_PRODUCTION"
+
+      - name: Deploy
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ vars.IP_PRODUCTION }}
+          username: ${{ secrets.SSH_USERNAME_PRODUCTION }}
+          key: ${{ secrets.SSH_KEY_PRODUCTION }}
+          source: "public/"
+          target: ${{ vars.WEBROOT_PRODUCTION }}
+          strip_components: 1

@@ -1,0 +1,14 @@
+---
+# This extends the default yaml-lint conf by adjusting some options.
+
+extends: default
+
+ignore: |
+  venv
+
+rules:
+  document-start:
+    level: error
+  line-length:
+    max: 2048
+    level: warning
