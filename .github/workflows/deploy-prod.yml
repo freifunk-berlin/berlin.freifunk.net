@@ -4,7 +4,7 @@ name: Deploy website to production server
 on:  # yamllint disable-line rule:truthy
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
