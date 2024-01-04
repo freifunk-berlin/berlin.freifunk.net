@@ -1,4 +1,6 @@
 ---
+title: "Freifunk Berlin"
+description: "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
 featured_image: '/header.jpg'
 ---
 
