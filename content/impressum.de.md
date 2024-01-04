@@ -1,5 +1,6 @@
 ---
-title: Impressum
+title: "Impressum"
+description: ""
 featured_image: ''
 omit_header_text: true
 description: ''

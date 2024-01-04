@@ -1,7 +1,7 @@
 ---
-title: Wiki
+title: "Wiki"
+description: "Das Freifunk-Wiki"
 omit_header_text: true
-description: Das Freifunk-Wiki
 menu:
   main:
     weight: 4

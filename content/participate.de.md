@@ -1,5 +1,6 @@
 ---
 title: "Mitmachen"
+description: ""
 omit_header_text: true
 menu:
   main:
