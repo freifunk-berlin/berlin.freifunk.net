@@ -45,3 +45,10 @@ hugo build --minify -b <baseURL>
 The website is deployed automatically via GitHub actions. The main branch is at [berlin.freifunk.net](https://berlin.freifunk.net). The other branches could be accessed via `dev.berlin.freifunk.net/<BRANCH_NAME>/`.
 
 The actions are defined in `.github/workflows` and could be configured with [GitHub variables and secrets](https://github.com/freifunk-berlin/berlin.freifunk.net/settings/secrets/actions). The configurations for the production and development webserver are in the `apache` directory.
+
+## Data fetching
+
+To display up to date information, we fetch and generate some data during the build process. These informations are available as shortcodes for the content and as partials for the templates. They are used at various places of the website.
+
+- Nodecount (ff-community api)
+- Lastchange (ff-community api)
