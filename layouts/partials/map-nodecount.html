@@ -1,0 +1,14 @@
+{{/* Count the nodes active on hopglass */}}
+{{ $data := "" }}
+{{ $url := "https://hopglass.berlin.freifunk.net/nodes.json" }}
+{{ with resources.GetRemote $url }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+    {{ $data = . | transform.Unmarshal }}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %q" $url }}
+{{ end }}
+{{ $nodecount := len $data.nodes }}
+{{ return $nodecount }}

@@ -1,0 +1,4 @@
+{{/* Get the current time in coorrect format */}}
+{{ $currentTime := now }}
+{{ $lastchange := $currentTime.Format "2006-01-02T15:04:05-07:00" }}
+{{ return $lastchange }}
