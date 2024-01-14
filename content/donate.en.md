@@ -1,5 +1,5 @@
 ---
-title: "Spenden"
+title: "Donate"
 description: ""
 omit_header_text: true
 menu:
@@ -7,11 +7,11 @@ menu:
     weight: 3
 ---
 
-## Freifunk in Berlin durch Spenden unterstützen
+## Support Freifunk in Berlin through donations
 
-Für den Aufbau und Erhalt unseres freien Funknetzwerks sind wird auf regelmäßige Spenden angewiesen. Wir bevorzugen Spenden über betterplace.org. Das ist sowohl für uns, als auch für euch einfacher. Spendenbescheinigungen werden von betterplace.org ausgestellt und im Februar des Folgejahres verschickt.
+We rely on regular donations to build and maintain our free wireless network. We prefer donations via betterplace.org. This is easier for both us and you. Donation receipts are issued by betterplace.org and sent in February of the following year.
 
-Ihr könnt Freifunk Berlin auf verschiedenen Wegen eure Geld-Spende zukommen lassen:
+You can send your donation to Freifunk Berlin in various ways:
 
 ### Betterplace
 
@@ -21,7 +21,7 @@ Ihr könnt Freifunk Berlin auf verschiedenen Wegen eure Geld-Spende zukommen las
 
 {{< img src="flattr-badge-large.png" alt="Flattr Freifunk Berlin" link="https://flattr.com/submit/auto?user_id=freifunk&url=http://freifunk.net&title=Freifunk%20Berlin&description=Freifunk%20is%20a%20non-commercial%20initiative%20for%20free%20decentraliced%20wireless%20mesh%20networks.&language=de_DE&tags=distributed,wifi,mesh,openwrt,olsr&category=software" >}}
 
-### Vereinskonto
+### Bank account
 
 ```text
 Förderverein Freie Netzwerke e.V.
@@ -32,6 +32,6 @@ BIC BEVODEBB
 Berliner Volksbank
 ```
 
-Gib bitte einen Verwendungszweck an. Hier stellen wir Zuwendungsbescheide erst ab einer Höhe von 20,- EUR aus, sofern Deine Postadresse vorliegt (Verwendungszweck oder Mail).
+Please specify a intended use. Here we only issue donation receipts for amounts over EUR 20, provided your postal address is available (purpose or email).
 
-Mail: spenden{at}foerderverein.freie-netwerke.de
+E-mail: spenden{at}foerderverein.freie-netwerke.de
