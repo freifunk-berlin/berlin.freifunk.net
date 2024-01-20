@@ -13,7 +13,7 @@ menu:
 
 Fertige Images kannst du im [Firmware-Selector](https://selector.berlin.freifunk.net/) herunterladen. Dort werden viele, aber nicht alle unterstützdem Router angeboten. Details zu Firmware für weitere Router und Informationen zum Selbstbau von Images findest du im Wiki-Artikel [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware).
 
-Der Berliner Freifunk-Wizard [config.berlin.freifunk.net](https://config.berlin.freifunk.net/wizard/routers) gibt dir die bei der Einrichtung benötigten IPs.
+Der Berliner Freifunk-Wizard [config.berlin.freifunk.net](https://config.berlin.freifunk.net) gibt dir die bei der Einrichtung benötigten IPs.
 
 Der genaue Vorgang zur Einrichtung ist im Wiki-Artikel [Berlin:Firmware/HowTo](https://wiki.freifunk.net/Berlin:Firmware/HowTo) beschrieben.
 
