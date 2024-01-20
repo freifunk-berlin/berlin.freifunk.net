@@ -76,5 +76,5 @@ So kannst du mitmachen
 Viele weitere Informationen gibt es in den [Häufigen Fragen](https://wiki.freifunk.net/Berlin:FAQ) im [Wiki]({{< relref path="wiki.md" >}}).
 
 * [HowTo](https://wiki.freifunk.net/Berlin:Firmware/HowTo)
-* [Freifunk-Wizard](https://config.berlin.freifunk.net/wizard/routers)
+* [Freifunk-Wizard](https://config.berlin.freifunk.net)
 * [BBB-VPN](https://wiki.freifunk.net/Berlin:BBB-VPN)

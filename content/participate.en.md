@@ -76,5 +76,5 @@ Here's how you can join in
 There is a lot more information in the [Frequently Asked Questions](https://wiki.freifunk.net/Berlin:FAQ) in the [Wiki]({{< relref path="wiki.md" >}}).
 
 * [HowTo](https://wiki.freifunk.net/Berlin:Firmware/HowTo)
-* [Freifunk Wizard](https://config.berlin.freifunk.net/wizard/routers)
+* [Freifunk Wizard](https://config.berlin.freifunk.net)
 * [BBB-VPN](https://wiki.freifunk.net/Berlin:BBB-VPN)

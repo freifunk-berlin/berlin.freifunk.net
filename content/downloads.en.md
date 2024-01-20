@@ -13,7 +13,7 @@ menu:
 
 You can download images in the [firmware selector](https://selector.berlin.freifunk.net/). Many, but not all, supported routers are offered there. Details about firmware for other routers and information about building your own images can be found in the Wiki article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware).
 
-The Berlin Freifunk wizard [config.berlin.freifunk.net](https://config.berlin.freifunk.net/wizard/routers) gives you the IPs required for setup.
+The Berlin Freifunk wizard [config.berlin.freifunk.net](https://config.berlin.freifunk.net) gives you the IPs required for setup.
 
 The exact setup process is described in the Wiki article [Berlin:Firmware/HowTo](https://wiki.freifunk.net/Berlin:Firmware/HowTo).
 
