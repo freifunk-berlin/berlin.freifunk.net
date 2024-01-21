@@ -17,10 +17,6 @@ Ihr könnt Freifunk Berlin auf verschiedenen Wegen eure Geld-Spende zukommen las
 
 {{< iframe src="https://www.betterplace-widget.org/projects/83703?l=de" height="320px">}}
 
-### Flattr
-
-{{< img src="flattr-badge-large.png" alt="Flattr Freifunk Berlin" link="https://flattr.com/submit/auto?user_id=freifunk&url=http://freifunk.net&title=Freifunk%20Berlin&description=Freifunk%20is%20a%20non-commercial%20initiative%20for%20free%20decentraliced%20wireless%20mesh%20networks.&language=de_DE&tags=distributed,wifi,mesh,openwrt,olsr&category=software" >}}
-
 ### Vereinskonto
 
 ```text
