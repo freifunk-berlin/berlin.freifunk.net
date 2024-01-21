@@ -52,7 +52,7 @@ You want to
 Here's how you can join in
 
 * Get a Freifunk-enabled outdoor router. Recommendations can be found in the article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware#Unterst.C3.BCtzte_Router) of the [Wiki]({{< relref path="wiki.md" >}} ).
-* You may be able to borrow this hardware as part of a [letter of transfer](https://wiki.freifunk.net/Berlin:%C3%9Cberlassenserkl%C3%A4rung).
+* You may be able to borrow this hardware as part of a [letter of transfer](https://wiki.freifunk.net/Berlin:%C3%9Cberlassungserkl%C3%A4rung).
 * To plan the new connections, you should [contact]({{< relref path="contact.md" >}}) the Freifunk operators who operate the remote routers.
 
 ### Backbone
