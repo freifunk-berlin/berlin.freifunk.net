@@ -17,8 +17,6 @@ We communicate not only face-to-face at the meetings but also through public mai
 
 * [Berlin Wireless](https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin) Berlin's Freifunk list
 * [Berlin Neukölln](https://lists.spline.inf.fu-berlin.de/mailman/listinfo/ff-nk) Neighborhood's list for Berlin Neukölln
-* [Berlin Treptow-Köpenick](https://www.geroedel.de/mailman/listinfo/freifunk-tk) Neighborhood's list for Berlin Treptow-Köpenick
-* [Berlin Spandau](https://www.geroedel.de/mailman/listinfo/ff-spandau) Neighborhood's list for Berlin Spandau
 * [WLANnews](https://lists.freifunk.net/mailman/listinfo/wlannews-freifunk.net) Communities' news and news on wifi and free networks from Germany
 * [WLANware](https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net) Technical discussions on wifi hardware from all over Germany
 * [WLANtalk](https://lists.freifunk.net/mailman/listinfo/wlantalk-freifunk.net) A transregional mailing list for communication between the individual Freifunk communities
