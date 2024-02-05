@@ -23,4 +23,4 @@ The firmware development takes place on [github.com/freifunk-berlin/falter-packa
 
 ### More downloads
 
-Various videos, eBooks and flyers can be found at [download.berlin.freifunk.net](https://download.berlin.freifunk.net/).
+Various videos, eBooks and flyers can be found at [download-master.berlin.freifunk.net](https://download-master.berlin.freifunk.net/).
