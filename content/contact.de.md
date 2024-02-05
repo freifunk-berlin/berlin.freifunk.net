@@ -18,7 +18,6 @@ Möglichkeiten, bei Freifunk mitzumachen, gibt es viele: als Netzwerker_in, Soft
 Zur Kommunikation gibt es neben den Treffen auch öffentliche Mailinglisten. Auf diesen trägst Du Dich selbst ein, indem die Deine Emailadresse angibst und in der folgenden Bestätigungsmail den Link klickst. Du kannst einstellen, ob Du jede Nachricht sofort oder eine tägliche Zusammenfassung bekommen möchtest.
 
 * [Berlin Wireless](https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin) Achtung: Stand September 2023 funktioniert die Anmeldung nicht. Bitte schreib eine Mail an <info@berlin.freifunk.net>. Berliner Freifunk-Liste (Stell dich hier der Community vor)
-* [Berlin Neukölln](https://lists.spline.inf.fu-berlin.de/mailman/listinfo/ff-nk) Kiezliste für Neukölln
 * [WLANnews](https://lists.freifunk.net/mailman/listinfo/wlannews-freifunk.net) Neuigkeiten aus den Communities und Nachrichten zum Thema WLAN und freie Netze aus ganz Deutschland
 * [WLANware](https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net) Technischer Austausch über WLAN-Hardware aus ganz Deutschland
 * [WLANtalk](https://lists.freifunk.net/mailman/listinfo/wlantalk-freifunk.net) Überregionale Liste zum Austausch zwischen den verschiedenen Freifunk-Communities
