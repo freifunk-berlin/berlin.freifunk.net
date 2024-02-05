@@ -19,8 +19,6 @@ Zur Kommunikation gibt es neben den Treffen auch öffentliche Mailinglisten. Auf
 
 * [Berlin Wireless](https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin) Achtung: Stand September 2023 funktioniert die Anmeldung nicht. Bitte schreib eine Mail an <info@berlin.freifunk.net>. Berliner Freifunk-Liste (Stell dich hier der Community vor)
 * [Berlin Neukölln](https://lists.spline.inf.fu-berlin.de/mailman/listinfo/ff-nk) Kiezliste für Neukölln
-* [Berlin Treptow-Köpenick](https://www.geroedel.de/mailman/listinfo/freifunk-tk) Kiezliste für Treptow-Köpenick
-* [Berlin Spandau](https://www.geroedel.de/mailman/listinfo/ff-spandau) Kiezliste für Spandau
 * [WLANnews](https://lists.freifunk.net/mailman/listinfo/wlannews-freifunk.net) Neuigkeiten aus den Communities und Nachrichten zum Thema WLAN und freie Netze aus ganz Deutschland
 * [WLANware](https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net) Technischer Austausch über WLAN-Hardware aus ganz Deutschland
 * [WLANtalk](https://lists.freifunk.net/mailman/listinfo/wlantalk-freifunk.net) Überregionale Liste zum Austausch zwischen den verschiedenen Freifunk-Communities
