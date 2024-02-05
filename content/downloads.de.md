@@ -23,4 +23,4 @@ Die Entwicklung der Firmware findet auf [github.com/freifunk-berlin/falter-packa
 
 ### Weitere Downloads
 
-Unter [download.berlin.freifunk.net](https://download.berlin.freifunk.net/) finden sich diverse Videos, eBooks und Flyer.
+Unter [download-master.berlin.freifunk.net](https://download-master.berlin.freifunk.net/) finden sich diverse Videos, eBooks und Flyer.
