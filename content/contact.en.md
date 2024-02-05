@@ -16,7 +16,6 @@ Time and date of the meetings of the Berlin Freifunk community can be found in t
 We communicate not only face-to-face at the meetings but also through public mailing lists. After registration with your e-mail address, you need to click the link in the confirmation mail. You can choose between instant message delivery and a daily digest.
 
 * [Berlin Wireless](https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin) Berlin's Freifunk list
-* [Berlin Neukölln](https://lists.spline.inf.fu-berlin.de/mailman/listinfo/ff-nk) Neighborhood's list for Berlin Neukölln
 * [WLANnews](https://lists.freifunk.net/mailman/listinfo/wlannews-freifunk.net) Communities' news and news on wifi and free networks from Germany
 * [WLANware](https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net) Technical discussions on wifi hardware from all over Germany
 * [WLANtalk](https://lists.freifunk.net/mailman/listinfo/wlantalk-freifunk.net) A transregional mailing list for communication between the individual Freifunk communities
