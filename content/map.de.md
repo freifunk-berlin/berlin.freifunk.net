@@ -7,7 +7,7 @@ menu:
     weight: 2
 ---
 
-Die Freifunk Berlin Karte zeigt freie WLAN Zugangspunkte mit ihrer genauen Lage. Die WLAN Zugangspunkte sind kostenlos nutzbar, unzensiert und öffentlich zugänglich.
+Die Freifunk Berlin Karte zeigt {{ getenv "HUGO_PARAMS_COMMUNITY_NODECOUNT" }} freie WLAN Zugangspunkte mit ihrer genauen Lage. Die WLAN Zugangspunkte sind kostenlos nutzbar, unzensiert und öffentlich zugänglich.
 
 {{< iframe src="https://openwifimap.net/#map?bbox=52.449,13.1777,52.587,13.625" height="600px" width="100%" >}}
 

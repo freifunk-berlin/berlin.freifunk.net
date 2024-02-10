@@ -17,6 +17,11 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Get data for community JSON and dynamic node count
+        run: |
+          CI_COMMUNITY_LASTCHANGE=$(date --iso-8601=seconds)
+          CI_COMMUNITY_NODECOUNT=$(curl -s 'https://hopglass.berlin.freifunk.net/nodes.json' | jq '.nodes | length')          
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
