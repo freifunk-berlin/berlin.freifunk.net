@@ -1,0 +1,71 @@
+{{/* Return dict with the github activity data:
+  - repo_count
+  - top_repos
+  - commit_count */}}
+
+{{ $ACCESS_TOKEN :=  getenv "HUGO_GITHUB_ACCESS_TOKEN" }}
+
+{{/* Defaults for development without matrix access token. */}}
+{{ $github_activity := dict "repo_count" 42 "top_repos" (slice "foo" "bar") "commit_count" 161 }}
+
+{{ if $ACCESS_TOKEN }}
+
+  {{ $headers := (dict "Authorization" (printf "Bearer %s" $ACCESS_TOKEN )) }}
+
+  {{/* Number of repos in the organization.
+      Private and archived repos are included, forks are excluded.
+      A maximum of 10 pages with up to 100 repos each are checked.
+      If more than 1000 repos exist an error is thrown. */}}
+  {{ $repo_list := slice}}
+  {{ range $page := (seq 10) }}
+    {{ $current_repo_list_url := printf "https://api.github.com/orgs/freifunk-berlin/repos?per_page=100&sort=pushed&page=%d" $page }}
+    {{ $current_repo_list_json := getJSON $current_repo_list_url $headers }}
+    {{ range $repo := $current_repo_list_json }}
+      {{ if not $repo.fork }}
+        {{ $repo_list = $repo_list| append $repo }}
+      {{ end }}
+    {{ end }}
+    {{ if lt (len $current_repo_list_json) 100 }}
+      {{ break }}
+    {{ else if eq $page 10}}
+      {{ errorf "Pagination error: There might be more than 1000 repos on github. You need to increase the max pagination in the github activities partial." }}
+    {{ end }}
+  {{ end }}
+  {{ $repo_count := len $repo_list}}
+
+  {{/* Top three active repos.
+      Based on latest push. */}}
+  {{ $top_repos := slice }}
+  {{ range $index, $repo := $repo_list }}
+        {{ if eq $index 3 }}
+            {{ break }}
+        {{ end }}
+        {{ $top_repos = $top_repos | append $repo.name }}
+  {{ end }}
+
+  {{/* Number of commits of the last seven days in all the repos.
+      A maximum of 10 pages with up to 100 commits each are checked.
+      If more than 1000 commits exist for a repo an error is thrown. */}}
+  {{ $past_seven_days_date := now.AddDate 0 0 -7 }}
+  {{ $past_seven_days := $past_seven_days_date.Format "2006-01-02T15:04:05Z" }}  
+  {{ $commit_count := 0 }}
+  {{ range $repo := $repo_list }}
+    {{ range $page := (seq 10) }}
+      {{ $commit_url := printf "https://api.github.com/repos/freifunk-berlin/%s/commits?per_page=100&since=%s&page=%d" $repo.name $past_seven_days $page }}
+      {{ $commit_json := getJSON $commit_url $headers }}
+      {{ $commit_count = add $commit_count (len $commit_json) }}
+      {{ if lt (len $commit_json) 100 }}
+        {{ break }}
+      {{ else if eq $page 10}}
+        {{ errorf "Pagination error: There might be more than 1000 commits for the %s repo. You need to increase the max pagination in the github activities partial." $repo.name }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ $github_activity = dict "repo_count" $repo_count "top_repos" $top_repos "commit_count" $commit_count }}
+
+{{ else }}
+  {{ warnf "HUGO_GITHUB_ACCESS_TOKEN not found in the environment. Using the development defaults for github activities partial." }}
+{{ end }}
+
+{{ return $github_activity}}

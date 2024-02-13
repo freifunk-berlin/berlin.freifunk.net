@@ -16,10 +16,16 @@ The website is built using the static website generator Hugo.
 hugo server -w
 ```
 
-Note: You can change the base address `-b` and the bind address `--bind` if your run it on a remote machine.
+You can change the base address `-b` and the bind address `--bind` if your run it on a remote machine.
 
 ```console
 hugo server -w -b http://localhost:1313/ --bind 0.0.0.0
+```
+
+You can set the environment variables `HUGO_MATRIX_ACCESS_TOKEN`, `HUGO_MATRIX_HOME_SERVER` and `HUGO_GITHUB_ACCESS_TOKEN` to get real activity informations. Else some dummy data is used.
+
+```console
+HUGO_GITHUB_ACCESS_TOKEN="secret" HUGO_MATRIX_ACCESS_TOKEN="secret" HUGO_MATRIX_HOME_SERVER="htps://matrix.org" hugo server -w
 ```
 
 ## Build for production
@@ -50,5 +56,8 @@ The actions are defined in `.github/workflows` and could be configured with [Git
 
 To display up to date information, we fetch and generate some data during the build process. These informations are available as shortcodes for the content and as partials for the templates. They are used at various places of the website.
 
-- Nodecount (ff-community api)
-- Lastchange (ff-community api)
+- map-nodecount (ff-community api)
+- community-lastchange (ff-community api)
+- activities-mailinglist (activities section)
+- activities-matrix (activities section)
+- activities-github (activities section)

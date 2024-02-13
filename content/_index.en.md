@@ -19,3 +19,15 @@ Freifunk's foundation is a so called mesh network. All routers within the Freifu
 ## How can I contribute?
 
 Join us and become a Freifunk activist! Come to one of the meetings or go directly to the HowTo and get your router ready for Freifunk! There are still no other network activists in your area? Well, then you're the 1st one and further will soon follow!
+
+## Activities
+
+{{< activities-matrix >}}
+
+---
+
+{{< activities-github >}}
+
+---
+
+{{< activities-mailinglist >}}

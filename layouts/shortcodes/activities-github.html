@@ -1,0 +1,19 @@
+{{ $github_activity := partial "activities-github.html" . }}
+
+{{ if eq .Site.Language.Lang "de" }}
+    Zur Versionsverwaltung der Software nutzen wir <a href="https://github.com/freifunk-berlin/">Github</a>.
+    Dort gab es in den letzten sieben Tagen <b>{{ $github_activity.commit_count }} (commits)</b> Änderungen am Code.
+    Auf der Platform werden insgesamt <b>{{ $github_activity.repo_count }} (repositories)</b> Projekte verwaltet.
+    Die aktivsten sind derzeit:
+{{ else if eq .Site.Language.Lang "en" }}
+    We use <a href="https://github.com/freifunk-berlin/">Github</a> for version control of the software.
+    There have been <b>{{ $github_activity.commit_count }} (commits)</b> changes to the code in the last seven days.
+    A total of <b>{{ $github_activity.repo_count }} (repositories)</b> projects are managed on the platform.
+    The most active are currently:
+{{ end }}
+
+ <ul style="text-align:left;margin-left: auto;margin-right: auto;width: fit-content;">
+    {{ range $element := $github_activity.top_repos }}
+    <li><a href="https://github.com/freifunk-berlin/{{ $element }}">{{ $element }}</a></li>
+    {{ end }}
+</ul>

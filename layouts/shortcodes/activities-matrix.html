@@ -1,0 +1,11 @@
+{{ $matrix_activity := partial "activities-matrix.html" . }}
+
+{{ if eq .Site.Language.Lang "de" }}
+    Im <a href="https://matrix.to/#/#berlin.freifunk.net:matrix.org">Freifunk Berlin Matrix Space</a> sind <b>{{ $matrix_activity.member_count }} User</b> aktiv. 
+    Neben dem Hauptchat gibt es Themen-Chats für z.B. Hardware und Firmware-Entwicklung sowie <b>{{ $matrix_activity.site_room_count }} Chats</b> für spezifische Freifunk-Standorte.
+    Im Hauptchat wurden in den letzten 30 Tagen <b>{{ $matrix_activity.message_count }} Nachrichten</b> verschickt.
+{{ else if eq .Site.Language.Lang "en" }}
+    In the <a href="https://matrix.to/#/#berlin.freifunk.net:matrix.org">Freifunk Berlin Matrix Space</a> are <b>{{ $matrix_activity.member_count }}  active users</b>.
+    In addition to the main chat, there are topic chats for e.g. hardware and firmware development as well as <b>{{ $matrix_activity.site_room_count }} chats</b> for specific Freifunk locations.
+    In the main chat <b>{{ $matrix_activity.message_count }} messages</b> have been sent in the last 30 days.
+{{ end }}

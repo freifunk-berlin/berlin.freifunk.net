@@ -19,3 +19,15 @@ Die Grundlage von Freifunk bildet ein sogenanntes Mesh-Netzwerk. Alle WLAN-Route
 ## Wie kann ich mitmachen?
 
 Mach mit und werde FreifunkerIn! Komm zu den Treffen oder geh direkt zum HowTo und mach deinen Router fit für Freifunk! Gibt es noch keine weiteren Freifunker_innen in deiner Gegend? Dann bist du die oder der Erste und andere werden dir bald folgen!
+
+## Aktivitäten
+
+{{< activities-matrix >}}
+
+---
+
+{{< activities-github >}}
+
+---
+
+{{< activities-mailinglist >}}

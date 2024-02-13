@@ -1,0 +1,13 @@
+{{ $mail_subjects := partial "activities-mailinglist.html" . }}
+
+{{ if eq .Site.Language.Lang "de" }}
+    Auf der <a href="https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin">Mailingliste</a> werden gerade folgende Themen diskutiert:
+{{ else if eq .Site.Language.Lang "en" }}
+    The following topics are currently being discussed on the <a href="https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin">mailing list</a>:
+{{ end }}
+
+<ul style="text-align:left;margin-left: auto;margin-right: auto;width: fit-content;">
+    {{ range $element := $mail_subjects }}
+    <li>{{ $element }}</li>
+    {{ end }}
+</ul>
