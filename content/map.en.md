@@ -7,11 +7,9 @@ menu:
     weight: 2
 ---
 
-The Freifunk Berlin map shows free WiFi access points with their exact location. The WiFi access points are free to use, uncensored and publicly accessible.
+The [Freifunk Berlin map](https://hopglass.berlin.freifunk.net/) shows free WiFi access points with their exact location. The WiFi access points are free to use, uncensored and publicly accessible.
 
-{{< iframe src="https://openwifimap.net/#map?bbox=52.449,13.1777,52.587,13.625" height="600px" width="100%" >}}
-
-The map is available in several versions. In addition to the OpenWifiMap, there is also the [Hopglass version of the map](https://hopglass.berlin.freifunk.net/).
+{{< img src="hopglass.png" alt="You can see a map of Berlin. There are lots of little dots on the map. Most of them are blue, some are red. There are green lines between some of the dots." link="https://hopglass.berlin.freifunk.net/" width="100%" >}}
 
 ## Statistics
 
