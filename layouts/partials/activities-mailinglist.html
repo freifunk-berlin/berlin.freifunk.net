@@ -1,0 +1,37 @@
+{{/* Return the five latest subjects from the mailing list.
+     Only checks the last three months. Duplicates are removed, when they follow each other directly.
+     If no five unique subjects exist an error is thrown. */}}
+
+{{ $latest_subjects := slice }}
+{{ $previous_subject := "" }}
+
+{{ range $week := (seq 0 -2) }}
+  {{ $month_date := now.AddDate 0 ($week) 0 }}
+  {{ $month := $month_date.Format "2006-January" }}
+  {{ $mailing_list_url := printf "https://lists.berlin.freifunk.net/pipermail/berlin/%s/subject.html" $month }}
+  {{ $mailing_list_response := resources.GetRemote $mailing_list_url }}
+  {{ $mailing_list_html := $mailing_list_response.Content }}
+  {{ $mailing_list_subjects := findRE "\\[Berlin-wireless\\] (.*?)\n" $mailing_list_html }}
+  {{ $lastIndex := sub (len $mailing_list_subjects) 1 }}
+  {{ range $i, $e := $mailing_list_subjects }}
+      {{ $reverse_index := sub $lastIndex $i}}
+      {{ $subject := (index $mailing_list_subjects $reverse_index) }}
+      {{ $subject = trim (strings.TrimPrefix "[Berlin-wireless]" $subject) " " }}
+      {{ if not (eq $subject $previous_subject) }}
+          {{ $latest_subjects = $latest_subjects | append  $subject }}
+          {{ if eq (len $latest_subjects) 5 }}
+            {{ break }}
+          {{ end }}
+      {{ end }}
+      {{ $previous_subject = $subject }}
+  {{ end }}
+  {{ if eq (len $latest_subjects) 5 }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+{{ if lt (len $latest_subjects) 5 }}
+  {{ errorf "Mailing list archive error: There were no five unique subjects in the last three month. You need to increase the max month check in the mailinglist activities partial" }}
+{{ end }}
+
+{{ return $latest_subjects }}
