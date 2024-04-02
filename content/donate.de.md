@@ -1,10 +1,5 @@
 ---
 title: "Spenden"
-description: ""
-omit_header_text: true
-menu:
-  main:
-    weight: 3
 ---
 
 ## Freifunk in Berlin durch Spenden unterstützen

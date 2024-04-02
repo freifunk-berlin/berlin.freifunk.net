@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+    <style>
+        .hero {
+            {{ with resources.Get "images/header.jpg" }}
+                background-image: linear-gradient(to bottom, transparent 0%, #fff),  url("{{ .RelPermalink }}");
+            {{ end }}
+        }
+    </style>
+
+    <section id="hero" class="d-table w-100 overflow-hidden hero">
+        <div class="container">
+            <div class="row mt-5 align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="title-heading">
+                        <h4 class="heading mt-0 mb-3">{{- .Site.Title }}</h4>
+                        <p class="para-desc text-muted">{{- .Site.Params.Description}}</p>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container mt-100 mt-60">
+            <div class="justify-content-center mx-auto col-sm-6">{{ .Content }}</div>
+        </div>
+    </section>
+
+{{ end }}

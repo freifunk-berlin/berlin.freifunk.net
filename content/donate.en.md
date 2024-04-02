@@ -1,10 +1,5 @@
 ---
 title: "Donate"
-description: ""
-omit_header_text: true
-menu:
-  main:
-    weight: 3
 ---
 
 ## Support Freifunk in Berlin through donations
