@@ -2,12 +2,12 @@
 
 {{ if eq .Site.Language.Lang "de" }}
     Zur Versionsverwaltung der Software nutzen wir <a href="https://github.com/freifunk-berlin/">Github</a>.
-    Dort gab es in den letzten sieben Tagen <b>{{ $github_activity.commit_count }} (commits)</b> Änderungen am Code.
+    Dort gab es in den letzten 30 Tagen <b>{{ $github_activity.commit_count }} (commits)</b> Änderungen am Code.
     Auf der Platform werden insgesamt <b>{{ $github_activity.repo_count }} (repositories)</b> Projekte verwaltet.
     Die aktivsten sind derzeit:
 {{ else if eq .Site.Language.Lang "en" }}
     We use <a href="https://github.com/freifunk-berlin/">Github</a> for version control of the software.
-    There have been <b>{{ $github_activity.commit_count }} (commits)</b> changes to the code in the last seven days.
+    There have been <b>{{ $github_activity.commit_count }} (commits)</b> changes to the code in the last 30 days.
     A total of <b>{{ $github_activity.repo_count }} (repositories)</b> projects are managed on the platform.
     The most active are currently:
 {{ end }}

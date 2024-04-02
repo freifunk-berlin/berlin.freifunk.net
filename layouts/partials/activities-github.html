@@ -5,7 +5,7 @@
 
 {{ $ACCESS_TOKEN :=  getenv "HUGO_GITHUB_ACCESS_TOKEN" }}
 
-{{/* Defaults for development without matrix access token. */}}
+{{/* Defaults for development without github access token. */}}
 {{ $github_activity := dict "repo_count" 42 "top_repos" (slice "foo" "bar") "commit_count" 161 }}
 
 {{ if $ACCESS_TOKEN }}
@@ -43,15 +43,15 @@
         {{ $top_repos = $top_repos | append $repo.name }}
   {{ end }}
 
-  {{/* Number of commits of the last seven days in all the repos.
+  {{/* Number of commits of the last 30 days in all the repos.
       A maximum of 10 pages with up to 100 commits each are checked.
       If more than 1000 commits exist for a repo an error is thrown. */}}
-  {{ $past_seven_days_date := now.AddDate 0 0 -7 }}
-  {{ $past_seven_days := $past_seven_days_date.Format "2006-01-02T15:04:05Z" }}  
+  {{ $past_thirty_days_date := now.AddDate 0 0 -30 }}
+  {{ $past_thirty_days := $past_thirty_days_date.Format "2006-01-02T15:04:05Z" }}  
   {{ $commit_count := 0 }}
   {{ range $repo := $repo_list }}
     {{ range $page := (seq 10) }}
-      {{ $commit_url := printf "https://api.github.com/repos/freifunk-berlin/%s/commits?per_page=100&since=%s&page=%d" $repo.name $past_seven_days $page }}
+      {{ $commit_url := printf "https://api.github.com/repos/freifunk-berlin/%s/commits?per_page=100&since=%s&page=%d" $repo.name $past_thirty_days $page }}
       {{ $commit_json := getJSON $commit_url $headers }}
       {{ $commit_count = add $commit_count (len $commit_json) }}
       {{ if lt (len $commit_json) 100 }}
