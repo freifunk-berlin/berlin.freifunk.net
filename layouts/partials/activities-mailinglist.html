@@ -5,28 +5,30 @@
 {{ $latest_subjects := slice }}
 {{ $previous_subject := "" }}
 
-{{ range $week := (seq 0 -2) }}
-  {{ $month_date := now.AddDate 0 ($week) 0 }}
+{{ range $month := (seq 0 -2) }}
+  {{ $month_date := now.AddDate 0 ($month) 0 }}
   {{ $month := $month_date.Format "2006-January" }}
   {{ $mailing_list_url := printf "https://lists.berlin.freifunk.net/pipermail/berlin/%s/subject.html" $month }}
   {{ $mailing_list_response := resources.GetRemote $mailing_list_url }}
-  {{ $mailing_list_html := $mailing_list_response.Content }}
-  {{ $mailing_list_subjects := findRE "\\[Berlin-wireless\\] (.*?)\n" $mailing_list_html }}
-  {{ $lastIndex := sub (len $mailing_list_subjects) 1 }}
-  {{ range $i, $e := $mailing_list_subjects }}
-      {{ $reverse_index := sub $lastIndex $i}}
-      {{ $subject := (index $mailing_list_subjects $reverse_index) }}
-      {{ $subject = trim (strings.TrimPrefix "[Berlin-wireless]" $subject) " " }}
-      {{ if not (eq $subject $previous_subject) }}
-          {{ $latest_subjects = $latest_subjects | append  $subject }}
-          {{ if eq (len $latest_subjects) 5 }}
-            {{ break }}
-          {{ end }}
-      {{ end }}
-      {{ $previous_subject = $subject }}
-  {{ end }}
-  {{ if eq (len $latest_subjects) 5 }}
-    {{ break }}
+  {{ with $mailing_list_response }}
+    {{ $mailing_list_html := $mailing_list_response.Content }}
+    {{ $mailing_list_subjects := findRE "\\[Berlin-wireless\\] (.*?)\n" $mailing_list_html }}
+    {{ $lastIndex := sub (len $mailing_list_subjects) 1 }}
+    {{ range $i, $e := $mailing_list_subjects }}
+        {{ $reverse_index := sub $lastIndex $i}}
+        {{ $subject := (index $mailing_list_subjects $reverse_index) }}
+        {{ $subject = trim (strings.TrimPrefix "[Berlin-wireless]" $subject) " " }}
+        {{ if not (eq $subject $previous_subject) }}
+            {{ $latest_subjects = $latest_subjects | append  $subject }}
+            {{ if eq (len $latest_subjects) 5 }}
+              {{ break }}
+            {{ end }}
+        {{ end }}
+        {{ $previous_subject = $subject }}
+    {{ end }}
+    {{ if eq (len $latest_subjects) 5 }}
+      {{ break }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
