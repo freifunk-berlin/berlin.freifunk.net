@@ -63,3 +63,5 @@ jobs:
           # Change to 'main' if your main branch differs
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Lint Text
+        uses: errata-ai/vale-action@reviewdog
