@@ -8,7 +8,7 @@ The website is built using the static website generator Hugo.
 
 - Clone this repository
 - Load submodule with `git submodule init` and `git submodule update`
-- Install [Hugo](https://gohugo.io/installation/)
+- Install [Hugo](https://gohugo.io/installation/) (>=0.120.0)
 
 ## Run for development
 

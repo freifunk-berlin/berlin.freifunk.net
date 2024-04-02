@@ -1,0 +1,124 @@
+title = 'Freifunk Berlin'
+languageCode = 'de'
+
+baseURL = "https://berlin.freifunk.net"
+
+defaultContentLanguage = "de"
+defaultContentLanguageInSubdir = true
+
+enableRobotsTXT = true
+
+timeout = "120s"
+
+disableKinds = ['taxonomy', 'term']
+
+[module]
+    replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
+    [[module.imports]]
+        path = "github.com/colinwilson/lotusdocs"
+        disable = false
+    [[module.imports]]
+        path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false
+
+[languages]
+    [languages.de]
+        weight = 1
+        languageName = "Deutsch"
+        languageCode = "de"
+        title = "Freifunk Berlin"
+        [languages.de.menus]
+            [[languages.de.menus.primary]]
+                name = 'Mitmachen'
+                url = "participate"
+                weight = 10
+            [[languages.de.menus.primary]]
+                name = 'Netzkarte'
+                url = 'map'
+                weight = 20
+            [[languages.de.menus.primary]]
+                name = 'Spenden'
+                url = 'donate'
+                weight = 30
+            [[languages.de.menus.primary]]
+                name = 'Wiki'
+                url = 'wiki'
+                weight = 40
+            [[languages.de.menus.primary]]
+                name = 'Downloads'
+                url = 'downloads'
+                weight = 50
+            [[languages.de.menus.primary]]
+                name = 'FAQ'
+                url = 'https://wiki.freifunk.net/Berlin:FAQ'
+                weight = 60
+            [[languages.de.menus.primary]]
+                name = 'Kontakt'
+                url = 'contact'
+                weight = 70
+            [[languages.de.menus.primary]]
+                name = 'freifunk.net'
+                url = 'https://freifunk.net/'
+                weight = 80
+        [languages.de.params]
+            description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
+            [[languages.de.params.footer]]
+                name = "Impressum"
+                url = "imprint"
+    [languages.en]
+        weight = 2
+        languageName = "English"
+        languageCode = "en"
+        title = "Freifunk Berlin"
+        [languages.en.menus]
+            [[languages.en.menus.primary]]
+                name = 'Participate'
+                url = "participate"
+                weight = 10
+            [[languages.en.menus.primary]]
+                name = 'Map'
+                url = 'map'
+                weight = 20
+            [[languages.en.menus.primary]]
+                name = 'Donate'
+                url = 'donate'
+                weight = 30
+            [[languages.en.menus.primary]]
+                name = 'Wiki'
+                url = 'wiki'
+                weight = 40
+            [[languages.en.menus.primary]]
+                name = 'Downloads'
+                url = 'downloads'
+                weight = 50
+            [[languages.en.menus.primary]]
+                name = 'FAQ'
+                url = 'https://wiki.freifunk.net/Berlin:FAQ'
+                weight = 60
+            [[languages.en.menus.primary]]
+                name = 'Contact'
+                url = 'contact'
+                weight = 70
+            [[languages.en.menus.primary]]
+                name = 'freifunk.net'
+                url = 'https://freifunk.net/'
+                weight = 80
+        [languages.en.params]
+            description = "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
+            [[languages.en.params.footer]]
+                name = "Imprint"
+                url = "imprint"
+
+[sitemap]
+    filename = "sitemap.xml"
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+    sans_serif_font = "Arial"
+    secondary_font  = "Arial"
+    mono_font       = "Courier New"
+    [params.social]
+        github = "freifunk-berlin"
+        twitter = "freifunk_berlin"

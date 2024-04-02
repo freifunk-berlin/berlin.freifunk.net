@@ -1,10 +1,5 @@
 ---
 title: "Mitmachen"
-description: ""
-omit_header_text: true
-menu:
-  main:
-    weight: 2
 ---
 
 ## Jede\_r kann mitmachen!
@@ -24,7 +19,7 @@ Sprich mit deinem Freundeskreis, Geschäftspartner\_innen und allen Menschen die
 
 _Wohnung, Geschäft, Café, Restaurant, Bar ..._
 
-{{< img src="participate_small.png" alt="Person am Laptop mit einem Router auf der Fensterbank" >}}
+{{< img src="images/participate_small.png" alt="Person am Laptop mit einem Router auf der Fensterbank" >}}
 
 Du möchtest
 
@@ -42,7 +37,7 @@ So kannst du mitmachen
 
 _Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges Gelände ..._
 
-{{< img src="participate_medium.png" alt="Glückliche Personen mit Wlan Empfang am Handy und Laptops" >}}
+{{< img src="images/participate_medium.png" alt="Glückliche Personen mit Wlan Empfang am Handy und Laptops" >}}
 
 Du möchtest
 
@@ -59,7 +54,7 @@ So kannst du mitmachen
 
 _Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus, Kirchturm ..._
 
-{{< img src="participate_big.png" alt="Dächer von Häusern die mit roten Punkten und Linien miteinander verbunden sind um das Mesh-Netz zu symbolisieren" >}}
+{{< img src="images/participate_big.png" alt="Dächer von Häusern die mit roten Punkten und Linien miteinander verbunden sind um das Mesh-Netz zu symbolisieren" >}}
 
 Du möchtest
 

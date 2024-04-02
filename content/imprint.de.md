@@ -1,16 +1,6 @@
 ---
 title: "Impressum"
-description: ""
-featured_image: ''
-omit_header_text: true
-description: ''
-type: page
-menu: footer
-
 ---
-
-
-### Impressum
 
 **Kontakt Freifunk Berlin**  
 info{at}berlin.freifunk.net

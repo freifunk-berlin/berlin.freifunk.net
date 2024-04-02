@@ -12,7 +12,7 @@
     The most active are currently:
 {{ end }}
 
- <ul style="text-align:left;margin-left: auto;margin-right: auto;width: fit-content;">
+ <ul>
     {{ range $element := $github_activity.top_repos }}
     <li><a href="https://github.com/freifunk-berlin/{{ $element }}">{{ $element }}</a></li>
     {{ end }}
