@@ -1,0 +1,19 @@
+---
+
+name: Comment on PR
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            This is a link to a preview of the website from this Pull Request: [dev.berlin.freifunk.net/${{ github.head_ref }}/](http://dev.berlin.freifunk.net/${{ github.head_ref }}/).
