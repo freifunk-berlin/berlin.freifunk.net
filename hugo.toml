@@ -2,7 +2,15 @@ title = 'Freifunk Berlin'
 languageCode = 'de'
 
 baseURL = "https://berlin.freifunk.net"
-theme = "ananke"
+
+[module]
+    replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
+    [[module.imports]]
+        path = "github.com/colinwilson/lotusdocs"
+        disable = false
+    [[module.imports]]
+        path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+        disable = false
 
 defaultContentLanguage = "de"
 defaultContentLanguageInSubdir = true
@@ -10,7 +18,7 @@ defaultContentLanguageInSubdir = true
 SectionPagesMenu = "main"
 enableRobotsTXT = true
 
-timeout = "100s"
+timeout = "120s"
 
 disableKinds = ['taxonomy', 'term']
 
@@ -29,6 +37,8 @@ disableKinds = ['taxonomy', 'term']
 [sitemap]
   filename = "sitemap.xml"
 
+
+
 [params]
   text_color = ""
   author = ""
@@ -39,27 +49,31 @@ disableKinds = ['taxonomy', 'term']
   # background_color_class = "bg-white"
   # recent_posts_number = 3
 
-[[params.ananke_socials]]
-name = "twitter"
-url = "https://twitter.com/freifunk_berlin"
-
-[[params.ananke_socials]]
-name = "github"
-url = "https://github.com/freifunk-berlin"
-
-[menu]
-[[menu.main]]
-    name = 'freifunk.net'
-    url = 'https://freifunk.net'
-    weight = 8
-    [menu.main.params]
-      rel = 'external'
-[[menu.main]]
-    name = 'FAQ'
-    url = 'https://wiki.freifunk.net/Berlin:FAQ'
-    weight = 6
-    [menu.main.params]
-      rel = 'external'
-
 [markup.goldmark.renderer]
 unsafe = true
+
+[menu]
+[[menu.primary]]
+    name  = "Docs"
+    url = "docs/"
+    identifier = "docs"
+    weight = 10
+
+[[menu.primary]]
+    name  = "Showcase"
+    url = "/showcase"
+    identifier = "showcase"
+    weight = 20
+
+[[menu.primary]]
+    name  = "Community"
+    url = "https://github.com/colinwilson/lotusdocs/discussions"
+    identifier = "community"
+    weight = 30
+
+[params.footer]
+copyright = "[Imprint](/imprint)"
+version = true
+
+[params.social]
+github = "https://github.com/freifunk-berlin/"
