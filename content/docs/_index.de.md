@@ -1,6 +1,6 @@
 ---
-title: "Freifunk Berlin"
-description: "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
+title: ""
+description: ""
 featured_image: '/header.jpg'
 ---
 
