@@ -67,4 +67,5 @@ copyright = "This work is licensed under [CC BY-NC-SA 4.0](https://creativecommo
 version = true
 
 [params.social]
-github = "https://github.com/freifunk-berlin/"
+github = "freifunk-berlin/"
+twitter = "freifunk_berlin"
