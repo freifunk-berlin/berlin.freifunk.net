@@ -1,6 +1,5 @@
 ---
 title: "Impressum"
-url: /impressum
 ---
 
 **Kontakt Freifunk Berlin**  
