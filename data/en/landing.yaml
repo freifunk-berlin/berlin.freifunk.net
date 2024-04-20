@@ -1,0 +1,64 @@
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  backgroundImage:
+    path: "images"
+    filename:
+      desktop: "header.jpg"
+      mobile: "header.jpg"
+
+  titleLogo:
+    path: "images"
+    filename: "logo.png"
+    alt: "Freifunk Logo"
+    height: 80px
+
+  title: "Freifunk Berlin"
+  subtitle: "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
+
+text1:
+  enable: true
+  weight: 20
+  template: text section
+  title: "What is Freifunk?"
+  text: Freifunk stands for distributing free networks, democratizing media of communication and promoting local social structures. By interconnecting whole neighborhoods, we want to bridge the digital gap and establish a free and independent network infrastructure. More precisely, the aim of Freifunk is installing open wifi networks and interconnecting them. This facilitates free data "air traffic" in the whole city within the Freifunk network. In short, Freifunk is an open, non-commercial, non-hierarchical initiative for free networks.
+
+imageText:
+  enable: true
+  weight: 30
+  template: image text
+
+  title: How does it work?
+  subtitle: Freifunk's foundation is a so called mesh network. All routers within the Freifunk network can communicate with one another and form their own wifi network. A routing protocol allows for everybody within the Freifunk network to communicate and exchange data with other participants. Some of the nodes within the network are further connected with the Internet. That way, everyone within Freifunk has also a direct access to the global network.
+  image:
+    path: "images"
+    filename: "adhoc_netz_wikipedia.png"
+
+text2:
+  enable: true
+  weight: 40
+  template: text section
+
+  title: "How can I contribute?"
+  text: "Join us and become a Freifunk activist! Come to one of the meetings or go directly to the HowTo and get your router ready for Freifunk! There are still no other network activists in your area? Well, then you're the 1st one and further will soon follow!"
+
+video:
+  enable: true
+  weight: 25
+  template: video
+
+  src: freifunk-verbindet
+  defaultformat: webm
+  preload: metadata
+
+activities:
+  enable: true
+  weight: 60
+  template: activities
+
+featureGrid:
+  enable: false
+imageCompare:
+  enable: false
