@@ -1,2 +1,2 @@
 ---
-ignorePatterns: ["layouts/page/single.json"]
+ignorePatterns: ["layouts/page/single.json", "assets/js/bootstrap.js"]

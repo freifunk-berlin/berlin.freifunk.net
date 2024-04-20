@@ -1,10 +1,5 @@
 ---
 title: "Wiki"
-description: "The Freifunk-Wiki"
-omit_header_text: true
-menu:
-  main:
-    weight: 4
 ---
 
 The [Freifunk-Wiki](https://wiki.freifunk.net/) is a central source of information for Freifunkers, in which everyone is warmly invited to participate. Freifunk Berlin is also there.

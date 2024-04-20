@@ -1,10 +1,5 @@
 ---
 title: "Participate"
-description: ""
-omit_header_text: true
-menu:
-  main:
-    weight: 2
 ---
 
 ## Everybody can participate!

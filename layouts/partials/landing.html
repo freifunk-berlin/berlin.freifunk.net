@@ -1,0 +1,25 @@
+{{ $map := newScratch }}
+{{ $landingData := .landingData }}
+
+{{ range $key, $value := .landingData }}
+    {{ $sectionTitle := (index $key) }}
+    {{ $weight := string ($value.weight) }}
+    {{ $template := string (replaceRE `( |-{1,})` "_" $value.template) }}
+    {{ with and $template $weight }}
+        {{ $map.SetInMap "wgtTpl" $sectionTitle (dict
+        "weight" $weight
+        "template" $template
+        "sectionTitle" $sectionTitle
+        )}}
+    {{ end }}
+{{ end }}
+
+{{ range sort ($map.Get "wgtTpl") ".weight" }}
+    {{ $path := printf "landing/%s.html" .template }}
+    {{ partial $path (dict "landingData" $landingData "sectionTitle" .sectionTitle) }}
+
+{{ end }}
+{{/* printf "%s" (sort ($map.Get "wgtTpl") ".weight" ) */}}
+
+
+
