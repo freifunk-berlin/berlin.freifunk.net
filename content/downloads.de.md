@@ -1,10 +1,5 @@
 ---
 title: "Downloads"
-description: ""
-omit_header_text: true
-menu:
-  main:
-    weight: 5
 ---
 
 ## Freifunk Berlin Downloads
