@@ -1,10 +1,5 @@
 ---
 title: "Mitmachen"
-description: ""
-omit_header_text: true
-menu:
-  main:
-    weight: 2
 ---
 
 ## Jede\_r kann mitmachen!

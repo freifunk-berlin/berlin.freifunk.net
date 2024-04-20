@@ -1,10 +1,5 @@
 ---
 title: "Wiki"
-description: "Das Freifunk-Wiki"
-omit_header_text: true
-menu:
-  main:
-    weight: 4
 ---
 
 Das [Freifunk-Wiki](https://wiki.freifunk.net/) ist eine zentrale
