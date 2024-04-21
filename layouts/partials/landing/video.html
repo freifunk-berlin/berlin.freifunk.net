@@ -1,0 +1,20 @@
+{{ $sectionTitle := .sectionTitle }}
+{{ with (index .landingData .sectionTitle) }}
+{{ if eq .enable true }}
+
+<section id="{{ $sectionTitle }}">
+    <div class="container mt-100 mt-60">
+        <div class="row justify-content-center mx-auto col-sm-6">
+            <video class="video-shortcode" preload="{{ .preload }}" controls width="100%" poster="{{ absURL "videos" }}/{{ .src }}.png" src="{{ absURL "videos" }}/{{ .src }}.{{ .defaultformat }}">
+                <source src="{{ absURL "videos" }}/{{ .src }}.webm" type="video/webm">
+                <source src="{{ absURL "videos" }}/{{ .src }}.mp4" type="video/mp4">
+                <source src="{{ absURL "videos" }}/{{ .src }}.ogv" type="video/ogg">
+                There should have been a video here but your browser does not seem
+                to support it.
+            </video>
+        </div>
+    </div>
+</section>
+
+{{ end }}
+{{ end }}

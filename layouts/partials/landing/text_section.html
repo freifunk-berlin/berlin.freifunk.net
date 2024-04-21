@@ -1,0 +1,21 @@
+{{ $sectionTitle := .sectionTitle }}
+{{ with (index .landingData .sectionTitle) }}
+{{ if eq .enable true }}
+<section id="{{ $sectionTitle }}">
+    <div class="container mt-100 mt-60">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    {{ with .title }}
+                        <h4 class="title fw-bold mb-4">{{ . }}</h4>
+                    {{ end }}
+                    {{ with .text }}
+                        <p class="text-muted para-desc mb-4 pb-2 mx-auto">{{ . | markdownify }}</p>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
