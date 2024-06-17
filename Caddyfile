@@ -1,0 +1,37 @@
+www.dev.freifunk.dev {
+	redir https://dev.freifunk.dev{uri}
+}
+
+dev.freifunk.dev {
+	root * /var/www/dev.freifunk.dev/www
+	encode gzip
+
+	redir /.well-known/* https://dev.freifunk.dev{uri}
+	redir / https://dev.freifunk.dev/de/{uri}
+	redir /index_en https://dev.freifunk.dev/en/{uri}
+	redir /network https://dev.freifunk.dev/de/map/{uri}
+	redir /contact https://dev.freifunk.dev/de/contact/
+	redir /contact_en https://dev.freifunk.dev/en/contact/{uri}
+	redir /download https://dev.freifunk.dev/de/downloads/{uri}
+	redir /participate/ https://dev.freifunk.dev/de/participate/{uri}
+	redir /p$ https://dev.freifunk.dev/de/participate/{uri}
+	redir /impressum https://dev.freifunk.dev/de/impressum/{uri}
+	redir /wiki https://dev.freifunk.dev/de/wiki/{uri}
+	redir /meshwiki https://dev.freifunk.dev/de/wiki/{uri}
+
+    locale en de de-DE {
+      detect header
+    }
+
+    redir {
+        if {path} is / {
+            if {Detected-Locale} is "de-DE" {
+                / /de/ 307
+            } else {
+                / /en/ 307
+            }
+        }
+    }
+
+	file_server
+}
