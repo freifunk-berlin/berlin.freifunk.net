@@ -1,0 +1,113 @@
+# www redirect
+www.{$SITE_ADDRESS:localhost} {
+	redir https://{$SITE_ADDRESS}{uri}
+}
+
+# production
+{$SITE_ADDRESS:localhost} {
+	root * {$WEBROOT:public}
+	encode gzip
+
+	@de_before_en {
+		header_regexp Accept-Language de.*en
+		path /
+	}
+	@en_before_de {
+		header_regexp Accept-Language en.*de
+		path /
+	}
+	@de_only {
+		header_regexp Accept-Language de
+		path /
+	}
+	@fallback {
+		path /
+	}
+
+	redir @de_before_en /de 302
+	redir @en_before_de /en 302
+	redir @de_only /de 302
+	redir @fallback /en 302
+
+	redir /index_en /en 301
+	redir /network /de/map 301
+	redir /contact /de/contact/ 301
+	redir /contact_en /en/contact 301
+	redir /download /de/downloads 301
+	redir /participate/ /de/participate 301
+	redir /p /de/participate 301
+	redir /impressum /de/impressum 301
+	redir /wiki /de/wiki 301
+	redir /meshwiki /de/wiki 301
+
+	file_server
+}
+
+# development
+dev.{$SITE_ADDRESS:localhost} {
+	root * {$WEBROOT_DEV:public}
+	encode gzip
+
+	@de_before_en {
+		header_regexp Accept-Language de.*en
+		path_regexp branch ^\/([[:alnum:]]+)(\/$|$)
+	}
+	@en_before_de {
+		header_regexp Accept-Language en.*de
+		path_regexp branch ^\/([[:alnum:]]+)(\/$|$)
+	}
+	@de_only {
+		header_regexp Accept-Language de
+		path_regexp branch ^\/([[:alnum:]]+)(\/$|$)
+	}
+	@fallback {
+		path_regexp branch ^\/([[:alnum:]]+)(\/$|$)
+	}
+
+	redir @de_before_en /{re.branch.1}/de 302
+	redir @en_before_de /{re.branch.1}/en 302
+	redir @de_only /{re.branch.1}/de 302
+	redir @fallback /{re.branch.1}/en 302
+
+	@index_en {
+		path_regexp branch ^\/([[:alnum:]]+)\/index\_en
+	}
+	redir @index_en /{re.branch.1}/en 301
+
+	@network {
+		path_regexp branch ^\/([[:alnum:]]+)\/network
+	}
+	redir @network /{re.branch.1}/de/map 301
+
+	@contact {
+		path_regexp branch ^\/([[:alnum:]]+)\/contact
+	}
+	redir @contact /{re.branch.1}/de/contact 301
+
+	@contact_en {
+		path_regexp branch ^\/([[:alnum:]]+)\/contact_en
+	}
+	redir @contact_en /{re.branch.1}/en/contact 301
+
+	@download {
+		path_regexp branch ^\/([[:alnum:]]+)\/download
+	}
+	redir @download /{re.branch.1}/de/downloads 301
+
+	@participate {
+		path_regexp branch ^\/([[:alnum:]]+)\/(participate|p$)
+	}
+	redir @participate /{re.branch.1}/de/participate 301
+
+	@impressum {
+		path_regexp branch ^\/([[:alnum:]]+)\/impressum
+	}
+	redir @impressum /{re.branch.1}/de/impressum 301
+
+	@wiki {
+		path_regexp branch ^\/([[:alnum:]]+)\/(meshwiki|wiki)
+	}
+	redir @wiki /{re.branch.1}/de/wiki 301
+
+	file_server
+}
