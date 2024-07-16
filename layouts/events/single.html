@@ -1,0 +1,33 @@
+{{ define "main" }}
+<section id="{{ .Title }}">
+    <div class="container mt-100 mt-60">
+        <h1 class="title fw-bold mb-4">{{ .Title }} ({{ time.Format "January 2, 2006" .Params.start }})</h1>
+        <div class="d-flex flex-wrap">
+            <div class="p-2 flex-grow-1">
+                <p class="text-muted para-desc mb-4 pb-2 mx-auto">{{ .Content | markdownify }}</p>
+            </div>
+            <div class="p-2">
+            
+
+                <span class="material-icons align-middle" style="font-size:20rem">event</span>
+                <p>
+                    <span class="material-icons align-middle">location_on</span>{{ .Params.location }}
+                </p>
+                {{ if .Params.repeat }}
+                <p>
+                    <span class="material-icons align-middle">event_repeat</span>Event happens regularly
+                </p>
+                {{ end }}
+                <p>
+                    <span class="material-icons align-middle mr-2">schedule</span>{{ time.Format "2 Jan 2006 15:04" .Params.start }}
+                    <br>
+                    - {{ time.Format "2 Jan 2006 15:04" .Params.end }}
+                </p>
+                <p>
+                <span class="material-icons align-middle">sell</span>{{ .Params.category }}
+            </p>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
