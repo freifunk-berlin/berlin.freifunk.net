@@ -1,8 +1,6 @@
 # Freifunk Berlin
 
-This is the repository for the website of the [Freifunk Community Berlin](https://berlin.freifunk.net).
-
-The website is built using the static website generator Hugo.
+This is the repository for the website of the [Freifunk Community Berlin](https://berlin.freifunk.net). The website is built using the static website generator Hugo.
 
 ## Install
 
@@ -12,29 +10,23 @@ The website is built using the static website generator Hugo.
 - Install [Node](https://nodejs.org/en/download/package-manager/current) (>=20)
 - Load js dependencies with `npm install`
 
-## Run for development
+## Development
+
+For quick start you can use the hugo development server.
 
 ```console
 hugo server -w
 ```
 
-You can change the base address `-b` and the bind address `--bind` if your run it on a remote machine.
+## Production
+
+First you must generate the content. You can set the environment variables `HUGO_MATRIX_ACCESS_TOKEN`, `HUGO_MATRIX_HOME_SERVER` and `HUGO_GITHUB_ACCESS_TOKEN` to get real activity informations. Else some dummy data is used.
 
 ```console
-hugo server -w -b http://localhost:1313/ --bind 0.0.0.0
+HUGO_GITHUB_ACCESS_TOKEN="<github_secret>" HUGO_MATRIX_ACCESS_TOKEN="<matrix_secret>" HUGO_MATRIX_HOME_SERVER="htps://matrix.org" hugo --minify -b <baseURL>
 ```
 
-You can set the environment variables `HUGO_MATRIX_ACCESS_TOKEN`, `HUGO_MATRIX_HOME_SERVER` and `HUGO_GITHUB_ACCESS_TOKEN` to get real activity informations. Else some dummy data is used.
-
-```console
-HUGO_GITHUB_ACCESS_TOKEN="secret" HUGO_MATRIX_ACCESS_TOKEN="secret" HUGO_MATRIX_HOME_SERVER="htps://matrix.org" hugo server -w
-```
-
-## Build for production
-
-```console
-hugo build --minify -b <baseURL>
-```
+The files are generated in the `public` directory and need to be served with a webserver (see deployment chapter).
 
 ## Structure
 
@@ -42,17 +34,16 @@ hugo build --minify -b <baseURL>
 ├── .github/workflows           # Config for pipelines to test and deploy
 ├── archetypes                  # Template for new content
 ├── content                     # Pages as markdown files
-├── layouts/partials            # Reusable elements
+├── layouts                     # Reusable elements
 ├── static                      # Images and videos
-├── themes                      # Theme, integrated via submodule
-└── apache                      # Server configs
+└── themes                      # Theme, integrated via submodule
 ```
 
 ## Deployment
 
 The website is deployed automatically via GitHub actions. The main branch is at [berlin.freifunk.net](https://berlin.freifunk.net). The other branches could be accessed via `dev.berlin.freifunk.net/<BRANCH_NAME>/`.
 
-The actions are defined in `.github/workflows` and could be configured with [GitHub variables and secrets](https://github.com/freifunk-berlin/berlin.freifunk.net/settings/secrets/actions). The configurations for the production and development webserver are in the `apache` directory.
+The actions are defined in `.github/workflows` and could be configured with [GitHub variables and secrets](https://github.com/freifunk-berlin/berlin.freifunk.net/settings/secrets/actions). The content is served with [caddy](https://caddyserver.com/) on the Freifunk servers. The configurations for the production and development webserver are in the [Caddyfile](https://github.com/freifunk-berlin/ansible/blob/main/templates/Caddyfile_website.j2) as part of the ansible setup.
 
 ## Data fetching
 
