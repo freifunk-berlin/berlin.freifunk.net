@@ -2,8 +2,6 @@ public/
 .hugo_build.lock
 .vscode/
 resources/_gen/
-www/
-www-dev/
 assets/jsconfig.json
 node_modules
 hugo_stats.json
