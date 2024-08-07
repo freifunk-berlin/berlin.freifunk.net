@@ -30,23 +30,23 @@ disableKinds = ['taxonomy', 'term']
         [languages.de.menus]
             [[languages.de.menus.primary]]
                 name = 'Mitmachen'
-                url = "participate"
+                url = "participate/"
                 weight = 10
             [[languages.de.menus.primary]]
                 name = 'Netzkarte'
-                url = 'map'
+                url = 'map/'
                 weight = 20
             [[languages.de.menus.primary]]
                 name = 'Spenden'
-                url = 'donate'
+                url = 'donate/'
                 weight = 30
             [[languages.de.menus.primary]]
                 name = 'Wiki'
-                url = 'wiki'
+                url = 'wiki/'
                 weight = 40
             [[languages.de.menus.primary]]
                 name = 'Downloads'
-                url = 'downloads'
+                url = 'downloads/'
                 weight = 50
             [[languages.de.menus.primary]]
                 name = 'FAQ'
@@ -54,7 +54,7 @@ disableKinds = ['taxonomy', 'term']
                 weight = 60
             [[languages.de.menus.primary]]
                 name = 'Kontakt'
-                url = 'contact'
+                url = 'contact/'
                 weight = 70
             [[languages.de.menus.primary]]
                 name = 'freifunk.net'
@@ -64,7 +64,7 @@ disableKinds = ['taxonomy', 'term']
             description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
             [[languages.de.params.footer]]
                 name = "Impressum"
-                url = "imprint"
+                url = "imprint/"
     [languages.en]
         weight = 2
         languageName = "English"
@@ -73,23 +73,23 @@ disableKinds = ['taxonomy', 'term']
         [languages.en.menus]
             [[languages.en.menus.primary]]
                 name = 'Participate'
-                url = "participate"
+                url = "participate/"
                 weight = 10
             [[languages.en.menus.primary]]
                 name = 'Map'
-                url = 'map'
+                url = 'map/'
                 weight = 20
             [[languages.en.menus.primary]]
                 name = 'Donate'
-                url = 'donate'
+                url = 'donate/'
                 weight = 30
             [[languages.en.menus.primary]]
                 name = 'Wiki'
-                url = 'wiki'
+                url = 'wiki/'
                 weight = 40
             [[languages.en.menus.primary]]
                 name = 'Downloads'
-                url = 'downloads'
+                url = 'downloads/'
                 weight = 50
             [[languages.en.menus.primary]]
                 name = 'FAQ'
@@ -97,7 +97,7 @@ disableKinds = ['taxonomy', 'term']
                 weight = 60
             [[languages.en.menus.primary]]
                 name = 'Contact'
-                url = 'contact'
+                url = 'contact/'
                 weight = 70
             [[languages.en.menus.primary]]
                 name = 'freifunk.net'
@@ -107,7 +107,7 @@ disableKinds = ['taxonomy', 'term']
             description = "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
             [[languages.en.params.footer]]
                 name = "Imprint"
-                url = "imprint"
+                url = "imprint/"
 
 [sitemap]
     filename = "sitemap.xml"
