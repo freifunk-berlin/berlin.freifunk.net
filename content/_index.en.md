@@ -8,7 +8,7 @@ Freifunk stands for distributing free networks, democratizing media of communica
 
 Freifunk's foundation is a so called mesh network. All routers within the Freifunk network can communicate with one another and form their own wifi network. A routing protocol allows for everybody within the Freifunk network to communicate and exchange data with other participants. Some of the nodes within the network are further connected with the Internet. That way, everyone within Freifunk has also a direct access to the global network.
 
-{{< img src="images/adhoc_netz_wikipedia.png" alt="mesh cloud with one node that has internet connection" >}}
+{{< img src="images/adhoc_netz_wikipedia.webp" alt="mesh cloud with one node that has internet connection" >}}
 
 ## How can I contribute?
 

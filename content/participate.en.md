@@ -19,7 +19,7 @@ Talk to your friends, business partners and everyone who surrounds you and sprea
 
 _Apartment, shop, cafe, restaurant, bar..._
 
-{{< img src="images/participate_small.png" alt="Person at the laptop with a router on the windowsill" >}}
+{{< img src="images/participate_small.webp" alt="Person at the laptop with a router on the windowsill" >}}
 
 You want to
 
@@ -37,7 +37,7 @@ Here's how you can join in
 
 _Balcony, tall building, public square, park, extensive grounds..._
 
-{{< img src="images/participate_medium.png" alt="Happy people with WiFi reception on cell phones and laptops" >}}
+{{< img src="images/participate_medium.webp" alt="Happy people with WiFi reception on cell phones and laptops" >}}
 
 You want to
 
@@ -54,7 +54,7 @@ Here's how you can join in
 
 _Roof, attic, tall building, public building, town hall, church tower..._
 
-{{< img src="images/participate_big.png" alt="Roofs of houses connected with red dots and lines to symbolize the mesh network" >}}
+{{< img src="images/participate_big.webp" alt="Roofs of houses connected with red dots and lines to symbolize the mesh network" >}}
 
 You want to
 
