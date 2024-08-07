@@ -2,7 +2,7 @@
 
     <style>
         .hero {
-            {{ with resources.Get "images/header.jpg" }}
+            {{ with resources.Get "images/header.webp" }}
                 background-image: linear-gradient(to bottom, transparent 0%, #fff),  url("{{ .RelPermalink }}");
             {{ end }}
         }

@@ -8,7 +8,7 @@ Die Vision von Freifunk ist die Verbreitung freier Netzwerke, die Demokratisieru
 
 Die Grundlage von Freifunk bildet ein sogenanntes Mesh-Netzwerk. Alle WLAN-Router im Freifunk-Netz kommunizieren untereinander und bilden ein eigenes Funknetzwerk in der Stadt. Ein Routing-Protokoll ermöglicht, dass jeder Mensch im Freifunk-Netz andere Teilnehmer_innen erreichen und Daten austauschen kann. Manche Knoten sind desweiteren auch direkt mit dem Internet verbunden. So haben alle Menschen im Freifunk-Netz auch direkten Zugriff auf das globale Netz.
 
-{{< img src="images/adhoc_netz_wikipedia.png" alt="mesh cloud with one node that has internet connection" >}}
+{{< img src="images/adhoc_netz_wikipedia.webp" alt="mesh cloud with one node that has internet connection" >}}
 
 ## Wie kann ich mitmachen?
 
