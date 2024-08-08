@@ -50,7 +50,7 @@ disableKinds = ['taxonomy', 'term']
                 weight = 50
             [[languages.de.menus.primary]]
                 name = 'FAQ'
-                url = 'https://wiki.freifunk.net/Berlin:FAQ'
+                url = 'https://wiki.freifunk.net/Berlin:FAQ/'
                 weight = 60
             [[languages.de.menus.primary]]
                 name = 'Kontakt'
@@ -93,7 +93,7 @@ disableKinds = ['taxonomy', 'term']
                 weight = 50
             [[languages.en.menus.primary]]
                 name = 'FAQ'
-                url = 'https://wiki.freifunk.net/Berlin:FAQ'
+                url = 'https://wiki.freifunk.net/Berlin:FAQ/'
                 weight = 60
             [[languages.en.menus.primary]]
                 name = 'Contact'
@@ -120,8 +120,8 @@ disableKinds = ['taxonomy', 'term']
     secondary_font  = "Arial"
     mono_font       = "Courier New"
     [params.social]
-        github = "freifunk-berlin"
-        twitter = "freifunk_berlin"
+        github = "freifunk-berlin/"
+        twitter = "freifunk_berlin/"
 
 [build]
   writeStats = true
