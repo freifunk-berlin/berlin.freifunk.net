@@ -4,7 +4,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     const els = JSON.parse(content).htmlElements
     return [...(els.tags || []), ...(els.classes || []), ...(els.ids || [])]
   },
-  safelist: []
+  safelist: ['nav-sticky', 'dropdown-menu', 'show']
 })
 
 module.exports = {
