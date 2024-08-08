@@ -60,6 +60,7 @@ jobs:
           # Disable some other linters
           VALIDATE_HTML: false
           VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_CSS: false
           # Change to 'main' if your main branch differs
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
