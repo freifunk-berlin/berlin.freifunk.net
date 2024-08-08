@@ -3,7 +3,7 @@
 <header id="topnav">
     <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo container-->
-        <a class="logo" aria-label="Home" href='{{ relLangURL "/" }}'>
+        <a class="logo" aria-label="Home" href='{{ site.Home.Permalink }}'>
             {{ with resources.Get "images/logo.svg" }}
                 {{ .Content | safeHTML }}
             {{ end }}
