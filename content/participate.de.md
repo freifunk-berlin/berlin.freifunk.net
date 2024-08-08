@@ -19,7 +19,7 @@ Sprich mit deinem Freundeskreis, Geschäftspartner\_innen und allen Menschen die
 
 _Wohnung, Geschäft, Café, Restaurant, Bar ..._
 
-{{< img src="images/participate_small.webp" alt="Person am Laptop mit einem Router auf der Fensterbank" width="400" height="258" >}}
+{{< img src="images/participate_small.webp" alt="Person am Laptop mit einem Router auf der Fensterbank" width="400" height="258" loading="lazy" >}}
 
 Du möchtest
 
@@ -37,7 +37,7 @@ So kannst du mitmachen
 
 _Balkon, hohes Gebäude, öffentlicher Platz, Park, weitläufiges Gelände ..._
 
-{{< img src="images/participate_medium.webp" alt="Glückliche Personen mit Wlan Empfang am Handy und Laptops" width="400" height="258" >}}
+{{< img src="images/participate_medium.webp" alt="Glückliche Personen mit Wlan Empfang am Handy und Laptops" width="400" height="258" loading="lazy" >}}
 
 Du möchtest
 
@@ -54,7 +54,7 @@ So kannst du mitmachen
 
 _Dach, Dachgeschoss, hohes Gebäude, öffentliches Gebäude, Rathaus, Kirchturm ..._
 
-{{< img src="images/participate_big.webp" alt="Dächer von Häusern die mit roten Punkten und Linien miteinander verbunden sind um das Mesh-Netz zu symbolisieren" width="400" height="258" >}}
+{{< img src="images/participate_big.webp" alt="Dächer von Häusern die mit roten Punkten und Linien miteinander verbunden sind um das Mesh-Netz zu symbolisieren" width="400" height="258" loading="lazy" >}}
 
 Du möchtest
 
