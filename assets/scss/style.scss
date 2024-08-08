@@ -1,0 +1,64 @@
+// Overwriting the theme stylesheet to allow custom colors
+
+/* Template Name: LotusLabs Docs
+   Author: Colin Wilson
+   E-mail: colin.wilson@proton.me
+   Created: October 2022
+   Version: 1.0.0
+   File Description: Main CSS file of the Landing Page template
+*/
+
+//Custom Font Variables
+$font-family-secondary:  {{ .Site.Params.secondary_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
+$font-family-sans-serif: {{ .Site.Params.sans_serif_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
+$font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" }};
+
+//Fonts
+// @import "custom/fonts/fonts";
+
+// scss-docs-start theme-color-variables
+$primary:       {{ .Site.Params.primary | default "#0066ff" }};
+$secondary:     {{ .Site.Params.secondary | default "#6c757d" }};
+$success:       {{ .Site.Params.success | default "#2eca8b" }};
+$info:          {{ .Site.Params.info | default "#17a2b8" }};
+$warning:       {{ .Site.Params.warning | default "#f17425" }};
+$danger:        {{ .Site.Params.danger | default "#e43f52" }};
+$light:         {{ .Site.Params.light | default "#f8f9fa" }};
+$dark:          {{ .Site.Params.dark | default "#3c4858" }};
+// scss-docs-end theme-color-variables
+
+//Core files
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "variables";
+@import "bootstrap/mixins";
+@import "bootstrap/bootstrap";
+
+// Plugins
+@import "custom/plugins/icons/google-material";
+
+// Structure
+@import "custom/structure/general";
+@import "custom/structure/topbar";
+// @import "custom/structure/content";
+// @import "custom/structure/sidebar-layouts";
+// @import "custom/structure/doc-nav";
+// @import "custom/structure/toc-layouts";
+@import "custom/structure/footer";
+
+// // Components
+@import "custom/components/buttons";
+@import "custom/components/badge";
+@import "custom/components/backgrounds";
+// @import "custom/components/alerts";
+// @import "custom/components/card";
+
+// // Pages
+// @import "custom/pages/blog";
+
+@import "custom/pages/features";
+@import "custom/pages/helper";
+@import "custom/pages/hero";
+{{ if ($.Scratch.Get "image_compare_enabled") }}@import "custom/pages/image-compare-viewer";{{ end }}
+
+// @import "custom/pages/simplebar";
