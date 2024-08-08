@@ -1,4 +1,4 @@
-<video class="video-shortcode" preload="{{ .Get "preload" }}" controls width="100%" poster="{{ absURL "videos" }}/{{ .Get "src" }}.png" src="{{ absURL "videos" }}/{{ .Get "src" }}.{{ .Get "default-format" }}">
+<video class="video-shortcode" preload="{{ .Get "preload" }}" controls width="100%" poster="{{ absURL "videos" }}/{{ .Get "src" }}.webp" src="{{ absURL "videos" }}/{{ .Get "src" }}.{{ .Get "default-format" }}">
     <source src="{{ absURL "videos" }}/{{ .Get "src" }}.webm" type="video/webm">
     <source src="{{ absURL "videos" }}/{{ .Get "src" }}.mp4" type="video/mp4">
     <source src="{{ absURL "videos" }}/{{ .Get "src" }}.ogv" type="video/ogg">
