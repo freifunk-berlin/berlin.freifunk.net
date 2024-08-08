@@ -1,13 +1,4 @@
 {{ define "main" }}
-
-    <style>
-        .hero {
-            {{ with resources.Get "images/header.webp" }}
-                background-image: linear-gradient(to bottom, transparent 0%, #fff),  url("{{ .RelPermalink }}");
-            {{ end }}
-        }
-    </style>
-
     <section id="hero" class="d-table w-100 overflow-hidden hero">
         <div class="container">
             <div class="row mt-5 align-items-center">

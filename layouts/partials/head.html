@@ -29,17 +29,15 @@
     {{ if hugo.IsProduction }}
         {{ $js = $js | fingerprint "sha384" }}
     {{ end }}
+    {{ if .IsHome }}
+    {{ with resources.Get "images/header.webp" }}
+    <link rel="preload" fetchpriority="high" as="image" href="{{ .RelPermalink }}" type="image/webp">
+    <style>
+        .hero {
+                background-image: linear-gradient(to bottom, transparent 0%, #fff),  url("{{ .RelPermalink }}");
+        }
+    </style>
+    {{ end }}
+    {{ end }}
         <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
-    <!-- Plausible Analytics Config -->
-    {{- if not .Site.IsServer }}
-    {{ if and (.Site.Params.plausible.scriptURL) (.Site.Params.plausible.dataDomain) -}}
-        {{- partialCached "head/plausible" . }}
-    {{- end -}}
-    {{- end -}}
-    <!-- Google Analytics v4 Config -->
-    {{- if not .Site.IsServer }}
-    {{- if .Site.GoogleAnalytics }}
-        {{- template "_internal/google_analytics.html" . -}}
-    {{- end -}}
-    {{- end -}}
 </head>
