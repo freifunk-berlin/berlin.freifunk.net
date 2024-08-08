@@ -9,6 +9,8 @@ The website is built using the static website generator Hugo.
 - Clone this repository
 - Load submodule with `git submodule init` and `git submodule update`
 - Install [Hugo](https://gohugo.io/installation/) (>=0.120.0)
+- Install [Node](https://nodejs.org/en/download/package-manager/current) (>=20)
+- Load js dependencies with `npm install`
 
 ## Run for development
 
