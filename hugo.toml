@@ -119,6 +119,7 @@ disableKinds = ['taxonomy', 'term']
     sans_serif_font = "Arial"
     secondary_font  = "Arial"
     mono_font       = "Courier New"
+    primary = "#dc0067"
     [params.social]
         github = "freifunk-berlin/"
         twitter = "freifunk_berlin/"
