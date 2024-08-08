@@ -1,5 +1,5 @@
 ---
-ignorePatterns: ["layouts/page/single.json", "assets/js/bootstrap.js"]
+ignorePatterns: ["layouts/page/single.json", "package.json", "package-lock.json", "assets/js/bootstrap.js"]
 parserOptions:
   ecmaVersion: latest
 env:
