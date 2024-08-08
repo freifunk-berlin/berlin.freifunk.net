@@ -14,6 +14,8 @@ jobs:
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
+        env:
+          URL_DEVELOPMENT: ${{ vars.URL_DEVELOPMENT }}
         with:
           message: |
-            This is a link to a preview of the website from this Pull Request: [dev.berlin.freifunk.net/${{ github.head_ref }}/](http://dev.berlin.freifunk.net/${{ github.head_ref }}/).
+            This is a link to a preview of the website from this Pull Request: [${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/](${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/).
