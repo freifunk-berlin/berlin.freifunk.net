@@ -1,2 +1,6 @@
 ---
 ignorePatterns: ["layouts/page/single.json", "assets/js/bootstrap.js"]
+parserOptions:
+  ecmaVersion: latest
+env:
+  es6: true
