@@ -1,0 +1,16 @@
+{
+  "name": "berlin.freifunk.net",
+  "version": "1.0.0",
+  "description": "This is the repository for the website of the [Freifunk Community Berlin](https://berlin.freifunk.net).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "postcss": "^8.4.41",
+    "postcss-cli": "^11.0.0"
+  }
+}

@@ -1,4 +1,4 @@
-{{/* Overwriting the theme partial to set custom meta tags. */}}
+{{/* Overwriting the theme partial to set custom meta tags, reduce css and remove unused components. */}}
 <head>
     <meta charset="utf-8" />
     <title>{{- .Site.Title }}</title>
@@ -15,11 +15,11 @@
         {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
     {{- end }}
     {{- $style := resources.Get "/scss/style.scss" }}
-    {{- $style = $style | resources.ExecuteAsTemplate "/scss/style.scss" . | resources.ToCSS $options }}
+    {{- $style = $style | resources.ExecuteAsTemplate "/scss/style.scss" . | resources.ToCSS $options | resources.PostCSS }}
     {{- if hugo.IsProduction }}
-        {{- $style = $style | minify | fingerprint "sha384" }}
+        {{- $style = $style | minify | fingerprint "sha384" | resources.PostProcess }}
     {{- end -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $style.Data.Integrity }}"{{ end -}}/>
+    <style>{{ $style.Content | safeCSS }}</style>
     <!-- Bootstrap JS -->
     {{ $js := resources.Get "js/bootstrap.js" }}
     {{ $params := dict }}

@@ -25,6 +25,16 @@ jobs:
           hugo-version: '0.121.2'
           extended: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      
+      - name: Prepare npm
+        run: npm ci
+
       - name: Build
         env:
           HUGO_ENV: production

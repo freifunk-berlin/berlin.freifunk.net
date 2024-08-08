@@ -122,3 +122,6 @@ disableKinds = ['taxonomy', 'term']
     [params.social]
         github = "freifunk-berlin"
         twitter = "freifunk_berlin"
+
+[build]
+  writeStats = true
