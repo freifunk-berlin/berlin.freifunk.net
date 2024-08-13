@@ -1,7 +1,8 @@
 {{ define "main" }}
-<section id="{{ .Title }}"
-         class="container mt-100 mt-60 justify-content-center mx-auto col-sm-6">
-    <h1 class="title fw-bold mb-4">{{ .Title }}</h1>
-    <p class="text-muted para-desc mb-4 pb-2 mx-auto">{{ .Content | markdownify }}</p>
+<section id="{{ .Title }}" class="container mt-100 mt-60">
+    <div class="justify-content-center mx-auto col-sm-6">
+        <h1 class="title fw-bold mb-4">{{ .Title }}</h1>
+        <p class="text-muted para-desc mb-4 pb-2 mx-auto">{{ .Content | markdownify }}</p>
+    </div>
 </section>
 {{ end }}
