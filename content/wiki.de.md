@@ -1,5 +1,6 @@
 ---
 title: "Wiki"
+description: "Das Freifunk-Wiki"
 ---
 
 Das [Freifunk-Wiki](https://wiki.freifunk.net/) ist eine zentrale
