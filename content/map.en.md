@@ -1,5 +1,6 @@
 ---
 title: "Network map"
+description: "Map of the free WiFi access points from Freifunk Berlin with exact locations. The WiFi access points are free to use, uncensored and publicly accessible."
 ---
 
 The [Freifunk Berlin map](https://hopglass.berlin.freifunk.net/) shows free WiFi access points with their exact location. The WiFi access points are free to use, uncensored and publicly accessible.

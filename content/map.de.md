@@ -1,5 +1,6 @@
 ---
 title: "Netzkarte"
+description: "Karte der freien WLAN Zugangspunkte von Freifunk Berlin mit genauer Lage. Die WLAN Zugangspunkte sind kostenlos nutzbar, unzensiert und öffentlich zugänglich."
 ---
 
 Die [Freifunk Berlin Karte](https://hopglass.berlin.freifunk.net/) zeigt freie WLAN Zugangspunkte mit ihrer genauen Lage. Die WLAN Zugangspunkte sind kostenlos nutzbar, unzensiert und öffentlich zugänglich.
