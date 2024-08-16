@@ -29,6 +29,9 @@
     {{ if hugo.IsProduction }}
         {{ $js = $js | fingerprint "sha384" }}
     {{ end }}
+    <!-- Canonical links -->
+    <link rel="canonical" href="{{ .Permalink }}">
+    <!-- Home background -->
     {{ if .IsHome }}
     {{ with resources.Get "images/header.webp" }}
     <link rel="preload" fetchpriority="high" as="image" href="{{ .RelPermalink }}" type="image/webp">
