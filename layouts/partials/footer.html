@@ -2,20 +2,36 @@
 <!-- Footer Start -->
 <footer class="footer footer-light footer-bar">
     <div class="footer-py-30">
-        <div class="container text-center">
-            <div class="row align-items-center">
-                    <div class="text-sm-start">
-                        <p class="mb-0 d-flex justify-content-end">
-                            {{ range .Site.Params.footer }}
-                                <a href="{{ relLangURL .url }}">{{ .name }}</a>
-                            {{ end }}                       
-                        </p>
-                    </div>
-                <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <!-- <p>Privacy</p> -->
-                </div><!--end col-->
-            </div><!--end row-->
-        </div><!--end container-->
+        <div class="container">
+            <ul class="nav align-items-center align-content-between flex-wrap">
+                {{ range .Site.Params.footer }}
+                <li class="nav-item">
+                    <a class="mx-2" href="{{ relLangURL .url }}">{{ .name }}</a>
+                </li>
+                {{ end }}
+                <li class="nav-item ms-auto">
+                    {{ $Site := .Site }}
+                    {{ with .File }}
+                    <button type="button" class="btn btn-primary btn-sm d-inline-flex align-items-center" id="edit-page-link" data-url="{{ $Site.Params.editURL }}{{ replace .Dir "\\" "/" }}{{ .LogicalName }}">
+                        <i class="material-icons size-16 me-2">edit</i><span>Edit</span>
+                    </button>
+                    {{ end }}
+                </li>
+            </ul>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var editLink = document.getElementById('edit-page-link');
+                    if (editLink) {
+                        var url = editLink.getAttribute('data-url');
+                        editLink.onclick = function() {
+                            window.open(url, '_blank');
+                        };
+                    }
+                });
+            </script>
+        </div>
+        <!--end container-->
     </div>
-</footer><!--end footer-->
+</footer>
+<!--end footer-->
 <!-- Footer End -->
