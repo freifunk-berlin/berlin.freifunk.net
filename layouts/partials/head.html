@@ -42,5 +42,68 @@
     </style>
     {{ end }}
     {{ end }}
-        <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
+    {{ if .IsHome }}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Freifunk Berlin",
+          "alternateName": "Berliner Freifunk-Community",
+          "url": "https://berlin.freifunk.net/",
+          "logo": "https://berlin.freifunk.net/favicon.svg",
+          "sameAs": [
+            "https://berlin.freifunk.net/",
+            "https://berlin.freifunk.net/de/",
+            "https://berlin.freifunk.net/en/",
+            "https://www.wikidata.org/wiki/Q129176426",
+            "https://github.com/freifunk-berlin/",
+            "https://twitter.com/freifunk_berlin/",
+            "https://x.com/freifunk_berlin/"
+          ],
+          "subjectOf": [
+            {
+              "@type": "Article",
+              "url": "https://wiki.freifunk.net/Berlin"
+            },
+            {
+              "@type": "Article",
+              "url": "https://www.mabb.de/information/digitale-welt/freifunk"
+            },
+            {
+              "@type": "Article",
+              "url": "https://rathausblock.org/projekte/freifunk/"
+            },
+            {
+              "@type": "Article",
+              "url": "https://k12.berlin/2020/07/17/wer-weitsicht-haben-will-muss-nicht-hoch-hinaus/"
+            },
+            {
+              "@type": "Article",
+              "url": "https://projektzukunft.berlin.de/blog/news-detail/wlan-karte-von-mabb-und-senatskanzlei-berlin"
+            },
+            {
+              "@type": "Article",
+              "url": "https://www.mabb.de/uber-die-mabb/aktuelles/neuigkeiten-details/mabb-unterstuetzt-berliner-freifunk-mit-10000-euro"
+            },
+            {
+              "@type": "Article",
+              "url": "https://perspektive89.com/flo-fleissig-besucht-die-freifunk-community-folge-5/"
+            },
+            {
+              "@type": "Article",
+              "url": "https://www.berliner-woche.de/prenzlauer-berg/c-soziales/freifunker-richard-hebstreit-setzt-sich-fuer-offene-und-kostenlose-netzwerke-fuer-alle-ein_a202786"
+            },
+            {
+              "@type": "Article",
+              "url": "https://www.heise.de/news/Berlin-setzt-auf-privat-finanziertes-WLAN-fuer-die-Stadt-186226.html"
+            },
+            {
+              "@type": "Article",
+              "url": "https://foerderverein.freie-netzwerke.de/wp-content/uploads/sites/3/2014/06/MABB_BBB_Abschlussbericht_2013_20140331.pdf"
+            }
+          ]
+        }
+    </script>
+    {{ end }}
 </head>
