@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="container mt-100 mt-60">
+  <div class="justify-content-center mx-auto col-sm-6">
+    <script type='importmap'>
+  {
+      "imports": {
+      "@fullcalendar/core": "https://cdn.skypack.dev/@fullcalendar/core@6.1.11",
+      "@fullcalendar/daygrid": "https://cdn.skypack.dev/@fullcalendar/daygrid@6.1.11",
+      "@fullcalendar/icalendar": "https://cdn.skypack.dev/@fullcalendar/icalendar@6.1.11"
+      }
+  }
+    </script>
+    <script type='module'>
+  import { Calendar } from '@fullcalendar/core'
+  import dayGridPlugin from '@fullcalendar/daygrid'
+  import iCalendarPlugin from '@fullcalendar/icalendar'
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const calendarEl = document.getElementById('calendar')
+      var calendar = new Calendar(calendarEl, {
+      plugins: [dayGridPlugin, iCalendarPlugin],
+
+      eventSources: [
+        {{- range .Params.Calendars }}
+
+      {
+          url: "{{ . }}",
+          format: 'ics'
+      },
+    {{- end }}
+    ]
+
+
+      })          
+      calendar.render()
+  })
+    </script>
+    <div id='calendar'></div>
+    <a href="index.ics">ical Feed</a>
+  </div>
+</div>
+{{ end }}
