@@ -1,6 +1,5 @@
 ---
 title: "Events"
-url: "events"
 ---
 
 <script type='importmap'>

@@ -12,6 +12,9 @@ timeout = "120s"
 
 disableKinds = ['taxonomy', 'term']
 
+[outputs]
+section = ["HTML", "RSS", "Calendar"]
+
 [module]
     replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
     [[module.imports]]
