@@ -1,5 +1,6 @@
 ---
 title: "Participate"
+description: "Freifunk is an open community. Everyone who wants to participate will find a way to do so. Take a look at which level suits you."
 ---
 
 ## Everybody can participate!

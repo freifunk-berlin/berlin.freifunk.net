@@ -1,5 +1,6 @@
 ---
 title: "Donate"
+description: "Regular donations are needed to set up and maintain the free radio network. Contribute to the costs."
 ---
 
 ## Support Freifunk in Berlin through donations

@@ -1,5 +1,6 @@
 ---
 title: "Impressum"
+description: "Offizielle Kontaktmöglichkeiten und Verantwortlichkeiten für die Website der Berliner Freifunk Community."
 ---
 
 **Kontakt Freifunk Berlin**  
