@@ -1,6 +1,6 @@
 ---
 title: "Wiki"
-description: "The Freifunk-Wiki"
+description: "The collective knowledge of the Freifunk communities can be found in the shared wiki. Take a look at which sites are interesting for you in Berlin."
 ---
 
 The [Freifunk-Wiki](https://wiki.freifunk.net/) is a central source of information for Freifunkers, in which everyone is warmly invited to participate. Freifunk Berlin is also there.

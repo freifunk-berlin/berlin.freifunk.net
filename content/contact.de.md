@@ -1,5 +1,6 @@
 ---
 title: "Kontakt"
+description: "Mit der Freifunk Community in Berlin kannst du über verschiedene Wege in Kontakt treten. Bei gemeinsamen Treffen oder in unseren Chats und Mailinglisten."
 ---
 
 ## Treffen

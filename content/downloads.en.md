@@ -1,5 +1,6 @@
 ---
 title: "Downloads"
+description: "Firmware downloads and instructions. Here you will find everything you need to set up your own Freifunk node."
 ---
 
 ## Freifunk Berlin Downloads

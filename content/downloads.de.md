@@ -1,5 +1,6 @@
 ---
 title: "Downloads"
+description: "Downloads der Firmware und passende Anleitungen dazu. Hier gibt es alles, was du brauchst um deinen eigenen Freifunk Knoten einzurichten."
 ---
 
 ## Freifunk Berlin Downloads

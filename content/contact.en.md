@@ -1,5 +1,6 @@
 ---
 title: "Contact"
+description: "You can get in touch with the Freifunk community in Berlin in various ways. At joint meetings or in our chats and mailing lists."
 ---
 
 ## Meetings

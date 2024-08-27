@@ -1,6 +1,6 @@
 ---
 title: "Wiki"
-description: "Das Freifunk-Wiki"
+description: "Im gemeinsamen Wiki ist das gesammelte Wissen der Freifunk Communitys zu finden. Schau dir an, welche Seiten für dich in Berlin spannend sind."
 ---
 
 Das [Freifunk-Wiki](https://wiki.freifunk.net/) ist eine zentrale

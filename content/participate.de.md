@@ -1,5 +1,6 @@
 ---
 title: "Mitmachen"
+description: "Freifunk ist eine offene Community. Es gibt verschiedene Möglichkeiten der Beteiligung. Schau dir an, welches Level zu dir passt."
 ---
 
 ## Jede\_r kann mitmachen!

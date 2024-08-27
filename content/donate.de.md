@@ -1,5 +1,6 @@
 ---
 title: "Spenden"
+description: "Für den Aufbau und Erhalt des freien Funknetzwerks werden regelmäßige Spenden benötigt. Beteilige dich an den Kosten."
 ---
 
 ## Freifunk in Berlin durch Spenden unterstützen
