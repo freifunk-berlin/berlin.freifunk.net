@@ -1,4 +1,7 @@
 ---
+outputs:
+- html
+- calendar
 title: "Freifunktreffen auf der c-base"
 start: "2024-07-03T20:00:00"
 end: "2024-07-03T15:23:00"

@@ -14,7 +14,6 @@ disableKinds = ['taxonomy', 'term']
 
 [outputs]
 section = ["HTML", "RSS", "Calendar"]
-page = ["HTML", "Calendar"]
 
 [module]
     replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
