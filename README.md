@@ -58,7 +58,8 @@ To display up to date information, we fetch and generate some data during the bu
 ## Events
 
 The events for the calendar are stored in simple markdown files. To create a new event, use the following commands:
-```
+
+```bash
 hugo new content --kind event events/<EVENT_NAME>.de.md
 hugo new content --kind event events/<EVENT_NAME>.en.md
 ```

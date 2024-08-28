@@ -4,15 +4,14 @@ import iCalendarPlugin from '@fullcalendar/icalendar'
 
 document.addEventListener('DOMContentLoaded', function () {
   const calendarEl = document.getElementById('calendar')
-  var calendar = new Calendar(calendarEl, {
+  const calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin, iCalendarPlugin],
-
     eventSources: [
-    {
-    url: "index.ics",
-    format: 'ics'
-  },
-  ]
-    })
-calendar.render()
+      {
+        url: 'index.ics',
+        format: 'ics'
+      }
+    ]
+  })
+  calendar.render()
 })

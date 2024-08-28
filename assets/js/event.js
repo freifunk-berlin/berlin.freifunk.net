@@ -1,5 +1,5 @@
-import { datetime, RRule, RRuleSet, rrulestr } from 'rrule'
+import { rrulestr } from 'rrule'
 
-const rrule_element = document.querySelector("#rrule");
-const rrule_object = rrulestr(rrule_element.dataset.rrule)
-rrule_element.innerHTML = rrule_object.toText()
+const rruleElement = document.querySelector('#rrule')
+const rruleObject = rrulestr(rruleElement.dataset.rrule)
+rruleElement.innerHTML = rruleObject.toText()
