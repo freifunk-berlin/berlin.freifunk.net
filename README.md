@@ -54,3 +54,13 @@ To display up to date information, we fetch and generate some data during the bu
 - activities-mailinglist (activities section)
 - activities-matrix (activities section)
 - activities-github (activities section)
+
+## Events
+
+The events for the calendar are stored in simple markdown files. To create a new event, use the following commands:
+```
+hugo new content --kind event events/<EVENT_NAME>.de.md
+hugo new content --kind event events/<EVENT_NAME>.en.md
+```
+
+Now you can edit the event at `events/<EVENT_NAME>.de.md` and `events/<EVENT_NAME>.en.md`.
