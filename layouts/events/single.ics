@@ -2,7 +2,6 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//freifunk berlin//hugo wegbsite generator//EN
 CALSCALE:GREGORIAN
-{{range .Pages -}}
 BEGIN:VEVENT
 DTSTAMP;VALUE=DATE-TIME:{{ dateFormat "20060102T150405Z" .Date }}
 LOCATION:{{ .Params.location }}
@@ -21,5 +20,4 @@ RRULE:{{ .Params.rrule }}
 {{ end }}
 URL:{{.Permalink}}
 END:VEVENT
-{{end -}}
 END:VCALENDAR
