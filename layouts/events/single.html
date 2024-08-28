@@ -1,5 +1,7 @@
 {{ define "main" }}
 <section id="{{ .Title }}">
+    {{ $built := resources.Get "js/event.js" | js.Build }}
+    <script src="{{ $built.RelPermalink }}" defer></script>
     <div class="container mt-100 mt-60">
         <h1 class="title fw-bold mb-4">
             <span class="material-icons"
@@ -8,26 +10,31 @@
                          vertical-align:bottom">calendar_month</span> {{ .Title }} <span style="color:grey;white-space:nowrap;">{{ time.Format "02 Jan 2006" .Params.start }}</span>
         </h1>
         <div class="d-flex flex-wrap">
-            <div class="">
-                <p class="text-muted para-desc mb-2 mx-auto">{{ .Content | markdownify }}</p>
-            </div>
-            <div class="p-4 bg-soft-primary rounded">
-                <div class="row">
-                    <span class="material-icons align-middle col-2">location_on</span>
-                    <p class="col-8">{{ .Params.location }}</p>
+            <p class="text-muted para-desc mb-2 mx-auto">{{ .Content | markdownify }}</p>
+            <div>
+                <div class="p-4 mb-4 bg-soft-primary rounded">
+                    <div class="row">
+                        <span class="material-icons align-middle col-2">location_on</span>
+                        <p class="col-8">{{ .Params.location }}</p>
+                    </div>
+                    <div class="row">
+                        <span class="material-icons align-middle col-2">schedule</span>
+                        <p class="col-8">
+                            {{ time.Format "2 Jan 2006 15:04" .Params.start }}
+                            <br>
+                            - {{ time.Format "2 Jan 2006 15:04" .Params.end }}
+                        </p>
+                    </div>
+                    {{ if .Params.rrule }}
+                    <div class="row">
+                        <span class="material-icons align-middle col-2">event_repeat</span>
+                        <p class="col-8" id="rrule" data-rrule="{{ .Params.rrule }}"></p>
+                    </div>
+                    {{ end }}
                 </div>
-                <div class="row">
-                    <span class="material-icons align-middle col-2">schedule</span>
-                    <p class="col-8">
-                        {{ time.Format "2 Jan 2006 15:04" .Params.start }}
-                        <br>
-                        - {{ time.Format "2 Jan 2006 15:04" .Params.end }}
-                    </p>
-                </div>
-                <div class="row">
-                    <span class="material-icons align-middle col-2">sell</span>
-                    <p class="col-8">{{ .Params.category }}</p>
-                </div>
+                {{ with  .OutputFormats.Get "calendar" -}}
+                <a href="{{ .Permalink | safeURL }}">ical feed</a>
+                {{- end }}
             </div>
         </div>
     </div>
