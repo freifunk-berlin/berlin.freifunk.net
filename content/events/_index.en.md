@@ -1,4 +1,4 @@
 ---
 title: "Events"
-calendars: ["index.ics"]
+description: "An overview of Freifunk events in the near future. Feel free to drop by."
 ---
