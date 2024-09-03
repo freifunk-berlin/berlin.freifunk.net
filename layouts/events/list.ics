@@ -11,7 +11,7 @@ SEQUENCE:0
 CLASS:PUBLIC
 SUMMARY:{{ .Title }}
 {{ $description := .Content | plainify }}
-{{ $description :=  replace $description "\n" "=0D=0A" }}
+{{ $description :=  replace $description "\n" "" }}
 DESCRIPTION;ENCODING=QUOTED-PRINTABLE:{{ $description }}
 UID:{{.Params.start}}@berlin.freifunk.net
 DTSTART;TZID=Europe/Berlin;VALUE=DATE-TIME:{{dateFormat "20060102T150405" .Params.start}}
