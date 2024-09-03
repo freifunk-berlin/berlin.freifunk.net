@@ -4,7 +4,7 @@ outputs:
 - calendar
 title: "Freifunktreffen auf der c-base"
 start: "2024-07-03T20:00:00"
-end: "2024-07-03T15:23:00"
+end: "2024-07-03T23:00:00"
 rrule: "FREQ=MONTHLY;INTERVAL=1;BYDAY=1WE"
 location: "Rungestraße 20, 10179 Berlin"
 ---
