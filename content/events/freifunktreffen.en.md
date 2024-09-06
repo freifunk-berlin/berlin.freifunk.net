@@ -2,7 +2,7 @@
 outputs:
 - html
 - calendar
-title: "Freifunk meet up on the c-base"
+title: "Freifunk meet-up"
 start: "2024-07-03T20:00:00"
 end: "2024-07-03T23:00:00"
 rrule: "FREQ=MONTHLY;INTERVAL=1;BYDAY=1WE"
