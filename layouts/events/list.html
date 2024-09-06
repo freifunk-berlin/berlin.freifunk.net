@@ -1,5 +1,13 @@
 {{ define "main" }}
 <div class="container mt-100 mt-60">
+  <style>
+    .fc-daygrid-event {
+      white-space: break-spaces;
+    }
+    .fc-event-main-frame {
+      flex-direction: column;
+    }
+  </style>
   <div class="justify-content-center mx-auto col-sm-6">
     <div id='calendar' class="mb-4"></div>
     {{ $js := resources.Get "js/calendar.js" }}
