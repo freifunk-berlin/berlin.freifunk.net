@@ -1,4 +1,4 @@
-// Overwriting the theme stylesheet to allow custom colors
+// Overwriting the theme stylesheet to allow custom colors and set paths for icon import
 
 /* Template Name: LotusLabs Docs
    Author: Colin Wilson
@@ -12,6 +12,9 @@
 $font-family-secondary:  {{ .Site.Params.secondary_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
 $font-family-sans-serif: {{ .Site.Params.sans_serif_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
 $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" }};
+
+//Icons
+$material-icon-font-path: '{{ absURL "docs/fonts/material-symbols-outlined.woff2" }}';
 
 //Fonts
 // @import "custom/fonts/fonts";
