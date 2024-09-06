@@ -5,7 +5,13 @@
             <span class="material-icons"
                   style="font-size: inherit;
                          line-height: inherit;
-                         vertical-align:bottom">calendar_month</span> {{ .Title }} <span style="color:grey;white-space:nowrap;">{{ time.Format "02 Jan 2006" .Params.start }}</span>
+                         vertical-align:bottom">calendar_month</span>
+            {{ .Title }}
+            {{ if not .Params.rrule }}
+            <span style="color:grey;white-space:nowrap;">
+                {{ time.Format "02 Jan 2006" .Params.start }}
+            </span>
+            {{ end }}
         </h1>
         <div class="d-flex flex-wrap">
             <p class="text-muted para-desc mb-2 mx-auto">{{ .Content | markdownify }}</p>
@@ -15,6 +21,18 @@
                         <span class="material-icons align-middle col-2">location_on</span>
                         <p class="col-8">{{ .Params.location }}</p>
                     </div>
+                    {{ if .Params.rrule }}
+                    <div class="row">
+                        <span class="material-icons align-middle col-2">schedule</span>
+                        <p class="col-8">
+                            {{ time.Format "15:04" .Params.start }} - {{ time.Format "15:04" .Params.end }}
+                        </p>
+                    </div>
+                    <div class="row">
+                        <span class="material-icons align-middle col-2">event_repeat</span>
+                        <p class="col-8">{{ .Params.rrule_text }}</p>
+                    </div>
+                    {{ else }}
                     <div class="row">
                         <span class="material-icons align-middle col-2">schedule</span>
                         <p class="col-8">
@@ -23,20 +41,6 @@
                             - {{ time.Format "2 Jan 2006 15:04" .Params.end }}
                         </p>
                     </div>
-                    {{ if .Params.rrule }}
-                    <div class="row">
-                        <span class="material-icons align-middle col-2">event_repeat</span>
-                        <p class="col-8" id="rrule" data-rrule="{{ .Params.rrule }}"></p>
-                    </div>
-                    {{ $js := resources.Get "js/event.js" }}
-                    {{ $params := dict }}
-                    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
-                    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
-                    {{ $js = $js | js.Build $opts }}
-                    {{ if hugo.IsProduction }}
-                    {{ $js = $js | fingerprint "sha384" }}
-                    {{ end }}
-                    <script src="{{ $js.RelPermalink }}" defer></script>
                     {{ end }}
                 </div>
                 {{ with  .OutputFormats.Get "calendar" -}}

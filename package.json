@@ -15,7 +15,6 @@
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "fullcalendar": "^6.1.15",
     "postcss": "^8.4.41",
-    "postcss-cli": "^11.0.0",
-    "rrule": "^2.8.1"
+    "postcss-cli": "^11.0.0"
   }
 }

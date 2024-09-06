@@ -6,6 +6,7 @@ title: "Freifunk meet-up"
 start: "2024-07-03T20:00:00"
 end: "2024-07-03T23:00:00"
 rrule: "FREQ=MONTHLY;INTERVAL=1;BYDAY=1WE"
+rrule_text: "Every first Wednesday of the month"
 location: "Rungestraße 20, 10179 Berlin"
 ---
 
