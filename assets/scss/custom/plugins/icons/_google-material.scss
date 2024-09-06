@@ -1,0 +1,14 @@
+// Overwriting the theme stylesheet to fix font path
+
+// Google Material Icon Font via
+// https://github.com/marella/material-symbols/tree/main/material-symbols
+
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-weight: 400 700;
+  font-display: block;
+  font-style: normal;
+  src: local('Material Symbols Outlined'), local('Material Icons'), local('MaterialIcons-Outlined'),
+    url($material-icon-font-path) format('woff2'),
+}
