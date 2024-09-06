@@ -1,4 +1,4 @@
-// Overwriting the theme stylesheet to reenable link decoration
+// Overwriting the theme stylesheet to reenable link decoration and fix contrast on bg-soft-primary
 
 body {
     font-family: $font-family-secondary;
@@ -37,4 +37,8 @@ p {
 
 #navigation a {
     text-decoration: none !important;
+}
+
+div.bg-soft-primary {
+    background: rgba($primary, 0.05) !important;
 }
