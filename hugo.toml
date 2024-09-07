@@ -40,6 +40,10 @@ section = ["HTML", "RSS", "Calendar"]
                 url = 'map/'
                 weight = 20
             [[languages.de.menus.primary]]
+                name = 'Spenden'
+                url = 'donate/'
+                weight = 20
+            [[languages.de.menus.primary]]
                 name = 'Dokumentation'
                 url = 'documentation/'
                 weight = 40
