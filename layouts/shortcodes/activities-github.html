@@ -11,9 +11,8 @@
     A total of <b>{{ $github_activity.repo_count }} (repositories)</b> projects are managed on the platform.
     The most active are currently:
 {{ end }}
-
- <ul>
-    {{ range $element := $github_activity.top_repos }}
-    <li><a href="https://github.com/freifunk-berlin/{{ $element }}">{{ $element }}</a></li>
-    {{ end }}
-</ul>
+<div class="d-flex flex-wrap mt-2 mb-4 gap-1">
+{{ range $element := $github_activity.top_repos }}
+<div class="d-inline bg-secondary border rounded-pill border-2 px-2 p-1"> <a href="https://github.com/freifunk-berlin/{{ $element }}">{{ $element }}</a></div>
+{{ end }}
+</div>
