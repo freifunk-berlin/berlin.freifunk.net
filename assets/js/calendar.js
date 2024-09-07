@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin, iCalendarPlugin],
     eventDisplay: 'block',
+    contentHeight: 'auto',
     eventSources: [
       {
         url: 'index.ics',
