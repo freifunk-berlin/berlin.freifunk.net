@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="container mt-100 mt-60">
+  <style>
+    .fc-daygrid-event {
+      white-space: break-spaces;
+    }
+    .fc-event-main-frame {
+      flex-direction: column;
+    }
+  </style>
+  <div class="justify-content-center mx-auto col-sm-6">
+    <div id='calendar' class="mb-4"></div>
+    {{ $js := resources.Get "js/calendar.js" }}
+    {{ $params := dict }}
+    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+    {{ $js = $js | js.Build $opts }}
+    {{ if hugo.IsProduction }}
+    {{ $js = $js | fingerprint "sha384" }}
+    {{ end }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+    {{ with  .OutputFormats.Get "calendar" -}}
+    <a href="{{ .Permalink | safeURL }}">ical feed</a>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

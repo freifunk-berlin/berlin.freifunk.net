@@ -2,5 +2,6 @@
 ignorePatterns: ["layouts/page/single.json", "package.json", "package-lock.json", "assets/js/bootstrap.js"]
 parserOptions:
   ecmaVersion: latest
+  sourceType: module
 env:
   es6: true

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//freifunk berlin//hugo wegbsite generator//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTAMP;VALUE=DATE-TIME:{{ dateFormat "20060102T150405Z" .Date }}
+LOCATION:{{ .Params.location }}
+CATEGORIES:{{ .Params.category }}
+SEQUENCE:0
+CLASS:PUBLIC
+SUMMARY:{{ .Title }}
+{{ $description := .Content | plainify }}
+{{ $description :=  replace $description "\n" "=0D=0A" }}
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:{{ $description }}
+UID:{{.Params.start}}@berlin.freifunk.net
+DTSTART;TZID=Europe/Berlin;VALUE=DATE-TIME:{{dateFormat "20060102T150405" .Params.start}}
+DTEND;TZID=Europe/Berlin;VALUE=DATE-TIME:{{dateFormat "20060102T150405" .Params.end}}
+{{ if .Params.rrule }}
+RRULE:{{ .Params.rrule }}
+{{ end }}
+URL:{{.Permalink}}
+END:VEVENT
+END:VCALENDAR
