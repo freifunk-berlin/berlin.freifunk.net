@@ -40,29 +40,17 @@ section = ["HTML", "RSS", "Calendar"]
                 url = 'map/'
                 weight = 20
             [[languages.de.menus.primary]]
-                name = 'Spenden'
-                url = 'donate/'
-                weight = 30
-            [[languages.de.menus.primary]]
-                name = 'Wiki'
-                url = 'wiki/'
+                name = 'Dokumentation'
+                url = 'documentation/'
                 weight = 40
             [[languages.de.menus.primary]]
                 name = 'Downloads'
                 url = 'downloads/'
                 weight = 50
             [[languages.de.menus.primary]]
-                name = 'FAQ'
-                url = 'https://wiki.freifunk.net/Berlin:FAQ'
-                weight = 60
-            [[languages.de.menus.primary]]
                 name = 'Kontakt'
                 url = 'contact/'
                 weight = 70
-            [[languages.de.menus.primary]]
-                name = 'freifunk.net'
-                url = 'https://freifunk.net/'
-                weight = 80
         [languages.de.params]
             description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
             [[languages.de.params.footer]]
