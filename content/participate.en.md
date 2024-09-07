@@ -30,7 +30,7 @@ You want to
 
 Here's how you can join in
 
-* When deciding which router you should get for Freifunk, see the article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware#Unterst.C3.BCtzte_Router) of the [Wiki]({{< relref path="wiki.md" >}}).
+* When deciding which router you should get for Freifunk, see the article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware#Unterst.C3.BCtzte_Router) of the [Wiki]({{< relref path="documentation.md" >}}).
 * Proceed as described in the article [Berlin:Firmware:HowTo](https://wiki.freifunk.net/Berlin:Firmware/HowTo) to flash and configure the firmware.
 * Place the router in a suitable location (e.g. windowsill).
 
@@ -47,7 +47,7 @@ You want to
 
 Here's how you can join in
 
-* Get a Freifunk-enabled outdoor router. Recommendations can be found in the article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware#Unterst.C3.BCtzte_Router) of the [Wiki]({{< relref path="wiki.md" >}} ).
+* Get a Freifunk-enabled outdoor router. Recommendations can be found in the article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware#Unterst.C3.BCtzte_Router) of the [Wiki]({{< relref path="documentation.md" >}} ).
 * You may be able to borrow this hardware as part of a [letter of transfer](https://wiki.freifunk.net/Berlin:%C3%9Cberlassungserkl%C3%A4rung).
 * To plan the new connections, you should [contact]({{< relref path="contact.md" >}}) the Freifunk operators who operate the remote routers.
 
@@ -63,13 +63,13 @@ You want to
 
 Here's how you can join in
 
-* Get several Freifunk-enabled outdoor routers for 5 GHz. Recommendations can be found in the article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware#Unterst.C3.BCtzte_Hardware) of the [Wiki]({{< relref path="wiki.md" >}} ).
+* Get several Freifunk-enabled outdoor routers for 5 GHz. Recommendations can be found in the article [Berlin:Firmware](https://wiki.freifunk.net/Berlin:Firmware#Unterst.C3.BCtzte_Hardware) of the [Wiki]({{< relref path="documentation.md" >}} ).
 * You may be able to borrow this hardware as part of a [letter of transfer](https://wiki.freifunk.net/Berlin:%C3%9Cberlassenserkl%C3%A4rung).
 * To plan the new connections, you should [contact]({{< relref path="contact.md" >}}) the Freifunk operators who operate the remote routers.
 
 ## Further information and tips
 
-There is a lot more information in the [Frequently Asked Questions](https://wiki.freifunk.net/Berlin:FAQ) in the [Wiki]({{< relref path="wiki.md" >}}).
+There is a lot more information in the [Frequently Asked Questions](https://wiki.freifunk.net/Berlin:FAQ) in the [Wiki]({{< relref path="documentation.md" >}}).
 
 * [HowTo](https://wiki.freifunk.net/Berlin:Firmware/HowTo)
 * [Freifunk Wizard](https://config.berlin.freifunk.net)

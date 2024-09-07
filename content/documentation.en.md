@@ -1,7 +1,11 @@
 ---
-title: "Wiki"
+title: "Documentation"
 description: "The collective knowledge of the Freifunk communities can be found in the shared wiki. Take a look at which sites are interesting for you in Berlin."
 ---
+
+Freifunk's foundation is a so called mesh network. All routers within the Freifunk network can communicate with one another and form their own wifi network. A routing protocol allows for everybody within the Freifunk network to communicate and exchange data with other participants. Some of the nodes within the network are further connected with the Internet. That way, everyone within Freifunk has also a direct access to the global network.
+
+{{< img src="images/adhoc_netz_wikipedia.webp" alt="mesh cloud with one node that has internet connection" width="350" height="168" loading="lazy" >}}
 
 The [Freifunk-Wiki](https://wiki.freifunk.net/) is a central source of information for Freifunkers, in which everyone is warmly invited to participate. Freifunk Berlin is also there.
 
