@@ -5,7 +5,9 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="title-heading">
                         <h4 class="heading mt-0 mb-3">{{- .Site.Title }}</h4>
-                        <p class="para-desc text-muted">{{- .Site.Params.Description}}</p>   
+                        <p class="para-desc text-muted">{{- .Site.Params.Description}}</p>
+                        <a class="btn btn-primary" href="{{- .Site.Params.Actions.Primary.Url }}" role="button">{{- .Site.Params.Actions.Primary.Name }}</a>
+                        <a class="btn btn-secondary" href="{{- .Site.Params.Actions.Seconary.Url }}" role="button">{{- .Site.Params.Actions.Seconary.Name }}</a>
                     </div>
                 </div>
             </div>

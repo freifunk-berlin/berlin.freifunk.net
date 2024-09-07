@@ -68,6 +68,13 @@ section = ["HTML", "RSS", "Calendar"]
             [[languages.de.params.footer]]
                 name = "Impressum"
                 url = "imprint/"
+            [languages.de.params.actions]
+                [languages.de.params.actions.primary]
+                    name="Freies Wlan finden"
+                    url="map/"
+                [languages.de.params.actions.seconary]
+                    name="Freifunker*in werden"
+                    url="participate/"
     [languages.en]
         weight = 2
         languageName = "English"
@@ -111,6 +118,13 @@ section = ["HTML", "RSS", "Calendar"]
             [[languages.en.params.footer]]
                 name = "Imprint"
                 url = "imprint/"
+            [languages.en.params.actions]
+                [languages.en.params.actions.primary]
+                    name="Find free Wifi"
+                    url="map/"
+                [languages.en.params.actions.seconary]
+                    name="Become part of Freifunk"
+                    url="participate/"
 
 [sitemap]
     filename = "sitemap.xml"
