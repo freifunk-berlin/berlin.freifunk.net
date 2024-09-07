@@ -6,8 +6,8 @@
     The following topics are currently being discussed on the <a href="https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin">mailing list</a>:
 {{ end }}
 
-<ul>
-    {{ range $element := $mail_subjects }}
-    <li>{{ $element }}</li>
-    {{ end }}
-</ul>
+<div class="d-flex flex-wrap mt-2 mb-4 gap-1">
+{{ range $element := $mail_subjects }}
+<div class="d-inline bg-secondary border rounded-pill border-2 px-2 p-1">{{ $element }}</div>
+{{ end }}
+</div>
