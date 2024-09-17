@@ -1,7 +1,7 @@
 {{/* Overwriting the theme partial to set custom meta tags, reduce css and remove unused components. */}}
 <head>
     <meta charset="utf-8" />
-    <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .Params.Title }}{{ .Params.Title }} {{ else }} {{ .Site.Title }} {{ end }}</title>
     {{- if not hugo.IsProduction }}
     <meta name="robots" content="noindex">
     {{- end }}
