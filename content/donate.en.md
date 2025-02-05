@@ -3,27 +3,14 @@ title: "Donate"
 description: "Regular donations are needed to set up and maintain the free radio network. Contribute to the costs."
 ---
 
-## Support Freifunk in Berlin through donations
+We rely on regular donations to set up and maintain our free radio network. We prefer donations via [betterplace.org](https://www.betterplace.org/de/projects/83703). This is easier for us as well as for you. Donation receipts are issued by [betterplace.org](https://www.betterplace.org/de/projects/83703) and sent out in February of the following year.
 
-We rely on regular donations to build and maintain our free wireless network. We prefer donations via betterplace.org. This is easier for both us and you. Donation receipts are issued by betterplace.org and sent in February of the following year.
+Alternatively, a bank transfer is also possible. Please enter a reason for payment. We will only issue donation receipts for donations of EUR 20 or more if we have your postal address. Please enter this in the reason for payment or via spenden{at}foerderverein.freie-netwerke.de.
 
-You can send your donation to Freifunk Berlin in various ways:
-
-### Betterplace
-
-{{< iframe src="https://www.betterplace-widget.org/projects/83703?l=de" height="320px">}}
-
-### Bank account
-
-```text
-Förderverein Freie Netzwerke e.V.
+{{< box type="secondary" >}}```
 Konto 722 722 7006
 BLZ 100 900 00
 IBAN DE51100900007227227006
 BIC BEVODEBB
 Berliner Volksbank
-```
-
-Please specify a intended use. Here we only issue donation receipts for amounts over EUR 20, provided your postal address is available (purpose or email).
-
-E-mail: spenden{at}foerderverein.freie-netwerke.de
+```{{< /box >}}

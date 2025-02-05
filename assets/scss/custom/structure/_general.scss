@@ -39,6 +39,10 @@ p {
     text-decoration: none !important;
 }
 
+i {
+    user-select: none;
+  }
+
 div.bg-soft-primary {
     background: rgba($primary, 0.05) !important;
 }

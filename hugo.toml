@@ -42,32 +42,31 @@ section = ["HTML", "RSS", "Calendar"]
             [[languages.de.menus.primary]]
                 name = 'Spenden'
                 url = 'donate/'
-                weight = 30
+                weight = 20
             [[languages.de.menus.primary]]
-                name = 'Wiki'
-                url = 'wiki/'
+                name = 'Dokumentation'
+                url = 'documentation/'
                 weight = 40
             [[languages.de.menus.primary]]
                 name = 'Downloads'
                 url = 'downloads/'
                 weight = 50
             [[languages.de.menus.primary]]
-                name = 'FAQ'
-                url = 'https://wiki.freifunk.net/Berlin:FAQ'
-                weight = 60
-            [[languages.de.menus.primary]]
                 name = 'Kontakt'
                 url = 'contact/'
                 weight = 70
-            [[languages.de.menus.primary]]
-                name = 'freifunk.net'
-                url = 'https://freifunk.net/'
-                weight = 80
         [languages.de.params]
             description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
             [[languages.de.params.footer]]
                 name = "Impressum"
                 url = "imprint/"
+            [languages.de.params.actions]
+                [languages.de.params.actions.primary]
+                    name="Freies Wlan finden"
+                    url="map/"
+                [languages.de.params.actions.seconary]
+                    name="Freifunker*in werden"
+                    url="participate/"
     [languages.en]
         weight = 2
         languageName = "English"
@@ -87,30 +86,29 @@ section = ["HTML", "RSS", "Calendar"]
                 url = 'donate/'
                 weight = 30
             [[languages.en.menus.primary]]
-                name = 'Wiki'
-                url = 'wiki/'
+                name = 'Documentation'
+                url = 'documentation/'
                 weight = 40
             [[languages.en.menus.primary]]
                 name = 'Downloads'
                 url = 'downloads/'
                 weight = 50
             [[languages.en.menus.primary]]
-                name = 'FAQ'
-                url = 'https://wiki.freifunk.net/Berlin:FAQ'
-                weight = 60
-            [[languages.en.menus.primary]]
                 name = 'Contact'
                 url = 'contact/'
                 weight = 70
-            [[languages.en.menus.primary]]
-                name = 'freifunk.net'
-                url = 'https://freifunk.net/'
-                weight = 80
         [languages.en.params]
             description = "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
             [[languages.en.params.footer]]
                 name = "Imprint"
                 url = "imprint/"
+            [languages.en.params.actions]
+                [languages.en.params.actions.primary]
+                    name="Find free Wifi"
+                    url="map/"
+                [languages.en.params.actions.seconary]
+                    name="Become part of Freifunk"
+                    url="participate/"
 
 [sitemap]
     filename = "sitemap.xml"
