@@ -20,7 +20,7 @@ hugo server -w
 
 ## Production
 
-First you must generate the content. You can set the environment variables `HUGO_MATRIX_ACCESS_TOKEN`, `HUGO_MATRIX_HOME_SERVER` and `HUGO_GITHUB_ACCESS_TOKEN` to get real activity informations. Else some dummy data is used.
+First you must generate the content. You can set the environment variables `HUGO_MATRIX_ACCESS_TOKEN`, `HUGO_MATRIX_HOME_SERVER` and `HUGO_GITHUB_ACCESS_TOKEN` to get real activity information. Else some dummy data is used.
 
 ```console
 HUGO_GITHUB_ACCESS_TOKEN="<github_secret>" HUGO_MATRIX_ACCESS_TOKEN="<matrix_secret>" HUGO_MATRIX_HOME_SERVER="htps://matrix.org" hugo --minify -b <baseURL>
