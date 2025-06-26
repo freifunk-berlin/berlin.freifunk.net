@@ -17,7 +17,7 @@ Zur Kommunikation gibt es neben den Treffen auch öffentliche Mailinglisten. Auf
 * [WLANnews](https://lists.freifunk.net/mailman/listinfo/wlannews-freifunk.net) Neuigkeiten aus den Communities und Nachrichten zum Thema WLAN und freie Netze aus ganz Deutschland
 * [WLANware](https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net) Technischer Austausch über WLAN-Hardware aus ganz Deutschland
 * [WLANtalk](https://lists.freifunk.net/mailman/listinfo/wlantalk-freifunk.net) Überregionale Liste zum Austausch zwischen den verschiedenen Freifunk-Communities
-* [Twitter](https://twitter.com/freifunk_berlin) Folge uns auf Twitter
+* [Mastodon](https://chaos.social/@freifunk_berlin) Folge uns auf Mastodon
 
 ## Chat
 

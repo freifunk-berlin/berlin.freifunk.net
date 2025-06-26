@@ -6,7 +6,7 @@
     "contact": {
       "email": "info@berlin.freifunk.net",
       "ml": "berlin@berlin.freifunk.net",
-      "twitter": "@freifunk_berlin",
+      "mastodon": "https://chaos.social/@freifunk_berlin",
       "matrix": "https://matrix.to/#/#berlin.freifunk.net:matrix.org"
     },
     "location": {
@@ -95,4 +95,3 @@
     },
     "url": "https://berlin.freifunk.net/"
   }
-  

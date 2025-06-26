@@ -15,7 +15,7 @@ We communicate not only face-to-face at the meetings but also through public mai
 * [WLANnews](https://lists.freifunk.net/mailman/listinfo/wlannews-freifunk.net) Communities' news and news on wifi and free networks from Germany
 * [WLANware](https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net) Technical discussions on wifi hardware from all over Germany
 * [WLANtalk](https://lists.freifunk.net/mailman/listinfo/wlantalk-freifunk.net) A transregional mailing list for communication between the individual Freifunk communities
-* [Twitter](https://twitter.com/freifunk_berlin) Follow us on Twitter
+* [Mastodon](https://chaos.social/@freifunk_berlin) Follow us on Mastodon
 
 ## Chat
 

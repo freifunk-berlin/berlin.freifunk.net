@@ -126,7 +126,7 @@ section = ["HTML", "RSS", "Calendar"]
     editURL = "https://github.com/freifunk-berlin/berlin.freifunk.net/edit/main/content"
     [params.social]
         github = "freifunk-berlin/"
-        twitter = "freifunk_berlin/"
+        mastodon = "https://chaos.social/@freifunk_berlin/"
 
 [build]
   writeStats = true
