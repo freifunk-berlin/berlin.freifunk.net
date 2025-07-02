@@ -10,7 +10,9 @@
 
 {{ if $ACCESS_TOKEN }}
 
-  {{ $headers := (dict "Authorization" (printf "Bearer %s" $ACCESS_TOKEN )) }}
+  {{ $opts := dict
+    "headers" (dict "Authorization" (printf "Bearer %s" $ACCESS_TOKEN ))
+  }}
 
   {{/* Number of repos in the organization.
       Private and archived repos are included, forks are excluded.
@@ -19,7 +21,7 @@
   {{ $repo_list := slice}}
   {{ range $page := (seq 10) }}
     {{ $current_repo_list_url := printf "https://api.github.com/orgs/freifunk-berlin/repos?per_page=100&sort=pushed&page=%d" $page }}
-    {{ with try (resources.GetRemote $current_repo_list_url $headers) }}
+    {{ with try (resources.GetRemote $current_repo_list_url $opts) }}
       {{ with .Err }}
         {{ errorf "%s" . }}
       {{ else }}
@@ -60,7 +62,7 @@
   {{ range $repo := $repo_list }}
     {{ range $page := (seq 10) }}
       {{ $commit_url := printf "https://api.github.com/repos/freifunk-berlin/%s/commits?per_page=100&since=%s&page=%d" $repo.name $past_thirty_days $page }}
-      {{ with try (resources.GetRemote $commit_url $headers )}}
+      {{ with try (resources.GetRemote $commit_url $opts )}}
         {{ with .Err }}
           {{ errorf "%s" . }}
         {{ else }}
