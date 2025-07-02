@@ -6,8 +6,8 @@ This is the repository for the website of the [Freifunk Community Berlin](https:
 
 - Clone this repository
 - Load submodule with `git submodule init` and `git submodule update`
-- Install [Hugo](https://gohugo.io/installation/) (>=0.120.0)
-- Install [Node](https://nodejs.org/en/download/package-manager/current) (>=20)
+- Install [Hugo](https://gohugo.io/installation/) (>=0.142.0)
+- Install [Node](https://nodejs.org/en/download/package-manager/current) (>=22)
 - Load js dependencies with `npm install`
 
 ## Development
