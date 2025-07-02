@@ -9,21 +9,19 @@ Ort und Zeit der Treffen der Berliner Freifunk-Community findest du im Artikel [
 
 Möglichkeiten, bei Freifunk mitzumachen, gibt es viele: als Netzwerker_in, Software-Programmierer_in, Autor_in, Designer_in oder Ideenpromoter_in...
 
+## Chat
+
+Ein großer Teil der Berliner Community kommuniziert per Matrix: [#berlin.freifunk.net:matrix.org](https://matrix.to/#/#berlin.freifunk.net:matrix.org)
+
 ## Mailingliste
 
-Zur Kommunikation gibt es neben den Treffen auch öffentliche Mailinglisten. Auf diesen trägst Du Dich selbst ein, indem die Deine Emailadresse angibst und in der folgenden Bestätigungsmail den Link klickst. Du kannst einstellen, ob Du jede Nachricht sofort oder eine tägliche Zusammenfassung bekommen möchtest.
+Zur Kommunikation gibt es neben den Treffen und Matrix auch öffentliche Mailinglisten. Auf diesen trägst Du Dich selbst ein, indem die Deine Emailadresse angibst und in der folgenden Bestätigungsmail den Link klickst. Du kannst einstellen, ob Du jede Nachricht sofort oder eine tägliche Zusammenfassung bekommen möchtest.
 
 * [Berlin Wireless](https://lists.berlin.freifunk.net/cgi-bin/mailman/listinfo/berlin) Achtung: Stand September 2023 funktioniert die Anmeldung nicht. Bitte schreib eine Mail an <info@berlin.freifunk.net>. Berliner Freifunk-Liste (Stell dich hier der Community vor)
 * [WLANnews](https://lists.freifunk.net/mailman/listinfo/wlannews-freifunk.net) Neuigkeiten aus den Communities und Nachrichten zum Thema WLAN und freie Netze aus ganz Deutschland
 * [WLANware](https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net) Technischer Austausch über WLAN-Hardware aus ganz Deutschland
 * [WLANtalk](https://lists.freifunk.net/mailman/listinfo/wlantalk-freifunk.net) Überregionale Liste zum Austausch zwischen den verschiedenen Freifunk-Communities
 * [Mastodon](https://chaos.social/@freifunk_berlin) Folge uns auf Mastodon
-
-## Chat
-
-Ein Teil der Berliner Community kommuniziert per Matrix: [#berlin.freifunk.net:matrix.org](https://matrix.to/#/#berlin.freifunk.net:matrix.org)
-
-Teile der Freifunk-Community tummeln sich im IRC: [irc://open.ircnet.net/#freifunk](irc://open.ircnet.net/#freifunk)
 
 ## Website
 
