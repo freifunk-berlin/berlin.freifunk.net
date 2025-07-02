@@ -19,19 +19,26 @@
   {{ $repo_list := slice}}
   {{ range $page := (seq 10) }}
     {{ $current_repo_list_url := printf "https://api.github.com/orgs/freifunk-berlin/repos?per_page=100&sort=pushed&page=%d" $page }}
-    {{ $current_repo_list_json := getJSON $current_repo_list_url $headers }}
-    {{ range $repo := $current_repo_list_json }}
-      {{ if not $repo.fork }}
-        {{ $repo_list = $repo_list| append $repo }}
+    {{ with try (resources.GetRemote $current_repo_list_url $headers) }}
+      {{ with .Err }}
+        {{ errorf "%s" . }}
+      {{ else }}
+        {{ $current_repo_list_json := .Value | transform.Unmarshal }}
+        {{ range $repo := $current_repo_list_json }}
+          {{ if not $repo.fork }}
+            {{ $repo_list = $repo_list| append $repo }}
+          {{ end }}
+        {{ end }}
+        {{ if lt (len $current_repo_list_json) 100 }}
+          {{ break }}
+        {{ else if eq $page 10}}
+          {{ errorf "Pagination error: There might be more than 1000 repos on github. You need to increase the max pagination in the github activities partial." }}
+        {{ end }}
       {{ end }}
-    {{ end }}
-    {{ if lt (len $current_repo_list_json) 100 }}
-      {{ break }}
-    {{ else if eq $page 10}}
-      {{ errorf "Pagination error: There might be more than 1000 repos on github. You need to increase the max pagination in the github activities partial." }}
     {{ end }}
   {{ end }}
   {{ $repo_count := len $repo_list}}
+  {{ $github_activity = merge $github_activity (dict "repo_count" $repo_count) }}
 
   {{/* Top three active repos.
       Based on latest push. */}}
@@ -42,6 +49,7 @@
         {{ end }}
         {{ $top_repos = $top_repos | append $repo.name }}
   {{ end }}
+  {{ $github_activity = merge $github_activity (dict "top_repos" $top_repos) }}
 
   {{/* Number of commits of the last 30 days in all the repos.
       A maximum of 10 pages with up to 100 commits each are checked.
@@ -52,17 +60,22 @@
   {{ range $repo := $repo_list }}
     {{ range $page := (seq 10) }}
       {{ $commit_url := printf "https://api.github.com/repos/freifunk-berlin/%s/commits?per_page=100&since=%s&page=%d" $repo.name $past_thirty_days $page }}
-      {{ $commit_json := getJSON $commit_url $headers }}
-      {{ $commit_count = add $commit_count (len $commit_json) }}
-      {{ if lt (len $commit_json) 100 }}
-        {{ break }}
-      {{ else if eq $page 10}}
-        {{ errorf "Pagination error: There might be more than 1000 commits for the %s repo. You need to increase the max pagination in the github activities partial." $repo.name }}
+      {{ with try (resources.GetRemote $commit_url $headers )}}
+        {{ with .Err }}
+          {{ errorf "%s" . }}
+        {{ else }}
+          {{ $commit_json := .Value | transform.Unmarshal }}
+          {{ $commit_count = add $commit_count (len $commit_json) }}
+          {{ if lt (len $commit_json) 100 }}
+            {{ break }}
+          {{ else if eq $page 10}}
+            {{ errorf "Pagination error: There might be more than 1000 commits for the %s repo. You need to increase the max pagination in the github activities partial." $repo.name }}
+          {{ end }}
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
-
-  {{ $github_activity = dict "repo_count" $repo_count "top_repos" $top_repos "commit_count" $commit_count }}
+  {{ $github_activity = merge $github_activity (dict "commit_count" $commit_count) }}
 
 {{ else }}
   {{ warnf "HUGO_GITHUB_ACCESS_TOKEN not found in the environment. Using the development defaults for github activities partial." }}

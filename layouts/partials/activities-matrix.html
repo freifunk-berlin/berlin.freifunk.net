@@ -14,9 +14,16 @@
 
     {{/* Number of members in main chat. */}}
     {{ $room_url := printf "%s/_matrix/client/v1/rooms/!zTqqomsFqlyQjqrZpm:matrix.org/hierarchy?access_token=%s" $HOME_SERVER $ACCESS_TOKEN }}
-    {{ $room_json := getJSON $room_url }}
-    {{ $room := index $room_json.rooms 0 }}
-    {{ $member_count := $room.num_joined_members }}
+    {{ with try (resources.GetRemote $room_url )}}
+        {{ with .Err }}
+            {{ errorf "%s" . }}
+        {{ else }}
+            {{ $room_json := .Value | transform.Unmarshal }}
+            {{ $room := index $room_json.rooms 0 }}
+            {{ $member_count := $room.num_joined_members }}
+            {{ $matrix_activity = merge $matrix_activity (dict "member_count" $member_count) }}
+        {{ end }}
+    {{ end }}
 
     {{/* Number of general and site rooms in the space.
         Only checks the first ten pages. If more rooms exist, an error is thrown.
@@ -26,22 +33,28 @@
     {{ $site_room_count := 0 }}
     {{ range $page := (seq 10) }}
         {{ $space_url := printf "%s/_matrix/client/v1/rooms/!EzZtBKEuKZqxrYSugs:digitale-gesellschaft.ch/hierarchy?access_token=%s&from=%s" $HOME_SERVER  $ACCESS_TOKEN $next_room_batch }}
-        {{ $space_json := getJSON $space_url }}
-        {{ range $room := $space_json.rooms }}
-            {{ $general_room_count = add $general_room_count 1 }}
-            {{ if strings.HasPrefix $room.name "Site -" }}
-                {{ $site_room_count = add $site_room_count 1 }}
+        
+        {{ with try (resources.GetRemote $space_url) }}
+            {{ with .Err }}
+                {{ errorf "%s" . }}
+            {{ else }}
+                {{ $space_json := .Value | transform.Unmarshal }}
+                {{ range $room := $space_json.rooms }}
+                    {{ $general_room_count = add $general_room_count 1 }}
+                    {{ if strings.HasPrefix $room.name "Site -" }}
+                        {{ $site_room_count = add $site_room_count 1 }}
+                    {{ end }}
+                {{ end }}
+                {{ if isset $space_json "next_batch" }}
+                    {{ $next_room_batch = $space_json.next_batch }}
+                    {{ if eq $page 10 }}
+                        {{ errorf "Pagination error: There might be more than ten pages of rooms. You need to increase the max pagination in the matrix activities partial." }}
+                    {{ end }}
+                {{ else }}
+                    {{ break }}
+                {{ end }}
             {{ end }}
-        {{ end }}
-
-
-        {{ if isset $space_json "next_batch" }}
-            {{ $next_room_batch = $space_json.next_batch }}
-            {{ if eq $page 10 }}
-                {{ errorf "Pagination error: There might be more than ten pages of rooms. You need to increase the max pagination in the matrix activities partial." }}
-            {{ end }}
-        {{ else }}
-            {{ break }}
+            {{ $matrix_activity = merge $matrix_activity (dict "site_room_count" $site_room_count) }}
         {{ end }}
     {{ end }}
 
@@ -55,27 +68,32 @@
     {{ $reached_last_message := false }}
     {{ range $page := (seq 10) }}
         {{ $messages_url := printf "%s/_matrix/client/v3/rooms/!zTqqomsFqlyQjqrZpm:matrix.org/messages?access_token=%s&limit=100&dir=b&from=%s" $HOME_SERVER $ACCESS_TOKEN $next_message_batch }}
-        {{ $messages_json := getJSON $messages_url }}
-        {{ range $message := $messages_json.chunk }}
-            {{ if gt $message.origin_server_ts $unix_milliseconds }}
-                {{ $message_count = add $message_count 1 }}
+        {{ with try (resources.GetRemote $messages_url)}}
+            {{ with .Err }}
+                {{ errorf "%s" . }}
             {{ else }}
-                {{ $reached_last_message = true }}
-                {{ break }}
+                {{ $messages_json := .Value | transform.Unmarshal }}
+                {{ range $message := $messages_json.chunk }}
+                    {{ if gt $message.origin_server_ts $unix_milliseconds }}
+                        {{ $message_count = add $message_count 1 }}
+                    {{ else }}
+                        {{ $reached_last_message = true }}
+                        {{ break }}
+                    {{ end }}
+                {{ end }}
+                {{ if $reached_last_message }}
+                    {{ break }}
+                {{ else if lt (len $messages_json.chunk) 100 }}
+                    {{ break }}
+                {{ else if eq $page 10 }}
+                    {{ errorf "Pagination error: There might be more than 10 pages of messages. You need to increase the max pagination in the matrix activities partial." }}
+                {{ else }}
+                    {{ $next_message_batch = $messages_json.end }}
+                {{ end }}
             {{ end }}
-        {{ end }}
-        {{ if $reached_last_message }}
-            {{ break }}
-        {{ else if lt (len $messages_json.chunk) 100 }}
-            {{ break }}
-        {{ else if eq $page 10 }}
-            {{ errorf "Pagination error: There might be more than 10 pages of messages. You need to increase the max pagination in the matrix activities partial." }}
-        {{ else }}
-            {{ $next_message_batch = $messages_json.end }}
+            {{ $matrix_activity = merge $matrix_activity (dict "message_count" $message_count) }}
         {{ end }}
     {{ end }}
-
-    {{ $matrix_activity = dict "message_count" $message_count "general_room_count" $general_room_count "site_room_count" $site_room_count "member_count" $member_count }}
 
 {{ else }}
     {{ warnf "HUGO_MATRIX_ACCESS_TOKEN not found in the environment. Using the development defaults for matrix activities partial." }}
