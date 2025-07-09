@@ -192,5 +192,9 @@
           ]
         }
     </script>
+    {{ $mastodon_link := index site.Params.social "mastodon" }}
+      {{ if $mastodon_link }}
+        <link rel="me" href='{{ index site.Params.social "mastodon" }}'>
+      {{ end }}
     {{ end }}
 </head>
