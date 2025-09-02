@@ -11,15 +11,15 @@
     },
     "location": {
       "address": {
-        "name": "Haus der Materialisierung",
-        "street": "Otto-Braun-Str. 70-72",
-        "zipcode": "10178"
+        "name": "Lause",
+        "street": "Lausitzer Straße 10",
+        "zipcode": "10999"
       },
       "city": "Berlin",
       "country": "DE",
       "geoCode": {
-        "lat": 52.52315,
-        "lon": 13.41957
+        "lat": 52.497480,
+        "lon": 13.427854
       }
     },
     "name": "Freifunk Berlin",
