@@ -37,10 +37,6 @@
         "url": "https://hopglass.berlin.freifunk.net"
       }
     ],
-    "socialprojects": {
-      "number": 38,
-      "website": "https://wiki.freifunk.net/Berlin:Refugees"
-    },
     "state": {
       "focus": [
         "infrastructure/backbone",
