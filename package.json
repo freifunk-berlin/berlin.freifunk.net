@@ -13,6 +13,8 @@
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/icalendar": "^6.1.15",
     "@fullhuman/postcss-purgecss": "^6.0.0",
+    "datatables.net-dt": "^2.3.5",
+    "datatables.net-plugins": "^2.3.2",
     "fullcalendar": "^6.1.15",
     "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0"

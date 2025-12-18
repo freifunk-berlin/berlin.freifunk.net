@@ -1,0 +1,57 @@
+{{/* Return list with dicts for each inventory item:
+    - name
+    - remaining
+    - category
+    - manufacturer */}}
+
+{{ $ACCESS_TOKEN := getenv "HUGO_INVENTORY_ACCESS_TOKEN" }}
+{{ $INVENTORY_API := printf "https://inventory.stadtfunk.net/api/v1/models" }}
+
+{{/* Defaults for development without inventory access token. */}}
+{{ $inventory := slice 
+    (dict "name" "FritzBox 4040" "remaining" 2 "category" "Router" "manufacturer" "AVM")
+    (dict "name" "EdgeSwitch 24 - ES-24-250W " "remaining" 3 "category" "Switch" "manufacturer" "Ubiquiti")
+    (dict "name" "Litebeam 5AC Gen2" "remaining" 4 "category" "Wireless link 5GHz" "manufacturer" "Ubiquiti")
+}}
+
+{{ if $ACCESS_TOKEN }}
+
+  {{ $inventory = slice }}
+  {{ $opts := dict
+    "headers" (dict
+      "Authorization" (printf "Bearer %s" $ACCESS_TOKEN)
+      "Accept" "application/json"
+      "Content-Type" "application/json")
+  }}
+
+  {{ with try (resources.GetRemote $INVENTORY_API $opts ) }}
+    {{ with .Err }}
+      {{ errorf "%s" . }}
+    {{ else }}
+      {{ $response_obj := .Value | transform.Unmarshal }}
+
+      {{ range $item := $response_obj.rows }}
+
+        {{ if gt $item.remaining 0 }}
+
+          {{ $name := $item.name }}
+          {{ $category := $item.category.name }}
+          {{ $remaining := cond (gt $item.remaining 3) "3+" $item.remaining }}
+          {{ $manufacturer := "" }}
+
+          {{ if $item.manufacturer }}
+            {{$manufacturer = $item.manufacturer.name}}
+          {{ end }}
+
+          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining "category" $category "manufacturer" $manufacturer) }}
+
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+{{ else }}
+  {{ warnf "HUGO_INVENTORY_ACCESS_TOKEN not found in the environment. Using the development defaults for inventory partial." }}
+{{ end }}
+
+{{ return $inventory }}

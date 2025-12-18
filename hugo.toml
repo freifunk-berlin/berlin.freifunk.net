@@ -23,6 +23,16 @@ section = ["HTML", "RSS", "Calendar"]
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
+    [[module.mounts]]
+        disableWatch = false
+        lang = ''
+        source = 'node_modules'
+        target = 'assets'
+    [[module.mounts]]
+        disableWatch = false
+        lang = ''
+        source = 'assets'
+        target = 'assets'
 
 [languages]
     [languages.de]

@@ -1,0 +1,47 @@
+{{ $products := partial "inventory.html" }}
+
+<table id='inventory-table' class="display">
+    <thead>
+        <tr>
+            {{ if eq .Site.Language.Lang "de" }}
+            <th>Anzahl</th>
+            <th>Produkt</th>
+            <th>Kategorie</th>
+            <th>Hersteller</th>
+            {{ else if eq .Site.Language.Lang "en" }}
+            <th>Quantity</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Manufacturer</th>
+            {{ end }}
+        </tr>
+    </thead>
+    <tbody>
+        {{ range $product := $products }}
+        <tr>
+            <td>{{ $product.remaining }}</td>
+            <td>{{ $product.name }}</td>
+            <td>{{ $product.category }}</td>
+            <td>{{ $product.manufacturer }}</td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
+
+{{/* Load datatables JS. */}}
+{{ $js := resources.Get "js/inventory.js" }}
+{{ $params := dict }}
+{{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+{{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+{{ $js = $js | js.Build $opts }}
+{{ if hugo.IsProduction }}
+    {{ $js = $js | fingerprint "sha384" }}
+{{ end }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+
+{{/* Load datatables CSS. */}}
+{{- $style := resources.Get "datatables.net-dt/css/dataTables.dataTables.css" -}}
+{{- if hugo.IsProduction }}
+    {{- $style = $style | minify | fingerprint "sha384" | resources.PostProcess }}
+{{- end -}}
+<style>{{ $style.Content | safeCSS }}</style>
