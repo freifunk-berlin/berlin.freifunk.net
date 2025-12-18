@@ -5,3 +5,4 @@ resources/_gen/
 assets/jsconfig.json
 node_modules
 hugo_stats.json
+.env

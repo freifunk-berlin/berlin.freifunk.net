@@ -20,10 +20,12 @@ hugo server -w
 
 ## Production
 
-First you must generate the content. You can set the environment variables `HUGO_MATRIX_ACCESS_TOKEN`, `HUGO_MATRIX_HOME_SERVER` and `HUGO_GITHUB_ACCESS_TOKEN` to get real activity information. Else some dummy data is used.
+The first step is to generate the content. In order to include real remote data you must set some environment variables. Use the definitions in [.env.example](.env.example) to create your own `.env` file. Else some dummy data is used.
 
 ```console
-HUGO_GITHUB_ACCESS_TOKEN="<github_secret>" HUGO_MATRIX_ACCESS_TOKEN="<matrix_secret>" HUGO_MATRIX_HOME_SERVER="htps://matrix.org" hugo --minify -b <baseURL>
+set -a
+source .env
+hugo --minify -b <baseURL>
 ```
 
 The files are generated in the `public` directory and need to be served with a webserver (see deployment chapter).
@@ -54,6 +56,7 @@ To display up to date information, we fetch and generate some data during the bu
 - activities-mailinglist (activities section)
 - activities-matrix (activities section)
 - activities-github (activities section)
+- inventary (inventary)
 
 ## Events
 
