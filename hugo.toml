@@ -141,5 +141,6 @@ section = ["HTML", "RSS", "Calendar"]
         copyright = ":YEAR: Freifunk Berlin"
     [params.docs]
         themeColor = "ff_blue"
+    [params.flexsearch]
 [build]
   writeStats = true
