@@ -137,6 +137,9 @@ section = ["HTML", "RSS", "Calendar"]
     [params.social]
         github = "freifunk-berlin/"
         mastodon = "https://chaos.social/@freifunk_berlin"
-
+    [params.footer]
+        copyright = ":YEAR: Freifunk Berlin"
+    [params.docs]
+        themeColor = "ff_blue"
 [build]
   writeStats = true

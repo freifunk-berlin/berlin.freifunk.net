@@ -1,0 +1,38 @@
+:root {
+    --ff-blue-900-hsl: 198, 100%, 5%;
+    --ff-blue-800-hsl: 198, 100%, 15%;
+    --ff-blue-700-hsl: 198, 100%, 25%;
+    --ff-blue-600-hsl: 198, 100%, 35%;
+    --ff-blue-500-hsl: 198 100% 43.9%; // original color #009ee0
+    --ff-blue-400-hsl: 198, 100%, 55%;
+    --ff-blue-300-hsl: 198, 100%, 65%;
+    --ff-blue-200-hsl: 198, 100%, 75%;
+    --ff-blue-100-hsl: 198, 100%, 85%;
+    --ff-blue-50-hsl: 198, 100%, 95%;
+
+    --ff-blue-900: hsl(var(--ff-blue-900-hsl));
+    --ff-blue-800: hsl(var(--ff-blue-800-hsl));
+    --ff-blue-700: hsl(var(--ff-blue-700-hsl));
+    --ff-blue-600: hsl(var(--ff-blue-600-hsl));
+    --ff-blue-500: hsl(var(--ff-blue-500-hsl));
+    --ff-blue-400: hsl(var(--ff-blue-400-hsl));
+    --ff-blue-300: hsl(var(--ff-blue-300-hsl));
+    --ff-blue-200: hsl(var(--ff-blue-200-hsl));
+    --ff-blue-100: hsl(var(--ff-blue-100-hsl));
+    --ff-blue-50: hsl(var(--ff-blue-50-hsl));
+
+    --primary: var(--ff-blue-600);
+    --primary-50: var(--ff-blue-50);
+    --primary-100: var(--ff-blue-100);
+    --primary-200: var(--ff-blue-200);
+    --primary-300: var(--ff-blue-300);
+    --primary-400: var(--ff-blue-400);
+    --primary-800: var(--ff-blue-800);
+
+    --primary-hsl: var(--ff-blue-500-hsl); //using 600 shade for better contrast
+    --primary-50-hsl: var(--ff-blue-50-hsl);
+    --primary-100-hsl: var(--ff-blue-100-hsl);
+    --primary-200-hsl: var(--ff-blue-200-hsl);
+    --primary-300-hsl: var(--ff-blue-300-hsl);
+    --primary-800-hsl: var(--ff-blue-800-hsl);
+}
