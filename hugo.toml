@@ -75,7 +75,7 @@ section = ["HTML", "RSS", "Calendar"]
                 weight = 80
         [languages.de.params]
             description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
-            [[languages.de.params.footer]]
+            [[languages.de.params.footer.link]]
                 name = "Impressum"
                 url = "imprint/"
     [languages.en]
@@ -118,7 +118,7 @@ section = ["HTML", "RSS", "Calendar"]
                 weight = 80
         [languages.en.params]
             description = "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
-            [[languages.en.params.footer]]
+            [[languages.en.params.footer.link]]
                 name = "Imprint"
                 url = "imprint/"
 

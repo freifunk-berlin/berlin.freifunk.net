@@ -4,7 +4,7 @@
     <div class="footer-py-30">
         <div class="container">
             <ul class="nav align-items-center align-content-between flex-wrap">
-                {{ range .Site.Params.footer }}
+                {{ range .Site.Params.footer.link }}
                 <li class="nav-item">
                     <a class="mx-2" href="{{ relLangURL .url }}">{{ .name }}</a>
                 </li>
