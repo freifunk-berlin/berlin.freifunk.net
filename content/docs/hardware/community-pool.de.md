@@ -43,4 +43,4 @@ Vor allem das Vergabeverfahren A basiert auf Vertrauen innerhalb der Community. 
 
 ## Inventar
 
-{{<inventory>}}
+{{< inventory >}}

@@ -43,4 +43,4 @@ Especially the allocation procedure A is based on trust within the community. It
 
 ## Inventory
 
-{{<inventory>}}
+{{< inventory >}}
