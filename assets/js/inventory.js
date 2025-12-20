@@ -11,5 +11,5 @@ document.addEventListener('DOMContentLoaded', function () {
     options.language = languageDE
   }
 
-  new DataTable('#inventory-table', options)
+  new DataTable('#inventory-table', options) // eslint-disable-line no-new
 })
