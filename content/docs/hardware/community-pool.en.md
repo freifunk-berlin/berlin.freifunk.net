@@ -37,6 +37,8 @@ To find the suitable device for your use case, you can check the [community inve
 
 We need money in the community fund to continue acquiring new hardware. Therefore, we kindly ask that if you use community hardware, you also leave a donation. This can be done either in the cash box on-site or through the [Freifunk donation campaign](https://www.betterplace.org/de/projects/157408-freifunk-berlin).
 
+We are also always happy to receive hardware donations that we can use to refill our stock. Please make sure that the hardware is still useful for Freifunk. See [our recommendations](donate/#donating-hardware) for more information.
+
 ## Transparency
 
 Especially the allocation procedure A is based on trust within the community. It is important that decisions are documented in a transparent manner. This allows for discussions and evaluations so we can align our expectations. For this purpose, every Community Day will include a report on the decisions made over the past six months. If necessary, adjustments to the allocation regulations can be discussed directly.

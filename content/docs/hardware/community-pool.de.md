@@ -37,6 +37,8 @@ Um das passende Gerät für dein Projekt zu finden, kannst du dir das [Community
 
 Wir brauchen Geld in der Community-Kasse, um weiter neue Hardware zu besorgen. Deshalb bitten wir dich, wenn du die Community-Hardware nutzt, auch eine Spende dazulassen. Entweder in der Barkasse vor Ort oder über die [Freifunk-Spendenkampagne](https://www.betterplace.org/de/projects/157408-freifunk-berlin).
 
+Wir freuen uns auch immer über Hardware-Spenden, mit denen wir unseren Bestand auffüllen können. Bitte stelle sicher, dass die Hardware für Freifunk noch brauchbar ist. Mehr Informationen dazu gibt es in [unseren Empfehlungen](donate/#sachspenden).
+
 ## Transparenz
 
 Vor allem das Vergabeverfahren A basiert auf Vertrauen innerhalb der Community. Dafür ist es wichtig, dass die Entscheidungen nachvollziehbar dokumentiert sind. So können diese besprochen und bewertet werden, damit wir unsere Erwartungen angleichen können. Dafür gibt es bei jedem Community-Day einen Bericht über die Entscheidungen des letzten halben Jahres. Falls nötig, können dann direkt Anpassungen der Regelungen zur Vergabe besprochen werden.

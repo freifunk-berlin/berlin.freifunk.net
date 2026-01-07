@@ -3,7 +3,7 @@ title: "Donate"
 description: "Regular donations are needed to set up and maintain the free radio network. Contribute to the costs."
 ---
 
-## Support Freifunk in Berlin through donations
+## Crowdfunding
 
 We rely on regular donations to build and maintain our free wireless network. We use betterplace.org for it. This is easier for both us and you. Donation receipts are issued by betterplace.org and sent in February of the following year.
 
@@ -27,3 +27,27 @@ We rely on regular donations to build and maintain our free wireless network. We
   })();
 </script>
 <div id="betterplace_donation_iframe" style="background: transparent url('https://www.betterplace.org/assets/new_spinner.gif') 275px 20px no-repeat;"><strong><a href="https://www.betterplace.org/en/donate/platform/projects/157408-freifunk-berlin">Donate now for “Freifunk Berlin”. The donation is processed by our partner betterplace.org</a></strong></div>
+
+## Donating Hardware
+
+Direct donations of hardware also help us operate the network. But please don't just show up with a pile of hardware. [Contact](/contact) us beforehand and let us know what devices you have. Here are a few tips on what hardware is useful to us:
+
+**Routers & Access Points**
+- The device should meet the [minimum requirements for OpenWRT](https://openwrt.org/supported_devices) and be supported by OpenWRT (see [hardware table](https://toh.openwrt.org/?view=normal)).
+- No 2.4GHz only Wi-Fi
+
+**Switch**
+- Managed switch (layer 2) for V-Lan management
+
+**Cables**
+- Cat5e or better
+- We also accept fiber optic cables and modules
+
+**Server**
+- DDR3 ECC 8GB UDIMM 1600MHZ
+- HP Gen 8&9 LFF HDD Caddy
+- Enterprise Sata SSDs >=120GB
+- DDR4 ECC RAM >= 16GB
+- Server that is not >10 years old
+- Managed PDU
+- 10G network cards

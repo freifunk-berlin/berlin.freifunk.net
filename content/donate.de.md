@@ -3,7 +3,7 @@ title: "Spenden"
 description: "Für den Aufbau und Erhalt des freien Funknetzwerks werden regelmäßige Spenden benötigt. Beteilige dich an den Kosten."
 ---
 
-## Freifunk in Berlin durch Spenden unterstützen
+## Geldspenden
 
 Für den Aufbau und Erhalt unseres freien Funknetzwerks sind wird auf regelmäßige Spenden angewiesen. Dafür nutzen wir betterplace.org. Das ist sowohl für uns, als auch für euch einfacher. Spendenbescheinigungen werden von betterplace.org ausgestellt und im Februar des Folgejahres verschickt.
 
@@ -27,3 +27,27 @@ Für den Aufbau und Erhalt unseres freien Funknetzwerks sind wird auf regelmäß
   })();
 </script>
 <div id="betterplace_donation_iframe" style="background: transparent url('https://www.betterplace.org/assets/new_spinner.gif') 275px 20px no-repeat;"><strong><a href="https://www.betterplace.org/de/donate/platform/projects/157408-freifunk-berlin">Jetzt Spenden für „Freifunk Berlin“ bei unserem Partner betterplace.org</a></strong></div>
+
+## Sachspenden
+
+Direkte Spenden von Hardware helfen uns ebenfalls beim Betrieb des Netzwerks. Aber bitte nicht einfach mit einem Haufen Hardware vorbei kommen. [Kontaktiere](contact/) uns vorher und schreibe welche Geräte du hast. Hier sind ein paar Tipps, welche Hardware für uns nützlich ist:
+
+**Router & Access Point**
+- Das Gerät sollte die [Mindestanforderungen für OpenWRT](https://openwrt.org/supported_devices) erfüllen und von OpenWRT unterstützt werden (siehe [Hardware-Tabelle](https://toh.openwrt.org/?view=normal)).
+- Kein Geräte die nur 2.4GHz können
+
+**Switch**
+- Managed Switch (Layer 2) für V-Lan Verwaltung
+
+**Kabel**
+- Cat5e oder besser
+- Wir nehmen auch gerne Glasfaserkabel und Module
+
+**Server**
+- DDR3 ECC 8 GB UDIMM 1600 MHz
+- HP Gen 8&9 LFF HDD Caddy
+- Enterprise Sata SSDs >=120 GB
+- DDR4 ECC RAM >= 16 GB
+- Server, der nicht älter als 10 Jahre ist
+- Verwaltete PDU
+- 10G-Netzwerkkarten
