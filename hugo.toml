@@ -72,9 +72,11 @@ disableKinds = ['taxonomy', 'term']
                 weight = 80
         [languages.de.params]
             description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
-            [[languages.de.params.footer.link]]
-                name = "Impressum"
-                url = "imprint/"
+            [languages.de.params.footer]
+                copyright = ":YEAR: Freifunk Berlin | [Impressum](/de/imprint)"
+                [[languages.de.params.footer.link]]
+                    name = "Impressum"
+                    url = "/de/imprint/"
     [languages.en]
         weight = 2
         languageName = "English"
@@ -115,9 +117,11 @@ disableKinds = ['taxonomy', 'term']
                 weight = 80
         [languages.en.params]
             description = "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
-            [[languages.en.params.footer.link]]
-                name = "Imprint"
-                url = "imprint/"
+            [languages.en.params.footer]
+                copyright = ":YEAR: Freifunk Berlin | [imprint](/de/imprint)"
+                [[languages.en.params.footer.link]]
+                    name = "Imprint"
+                    url = "/de/imprint/"
 
 [sitemap]
     filename = "sitemap.xml"
@@ -134,8 +138,6 @@ disableKinds = ['taxonomy', 'term']
     [params.social]
         github = "freifunk-berlin/"
         mastodon = "https://chaos.social/@freifunk_berlin"
-    [params.footer]
-        copyright = ":YEAR: Freifunk Berlin"
     [params.docs]
         themeColor = "ff_blue"
     [params.flexsearch]
