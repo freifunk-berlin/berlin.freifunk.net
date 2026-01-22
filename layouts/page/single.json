@@ -37,6 +37,14 @@
         "url": "https://hopglass.berlin.freifunk.net"
       }
     ],
+    "feeds": [
+      {
+        "category": "ics",
+        "url": "https://berlin.freifunk.net/de/events/index.ics",
+        "type": "ics",
+        "name": "events ff-berlin"
+      }
+    ],
     "state": {
       "focus": [
         "infrastructure/backbone",
