@@ -1,11 +1,17 @@
 {{ define "main"}}
-      <div class="d-flex flex-column justify-content-center align-items-center four-oh-four">
-        <div class="px-1">
-            <h1 class="text-center">{{- .Site.Params.Errortitle}}</h1>
-            <h4 class="text-center">{{- .Site.Params.Errordescription}}</h4>
+<div class="d-flex flex-column justify-content-center align-items-center four-oh-four">
+    <div class="px-1">
+        <h1 class="text-center">{{- .Site.Params.Errortitle}}</h1>
+        <h4 class="text-center">{{- .Site.Params.Errordescription}}</h4>
+    </div>
+    <div class="px-1">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="logo" aria-label="Home" href='{{ site.Home.Permalink }}'>
+                {{ with resources.Get "images/logo.svg" }}
+                {{ .Content | safeHTML }}
+                {{ end }}
+            </a>
         </div>
-        <div class="px-1">
-            <a href="{{ "" | relURL }}"><i class="material-icons size-35 me-0">berlin.freifunk.net</i></a>
-        </div>
-      </div>
+    </div>
+</div>
 {{ end }}
