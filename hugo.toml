@@ -73,7 +73,7 @@ disableKinds = ['taxonomy', 'term']
                     url = "/de/imprint/"
             [languages.de.params.actions]
                 [languages.de.params.actions.primary]
-                    name="Freies Wlan finden"
+                    name="Freies WLAN finden"
                     url="map/"
                 [languages.de.params.actions.seconary]
                     name="Freifunker*in werden"
@@ -119,7 +119,7 @@ disableKinds = ['taxonomy', 'term']
                     url = "/de/imprint/"
             [languages.en.params.actions]
                 [languages.en.params.actions.primary]
-                    name="Find free Wifi"
+                    name="Find free WiFi"
                     url="map/"
                 [languages.en.params.actions.seconary]
                     name="Become part of Freifunk"
