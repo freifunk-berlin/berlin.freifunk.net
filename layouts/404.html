@@ -1,0 +1,11 @@
+{{ define "main"}}
+      <div class="d-flex flex-column justify-content-center align-items-center four-oh-four">
+        <div class="px-1">
+            <h1 class="text-center">{{- .Site.Params.Errortitle}}</h1>
+            <h4 class="text-center">{{- .Site.Params.Errordescription}}</h4>
+        </div>
+        <div class="px-1">
+            <a href="{{ "" | relURL }}"><i class="material-icons size-35 me-0">berlin.freifunk.net</i></a>
+        </div>
+      </div>
+{{ end }}
