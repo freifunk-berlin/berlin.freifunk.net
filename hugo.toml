@@ -52,7 +52,7 @@ disableKinds = ['taxonomy', 'term']
                 weight = 20
             [[languages.de.menus.primary]]
                 name = 'Dokumentation'
-                url = 'documentation/'
+                url = 'docs/'
                 weight = 40
             [[languages.de.menus.primary]]
                 name = 'Downloads'
@@ -98,7 +98,7 @@ disableKinds = ['taxonomy', 'term']
                 weight = 30
             [[languages.en.menus.primary]]
                 name = 'Documentation'
-                url = 'documentation/'
+                url = 'docs/'
                 weight = 40
             [[languages.en.menus.primary]]
                 name = 'Downloads'
