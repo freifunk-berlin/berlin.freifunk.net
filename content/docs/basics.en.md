@@ -1,6 +1,8 @@
 ---
-title: "Documentation"
-description: "The collective knowledge of the Freifunk communities can be found in the shared wiki. Take a look at which sites are interesting for you in Berlin."
+title: "Basics"
+description: “The technical basis of how our mesh network works in Berlin.”
+weight: 200
+icon: menu_book
 ---
 
 Freifunk's foundation is a so called mesh network. All routers within the Freifunk network can communicate with one another and form their own wifi network. A routing protocol allows for everybody within the Freifunk network to communicate and exchange data with other participants. Some of the nodes within the network are further connected with the Internet. That way, everyone within Freifunk has also a direct access to the global network.
@@ -17,7 +19,3 @@ Here are a few good starting points:
 - [wiki.freifunk.net/MABB](https://wiki.freifunk.net/MABB), the site for the support of Berlin Freifunk by the Berlin-Brandenburg media authority.
 
 Join us!
-
-**The [last changes](https://wiki.freifunk.net/index.php?title=Spezial:Letzte_%C3%84nderungen&amp;days=30&amp;from=&amp;limit=500) to the Wiki regarding Berlin dealt with the topics...**
-
-_🚧  This section is currently being revised..._
