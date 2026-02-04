@@ -5,7 +5,7 @@
     - manufacturer */}}
 
 {{ $ACCESS_TOKEN := getenv "HUGO_INVENTORY_ACCESS_TOKEN" }}
-{{ $INVENTORY_API := printf "https://inventory.stadtfunk.net/api/v1/models" }}
+{{ $INVENTORY_API := printf "https://inventory.berlin.freifunk.net/api/v1/models" }}
 
 {{/* Defaults for development without inventory access token. */}}
 {{ $inventory := slice 
