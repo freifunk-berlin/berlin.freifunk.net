@@ -7,6 +7,7 @@ defaultContentLanguage = "de"
 defaultContentLanguageInSubdir = true
 
 enableRobotsTXT = true
+enableGitInfo = true
 
 timeout = "120s"
 
@@ -68,6 +69,7 @@ disableKinds = ['taxonomy', 'term']
             errortitle = "Seite nicht gefunden :("
             [languages.de.params.footer]
                 copyright = ":YEAR: Freifunk Berlin | [Impressum](/de/imprint)"
+                version = true
                 [[languages.de.params.footer.link]]
                     name = "Impressum"
                     url = "/de/imprint/"
@@ -114,6 +116,7 @@ disableKinds = ['taxonomy', 'term']
             errortitle = "Site not found :("
             [languages.en.params.footer]
                 copyright = ":YEAR: Freifunk Berlin | [imprint](/de/imprint)"
+                version = true
                 [[languages.en.params.footer.link]]
                     name = "Imprint"
                     url = "/de/imprint/"
@@ -142,6 +145,17 @@ disableKinds = ['taxonomy', 'term']
         mastodon = "https://chaos.social/@freifunk_berlin"
     [params.docs]
         themeColor = "ff_blue"
+        title = "FF-Berlin Docs"
+        prism = true
+        repoURL         = "https://github.com/freifunk-berlin/berlin.freifunk.net"
+        repoBranch      = "main"
+        editPage        = true
+        lastMod         = true
+        lastModRelative = true
+        sidebarIcons    = true
+        titleIcon       = true
+        listDescTrunc   = 100
+        descriptions    = true
     [params.flexsearch]
 [build]
   writeStats = true
