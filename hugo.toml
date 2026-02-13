@@ -5,6 +5,7 @@ baseURL = "https://berlin.freifunk.net"
 
 defaultContentLanguage = "de"
 defaultContentLanguageInSubdir = true
+disableDefaultLanguageRedirect = true
 
 enableRobotsTXT = true
 
