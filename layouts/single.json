@@ -43,6 +43,12 @@
         "url": "https://berlin.freifunk.net/de/events/index.ics",
         "type": "ics",
         "name": "events ff-berlin"
+      },
+      {
+        "category": "blog",
+        "url": "https://chaos.social/@freifunk_berlin.rss",
+        "type": "rss",
+        "name": "Mastodon"
       }
     ],
     "state": {
