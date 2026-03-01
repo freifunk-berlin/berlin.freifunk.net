@@ -133,7 +133,8 @@ disableKinds = ['taxonomy', 'term']
     secondary_font  = "Arial"
     mono_font       = "Courier New"
     primary = "#dc0067"
-    editURL = "https://github.com/freifunk-berlin/berlin.freifunk.net/edit/main/content"
+    editURL = "https://github.com/freifunk-berlin/berlin.freifunk.net/edit/main/content/"
+    language_dir = false
     [params.social]
         github = "freifunk-berlin/"
         mastodon = "https://chaos.social/@freifunk_berlin"
