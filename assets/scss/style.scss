@@ -26,7 +26,7 @@ $success:       {{ .Site.Params.success | default "#2eca8b" }};
 $info:          {{ .Site.Params.info | default "#17a2b8" }};
 $warning:       {{ .Site.Params.warning | default "#f17425" }};
 $danger:        {{ .Site.Params.danger | default "#e43f52" }};
-$light:         {{ .Site.Params.light | default "#f8f9fa" }};
+$light:         {{ .Site.Params.light | default "#ececec" }};
 $dark:          {{ .Site.Params.dark | default "#3c4858" }};
 // scss-docs-end theme-color-variables
 
