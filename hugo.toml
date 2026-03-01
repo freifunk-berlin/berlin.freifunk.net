@@ -70,9 +70,6 @@ disableKinds = ['taxonomy', 'term']
             [languages.de.params.footer]
                 copyright = ":YEAR: Freifunk Berlin | [Impressum](/de/imprint)"
                 version = true
-                [[languages.de.params.footer.link]]
-                    name = "Impressum"
-                    url = "/de/imprint/"
             [languages.de.params.actions]
                 [languages.de.params.actions.primary]
                     name="Freies WLAN finden"
@@ -117,9 +114,6 @@ disableKinds = ['taxonomy', 'term']
             [languages.en.params.footer]
                 copyright = ":YEAR: Freifunk Berlin | [imprint](/de/imprint)"
                 version = true
-                [[languages.en.params.footer.link]]
-                    name = "Imprint"
-                    url = "/de/imprint/"
             [languages.en.params.actions]
                 [languages.en.params.actions.primary]
                     name="Find free WiFi"
