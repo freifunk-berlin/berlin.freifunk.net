@@ -4,7 +4,11 @@ Freifunk stands for distributing free networks, democratizing media of communica
 
 {{< video src="freifunk-verbindet" default-format="webm" preload="metadata" >}}
 
-## Activities
+## Events
+
+As a community, we regularly organize meetings where we exchange ideas and collaboratively work to improve the network. Furthermore, we are present at various events to showcase our project and make valuable connections. Here, you can find the dates for the upcoming month, and the complete overview is available in the [calendar](/en/events/).
+
+{{< events >}}
 
 ## FAQ
 
