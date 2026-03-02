@@ -6,12 +6,6 @@ Freifunk stands for distributing free networks, democratizing media of communica
 
 ## Activities
 
-{{< activities-matrix >}}
-
-{{< activities-github >}}
-
-{{< activities-mailinglist >}}
-
 ## FAQ
 
 There is a [FAQ in the Freifunk Wiki](https://wiki.freifunk.net/Berlin:FAQ) for frequently asked questions.

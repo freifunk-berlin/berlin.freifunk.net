@@ -6,11 +6,6 @@ Die Vision von Freifunk ist die Verbreitung freier Netzwerke, die Demokratisieru
 
 ## Aktivitäten
 
-{{< activities-matrix >}}
-
-{{< activities-github >}}
-
-{{< activities-mailinglist >}}
 
 ## FAQ
 
