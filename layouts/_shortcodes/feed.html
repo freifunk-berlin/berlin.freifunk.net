@@ -1,0 +1,85 @@
+<style>
+    .status {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        position: relative;
+    }
+
+    .feed-container .status:not(:first-child) {
+        border-top: 1px solid #a7a7a7;
+
+    }
+
+    .status .invisible {
+        display: none;
+    }
+
+    .status p {
+        margin-bottom: 0;
+    }
+
+    .status a {
+        position: relative;
+        z-index: 1;
+    }
+
+    .status:hover {
+        text-decoration: underline;
+    }
+
+    .status .status-link {
+        position: absolute;
+        inset: 0;
+        font-size: 0;
+    }
+
+    .status .img-container {
+        height: 20rem;
+        overflow: hidden;
+        position: relative;
+        z-index: -1;
+    }
+
+    .status .img-container img {
+        filter: grayscale(1);
+        height: auto;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+
+{{ $statusIndex := 0 }}
+{{ with try (resources.GetRemote "https://chaos.social/api/v1/accounts/108384504829142801/statuses" )}}
+{{ with .Err }}
+{{ errorf "%s" . }}
+{{ else }}
+{{ $feed_json := .Value | transform.Unmarshal }}
+<div class="feed-container">
+    {{ range $item := $feed_json }}
+    {{ if or .reblog .in_reply_to_id }}
+    {{ continue }}
+    {{ end }}
+    <section class="status">
+        <a class="status-link" href="{{.url}}">Link to
+            the detail page</a>
+        <b>{{ time.Format "02 Jan 15:04" .created_at }}</b>
+        {{ .content | safeHTML }}
+        {{/* {{ if (isset .media_attachments 0) }}
+        {{ $firstMedia := index .media_attachments 0 }}
+        {{ if or (eq $firstMedia.type "image") (eq $firstMedia.type "gifv") (eq $firstMedia.type "video")}}
+        <div class="img-container">
+            <img src="{{ $firstMedia.preview_url }}" alt="{{ $firstMedia.description }}">
+        </div>
+        {{ end }}
+        {{ end }} */}}
+    </section>
+    {{ $statusIndex = add $statusIndex 1 }}
+    {{ if eq $statusIndex 3 }}
+    {{ break }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</div>
+{{ end }}
