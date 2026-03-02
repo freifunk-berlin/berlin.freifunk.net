@@ -1,5 +1,5 @@
 import { Calendar } from '@fullcalendar/core'
-import listPlugin from '@fullcalendar/list';
+import listPlugin from '@fullcalendar/list'
 import iCalendarPlugin from '@fullcalendar/icalendar'
 import deLocale from '@fullcalendar/core/locales/de'
 
@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initialView: 'listMonth',
     headerToolbar: false,
     stickyHeaderDates: false,
-        height: "auto",
+    height: 'auto',
     eventSources: [
       {
-        url: "events/index.ics",
+        url: 'events/index.ics',
         format: 'ics'
       }
     ]
