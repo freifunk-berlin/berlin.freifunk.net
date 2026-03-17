@@ -5,7 +5,8 @@
     - manufacturer */}}
 
 {{ $ACCESS_TOKEN := getenv "HUGO_INVENTORY_ACCESS_TOKEN" }}
-{{ $INVENTORY_API := printf "https://inventory.berlin.freifunk.net/api/v1/models" }}
+{{ $ASSETS_API := printf "https://inventory.berlin.freifunk.net/api/v1/models" }}
+{{ $ACCESSORIES_API := printf "https://inventory.berlin.freifunk.net/api/v1/accessories" }}
 
 {{/* Defaults for development without inventory access token. */}}
 {{ $inventory := slice 
@@ -24,7 +25,8 @@
       "Content-Type" "application/json")
   }}
 
-  {{ with try (resources.GetRemote $INVENTORY_API $opts ) }}
+  {{/*  Assets  */}}
+  {{ with try (resources.GetRemote $ASSETS_API $opts ) }}
     {{ with .Err }}
       {{ errorf "%s" . }}
     {{ else }}
@@ -48,6 +50,28 @@
           {{ end }}
 
           {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining "category" $category "manufacturer" $manufacturer "image" $image) }}
+
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/*  Accessories  */}}
+  {{ with try (resources.GetRemote $ACCESSORIES_API $opts ) }}
+    {{ with .Err }}
+      {{ errorf "%s" . }}
+    {{ else }}
+      {{ $response_obj := .Value | transform.Unmarshal }}
+
+      {{ range $item := $response_obj.rows }}
+
+        {{ if gt $item.remaining_qty 0 }}
+
+          {{ $name := $item.name }}
+          {{ $category := $item.category.name }}
+          {{ $remaining := cond (gt $item.remaining_qty $item.min_qty) (printf "%d+" (int $item.min_qty)) $item.remaining_qty }}
+
+          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining "category" $category "manufacturer" "") }}
 
         {{ end }}
       {{ end }}
