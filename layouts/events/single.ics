@@ -32,9 +32,9 @@ DESCRIPTION;ENCODING=QUOTED-PRINTABLE: {{ substr $description 0 36 }}
 UID:{{.Params.start}}@berlin.freifunk.net
 DTSTART;TZID=Europe/Berlin;VALUE=DATE-TIME:{{dateFormat "20060102T150405" .Params.start}}
 DTEND;TZID=Europe/Berlin;VALUE=DATE-TIME:{{dateFormat "20060102T150405" .Params.end}}
-{{ if .Params.rrule }}
+{{- if .Params.rrule }}
 RRULE:{{ .Params.rrule }}
-{{ end }}
+{{- end }}
 URL:{{.Permalink}}
 END:VEVENT
 END:VCALENDAR
