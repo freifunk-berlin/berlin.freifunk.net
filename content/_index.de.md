@@ -6,7 +6,7 @@ Die Vision von Freifunk ist die Verbreitung freier Netzwerke, die Demokratisieru
 
 ## Aktivitäten
 
-Das Freifunk-Netz wird kontinuierlich verbessert, indem wir die Software aktualisieren, die Hardware an den Standorten austauschen oder uns als Community zu Treffen und Planungen zusammenfinden. Um Einblicke in unsere Aktivitäten zu geben, posten wir gelegentlich ein Update auf Mastodon. Hier ein Auszug aus den letzten Meldungen. Der vollständige Feed ist im [Freifunk-Berlin Mastodon-Account](https://chaos.social/@freifunk_berlin) zu finden.
+Wir verbessern das Freifunk-Netz kon­ti­nu­ier­lich. Dafür entwickeln wir unsere Software, upgraden Hardware oder treffen uns als Community gemeinsam. Um Einblicke in unsere Aktivitäten zu geben, posten wir gelegentlich ein Update auf Mastodon. Hier ein Auszug aus den letzten Meldungen. Der vollständige Feed ist im [Freifunk-Berlin Mastodon-Account](https://chaos.social/@freifunk_berlin) zu finden.
 
 {{< feed >}}
 
