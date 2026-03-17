@@ -35,6 +35,9 @@
         {{ if gt $item.remaining 0 }}
 
           {{ $name := $item.name }}
+          {{ if $item.model_number }}
+            {{ $name = printf "%s (%s)" $name $item.model_number }}
+          {{ end }}
           {{ $category := $item.category.name }}
           {{ $remaining := cond (gt $item.remaining 3) "3+" $item.remaining }}
           {{ $manufacturer := "" }}
