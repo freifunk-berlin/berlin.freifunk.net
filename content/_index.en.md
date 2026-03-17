@@ -6,7 +6,7 @@ Freifunk stands for distributing free networks, democratizing media of communica
 
 ## Activities
 
-The Freifunk network is continuously enhanced through software updates, hardware exchanges at various locations, and community meetings for planning. To provide insights into our activities, we will occasionally post updates. Here’s a selection of the latest announcements. The complete feed can be found on the [Freifunk-Berlin Mastodon account](https://chaos.social/@freifunk_berlin).
+We are constantly improving the Freifunk network. To do this, we develop our software, upgrade our hardware, and come together as a community. To provide insights into our activities, we will occasionally post updates. Here’s a selection of the latest announcements. The complete feed can be found on the [Freifunk-Berlin Mastodon account](https://chaos.social/@freifunk_berlin).
 
 {{< feed >}}
 
