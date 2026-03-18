@@ -8,11 +8,13 @@
             <th>Produkt</th>
             <th>Kategorie</th>
             <th>Hersteller</th>
+            <th>Bild</th>
             {{ else if eq .Site.Language.Lang "en" }}
             <th>Quantity</th>
             <th>Product</th>
             <th>Category</th>
             <th>Manufacturer</th>
+            <th>Image</th>
             {{ end }}
         </tr>
     </thead>
@@ -23,6 +25,7 @@
             <td>{{ $product.name }}</td>
             <td>{{ $product.category }}</td>
             <td>{{ $product.manufacturer }}</td>
+            <td><img src="{{ $product.image }}"></td>
         </tr>
         {{ end }}
     </tbody>
