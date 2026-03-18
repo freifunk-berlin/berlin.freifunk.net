@@ -38,12 +38,13 @@
           {{ $category := $item.category.name }}
           {{ $remaining := cond (gt $item.remaining 3) "3+" $item.remaining }}
           {{ $manufacturer := "" }}
+          {{ $image := $item.image }}
 
           {{ if $item.manufacturer }}
             {{$manufacturer = $item.manufacturer.name}}
           {{ end }}
 
-          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining "category" $category "manufacturer" $manufacturer) }}
+          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining "category" $category "manufacturer" $manufacturer "image" $image) }}
 
         {{ end }}
       {{ end }}

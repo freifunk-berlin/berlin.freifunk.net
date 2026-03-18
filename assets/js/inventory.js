@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const options = {
     paging: false,
     info: false,
-    columns: [{ width: '10%' }, null, null, null]
+    columns: [{ width: '10%' }, null, null, null, null]
   }
   if (document.documentElement.lang === 'de') {
     options.language = languageDE
