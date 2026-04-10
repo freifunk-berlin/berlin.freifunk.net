@@ -5,14 +5,16 @@
         <div class="d-flex align-items-center">
             <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}' class="logo-icon me-3" aria-label="HomePage" alt="HomePage">
                 <div class="small">
-                    {{ with resources.Get "images/logos/mark.svg" }}
-                            {{ .Content | safeHTML }}
-                    {{ end }}
+                    <img
+                        src="/images/logo.svg"
+                        alt="Freifunk logo"
+                        style="height:20px;">
                 </div>
                 <div class="big">
-                    {{ with resources.Get "images/logos/logo.svg" }}
-                            {{ .Content | safeHTML }}
-                    {{ end }}
+                    <img
+                        src="/images/logo.svg"
+                        alt="Freifunk logo"
+                        style="height:20px;">
                 </div>
             </a>
             <button id="close-sidebar" class="btn btn-icon btn-soft">
