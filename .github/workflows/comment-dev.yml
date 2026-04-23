@@ -18,4 +18,4 @@ jobs:
           URL_DEVELOPMENT: ${{ vars.URL_DEVELOPMENT }}
         with:
           message: |
-            This is a link to a preview of the website from this Pull Request: [${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/](${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/).
+            This is a link to a preview of the website from this Pull Request: [${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/de/](${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/de/).
