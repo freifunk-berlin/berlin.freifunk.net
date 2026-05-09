@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const calendarEl = document.getElementById('calendar')
   const calendar = new Calendar(calendarEl, {
     plugins: [listPlugin, iCalendarPlugin],
-    initialView: 'listMonth',
+    initialView: 'list',
+    duration: { weeks: 6 },
     headerToolbar: false,
     stickyHeaderDates: false,
     height: 'auto',

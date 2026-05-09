@@ -18,6 +18,9 @@
         margin-bottom: 0;
     }
 
+        {
+            {
+            /*  
     .status a {
         position: relative;
         z-index: 1;
@@ -25,28 +28,35 @@
 
     .status:hover {
         text-decoration: underline;
+    }  */
+        }
     }
 
+        {
+            {
+            /*  
     .status .status-link {
         position: absolute;
         inset: 0;
         font-size: 0;
+    }  */
+        }
     }
 
-    .status .img-container {
+    .img-container {
         height: 20rem;
         overflow: hidden;
         position: relative;
         z-index: -1;
     }
 
-    .status .img-container img {
+    img {
         filter: grayscale(1);
-        height: auto;
+        {{/*  height: auto;
         width: 100%;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%);  */}}
     }
 </style>
 
@@ -57,29 +67,85 @@
 {{ else }}
 {{ $feed_json := .Value | transform.Unmarshal }}
 <div class="feed-container">
+
+<div class="container-fluid py-2">
+    <div class="hs full">
+
+
     {{ range $item := $feed_json }}
     {{ if or .reblog .in_reply_to_id }}
     {{ continue }}
     {{ end }}
-    <section class="status">
-        <a class="status-link" href="{{.url}}">Link to
-            the detail page</a>
-        <b>{{ time.Format "02 Jan 15:04" .created_at }}</b>
-        {{ .content | safeHTML }}
-        {{/* {{ if (isset .media_attachments 0) }}
+    <div class="card item" style="width: 18rem;">
+        <div>
+        {{ if (isset .media_attachments 0) }}
         {{ $firstMedia := index .media_attachments 0 }}
         {{ if or (eq $firstMedia.type "image") (eq $firstMedia.type "gifv") (eq $firstMedia.type "video")}}
-        <div class="img-container">
             <img src="{{ $firstMedia.preview_url }}" alt="{{ $firstMedia.description }}">
-        </div>
+     
         {{ end }}
-        {{ end }} */}}
-    </section>
+        {{ end }}
+        <div class="card-body">
+            <h5 class="card-title">{{ time.Format "02 Jan 15:04 2006" .created_at }}</h5>
+            <p class="card-text"> {{ .content | safeHTML }}</p>
+        </div>
+        </div>
+        <div class="card-body">
+            <a class="status-link" href="{{.url}}">Link to
+                the detail page</a>
+        </div>
+    </div>
     {{ $statusIndex = add $statusIndex 1 }}
-    {{ if eq $statusIndex 3 }}
+    {{ if eq $statusIndex 5 }}
     {{ break }}
     {{ end }}
     {{ end }}
     {{ end }}
+
+
+</div>
+</div>
 </div>
 {{ end }}
+
+
+
+  <ul class="hs full">
+    <li class="item">test</li>
+    <li class="item">test</li>
+    <li class="item">test</li>
+    <li class="item">test</li>
+    <li class="item">test</li>
+    <li class="item">test</li>
+  </ul>
+  
+
+
+<style>
+:root {
+  --gutter: 20px;
+}
+
+
+.hs {
+  display: grid;
+  grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: 10px;
+  grid-template-rows: minmax(150px, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: calc(50% - var(--gutter) * 2);
+
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(.75 * var(--gutter));
+  margin-bottom: calc(-.25 * var(--gutter));
+}
+
+.hs:before,
+.hs:after {
+  content: '';
+  width: 10px;
+}
+
+
+</style>
