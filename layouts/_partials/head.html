@@ -29,21 +29,18 @@
     {{ if hugo.IsProduction }}
         {{ $js = $js | fingerprint "sha384" }}
     {{ end }}
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}" {{ end -}}
+      defer></script>
     <!-- Canonical links -->
     <link rel="canonical" href="{{ .Permalink }}">
-    <!-- Home background -->
-    {{ if .IsHome }}
+    <!-- Hero background -->
+    {{ if (and .Site.Data.landing.hero.enable .IsHome) }}
     {{ with resources.Get "images/header.webp" }}
     <link rel="preload" fetchpriority="high" as="image" href="{{ .RelPermalink }}" type="image/webp">
-    <style>
-        .hero {
-                background-image: linear-gradient(to bottom, transparent 0%, #fff),  url("{{ .RelPermalink }}");
-        }
-    </style>
     {{ end }}
     {{ end }}
-    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end -}} defer></script>
     {{ if .IsHome }}
+    <!-- Structured data -->
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
