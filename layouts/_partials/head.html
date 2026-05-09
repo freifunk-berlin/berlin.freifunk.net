@@ -9,6 +9,16 @@
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
     <!-- favicon -->
     {{ block "head/favicon" . }}{{ partialCached "head/favicon.html" . }}{{ end }}
+    <!-- Swiper css -->
+    {{ if (and .Site.Data.landing.mastodon.enable .IsHome) }}
+    {{- $style := resources.Get "swiper/swiper-bundle.min.css" -}}
+    {{- if hugo.IsProduction }}
+    {{- $style = $style | minify | fingerprint "sha384" | resources.PostProcess }}
+    {{- end -}}
+    <style>
+        {{$style.Content | safeCSS}}
+    </style> 
+    {{ end }}
     <!-- Custom CSS -->
     {{- $options := dict "enableSourceMap" true }}
     {{- if hugo.IsProduction}}
@@ -31,6 +41,32 @@
     {{ end }}
     <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}" {{ end -}}
       defer></script>
+    <!-- Calendar Eventlist JS -->
+    {{ if (and .Site.Data.landing.calendar.enable .IsHome) }}
+    {{ $js := resources.Get "js/eventList.js" }}
+    {{ $params := dict }}
+    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+    {{ $js = $js | js.Build $opts }}
+    {{ if hugo.IsProduction }}
+    {{ $js = $js | fingerprint "sha384" }}
+    {{ end }}
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}" {{ end -}}
+      defer></script>
+    {{ end }}
+    <!-- Mastodon JS -->
+    {{ if (and .Site.Data.landing.mastodon.enable .IsHome) }}
+    {{ $js := resources.Get "js/mastodon.js" }}
+    {{ $params := dict }}
+    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+    {{ $js = $js | js.Build $opts }}
+    {{ if hugo.IsProduction }}
+    {{ $js = $js | fingerprint "sha384" }}
+    {{ end }}
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}" {{ end -}}
+      defer></script>
+    {{ end }}
     <!-- Canonical links -->
     <link rel="canonical" href="{{ .Permalink }}">
     <!-- Hero background -->

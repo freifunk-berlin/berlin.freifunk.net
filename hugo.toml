@@ -65,7 +65,6 @@ disableKinds = ['taxonomy', 'term']
                 url = 'contact/'
                 weight = 70
         [languages.de.params]
-            description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
             errordescription = "Die gesuchte Seite konnte nicht gefunden werden. Versuche es später noch einmal oder gehe zurück zu unserer Homepage."
             errortitle = "Seite nicht gefunden :("
             [languages.de.params.footer]
@@ -109,7 +108,6 @@ disableKinds = ['taxonomy', 'term']
                 url = 'contact/'
                 weight = 70
         [languages.en.params]
-            description = "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
             errordescription = "The requested site could not be found. Please try again later or return to our homepage."
             errortitle = "Site not found :("
             [languages.en.params.footer]

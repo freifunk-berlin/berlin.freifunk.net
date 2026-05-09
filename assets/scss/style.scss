@@ -59,10 +59,37 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
 // // Pages
 // @import "custom/pages/blog";
 
+// Feature grid
+{{ if (and .Site.Data.landing.featureGrid.enable .IsHome) }}
 @import "custom/pages/features";
+{{ end }}
+
 @import "custom/pages/helper";
+
+// Image compare
+{{ if ($.Scratch.Get "image_compare_enabled") }}
+@import "custom/pages/image-compare-viewer";
+{{ end }}
+
+// Hero
+{{ if (and .Site.Data.landing.hero.enable .IsHome) }}
 @import "custom/pages/hero";
-{{ if ($.Scratch.Get "image_compare_enabled") }}@import "custom/pages/image-compare-viewer";{{ end }}
+{{ with resources.Get "images/header.webp" }}
+.hero {
+    background-image: linear-gradient(to bottom, transparent 0%, #fff),  url("{{ .RelPermalink }}");
+}
+{{ end }}
+{{ end }}
+
+// Calendar
+{{ if (and .Site.Data.landing.calendar.enable .IsHome) }}
+@import "custom/pages/calendar";
+{{ end }}
+
+// Mastodon
+{{ if (and .Site.Data.landing.mastodon.enable .IsHome) }}
+@import "custom/pages/mastodon";
+{{ end }}
 
 // @import "custom/pages/simplebar";
 
@@ -70,4 +97,11 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
 .logo img {
   height: 26px;
   width: auto;
+}
+
+@media (max-width: 991.98px) {
+    .lg-full {
+        width: 100%;
+        height: auto;
+    }
 }
