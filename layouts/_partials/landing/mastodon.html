@@ -1,0 +1,56 @@
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ $data := index .Site.Data.landing $sectionTitle }}
+{{ $translated := index $data .Site.Language.Lang }}
+
+
+<div id="mastodon" class="mt-5">
+    <div class="container pt-4">
+        <h2>{{ $translated.title }}</h2>
+        <p>
+            {{ $translated.text | markdownify }}
+        </p>
+        {{ $statusIndex := 0 }}
+        {{ with try (resources.GetRemote "https://chaos.social/api/v1/accounts/108384504829142801/statuses" )}}
+        {{ with .Err }}
+        {{ errorf "%s" . }}
+        {{ else }}
+        {{ $feed_json := .Value | transform.Unmarshal }}
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {{ range $item := sort $feed_json ".created_at"  }}
+                {{ if or .reblog .in_reply_to_id }}
+                {{ continue }}
+                {{ end }}
+                <div class="swiper-slide">
+                    <div class="card item border-secondary">
+                        <h5 class="card-header text-body-secondary">{{ time.Format "02 Jan 15:04 2006" .created_at }}</h5>
+                        {{ if (isset .media_attachments 0) }}
+                        {{ $firstMedia := index .media_attachments 0 }}
+                        {{ if or (eq $firstMedia.type "image") (eq $firstMedia.type "gifv") (eq $firstMedia.type
+                        "video")}}
+                        <div class="card-image">
+                            <img src="{{ $firstMedia.preview_url }}" alt="{{ $firstMedia.description }}">
+                        </div>
+                        {{ end }}
+                        {{ end }}
+                        <div class="card-body fading-text">
+                            {{ .content | safeHTML }}
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{.url}}">View on Mastodon</a>
+                        </div>
+                    </div>
+                    {{ $statusIndex = add $statusIndex 1 }}
+                    {{ if eq $statusIndex 5 }}
+                    {{ break }}
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+</div>

@@ -64,7 +64,6 @@ disableKinds = ['taxonomy', 'term']
                 url = 'contact/'
                 weight = 70
         [languages.de.params]
-            description = "Freifunk Berlin ist eine lokale Initiative mit dem Ziel, ein freies WLAN-Netzwerk über Berlin aufzuspannen und freien Netzzugang anzubieten."
             errordescription = "Die gesuchte Seite konnte nicht gefunden werden. Versuche es später noch einmal oder gehe zurück zu unserer Homepage."
             errortitle = "Seite nicht gefunden :("
             [languages.de.params.footer]
@@ -73,13 +72,7 @@ disableKinds = ['taxonomy', 'term']
                 [[languages.de.params.footer.link]]
                     name = "Impressum"
                     url = "/de/imprint/"
-            [languages.de.params.actions]
-                [languages.de.params.actions.primary]
-                    name="Freies WLAN finden"
-                    url="map/"
-                [languages.de.params.actions.seconary]
-                    name="Freifunker*in werden"
-                    url="participate/"
+
     [languages.en]
         weight = 2
         languageName = "English"
@@ -111,7 +104,6 @@ disableKinds = ['taxonomy', 'term']
                 url = 'contact/'
                 weight = 70
         [languages.en.params]
-            description = "Freifunk Berlin is a local initiative with the aim of setting up a free WiFi network across Berlin and offering free network access."
             errordescription = "The requested site could not be found. Please try again later or return to our homepage."
             errortitle = "Site not found :("
             [languages.en.params.footer]
@@ -120,13 +112,6 @@ disableKinds = ['taxonomy', 'term']
                 [[languages.en.params.footer.link]]
                     name = "Imprint"
                     url = "/de/imprint/"
-            [languages.en.params.actions]
-                [languages.en.params.actions.primary]
-                    name="Find free WiFi"
-                    url="map/"
-                [languages.en.params.actions.seconary]
-                    name="Become part of Freifunk"
-                    url="participate/"
 
 [sitemap]
     filename = "sitemap.xml"

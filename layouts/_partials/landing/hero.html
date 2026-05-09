@@ -1,0 +1,20 @@
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ $data := index .Site.Data.landing $sectionTitle }}
+{{ $translated := index $data .Site.Language.Lang }}
+
+<section id="hero" class="d-table w-100 overflow-hidden hero">
+    <div class="container">
+        <div class="row mt-5 align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="title-heading">
+                    <h4 class="heading mt-0 mb-3">{{- .Site.Title }}</h4>
+                    <p class="para-desc text-muted">{{- $translated.subtitle }}</p>
+                    <a class="btn btn-primary mb-1" href="{{- $data.ctaButton.url }}" role="button">{{-
+                        $translated.ctaButton.text }}</a>
+                    <a class="btn btn-secondary mb-1" href="{{- $data.cta2Button.url }}" role="button">{{-
+                        $translated.cta2Button.text }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

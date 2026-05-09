@@ -1,0 +1,16 @@
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ $data := index .Site.Data.landing $sectionTitle }}
+{{ $translated := index $data .Site.Language.Lang }}
+
+<div class="container pt-5">
+    <h2>{{ $translated.title }}</h2>
+    <div class="d-flex flex-wrap-reverse flex-lg-nowrap gap-3">
+        <div class="flex-fill">
+            <div id='calendar' class="lg-full" style="width:400px;"></div>
+        </div>
+        <div class="flex-fill">
+            <p> {{ $translated.text | markdownify }}
+            </p>
+        </div>
+    </div>
+</div>

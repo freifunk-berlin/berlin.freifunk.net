@@ -1,0 +1,24 @@
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ $data := index .Site.Data.landing $sectionTitle }}
+{{ $translated := index $data .Site.Language.Lang }}
+
+<div class="container mt-100 mt-60">
+    <h2>{{ $translated.title }}</h2>
+    <div class="d-flex flex-wrap flex-lg-nowrap gap-3">
+        <div class="flex-fill">
+            <p>
+                {{ $translated.text | markdownify }}
+            </p>
+        </div>
+        <div class="flex-fill">
+            <video id="intro-video" class="video-text lg-full border border-2 border-secondary-subtle" preload="metadata" width="{{ $data.size }}" height="221.633px"
+                poster='{{ absURL "videos" }}/{{$data.video }}.webp' src='{{ absURL "videos" }}/{{ $data.video }}.webm'>
+                <source src='{{ absURL "videos" }}/{{ $data.video }}.webm' type="video/webm">
+                <source src='{{ absURL "videos" }}/{{ $data.video }}.mp4' type="video/mp4">
+                <source src='{{ absURL "videos" }}/{{ $data.video }}.ogv' type="video/ogg">
+                There should have been a video here but your browser does not seem
+                to support it.
+            </video>
+        </div>
+    </div>
+</div>
