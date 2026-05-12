@@ -33,6 +33,9 @@ jobs:
       - name: Prepare npm
         run: npm ci
 
+      - name: Install dart sass
+        run: sudo snap install dart-sass
+
       - name: Build
         env:
           HUGO_ENV: production
