@@ -27,7 +27,9 @@ video_text:
   template: video text
 
   video: freifunk-verbindet
-  size: 400px
+  width: 640px
+  height: 360px
+
   de:
     title: Was ist Freifunk?
     text: >

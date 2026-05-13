@@ -83,6 +83,7 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
 }
 
 // Mastodon
+
 .swiper-slide .card {
     height: 500px;
 }
@@ -131,14 +132,25 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
 }
 
 // Logo
+
 .logo img {
   height: 26px;
   width: auto;
 }
 
-@media (max-width: 991.98px) {
+// Landingpage video
+
+video {
+    height: auto;
+}
+
+.lg-full {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 992px) {
     .lg-full {
-        width: 100%;
-        height: auto;
+        width: 400px
     }
 }
