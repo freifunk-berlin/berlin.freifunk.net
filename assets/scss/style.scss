@@ -72,11 +72,12 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
 {{ end }}
 
 // Calendar
-.fc-list-day-text {
+
+#calendar th a {
     color: var(--bs-body-color);
 }
 
-.fc-list-event-title a {
+#calendar tr td a {
     color: var(--bs-primary) !important;
     text-decoration: underline !important;
 }
@@ -101,7 +102,7 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
     padding-top: 20px;
 }
 
-.swiper-pagination-bullet {
+.swiper-pagination span {
     width: 22px;
     border-radius: 7px;
     background-color: #dc0067;
