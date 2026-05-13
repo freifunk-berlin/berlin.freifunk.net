@@ -11,7 +11,7 @@
             </p>
         </div>
         <div class="flex-fill">
-            <video id="intro-video" class="video-text lg-full border border-2 border-secondary-subtle" preload="metadata" width="{{ $data.size }}" height="221.633px"
+            <video id="intro-video" class="video-text lg-full border border-2 border-secondary-subtle" preload="metadata" width="{{ $data.width }}" height="{{ $data.height }}"
                 poster='{{ absURL "videos" }}/{{$data.video }}.webp' src='{{ absURL "videos" }}/{{ $data.video }}.webm'>
                 <source src='{{ absURL "videos" }}/{{ $data.video }}.webm' type="video/webm">
                 <source src='{{ absURL "videos" }}/{{ $data.video }}.mp4' type="video/mp4">
