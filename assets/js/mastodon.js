@@ -1,6 +1,6 @@
 import Swiper from 'swiper/swiper-bundle.min.mjs'
 
-new Swiper('.swiper', {
+new Swiper('.swiper', { // eslint-disable-line no-new
   loop: true,
   slidesPerView: 1,
   spaceBetween: 30,

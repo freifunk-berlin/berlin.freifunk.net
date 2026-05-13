@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     contentHeight: 'auto',
     eventSources: [
       {
-        url: url,
+        url,
         format: 'ics'
       }
     ]
