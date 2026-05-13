@@ -80,7 +80,7 @@ mastodon:
   weight: 20
   template: mastodon
 
-  link:
+  link: https://chaos.social/api/v1/accounts/108384504829142801/statuses
   de:
     title: Aktivitäten
     text: >

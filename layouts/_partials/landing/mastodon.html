@@ -10,7 +10,7 @@
             {{ $translated.text | markdownify }}
         </p>
         {{ $statusIndex := 0 }}
-        {{ with try (resources.GetRemote "https://chaos.social/api/v1/accounts/108384504829142801/statuses" )}}
+        {{ with try (resources.GetRemote $data.link )}}
         {{ with .Err }}
         {{ errorf "%s" . }}
         {{ else }}
