@@ -20,9 +20,9 @@
     </style> 
     {{ end }}
     <!-- Custom CSS -->
-    {{- $options := dict "enableSourceMap" true "transpiler" "dartsass" }}
+    {{- $options := dict "enableSourceMap" true }}
     {{- if hugo.IsProduction}}
-        {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" "transpiler" "dartsass" }}
+        {{- $options := dict "enableSourceMap" false "outputStyle" "compressed" }}
     {{- end }}
     {{- $style := resources.Get "/scss/style.scss" }}
     {{- $style = $style | resources.ExecuteAsTemplate "/scss/style.scss" . | css.Sass $options | css.PostCSS }}
