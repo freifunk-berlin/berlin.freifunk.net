@@ -6,7 +6,7 @@
     <h2>{{ $translated.title }}</h2>
     <div class="d-flex flex-wrap-reverse flex-lg-nowrap gap-3">
         <div class="flex-fill">
-            <div id='calendar' class="lg-full" style="width:400px;"></div>
+            <div id='calendar' data-ical="{{ $data.ical }}" class="lg-full"></div>
         </div>
         <div class="flex-fill">
             <p> {{ $translated.text | markdownify }}
