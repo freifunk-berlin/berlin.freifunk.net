@@ -104,3 +104,8 @@ mastodon:
 
 imageCompare:
   enable: false
+
+featureGrid:
+  enable: false
+  weight: 0
+  template: feature grid
