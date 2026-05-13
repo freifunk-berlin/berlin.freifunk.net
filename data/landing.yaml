@@ -57,7 +57,8 @@ calendar:
   weight: 30
   template: calendar
 
-  ical: XXX
+  ical: index.ics
+
   de:
     title: Termine
     text: >

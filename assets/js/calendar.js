@@ -5,13 +5,14 @@ import deLocale from '@fullcalendar/core/locales/de'
 
 document.addEventListener('DOMContentLoaded', function () {
   const calendarEl = document.getElementById('calendar')
+  const url = calendarEl.dataset.ical
   const calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin, iCalendarPlugin],
     eventDisplay: 'block',
     contentHeight: 'auto',
     eventSources: [
       {
-        url: 'index.ics',
+        url: url,
         format: 'ics'
       }
     ]
