@@ -59,39 +59,75 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
 // // Pages
 // @import "custom/pages/blog";
 
-// Feature grid
-{{ if (and .Site.Data.landing.featureGrid.enable .IsHome) }}
 @import "custom/pages/features";
-{{ end }}
-
 @import "custom/pages/helper";
-
-// Image compare
-{{ if ($.Scratch.Get "image_compare_enabled") }}
 @import "custom/pages/image-compare-viewer";
-{{ end }}
+@import "custom/pages/hero";
 
 // Hero
-{{ if (and .Site.Data.landing.hero.enable .IsHome) }}
-@import "custom/pages/hero";
 {{ with resources.Get "images/header.webp" }}
 .hero {
     background-image: linear-gradient(to bottom, transparent 0%, #fff),  url("{{ .RelPermalink }}");
 }
 {{ end }}
-{{ end }}
 
 // Calendar
-{{ if (and .Site.Data.landing.calendar.enable .IsHome) }}
-@import "custom/pages/calendar";
-{{ end }}
+.fc-list-day-text {
+    color: var(--bs-body-color);
+}
+
+.fc-list-event-title a {
+    color: var(--bs-primary) !important;
+    text-decoration: underline !important;
+}
 
 // Mastodon
-{{ if (and .Site.Data.landing.mastodon.enable .IsHome) }}
-@import "custom/pages/mastodon";
-{{ end }}
+.swiper-slide .card {
+    height: 500px;
+}
 
-// @import "custom/pages/simplebar";
+.swiper-slide .card-image {
+    max-height: 50%;
+    overflow: hidden;
+}
+
+.swiper-slide .card-image img {
+    width: 100%;
+    filter: grayscale(1);
+}
+
+.swiper-pagination {
+    position: static;
+    padding-top: 20px;
+}
+
+.swiper-pagination-bullet {
+    width: 22px;
+    border-radius: 7px;
+    background-color: #dc0067;
+}
+
+.swiper-slide .invisible {
+    display: none;
+}
+
+.swiper-slide .fading-text {
+    overflow: hidden;
+    background: -webkit-linear-gradient(#3C4257, #EEE);
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    -webkit-text-fill-color: transparent;
+    box-decoration-break: clone;
+    text-shadow: none;
+}
+
+#mastodon {
+    background-color: #dc006722;
+}
+
+.swiper-slide .fading-text a {
+    -webkit-text-fill-color: initial;
+}
 
 // Logo
 .logo img {
