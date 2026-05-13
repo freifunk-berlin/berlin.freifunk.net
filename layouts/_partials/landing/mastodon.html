@@ -17,7 +17,7 @@
         {{ $feed_json := .Value | transform.Unmarshal }}
         <div class="swiper">
             <div class="swiper-wrapper">
-                {{ range $item := sort $feed_json ".created_at"  }}
+                {{ range $item := $feed_json }}
                 {{ if or .reblog .in_reply_to_id }}
                 {{ continue }}
                 {{ end }}
