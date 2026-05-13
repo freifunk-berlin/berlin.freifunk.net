@@ -67,6 +67,19 @@
     <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}" {{ end -}}
       defer></script>
     {{ end }}
+    <!-- Video Text JS -->
+    {{ if (and .Site.Data.landing.video_text.enable .IsHome) }}
+    {{ $js := resources.Get "js/videoText.js" }}
+    {{ $params := dict }}
+    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+    {{ $js = $js | js.Build $opts }}
+    {{ if hugo.IsProduction }}
+    {{ $js = $js | fingerprint "sha384" }}
+    {{ end }}
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}" {{ end -}}
+      defer></script>
+    {{ end }}
     <!-- Canonical links -->
     <link rel="canonical" href="{{ .Permalink }}">
     <!-- Hero background -->
