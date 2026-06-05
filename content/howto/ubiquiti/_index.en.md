@@ -48,13 +48,21 @@ Management Network Settings
 * IPv6 must be `on`.
 * IPv6 address should be `local` or `SLAAC`
 
+Advanced
+
+* Two VLANs are needed on the interface that is connected to the core router. One with ID `42` and comment `mgmt` and the other one with the correct mesh VLAN as configured on the core and the mesh connection as comment.
+* The existing bridge must be changed to connect the mesh-VLAN and the Wifi-interface.
+* The management interface must be the management VLAN.
+* The IP address must be `static` and set to the management IP assigned to this device in the locations config.
+* Gateway and DNS should point to the core routers IP address.
+
 #### Services
 
 SNMP
 
 * SNMP Agent must be `enabled`. We require this to monitor the antennas.
 * SNMP Community must be `public`.
-* SNMP Community must be filled e.g with the location name (e.g. `sama`).
+* SNMP Location must be filled e.g with the location name (e.g. `sama`).
 * SNMP Contact must be filled e.g with `none`.
 
 Web Server
@@ -90,5 +98,9 @@ Date/Time Settings
 System Accounts
 
 * Administrator username should be `ubnt`. We use `ubnt` on most devices on the network, however on some devices we also use `root` and `admin`.
+
+Location
+
+* Set Latitude, Longitude and Height so that fresnel can be calculated in the dashboard view.
 
 ### Switches
