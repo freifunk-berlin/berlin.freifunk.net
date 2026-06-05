@@ -6,13 +6,13 @@
             <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}' class="logo-icon me-3" aria-label="HomePage" alt="HomePage">
                 <div class="small">
                     <img
-                        src="/images/logo.svg"
+                        src="{{ "images/logo.svg" | relURL }}"
                         alt="Freifunk logo"
                         style="height:26px !important; width:36.5px">
                 </div>
                 <div class="big">
                     <img
-                        src="/images/logo.svg"
+                        src="{{ "images/logo.svg" | relURL }}"
                         alt="Freifunk logo"
                         style="height:26px !important; width:36.5px">
                 </div>
