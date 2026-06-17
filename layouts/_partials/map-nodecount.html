@@ -1,6 +1,6 @@
-{{/* Count the nodes active on hopglass */}}
+{{/* Count the nodes active on the map */}}
 {{ $data := "" }}
-{{ $url := "https://hopglass.berlin.freifunk.net/meshviewer.json" }}
+{{ $url := "https://map.berlin.freifunk.net/meshviewer.json" }}
 
 {{ with try (resources.GetRemote $url) }}
   {{ with .Err }}

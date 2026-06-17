@@ -34,7 +34,7 @@
         "interval": "daily",
         "mapType": "geographical",
         "technicalType": "meshviewer",
-        "url": "https://hopglass.berlin.freifunk.net"
+        "url": "https://map.berlin.freifunk.net"
       }
     ],
     "feeds": [

@@ -7,10 +7,10 @@ Mit Freifunk kannst du überall in Berlin kostenlos das Internet über WLAN nutz
 
 ## WLAN / WiFi Hotspots auf der Karte finden
 
-Die interaktive [Freifunk Berlin Karte](https://hopglass.berlin.freifunk.net/) zeigt dir die gerade verfügbaren WLAN-Hotspots in Berlin und Umgebung. Du kannst gezielt nach einem offenen WLAN-Zugangspunkt in deiner Nähe suchen und dir den exakten Standort anzeigen lassen.
+Die interaktive [Freifunk Berlin Karte](https://map.berlin.freifunk.net/) zeigt dir die gerade verfügbaren WLAN-Hotspots in Berlin und Umgebung. Du kannst gezielt nach einem offenen WLAN-Zugangspunkt in deiner Nähe suchen und dir den exakten Standort anzeigen lassen.
 
 {{< map-iframe >}}
-{{< img src="images/hopglass.webp" alt="Es ist eine Karte von Berlin zu sehen. Auf der Karte sind viele kleine Punkte. Die meisten sind blau, einige sind rot. Zwischen manchen der Punkte sind grüne Linien gezogen." link="https://hopglass.berlin.freifunk.net/" width="1127" height="850" loading="lazy" >}}
+{{< img src="images/map.webp" alt="Es ist eine Karte von Berlin zu sehen. Auf der Karte sind viele kleine Punkte. Die meisten sind blau, einige sind rot. Zwischen manchen der Punkte sind grüne Linien gezogen." link="https://map.berlin.freifunk.net/" width="1127" height="850" loading="lazy" >}}
 {{< /map-iframe >}}
 
 Die Karte wird alle 30 Minuten automatisch aktualisiert, sodass du stets die aktuellen Informationen zu den verfügbaren WLAN-Hotspots siehst.
