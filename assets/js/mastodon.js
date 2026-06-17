@@ -11,6 +11,11 @@ new Swiper('.swiper', { // eslint-disable-line no-new
       return '<span class="' + className + '">' + '</span>'
     }
   },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    addIcons: true
+  },
   breakpoints: {
     576: {
       slidesPerView: 2

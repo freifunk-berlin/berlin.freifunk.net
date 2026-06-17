@@ -98,9 +98,22 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
     filter: grayscale(1);
 }
 
+.swiper-button-prev, .swiper-button-next {
+    position: relative;
+    margin-top: 0 !important;
+    height: 20px;
+    color: #dc0067;
+}
+
+.swiper-nav {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
 .swiper-pagination {
     position: static;
-    padding-top: 20px;
 }
 
 .swiper-pagination span {
@@ -123,22 +136,13 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
     text-shadow: none;
 }
 
-#mastodon {
-    background-color: #dc00671c;
-}
-
 .swiper-slide .fading-text a {
     -webkit-text-fill-color: initial;
 }
 
-// Logo
-
-.logo img {
-  height: 26px;
-  width: auto;
+#mastodon {
+    background-color: #dc00671c;
 }
-
-// Landingpage video
 
 video {
     height: auto;
