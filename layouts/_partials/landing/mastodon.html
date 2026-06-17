@@ -23,7 +23,7 @@
                 {{ end }}
                 <div class="swiper-slide">
                     <div class="card item border-secondary">
-                        <h5 class="card-header text-body-secondary">{{ time.Format "02 Jan 15:04 2006" .created_at }}</h5>
+                        <h5 class="card-header text-body-secondary">{{ time.Format "02 Jan 2006" .created_at }}</h5>
                         {{ if (isset .media_attachments 0) }}
                         {{ $firstMedia := index .media_attachments 0 }}
                         {{ if or (eq $firstMedia.type "image") (eq $firstMedia.type "gifv") (eq $firstMedia.type
