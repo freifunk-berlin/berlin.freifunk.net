@@ -144,6 +144,15 @@ $dark:          {{ .Site.Params.dark | default "#3c4858" }};
     background-color: #dc00671c;
 }
 
+// Logo
+
+.logo img {
+  height: 26px;
+  width: auto;
+}
+
+// Landingpage video
+
 video {
     height: auto;
 }
