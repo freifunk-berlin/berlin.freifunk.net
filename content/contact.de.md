@@ -11,7 +11,7 @@ Möglichkeiten, bei Freifunk mitzumachen, gibt es viele: als Netzwerker_in, Soft
 
 ## Chat
 
-Ein großer Teil der Berliner Community kommuniziert per Matrix: [#berlin.freifunk.net:matrix.org](https://matrix.to/#/#berlin.freifunk.net:matrix.org)
+Ein großer Teil der Berliner Community kommuniziert per Matrix! Den Hauptkanal findet man bei [#berlin.freifunk.net:matrix.org](https://matrix.to/#/#berlin.freifunk.net:matrix.org) – weitere Kanäle findet man in unserem Matrix Space bei [#freifunk-berlin:digitale-gesellschaft.ch](https://matrix.to/#/#freifunk-berlin:digitale-gesellschaft.ch).
 
 ## Mailingliste
 

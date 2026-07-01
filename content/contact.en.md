@@ -9,7 +9,7 @@ Time and date of the meetings of the Berlin Freifunk community can be found in t
 
 ## Chat
 
-Most of the Berlin Freifunk community communicates via Matrix: [#berlin.freifunk.net:matrix.org](https://matrix.to/#/#berlin.freifunk.net:matrix.org)
+Most of the Berlin Freifunk community communicates via Matrix! The main channel can be found at [#berlin.freifunk.net:matrix.org](https://matrix.to/#/#berlin.freifunk.net:matrix.org) – however, there are more in our Matrix space at [#freifunk-berlin:digitale-gesellschaft.ch](https://matrix.to/#/#freifunk-berlin:digitale-gesellschaft.ch).
 
 ## Mailing list
 
