@@ -2,9 +2,7 @@
 name: Deploy website to dev server
 
 on:    # yamllint disable-line rule:truthy
-  push:
-    branches-ignore:
-      - main
+  pull_request:
 
 jobs:
   deploy:
