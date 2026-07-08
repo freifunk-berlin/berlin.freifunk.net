@@ -19,3 +19,5 @@ jobs:
         with:
           message: |
             This is a link to a preview of the website from this Pull Request: [${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/](${{ vars.URL_DEVELOPMENT }}/${{ github.head_ref }}/).
+
+# Test
