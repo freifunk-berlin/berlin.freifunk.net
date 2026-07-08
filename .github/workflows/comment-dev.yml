@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         env:
           URL_DEVELOPMENT: ${{ vars.URL_DEVELOPMENT }}
         with:
