@@ -10,10 +10,10 @@ description: "Information about the wifi network at DWeb Camp 2026 and collabora
 Freifunk is a grassroots initiative all over Germany, providing free (as in love, not beer) Internet Access.
 
 To know more:
-- [https://en.wikipedia.org/wiki/Freifunk](Freifunk Wikipedia Page)
-- [https://berlin.freifunk.net/](Our Website)
-- [https://map.berlin.freifunk.net/](A Map of our Infrastructure in Berlin)
-- [https://www.freifunk-karte.de/](A Map of all Freifunk Communities in Germany)
+- [Freifunk Wikipedia Page](https://en.wikipedia.org/wiki/Freifunk)
+- [Our Website](https://berlin.freifunk.net/)
+- [A Map of our Infrastructure in Berlin](https://map.berlin.freifunk.net/)
+- [A Map of all Freifunk Communities in Germany](https://www.freifunk-karte.de/)
 
 
 ## Neighborhood Walk
@@ -29,7 +29,7 @@ We offer variants of the walk which don't involve stairs or climbing, and with t
 
 Our Network is slightly differently organized than what you would expect on most Conferences.
 
-We run everything on OpenSource Software. E.g. the Accesspoints (AP) are running [https://openwrt.org/](OpenWRT).
+We run everything on OpenSource Software. E.g. the Accesspoints (AP) are running [OpenWRT](https://openwrt.org/)).
 
 Each AP is its own network, meshing with all other APs. There is no blocking, traffic shaping or any other interference.
 
