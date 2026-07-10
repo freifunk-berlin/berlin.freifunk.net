@@ -3,7 +3,7 @@ title: "DWeb Camp 2026, powered by Freifunk"
 description: "Information about the wifi network at DWeb Camp 2026 and collaboration with the Freifunk Berlin community network."
 ---
 
-[https://berlin.freifunk.net/](Freifunk Berlin) is providing the Network at dwebcamp 2026.
+[Freifunk Berlin](https://berlin.freifunk.net/) is providing the Network at dwebcamp 2026.
 
 # About Freifunk
 
