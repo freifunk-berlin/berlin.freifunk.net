@@ -25,53 +25,35 @@
       "Content-Type" "application/json")
   }}
 
-  {{/*  Assets  */}}
-  {{ with try (resources.GetRemote $ASSETS_API $opts ) }}
-    {{ with .Err }}
-      {{ errorf "%s" . }}
-    {{ else }}
-      {{ $response_obj := .Value | transform.Unmarshal }}
+  {{ range $api_url := slice $ASSETS_API $ACCESSORIES_API }}
+    {{ with try (resources.GetRemote $api_url $opts ) }}
+      {{ with .Err }}
+        {{ errorf "%s" . }}
+      {{ else }}
+        {{ $response_obj := .Value | transform.Unmarshal }}
 
-      {{ range $item := $response_obj.rows }}
+        {{ range $item := $response_obj.rows }}
 
-        {{ if gt $item.remaining 0 }}
-
-          {{ $name := $item.name }}
-          {{ if $item.model_number }}
-            {{ $name = printf "%s (%s)" $name $item.model_number }}
+          {{ if eq (int $item.remaining) 0 }}
+            {{ continue }}    
           {{ end }}
+
           {{ $category := $item.category.name }}
-          {{ $remaining := cond (gt $item.remaining 3) "3+" $item.remaining }}
-          {{ $manufacturer := "" }}
+          {{ $min_qty := cond (lt $item.min_qty 3) 3 $item.min_qty }}
+          {{ $remaining := cond (gt $item.remaining $min_qty) (printf "%d+" (int $min_qty)) $item.remaining }} }}
           {{ $image := $item.image }}
 
+          {{ $name :=  $item.name }}
+          {{ if $item.model_number }}
+            {{ $name = printf "%s (%s)" $item.name $item.model_number }}
+          {{ end }}
+
+          {{ $manufacturer := "" }}
           {{ if $item.manufacturer }}
             {{$manufacturer = $item.manufacturer.name}}
           {{ end }}
 
-          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining "category" $category "manufacturer" $manufacturer "image" $image) }}
-
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-
-  {{/*  Accessories  */}}
-  {{ with try (resources.GetRemote $ACCESSORIES_API $opts ) }}
-    {{ with .Err }}
-      {{ errorf "%s" . }}
-    {{ else }}
-      {{ $response_obj := .Value | transform.Unmarshal }}
-
-      {{ range $item := $response_obj.rows }}
-
-        {{ if gt $item.remaining_qty 0 }}
-
-          {{ $name := $item.name }}
-          {{ $category := $item.category.name }}
-          {{ $remaining := cond (gt $item.remaining_qty $item.min_qty) (printf "%d+" (int $item.min_qty)) $item.remaining_qty }}
-
-          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining "category" $category "manufacturer" "") }}
+          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining  "category" $category "manufacturer" $manufacturer "image" $image) }}
 
         {{ end }}
       {{ end }}
