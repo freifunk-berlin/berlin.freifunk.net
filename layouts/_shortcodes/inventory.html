@@ -25,7 +25,10 @@
             <td>{{ $product.name }}</td>
             <td>{{ $product.category }}</td>
             <td>{{ $product.manufacturer }}</td>
-            <td><img src="{{ $product.image }}"></td>
+            <td>
+            {{ if $product.image }}
+                <img style="height:6rem;" src="{{ $product.image }}" alt="Product image of {{ $product.name }}"></td>
+            {{ end }}
         </tr>
         {{ end }}
     </tbody>
