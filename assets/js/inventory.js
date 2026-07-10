@@ -3,7 +3,8 @@ import languageDE from 'datatables.net-plugins/i18n/de-DE.mjs'
 
 document.addEventListener('DOMContentLoaded', function () {
   const options = {
-    paging: false,
+    paging: true,
+    lengthMenu: [20, 100, { label: 'All', value: -1 }],
     info: false,
     columns: [{ width: '10%' }, null, null, null, null]
   }
