@@ -53,7 +53,10 @@
             {{$manufacturer = $item.manufacturer.name}}
           {{ end }}
 
-          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining  "category" $category "manufacturer" $manufacturer "image" $image) }}
+          {{ $tags_regex := `(?i)#([a-z0-9_-]+)` }}
+          {{ $tags := findRE $tags_regex $item.notes }}
+
+          {{ $inventory = $inventory | append (dict "name" $name "remaining" $remaining  "category" $category "manufacturer" $manufacturer "image" $image "tags" $tags ) }}
 
         {{ end }}
       {{ end }}

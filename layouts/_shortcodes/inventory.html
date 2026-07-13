@@ -22,7 +22,13 @@
         {{ range $product := $products }}
         <tr>
             <td>{{ $product.remaining }}</td>
-            <td>{{ $product.name }}</td>
+            <td>
+                {{ $product.name }}
+                <br>
+                {{ range $product.tags }}
+                    <span class="badge text-bg-secondary rounded-pill ">{{ . }}</span>
+                {{ end }}
+            </td>
             <td>{{ $product.category }}</td>
             <td>{{ $product.manufacturer }}</td>
             <td>
