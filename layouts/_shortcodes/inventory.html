@@ -31,9 +31,9 @@
             </td>
             <td>{{ $product.category }}</td>
             <td>{{ $product.manufacturer }}</td>
-            <td>
+            <td class="inventory-images">
             {{ if $product.image }}
-                <img style="height:6rem;" src="{{ $product.image }}" alt="Product image of {{ $product.name }}"></td>
+                <img src="{{ $product.image }}" alt="Product image of {{ $product.name }}"></td>
             {{ end }}
         </tr>
         {{ end }}
