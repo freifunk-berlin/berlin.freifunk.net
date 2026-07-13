@@ -35,7 +35,7 @@
             {{ if $product.image }}
                 <img src="{{ $product.image }}" alt="Product image of {{ $product.name }}"></td>
             {{ else }}
-                <img src="/images/inventory/no_picture_available.png" alt="Placeholder image for missing device image'"></td>
+                <img src="{{ "images/inventory/no_picture_available.png" | relURL }}" alt="Placeholder image for missing device image'"></td>
             {{ end }}
         </tr>
         {{ end }}
