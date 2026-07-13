@@ -80,3 +80,15 @@ $code-block-padding-top: {{ if eq .Site.Params.docs.prism true -}}0{{ else }}1.2
   height: 26px;
   width: auto;
 }
+
+// Inventory
+.inventory-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inventory-images img{
+  height: 6rem !important;
+  max-width: fit-content !important;
+}
