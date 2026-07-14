@@ -109,30 +109,30 @@ featureGrid:
   enable: false
 
 faq:
-  enable: true
-  weight: 50
-  template: faq
+  enable: false  # Disabled until there is content
+  # weight: 50
+  # template: faq
 
-  de:
-    title: FAQ
-    text: >
-      Für den Fall, dass es noch Unklarheiten gibt, haben wir hier eine
-      Zusammenfassung der häufigsten Fragen erstellt. Wenn dein Thema hier nicht
-      aufgeführt ist, [melde dich](/contact) gerne bei uns.
-    sections:
-      - question: Question 1 DE
-        answer: Answer 1 DE
-      - question: Question 2 DE
-        answer: Answer 2 DE
+  # de:
+  #   title: FAQ
+  #   text: >
+  #     Für den Fall, dass es noch Unklarheiten gibt, haben wir hier eine
+  #     Zusammenfassung der häufigsten Fragen erstellt. Wenn dein Thema hier nicht
+  #     aufgeführt ist, [melde dich](/contact) gerne bei uns.
+  #   sections:
+  #     - question: Question 1 DE
+  #       answer: Answer 1 DE
+  #     - question: Question 2 DE
+  #       answer: Answer 2 DE
 
-  en:
-    title: FAQ
-    text: >
-      In case anything is still unclear, we’ve put together a summary of the most 
-      frequently asked questions here. If your topic isn’t listed, feel free to 
-      [contact us](/contact).
-    sections:
-      - question: Question 1 EN
-        answer: Answer 1 EN
-      - question: Question 2 EN
-        answer: Answer 2 EN
+  # en:
+  #   title: FAQ
+  #   text: >
+  #     In case anything is still unclear, we’ve put together a summary of the most
+  #     frequently asked questions here. If your topic isn’t listed, feel free to
+  #     [contact us](/contact).
+  #   sections:
+  #     - question: Question 1 EN
+  #       answer: Answer 1 EN
+  #     - question: Question 2 EN
+  #       answer: Answer 2 EN
