@@ -1,0 +1,30 @@
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ $data := index .Site.Data.landing $sectionTitle }}
+{{ $translated := index $data .Site.Language.Lang }}
+
+<div class="container pt-5">
+    <h2>{{ $translated.title }}</h2>
+    <p>
+        {{ $translated.text | markdownify }}
+    </p>
+    <div class="accordion" id="faqAccordion">
+        {{ $counter := 0 }}
+        {{ range $section := $translated.sections }}
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{ $counter }}" aria-expanded="false"
+                    aria-controls="collapse{{ $counter }}">
+                    {{ .question }}
+                </button>
+            </h2>
+            <div id="collapse{{ $counter }}" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    {{ .answer }}
+                </div>
+            </div>
+        </div>
+        {{ $counter = add $counter 1 }}
+        {{ end }}
+    </div>
+</div>
