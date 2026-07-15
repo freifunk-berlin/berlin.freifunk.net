@@ -22,13 +22,28 @@ This format allow a clear identification:
 
 ### Antennas with airOS 6
 
+* WDS transpoarent bridge `on`: All traffic is passed without being modified in any way. Like running an ethernet cable. Without this the MAC address of the packet sent through the AP changes to the MAC of the AP, affecting e.g. latency.
+
 ### Antennas with airOS 8
+
+* Wireless Network Protection: This feature protects the airMAX network against de-authentication attacks. airMAX AC and airMAX M client devices are supported but they must be used with an airMAX AC AP.
+* Automatic powe control `on` (Reducing the transmission power reduces interference with neighboring devices.)
+* Keep signal level `reliable`
+
 
 #### Wireless Settings
 
 Basic Wireless Settings
 
 * Auto adjust Distance should be `on`.
+* Channel Width: 40 MHz (We use wider chanells for more bandwidth)
+* Activate control frequency list (The default options are for 20 MHz width. We need to use other frequencies as center frequencies (-20) so that we do not overlap channels. Control frequency: should be one of the sub channels (20 MHz channels).)
+TODO: List with channels for 40 MHz
+TODO: Channel image
+TODO: Clarify how many options should be selected for control frequency list and if ther should allways be a non-dfs option.
+
+* Client isolation must be `on`: Blocks traffic between clients. Without this we would get mesh links between the different stations connected to the same AP.
+* Multicast enhancement must be `off`: If clients do not send IGMP (Internet Group Management Protocol) messages, then they are not registered as receivers of your multicast traffic. Using IGMP snooping, the Multicast Enhancement option isolates multicast traffic from unregistered clients and allows the device to send multicast traffic to registered clients using higher data rates. This lessens the risk of traffic overload on PtMP links and increases the reliability of multicast traffic since packets are transmitted again if the first transmission fails. If clients do not send IGMP messages but should receive multicast traffic, then you may need to disable the Multicast Enhancement option.
 
 Wireless Security
 
@@ -40,6 +55,10 @@ Advanced
 * Client Isolation must be `on`. Without this we will have mesh links between clients.
 * Automatic Power Control should be `on` and set to `reliable`. This will help to reduce noise on neighboring antennas.
 * ReSE should be `on`. ReSE stand for Receive Signal Enhancement and improves the receiver performance for the whole network.
+
+**Frame Duratiuon:**
+- Flexible (legacy): lower latency
+- Flexible: higher throughput
 
 #### Network Settings
 
@@ -94,6 +113,11 @@ Date/Time Settings
 * Time Zone should be `UTC`.
 * NTP Client must be `on` on devices without GPT and must be set to `off` on devices with GPS. The management via UISP requires a synced time. Acquiring the time via GPS is usually more precise.
 * NTP Server should be set to the core router ip.
+
+**How GPS Sync Works:**
+
+GPS Sync™ eliminates problems that occur with multiple access points (APs) that are co‑located. When GPS Sync is enabled, all synchronized APs will transmit at the same time and receive at the same time. The result is a drastic reduction in co-location interference. Each AP has a GPS receiver and synchronizes its transmissions to the GPS timing signal – no connection between APs is required. To use GPS Sync, all APs must have GPS receivers and all radios must be
+running airOS® version 8.3 or above. Frequency reuse will be possible in properly designed networks.
 
 System Accounts
 
