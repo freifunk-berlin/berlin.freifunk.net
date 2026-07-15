@@ -49,10 +49,6 @@ disableKinds = ['taxonomy', 'term']
                 url = 'map/'
                 weight = 20
             [[languages.de.menus.primary]]
-                name = 'DWeb Camp 2026'
-                url = 'dweb/'
-                weight = 25
-            [[languages.de.menus.primary]]
                 name = 'Spenden'
                 url = 'donate/'
                 weight = 30
@@ -95,10 +91,6 @@ disableKinds = ['taxonomy', 'term']
                 name = 'Map'
                 url = 'map/'
                 weight = 20
-            [[languages.en.menus.primary]]
-                name = 'DWeb Camp 2026'
-                url = 'dweb/'
-                weight = 25
             [[languages.en.menus.primary]]
                 name = 'Donate'
                 url = 'donate/'
