@@ -54,6 +54,7 @@ To display up to date information, we fetch and generate some data during the bu
 - map-nodecount (ff-community api)
 - community-lastchange (ff-community api)
 - inventory (docs inventory)
+- mastodon (homepage)
 
 ## Events
 
